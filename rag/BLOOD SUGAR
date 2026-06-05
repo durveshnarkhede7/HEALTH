@@ -1,0 +1,254 @@
+{
+  "_meta": {
+    "layer": "14_BLOOD_SUGAR",
+    "version": "1.0",
+    "description": "The complete blood sugar regulation system — from postprandial glucose dynamics to insulin resistance progression, reactive hypoglycaemia, and tissue-specific glucotoxic damage pathways.",
+    "nodes": [
+      "BSG_REGULATION_001",
+      "BSG_POSTPRANDIAL_001",
+      "BSG_INSULIN_RESISTANCE_001",
+      "BSG_REACTIVE_HYPOGLYCEMIA_001",
+      "BSG_FASTING_GLUCOSE_001",
+      "BSG_GLUCOTOXICITY_001",
+      "BSG_HAIR_SKIN_AXIS_001",
+      "BSG_DAWN_PHENOMENON_001",
+      "BSG_CORTISOL_GLUCOSE_001",
+      "BSG_GUT_GLUCOSE_AXIS_001"
+    ]
+  },
+  "BSG_REGULATION_001": {
+    "id": "BSG_REGULATION_001",
+    "node_type": "blood_sugar",
+    "version": "1.0",
+    "name": "Blood Glucose Homeostasis (Master Regulation)",
+    "definition": "The tightly controlled system that maintains blood glucose between 70-100 mg/dL in fasting and below 140 mg/dL postprandially. This is not a simple on-off switch — it is a multi-organ, multi-hormonal feedback loop involving the pancreas, liver, muscles, brain, and adrenals.",
+    "mechanism": {
+      "glucose_sensing": "Pancreatic beta cells are the primary glucose sensors. They express glucokinase (the glucose sensor enzyme) which has a Km of ~5mM — meaning it becomes active precisely at the blood glucose threshold where insulin secretion is needed. This is why beta cells are uniquely tuned to physiological glucose levels.",
+      "insulin_response": "Rising blood glucose → beta cell glucokinase activation → increased ATP production → closure of ATP-sensitive K+ channels → membrane depolarisation → calcium influx → insulin vesicle exocytosis. First phase (0-10 min): pre-formed insulin granules. Second phase (10-60 min): newly synthesised insulin. Loss of first-phase insulin response is the earliest detectable sign of prediabetes.",
+      "glucagon_counter_regulation": "Falling blood glucose → alpha cells release glucagon → liver glycogenolysis (glycogen → glucose) and gluconeogenesis (amino acids/lactate → glucose). This is the primary defence against hypoglycaemia.",
+      "hepatic_glucose_output": "The liver is the central glucose buffer. Fed state: liver stores glucose as glycogen (up to 100-120g). Fasted state (after 6-8 hours): liver releases glucose from glycogen. Prolonged fast (12+ hours): liver switches to gluconeogenesis from amino acids, glycerol, and lactate.",
+      "muscle_glucose_uptake": "Muscle is the largest glucose sink in the body (accounting for ~80% of postprandial glucose disposal). Glucose entry requires GLUT4 translocation to the cell membrane, triggered by either insulin OR muscle contraction (the reason exercise improves blood sugar independent of insulin).",
+      "brain_glucose_demand": "The brain consumes ~120g of glucose per day (~20% of total body glucose) despite being only 2% of body weight. It cannot use fatty acids for fuel (they cannot cross the blood-brain barrier). During prolonged fasting, the brain can partially switch to ketone bodies — but glucose remains the primary fuel."
+    },
+    "hormonal_regulators": {
+      "glucose_lowering": ["HOR_INSULIN_001 (Primary — lowers blood glucose by driving it into cells)"],
+      "glucose_raising": [
+        "HOR_GLUCAGON_001 (Primary counter-regulatory — releases liver glucose)",
+        "HOR_CORTISOL_001 (Stimulates gluconeogenesis and causes peripheral insulin resistance — this is why stress raises blood sugar)",
+        "HOR_ADRENALINE_001 (Emergency glucose release via rapid glycogenolysis)",
+        "HOR_GH_001 (Growth Hormone has anti-insulin effects — raises blood sugar during fasting and sleep)"
+      ]
+    },
+    "indian_context": "The Indian population has a genetically lower beta cell reserve compared to Caucasian populations. Indian beta cells exhaust faster under the same glycaemic load, which is why Indians develop diabetes at lower BMI and younger ages. Combined with the 60-75% carbohydrate-dominant diet, the Indian pancreas is under constant, unrelenting stress from birth.",
+    "symptom_refs": ["SYM_FATIGUE_001", "SYM_BRAINFOG_001", "SYM_CRAVINGS_001"]
+  },
+  "BSG_POSTPRANDIAL_001": {
+    "id": "BSG_POSTPRANDIAL_001",
+    "node_type": "blood_sugar",
+    "version": "1.0",
+    "name": "Postprandial Blood Sugar Dynamics",
+    "definition": "The blood glucose response in the 0-3 hour window after eating a meal. This is the most critical window for metabolic health because it determines the magnitude of the insulin spike, the degree of oxidative stress, and the downstream hormonal cascade.",
+    "mechanism": {
+      "glycaemic_spike": "Carbohydrate digestion → glucose absorption in small intestine → portal vein → liver → systemic blood glucose rise. The speed and height of this spike is determined by glycaemic index (GI), glycaemic load (GL), fibre content, fat/protein pairing, and stomach emptying rate.",
+      "insulin_spike_proportional": "Insulin release is directly proportional to the glucose spike. High GI meal (white rice, maida paratha) → sharp glucose spike → massive insulin spike. Low GI meal (dal + roti + sabzi) → gradual glucose rise → moderate insulin response.",
+      "triglyceride_response": "Excess glucose beyond immediate energy needs → liver converts glucose to triglycerides via de novo lipogenesis → VLDL particles → stored as visceral fat. This is the primary mechanism linking sugar to belly fat.",
+      "oxidative_burst": "Every glucose spike generates a transient burst of mitochondrial ROS due to increased electron flow through the ETC. Repeated daily glucose spikes → chronic low-grade oxidative stress (OXI_STRESS_001). This is called 'glycaemic variability damage' — and it is MORE damaging than sustained moderately high glucose.",
+      "incretin_response": "GLP-1 and GIP (incretin hormones) are released from gut L-cells and K-cells in response to food. They amplify insulin secretion, suppress glucagon, slow gastric emptying, and promote satiety. Their function is blunted in prediabetes."
+    },
+    "indian_context": "The typical Indian meal structure (large portion of rice/roti with minimal protein/fat in the first bite) causes a rapid, high glycaemic spike. Eating order matters — eating dal/sabzi first, then roti/rice last, can reduce the postprandial spike by 30-40%.",
+    "nutritional_connection": [
+      "NUT_CARBS_001 (Primary substrate)",
+      "NUT_FIBRE_001 (Slows gastric emptying → flattens the curve)",
+      "NUT_CHROMIUM_001 (Enhances GLUT4 → faster glucose clearance)"
+    ],
+    "symptom_refs": ["SYM_POSTMEALSLEEPINESS_001", "SYM_BLOATING_001"]
+  },
+  "BSG_INSULIN_RESISTANCE_001": {
+    "id": "BSG_INSULIN_RESISTANCE_001",
+    "node_type": "blood_sugar",
+    "version": "1.0",
+    "name": "Insulin Resistance Progression",
+    "definition": "The progressive loss of cellular responsiveness to insulin, requiring the pancreas to produce increasingly higher insulin levels to achieve the same glucose-lowering effect. This is not a binary state — it is a spectrum that develops over years.",
+    "mechanism": {
+      "stage_1_compensated": "Cells begin downregulating insulin receptors (GLUT4 internalisation) due to chronic hyperinsulinaemia. Fasting glucose remains normal because the pancreas compensates by producing MORE insulin. HbA1c may be normal. HOMA-IR is elevated. This stage is invisible to standard blood tests unless fasting insulin is measured.",
+      "stage_2_prediabetes": "Beta cells begin to fail under the sustained workload. First-phase insulin response is lost. Fasting glucose rises to 100-125 mg/dL. HbA1c 5.7-6.4%. Postprandial spikes exceed 140 mg/dL. Visceral fat accumulation accelerates.",
+      "stage_3_type2_diabetes": "Beta cell mass is reduced by 50-80% through a combination of apoptosis (glucotoxicity), lipotoxicity (ceramide accumulation), and oxidative stress (beta cells have the lowest antioxidant enzyme levels of any tissue — BIO_PANCREAS_001). Fasting glucose exceeds 126 mg/dL. HbA1c exceeds 6.5%. Pancreas can no longer compensate.",
+      "tissue_specific_resistance": {
+        "muscle": "Reduced GLUT4 translocation → glucose stays in blood instead of entering muscle. Intramyocellular lipid (IMCL) accumulation from DAG and ceramides blocks IRS-1 signalling.",
+        "liver": "Hepatic insulin resistance → liver fails to suppress gluconeogenesis even when blood glucose is already elevated → continuous glucose dumping into the blood. Simultaneously, lipogenesis remains insulin-sensitive → paradox: liver BOTH dumps glucose AND makes fat.",
+        "adipose": "Adipose insulin resistance → failure to suppress lipolysis → free fatty acids flood the bloodstream → worsen muscle/liver insulin resistance → vicious cycle."
+      }
+    },
+    "triggers": [
+      "NUT_CARBS_001 (Chronic high glycaemic diet)",
+      "INF_METABOLIC_001 (Visceral fat inflammation)",
+      "STR_CHRONIC_001 (Cortisol causes peripheral insulin resistance)",
+      "SLP_DEPRIVATION_001 (One night of poor sleep → 30% reduction in insulin sensitivity)",
+      "STR_CIRCADIAN_001 (Night shift work destroys glucose homeostasis)",
+      "EXE_NEAT_001 deficit (Prolonged sitting → muscles remain insulin resistant)"
+    ],
+    "downstream_damage": [
+      "HOR_TESTOSTERONE_001 (Hyperinsulinaemia in women → ovarian androgen overproduction → PCOS)",
+      "HOR_SHBG_001 (Insulin suppresses liver SHBG production → more free testosterone → acne, hair loss)",
+      "OXI_GLYCATION_001 (Elevated glucose → accelerated AGE formation)",
+      "INF_METABOLIC_001 (Feeds the inflammation-resistance loop)"
+    ],
+    "indian_context": "India has 100+ million diagnosed diabetics and an estimated 140+ million prediabetics. The South Asian genotype has smaller beta cell mass, lower insulin secretory capacity, and higher visceral fat deposition at lower BMI — meaning the Indian pancreas fails EARLIER than Caucasian pancreas under the same dietary stress. A 'normal' BMI of 23 in an Indian can harbour severe insulin resistance.",
+    "resolution_pathways": [
+      "EXE_RESISTANCE_001 (GLUT4 translocation via contraction — insulin-independent glucose uptake)",
+      "NUT_MAGNESIUM_001 (Restores insulin receptor tyrosine kinase activity)",
+      "NUT_CHROMIUM_001 (Chromodulin amplifies insulin signal)",
+      "SLP_DEEPSLEEP_001 (Restores next-day insulin sensitivity)",
+      "REC_METABOLIC_001 (2 weeks to 3 months recovery timeline)"
+    ],
+    "lab_markers": ["LAB_FASTING_INSULIN_001", "LAB_HOMA_IR_001", "LAB_HBA1C_001", "LAB_FASTING_GLUCOSE_001"],
+    "symptom_refs": ["SYM_WEIGHTGAIN_001", "SYM_FATIGUE_001", "SYM_CRAVINGS_001", "SYM_ACNE_001", "SYM_HAIRFALL_001"]
+  },
+  "BSG_REACTIVE_HYPOGLYCEMIA_001": {
+    "id": "BSG_REACTIVE_HYPOGLYCEMIA_001",
+    "node_type": "blood_sugar",
+    "version": "1.0",
+    "name": "Reactive Hypoglycaemia (Sugar Crash)",
+    "definition": "A sharp drop in blood glucose to below 70 mg/dL occurring 1-3 hours after a high glycaemic meal, caused by an exaggerated insulin overshoot. The body over-corrects the glucose spike, crashing blood sugar below the safe threshold.",
+    "mechanism": {
+      "overshoot": "High GI meal → massive glucose spike → proportionally massive insulin release → glucose is rapidly driven into cells → blood sugar drops below baseline → symptoms of hypoglycaemia. In insulin-resistant individuals, the delayed first-phase insulin response means second-phase insulin continues AFTER glucose has already normalised → crash.",
+      "counter_regulatory_cascade": "Falling glucose → brain detects threat → emergency cortisol and adrenaline release → glycogenolysis → glucose recovery. This is why sugar crashes cause anxiety, shakiness, irritability, and cravings for more sugar — it is a literal adrenaline surge.",
+      "cravings_loop": "Sugar crash → cortisol/adrenaline surge → intense craving for quick sugar → another high GI food → another spike → another crash. This hormonal rollercoaster can repeat 4-6 times per day on a typical Indian diet."
+    },
+    "indian_context": "The afternoon chai + biscuit habit is the classic reactive hypoglycaemia trigger. Large white rice lunch → massive spike → crash at 3-4 PM → chai with sugar and biscuits → second spike → second crash → evening cravings. This pattern is so normalised in Indian culture that most people do not recognise it as a metabolic dysfunction.",
+    "hormonal_impacts": [
+      "HOR_CORTISOL_001 (Emergency spike during crash → contributes to chronic cortisol elevation if repeated daily)",
+      "HOR_ADRENALINE_001 (Emergency release → anxiety, heart pounding, shakiness)"
+    ],
+    "symptom_refs": ["SYM_FATIGUE_001", "SYM_BRAINFOG_001", "SYM_ANXIETY_001", "SYM_CRAVINGS_001"]
+  },
+  "BSG_FASTING_GLUCOSE_001": {
+    "id": "BSG_FASTING_GLUCOSE_001",
+    "node_type": "blood_sugar",
+    "version": "1.0",
+    "name": "Fasting Glucose Regulation",
+    "definition": "The mechanisms that maintain blood glucose during the overnight fast and between meals. Fasting glucose reflects the liver's glucose output, NOT the dietary glucose load.",
+    "mechanism": {
+      "hepatic_glycogenolysis": "During the first 6-8 hours of fasting, the liver breaks down stored glycogen (100-120g total) to maintain blood glucose at 70-100 mg/dL.",
+      "gluconeogenesis_switch": "After 12+ hours, glycogen stores are depleted. The liver switches to synthesising NEW glucose from: (1) amino acids (primarily alanine from muscle), (2) glycerol (from fat breakdown), (3) lactate (from anaerobic glycolysis in muscles and RBCs). Cortisol is the primary hormone stimulating this process.",
+      "elevated_fasting_glucose": "Fasting glucose above 100 mg/dL indicates that the liver is dumping glucose even when it should NOT be — because hepatic insulin resistance prevents insulin from suppressing gluconeogenesis. This is why fasting glucose is a liver-centric marker, not a diet marker.",
+      "dawn_phenomenon_ref": "See BSG_DAWN_PHENOMENON_001 for why fasting glucose can be paradoxically elevated in the morning."
+    },
+    "indian_context": "Many Indians present with elevated fasting glucose (100-110 mg/dL) despite eating dinner at 8 PM and testing at 8 AM — a 12-hour fast. This is NOT from eating too much — it is from hepatic insulin resistance and excess cortisol-driven gluconeogenesis overnight.",
+    "lab_markers": ["LAB_FASTING_GLUCOSE_001"],
+    "resolution_pathways": ["EXE_RESISTANCE_001 (Depletes hepatic glycogen)", "Moderate dinner carbohydrate restriction", "STR_CHRONIC_001 management"]
+  },
+  "BSG_GLUCOTOXICITY_001": {
+    "id": "BSG_GLUCOTOXICITY_001",
+    "node_type": "blood_sugar",
+    "version": "1.0",
+    "name": "Glucotoxicity (Tissue Damage from Elevated Glucose)",
+    "definition": "The direct biochemical damage caused by chronically elevated blood glucose to tissues, enzymes, and organ systems — independent of insulin levels. Glucose itself becomes toxic when it exceeds the body's capacity to metabolise it safely.",
+    "damage_pathways": {
+      "polyol_pathway": "Excess glucose → aldose reductase converts glucose to sorbitol → accumulates intracellularly (cannot cross membranes) → osmotic stress → cell swelling → damage. Particularly destructive in the lens (cataracts), nerves (neuropathy), and kidneys (nephropathy). Aldose reductase consumes NADPH in this process, depleting the antioxidant reserve needed for glutathione regeneration.",
+      "hexosamine_pathway": "Excess glucose → fructose-6-phosphate → glucosamine-6-phosphate → O-GlcNAcylation of proteins → altered gene expression and protein function. Contributes to insulin resistance at the molecular level.",
+      "PKC_activation": "Excess glucose → increased diacylglycerol (DAG) synthesis → activation of protein kinase C (PKC) → vascular permeability increase, basement membrane thickening, pro-inflammatory gene expression. Primary driver of diabetic retinopathy and nephropathy.",
+      "AGE_formation": "See OXI_GLYCATION_001. The direct non-enzymatic glycation of proteins, lipids, and DNA by glucose."
+    },
+    "tissue_targets": [
+      "BIO_PANCREAS_001 (Glucotoxicity directly kills beta cells — creating a vicious cycle where the cells needed to lower glucose are destroyed BY glucose)",
+      "BIO_NERVOUS_001 (Peripheral neuropathy — 'burning feet' sensation, extremely common in Indian diabetics)",
+      "BIO_FOLLICLE_001 (Glucotoxic keratin damage → brittle, weak hair shafts)",
+      "BIO_DERMIS_001 (Acanthosis nigricans — dark velvety patches on neck/armpits — a direct sign of insulin resistance)"
+    ],
+    "indian_context": "India has among the highest rates of diabetic complications globally because diabetes is often diagnosed late (average 7 years after onset). By the time of diagnosis, 50% of beta cell function is already lost and glucotoxic damage to nerves, kidneys, and eyes has already begun.",
+    "resolution_pathways": ["BSG_INSULIN_RESISTANCE_001 management", "NUT_B1_001 (Benfotiamine blocks polyol and hexosamine pathways)"],
+    "symptom_refs": ["SYM_NUMBNESS_001", "SYM_BLURREDVISION_001", "SYM_DRYSKIN_001"]
+  },
+  "BSG_HAIR_SKIN_AXIS_001": {
+    "id": "BSG_HAIR_SKIN_AXIS_001",
+    "node_type": "blood_sugar",
+    "version": "1.0",
+    "name": "Blood Sugar → Hair & Skin Damage Axis",
+    "definition": "The precise multi-pathway mechanism by which blood sugar dysregulation causes hair loss, thinning, acne, premature greying, and skin aging. This is NOT a vague association — there are 5 distinct, proven molecular pathways.",
+    "pathways": {
+      "pathway_1_insulin_to_androgens": {
+        "name": "Insulin → Androgen Pathway",
+        "mechanism": "Hyperinsulinaemia → stimulates ovarian theca cells to produce testosterone (in women) → 5-alpha reductase converts testosterone to DHT → DHT binds androgen receptors in the dermal papilla → miniaturises the follicle. SIMULTANEOUSLY, insulin suppresses hepatic SHBG production → more free testosterone available → amplified DHT conversion.",
+        "refs": ["HOR_INSULIN_001", "HOR_TESTOSTERONE_001", "HOR_DHT_001", "HOR_SHBG_001"]
+      },
+      "pathway_2_IGF1_sebum": {
+        "name": "Insulin → IGF-1 → Sebum → Acne Pathway",
+        "mechanism": "Chronic hyperinsulinaemia → liver increases IGF-1 production → IGF-1 binds IGF-1R on sebocytes → stimulates sebaceous gland lipogenesis → increased sebum production → blocked pores → P. acnes proliferation → inflammatory acne.",
+        "refs": ["HOR_IGF1_001", "BIO_SEBACEOUSGLAND_001"]
+      },
+      "pathway_3_glycation_keratin": {
+        "name": "Glucose → Keratin Glycation Pathway",
+        "mechanism": "Chronically elevated blood glucose → non-enzymatic glycation of keratin proteins in the hair shaft → cross-linked, rigid, brittle keratin → hair becomes dry, rough, breaks easily, and loses tensile strength. The hair shaft literally becomes 'sugar-coated' at the molecular level.",
+        "refs": ["OXI_GLYCATION_001", "BIO_FOLLICLE_001"]
+      },
+      "pathway_4_microvascular": {
+        "name": "Glucose → Microvascular Damage Pathway",
+        "mechanism": "Elevated glucose → basement membrane thickening in dermal papilla capillaries → reduced blood flow to the follicle → nutrient and oxygen starvation → matrix cells cannot sustain their extreme mitotic rate → hair thins. Same mechanism as diabetic retinopathy but in the scalp.",
+        "refs": ["BSG_GLUCOTOXICITY_001", "BIO_FOLLICLE_001"]
+      },
+      "pathway_5_oxidative_follicle": {
+        "name": "Glucose Spikes → Oxidative Follicle Damage Pathway",
+        "mechanism": "Each postprandial glucose spike → transient mitochondrial ROS burst in matrix cells → cumulative oxidative DNA damage to follicle stem cells → premature miniaturisation and greying. The hair follicle matrix, being the fastest dividing tissue, is the most vulnerable to this repeated oxidative insult.",
+        "refs": ["OXI_FOLLICLE_001", "OXI_MITOCHONDRIAL_001"]
+      }
+    },
+    "skin_damage": {
+      "acanthosis_nigricans": "Dark, velvety patches on the neck, armpits, and groin. Caused by hyperinsulinaemia → excessive keratinocyte and fibroblast growth via IGF-1R stimulation. The strongest visible external marker of insulin resistance.",
+      "skin_tags": "Multiple skin tags on the neck and eyelids — caused by the same IGF-1-driven growth stimulation. Highly correlated with insulin resistance and visceral fat.",
+      "premature_aging": "Glycation of dermal collagen (15-year half-life) → permanent cross-links → rigid, wrinkled, sagging skin. AGE-modified collagen cannot be repaired — it must be physically replaced, which takes years."
+    },
+    "indian_context": "The connection between blood sugar and hair/skin is almost NEVER diagnosed in India. Women presenting with hair loss and acne are treated with topical minoxidil and antibiotics, while the root cause (insulin resistance from a white rice/maida-heavy diet) is completely missed. Checking fasting insulin and HOMA-IR should be standard for ANY Indian patient presenting with unexplained hair loss or acne.",
+    "symptom_refs": ["SYM_HAIRFALL_001", "SYM_ACNE_001", "SYM_PREMATUREGREYING_001", "SYM_DRYSKIN_001", "SYM_SKINTAGS_001"]
+  },
+  "BSG_DAWN_PHENOMENON_001": {
+    "id": "BSG_DAWN_PHENOMENON_001",
+    "node_type": "blood_sugar",
+    "version": "1.0",
+    "name": "Dawn Phenomenon (Morning Glucose Spike)",
+    "definition": "A natural physiological rise in blood glucose that occurs between 4-8 AM, caused by a pre-dawn surge of counter-regulatory hormones (cortisol, growth hormone, glucagon) preparing the body to wake up.",
+    "mechanism": {
+      "cortisol_surge": "The circadian cortisol peak (HOR_CORTISOL_001) occurs at ~6-8 AM. Cortisol stimulates hepatic gluconeogenesis → liver dumps glucose into blood → blood sugar rises by 10-20 mg/dL in healthy individuals.",
+      "growth_hormone_pulse": "Growth Hormone released during late-night deep sleep (SLP_DEEPSLEEP_001) has anti-insulin effects that persist into the early morning → further raises blood glucose.",
+      "pathological_amplification": "In insulin-resistant individuals, the liver over-responds to cortisol and GH signals because it cannot hear insulin's 'stop' signal → fasting glucose can rise to 110-130+ mg/dL by morning. This is why some diabetics have HIGHER blood sugar after fasting all night than after eating."
+    },
+    "indian_context": "Many Indian patients are confused and distressed when their fasting glucose is elevated despite 'not eating anything since dinner.' Understanding the dawn phenomenon prevents unnecessary dietary restriction and correctly identifies the root cause as hepatic insulin resistance and cortisol dysregulation, not food.",
+    "hormonal_refs": ["HOR_CORTISOL_001", "HOR_GH_001", "HOR_GLUCAGON_001"],
+    "resolution_pathways": ["Light evening walk after dinner", "Apple cider vinegar before bed (acetic acid suppresses hepatic glucose output)", "EXE_RESISTANCE_001 (Depletes liver glycogen)"]
+  },
+  "BSG_CORTISOL_GLUCOSE_001": {
+    "id": "BSG_CORTISOL_GLUCOSE_001",
+    "node_type": "blood_sugar",
+    "version": "1.0",
+    "name": "Stress-Cortisol-Glucose Connection",
+    "definition": "The precise mechanism by which psychological stress directly raises blood sugar without eating any food. This is one of the most overlooked drivers of insulin resistance and diabetes progression.",
+    "mechanism": {
+      "cortisol_gluconeogenesis": "Cortisol binds glucocorticoid receptors in the liver → activates PEPCK and G6Pase genes → stimulates gluconeogenesis → liver synthesises and releases glucose into the blood. This is a survival mechanism — preparing fuel for fight-or-flight. In chronic stress, this glucose production runs continuously.",
+      "cortisol_peripheral_resistance": "Cortisol simultaneously reduces peripheral insulin sensitivity — muscles and fat cells become less responsive to insulin → glucose remains in the blood longer → higher postprandial spikes.",
+      "cortisol_belly_fat": "Cortisol specifically promotes visceral fat deposition (via 11-beta-HSD1 enzyme which converts cortisone to active cortisol inside visceral adipose tissue). Visceral fat → INF_METABOLIC_001 → worsened insulin resistance → more cortisol needed → more belly fat. This is the stress-belly-diabetes vicious triangle."
+    },
+    "indian_context": "This is the missing link in why highly stressed IT professionals, students preparing for competitive exams, and individuals with family conflicts develop insulin resistance and diabetes even without eating excessively. Stress alone can raise HbA1c.",
+    "hormonal_refs": ["HOR_CORTISOL_001", "HOR_INSULIN_001", "STR_CHRONIC_001"],
+    "symptom_refs": ["SYM_WEIGHTGAIN_001 (Specifically belly fat)", "SYM_CRAVINGS_001"]
+  },
+  "BSG_GUT_GLUCOSE_AXIS_001": {
+    "id": "BSG_GUT_GLUCOSE_AXIS_001",
+    "node_type": "blood_sugar",
+    "version": "1.0",
+    "name": "Gut-Glucose Axis (Microbiome Blood Sugar Connection)",
+    "definition": "The bidirectional relationship between the gut microbiome and blood sugar regulation. The gut is not just a passive absorber of glucose — it actively modulates how much glucose enters the blood, how fast, and how the body responds to it.",
+    "mechanism": {
+      "incretin_effect": "Gut L-cells secrete GLP-1 and K-cells secrete GIP (incretin hormones) in response to nutrients. GLP-1 amplifies insulin secretion by 50-70% (the 'incretin effect'), slows gastric emptying (reducing glucose absorption rate), and promotes satiety. A dysbiotic microbiome REDUCES incretin production → blunted insulin response → higher glucose spikes.",
+      "short_chain_fatty_acids": "Beneficial bacteria (Lactobacillus, Bifidobacterium, Faecalibacterium) ferment dietary fibre → produce Short Chain Fatty Acids (SCFAs: butyrate, propionate, acetate). Propionate stimulates intestinal gluconeogenesis → portal vein glucose signal → hepato-portal glucose sensing → improved whole-body insulin sensitivity. Butyrate strengthens the gut barrier (preventing LPS leakage). Acetate improves appetite regulation.",
+      "LPS_insulin_resistance": "Dysbiosis + leaky gut → LPS (bacterial endotoxin) enters bloodstream → TLR4 activation on adipocytes and hepatocytes → NF-kB → TNF-alpha, IL-6 → direct serine phosphorylation of IRS-1 → insulin resistance. This is called 'metabolic endotoxaemia' — the gut CAUSING diabetes.",
+      "bile_acid_metabolism": "Gut bacteria modify primary bile acids (from the liver) into secondary bile acids → activate FXR and TGR5 receptors → regulate hepatic glucose output and GLP-1 secretion. Antibiotic-disrupted microbiomes → altered bile acid pool → impaired glucose regulation."
+    },
+    "indian_context": "The traditional Indian diet (high fibre from dal, whole grains, vegetables) supports SCFA-producing bacteria. The modern urban Indian diet (maida, white rice, processed foods, low fibre) starves these bacteria, shifting the microbiome towards a pro-inflammatory, pro-diabetic composition. Additionally, widespread antibiotic overuse in India decimates beneficial SCFA producers.",
+    "gut_refs": ["GUT_DYSBIOSIS_001", "GUT_LEAKYGUT_001", "INF_GUT_001"],
+    "nutritional_connection": [
+      "NUT_FIBRE_001 (The primary fuel for SCFA-producing bacteria)",
+      "NUT_PROTEIN_001 (L-glutamine for gut barrier integrity)"
+    ],
+    "resolution_pathways": ["Prebiotic fibre intake (dal, vegetables, whole grains)", "Probiotic foods (homemade curd, kanji)", "Antibiotic stewardship"]
+  }
+}

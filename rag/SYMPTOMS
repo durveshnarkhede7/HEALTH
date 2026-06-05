@@ -1,0 +1,543 @@
+{
+  "_meta": {
+    "layer": "03_SYMPTOMS",
+    "layer_number": 3,
+    "version": "1.0",
+    "description": "Defines what users experience and feel. Connects to biology and root causes. Never stores why \u2014 only what.",
+    "total_nodes": 19,
+    "node_type": "symptom",
+    "anti_duplication_rule": "Symptoms describe user-facing concerns. They reference systems, root causes, and clusters by ID. They do NOT explain biological mechanisms, which are stored in 02_BIOLOGY, or list lab markers or interventions directly.",
+    "nodes": [
+      "SYM_HAIRFALL_001",
+      "SYM_HAIRTHIN_001",
+      "SYM_ACNE_001",
+      "SYM_FATIGUE_001",
+      "SYM_BRAINFOG_001",
+      "SYM_WEIGHTGAIN_001",
+      "SYM_POORSLEEP_001",
+      "SYM_BLOATING_001",
+      "SYM_DRYSKIN_001",
+      "SYM_IRREGULARPERIODS_001",
+      "SYM_SCALPDRY_001",
+      "SYM_OILYSKIN_001",
+      "SYM_DARKSPOTS_001",
+      "SYM_LOWENERGY_001",
+      "SYM_CONSTIPATION_001",
+      "SYM_MUSCLEWEAKNESS_001",
+      "SYM_JOINTPAIN_001",
+      "SYM_SHORTBREATH_001",
+      "SYM_WEIGHTLOSS_001"
+    ]
+  },
+  "SYM_HAIRFALL_001": {
+    "id": "SYM_HAIRFALL_001",
+    "node_type": "symptom",
+    "version": "1.0",
+    "name": "Hair Fall",
+    "parent_system": "SYS_HAIR_001",
+    "definition": "Loss of more than 100 hairs per day or visually noticeable reduction in hair density.",
+    "severity_scale": {
+      "mild": "Slightly more than usual hair on pillow, comb, or drain",
+      "moderate": "Visible thinning, noticeable reduction in ponytail thickness",
+      "severe": "Bald patches visible, scalp shows through hair"
+    },
+    "identification_patterns": [
+      "Positive pull test (>6 hairs from 60-hair grab)",
+      "Diffuse thinning across scalp",
+      "Hairline recession (temples/crown)",
+      "Circumscribed bald patches"
+    ],
+    "red_flags": [
+      "Sudden patchy hair loss \u2192 refer dermatologist (alopecia areata possible)",
+      "Hairline loss with scaling/crusting \u2192 refer dermatologist",
+      "Hair loss with systemic fatigue, cold intolerance \u2192 check thyroid",
+      "Hair loss with heavy periods, fatigue \u2192 check ferritin",
+      "Hair loss with acne + irregular periods \u2192 check for PCOS"
+    ],
+    "related_systems": [
+      "SYS_HAIR_001",
+      "SYS_HORMONAL_001",
+      "SYS_ENERGY_001",
+      "SYS_DIGESTIVE_001"
+    ],
+    "root_cause_refs": [
+      "RCE_IRON_HAIR_001",
+      "RCE_DHT_HAIR_001",
+      "RCE_THYROID_HAIR_001",
+      "RCE_PCOS_HAIR_001",
+      "RCE_PROTEIN_HAIR_001",
+      "RCE_VITD_HAIR_001",
+      "RCE_TELOGEN_HAIR_001"
+    ],
+    "symptom_cluster_refs": [
+      "SCL_IRON_001",
+      "SCL_PCOS_001",
+      "SCL_THYROID_001"
+    ],
+    "clinical_subtypes": {
+      "telogen_effluvium": "Root shedding where hairs enter the resting phase prematurely due to systemic stress (iron/protein deficiency, illness, cortisol). Characterised by white bulbs at the fallen hair root.",
+      "androgenetic_alopecia": "Follicle miniaturisation driven by DHT. The hair shaft gets progressively thinner and shorter over successive cycles rather than sudden shedding."
+    }
+  },
+  "SYM_HAIRTHIN_001": {
+    "id": "SYM_HAIRTHIN_001",
+    "node_type": "symptom",
+    "version": "1.0",
+    "name": "Hair Thinning",
+    "parent_system": "SYS_HAIR_001",
+    "definition": "Progressive reduction in individual hair shaft diameter without necessarily increased shedding.",
+    "severity_scale": {
+      "mild": "Hair feels finer, lacks volume",
+      "moderate": "Noticeable reduction in hair thickness, scalp visible in parts",
+      "severe": "Severe miniaturisation, vellus-like fine hairs"
+    },
+    "key_differentiator": "Thinning = miniaturised follicles. Hair Fall = excessive shedding. Both can coexist.",
+    "primary_cause": "Follicle miniaturisation driven by DHT (androgenetic) or nutritional deficiency reducing shaft diameter.",
+    "root_cause_refs": [
+      "RCE_DHT_HAIR_001",
+      "RCE_IRON_HAIR_001",
+      "RCE_PROTEIN_HAIR_001"
+    ]
+  },
+  "SYM_ACNE_001": {
+    "id": "SYM_ACNE_001",
+    "node_type": "symptom",
+    "version": "1.0",
+    "name": "Acne",
+    "parent_system": "SYS_SKIN_001",
+    "definition": "Inflammatory skin condition characterised by comedones, papules, pustules, or cysts from blocked sebaceous glands.",
+    "severity_scale": {
+      "mild": "Blackheads/whiteheads only",
+      "moderate": "Papules and pustules present",
+      "severe": "Cysts, nodules, scarring"
+    },
+    "location_patterns": {
+      "forehead_nose": "Gut / digestive imbalance, high refined-carbohydrate diets",
+      "jawline_chin": "Hormonal (PCOS, androgen excess)",
+      "cheeks": "Dairy sensitivity, gut",
+      "back_chest": "Hormonal or heat"
+    },
+    "root_cause_refs": [
+      "RCE_DHT_SKIN_001",
+      "RCE_INSULIN_ACNE_001",
+      "RCE_GUT_ACNE_001"
+    ],
+    "clinical_subtypes": {
+      "comedonal_acne": "Non-inflammatory clogged pores (blackheads and whiteheads) primarily driven by abnormal keratinisation and sebum overproduction.",
+      "inflammatory_acne": "Papules and pustules driven by P. acnes overgrowth, systemic inflammation, and high omega-6 intake, where the immune system attacks the follicle.",
+      "cystic_acne": "Deep, painful nodules strongly driven by hormonal fluctuations (DHT, insulin, PCOS) leading to severe follicular rupture and scarring."
+    }
+  },
+  "SYM_FATIGUE_001": {
+    "id": "SYM_FATIGUE_001",
+    "node_type": "symptom",
+    "version": "1.0",
+    "name": "Fatigue",
+    "parent_system": "SYS_ENERGY_001",
+    "definition": "Persistent physical or mental tiredness not relieved by rest.",
+    "severity_scale": {
+      "mild": "Tired by evening, manageable with coffee",
+      "moderate": "Tired throughout day, reduced productivity",
+      "severe": "Cannot complete daily tasks, brain fog present"
+    },
+    "red_flags": [
+      "Fatigue + cold intolerance + weight gain \u2192 check thyroid",
+      "Fatigue + pallor + hair fall \u2192 check ferritin",
+      "Fatigue + excessive thirst + urination \u2192 check HbA1c",
+      "Fatigue + post-meal crash \u2192 check HbA1c/insulin resistance"
+    ],
+    "root_cause_refs": [
+      "RCE_IRON_ENERGY_001",
+      "RCE_THYROID_ENERGY_001",
+      "RCE_B12_ENERGY_001",
+      "RCE_VITD_ENERGY_001",
+      "RCE_CORTISOL_ENERGY_001",
+      "RCE_MAGNESIUM_ENERGY_001"
+    ]
+  },
+  "SYM_BRAINFOG_001": {
+    "id": "SYM_BRAINFOG_001",
+    "node_type": "symptom",
+    "version": "1.0",
+    "name": "Brain Fog",
+    "parent_system": "SYS_ENERGY_001",
+    "definition": "Cognitive difficulty characterised by poor concentration, memory lapses, slow thinking, and mental fatigue.",
+    "root_cause_refs": [
+      "RCE_IRON_ENERGY_001",
+      "RCE_B12_ENERGY_001",
+      "RCE_THYROID_ENERGY_001",
+      "RCE_GUT_BRAIN_001",
+      "RCE_OMEGA3_BRAIN_001"
+    ],
+    "identification_patterns": [
+      "Postprandial reactive hypoglycaemia (crash after high-carb meal)"
+    ]
+  },
+  "SYM_WEIGHTGAIN_001": {
+    "id": "SYM_WEIGHTGAIN_001",
+    "node_type": "symptom",
+    "version": "1.0",
+    "name": "Unexplained Weight Gain",
+    "parent_system": "SYS_WEIGHT_001",
+    "definition": "Weight gain without proportionate increase in caloric intake.",
+    "red_flags": [
+      "Weight gain + hair fall + fatigue \u2192 check thyroid",
+      "Weight gain + irregular periods + acne \u2192 check PCOS/insulin",
+      "Weight gain + excessive thirst \u2192 check HbA1c"
+    ],
+    "root_cause_refs": [
+      "RCE_THYROID_WEIGHT_001",
+      "RCE_PCOS_WEIGHT_001",
+      "RCE_INSULIN_WEIGHT_001"
+    ]
+  },
+  "SYM_POORSLEEP_001": {
+    "id": "SYM_POORSLEEP_001",
+    "node_type": "symptom",
+    "version": "1.0",
+    "name": "Poor Sleep",
+    "parent_system": "SYS_SLEEP_001",
+    "definition": "Difficulty falling asleep, staying asleep, or feeling unrefreshed after sleep.",
+    "root_cause_refs": [
+      "RCE_CORTISOL_SLEEP_001",
+      "RCE_MAGNESIUM_SLEEP_001",
+      "RCE_THYROID_SLEEP_001"
+    ]
+  },
+  "SYM_BLOATING_001": {
+    "id": "SYM_BLOATING_001",
+    "node_type": "symptom",
+    "version": "1.0",
+    "name": "Bloating",
+    "parent_system": "SYS_DIGESTIVE_001",
+    "definition": "Abdominal distension and discomfort from gas or fluid accumulation.",
+    "root_cause_refs": [
+      "RCE_DYSBIOSIS_GUT_001",
+      "RCE_LEAKYGUT_001"
+    ]
+  },
+  "SYM_DRYSKIN_001": {
+    "id": "SYM_DRYSKIN_001",
+    "node_type": "symptom",
+    "version": "1.0",
+    "name": "Dry Skin",
+    "parent_system": "SYS_SKIN_001",
+    "definition": "Rough, flaky, or tight skin due to insufficient moisture or barrier dysfunction.",
+    "root_cause_refs": [
+      "RCE_VITD_SKIN_001",
+      "RCE_OMEGA3_SKIN_001",
+      "RCE_THYROID_SKIN_001",
+      "RCE_HYDRATION_SKIN_001",
+      "RCE_FATS_SKIN_001"
+    ]
+  },
+  "SYM_IRREGULARPERIODS_001": {
+    "id": "SYM_IRREGULARPERIODS_001",
+    "node_type": "symptom",
+    "version": "1.0",
+    "name": "Irregular Periods",
+    "parent_system": "SYS_HORMONAL_001",
+    "definition": "Menstrual cycles shorter than 21 days or longer than 35 days, or variable in duration.",
+    "red_flags": [
+      "Irregular periods + hair fall + acne \u2192 check PCOS",
+      "Irregular periods + weight gain + insulin resistance \u2192 check metabolic panel"
+    ],
+    "root_cause_refs": [
+      "RCE_PCOS_001",
+      "RCE_THYROID_HORMONAL_001",
+      "RCE_STRESS_HORMONAL_001"
+    ]
+  },
+  "SYM_SCALPDRY_001": {
+    "id": "SYM_SCALPDRY_001",
+    "node_type": "symptom",
+    "version": "1.0",
+    "name": "Dry/Flaky Scalp",
+    "parent_system": "SYS_HAIR_001",
+    "definition": "Flaking, itching, or tightness of the scalp often associated with barrier dysfunction or fungal overgrowth.",
+    "severity_scale": {
+      "mild": "Occasional flaking",
+      "moderate": "Frequent itching and visible flakes",
+      "severe": "Thick crusts, bleeding"
+    },
+    "identification_patterns": [
+      "Flakes on dark clothing",
+      "Tightness after washing"
+    ],
+    "related_systems": [
+      "SYS_HAIR_001",
+      "SYS_SKIN_001"
+    ],
+    "root_cause_refs": [
+      "RCE_OMEGA3_SKIN_001",
+      "RCE_VITD_SKIN_001"
+    ],
+    "symptom_cluster_refs": [
+      "SCL_BARRIER_001"
+    ]
+  },
+  "SYM_OILYSKIN_001": {
+    "id": "SYM_OILYSKIN_001",
+    "node_type": "symptom",
+    "version": "1.0",
+    "name": "Oily Skin",
+    "parent_system": "SYS_SKIN_001",
+    "definition": "Excessive sebum production leading to a shiny appearance and increased risk of comedones.",
+    "severity_scale": {
+      "mild": "Shiny T-zone by midday",
+      "moderate": "Requires blotting frequently",
+      "severe": "Constant oiliness, makeup slides off"
+    },
+    "identification_patterns": [
+      "Enlarged pores",
+      "Frequent comedones"
+    ],
+    "related_systems": [
+      "SYS_SKIN_001",
+      "SYS_HORMONAL_001",
+      "SYS_METABOLIC_001"
+    ],
+    "root_cause_refs": [
+      "RCE_DHT_SKIN_001",
+      "RCE_INSULIN_ACNE_001"
+    ],
+    "symptom_cluster_refs": [
+      "SCL_ANDROGEN_001",
+      "SCL_INSULIN_001"
+    ]
+  },
+  "SYM_DARKSPOTS_001": {
+    "id": "SYM_DARKSPOTS_001",
+    "node_type": "symptom",
+    "version": "1.0",
+    "name": "Dark Spots / Hyperpigmentation",
+    "parent_system": "SYS_SKIN_001",
+    "definition": "Patches of skin that become darker than the surrounding area due to excess melanin production.",
+    "severity_scale": {
+      "mild": "Faint marks post-acne",
+      "moderate": "Noticeable patches requiring concealer",
+      "severe": "Large melasma patches"
+    },
+    "related_systems": [
+      "SYS_SKIN_001",
+      "SYS_HORMONAL_001"
+    ],
+    "root_cause_refs": [
+      "RCE_INSULIN_ACNE_001"
+    ],
+    "symptom_cluster_refs": [
+      "SCL_INSULIN_001",
+      "SCL_ESTROGEN_001"
+    ]
+  },
+  "SYM_LOWENERGY_001": {
+    "id": "SYM_LOWENERGY_001",
+    "node_type": "symptom",
+    "version": "1.0",
+    "name": "Low Energy",
+    "parent_system": "SYS_ENERGY_001",
+    "definition": "A general lack of physical or mental vigour, often preceding clinical fatigue.",
+    "severity_scale": {
+      "mild": "Need extra coffee",
+      "moderate": "Skipping workouts due to tiredness",
+      "severe": "Struggling to stay awake at work"
+    },
+    "related_systems": [
+      "SYS_ENERGY_001",
+      "SYS_SLEEP_001",
+      "SYS_METABOLIC_001"
+    ],
+    "root_cause_refs": [
+      "RCE_IRON_ENERGY_001",
+      "RCE_B12_ENERGY_001",
+      "RCE_THYROID_ENERGY_001",
+      "RCE_MAGNESIUM_ENERGY_001"
+    ],
+    "symptom_cluster_refs": [
+      "SCL_IRON_001",
+      "SCL_THYROID_001"
+    ]
+  },
+  "SYM_CONSTIPATION_001": {
+    "id": "SYM_CONSTIPATION_001",
+    "node_type": "symptom",
+    "version": "1.0",
+    "name": "Constipation",
+    "parent_system": "SYS_DIGESTIVE_001",
+    "definition": "Infrequent bowel movements or difficulty passing stools.",
+    "severity_scale": {
+      "mild": "Skipping a day occasionally",
+      "moderate": "Straining, hard stools",
+      "severe": "<3 bowel movements per week, pain"
+    },
+    "red_flags": [
+      "Blood in stool \u2192 refer to GI",
+      "Severe abdominal pain \u2192 ER"
+    ],
+    "identification_patterns": [
+      "Bristol Stool Chart Type 1-2"
+    ],
+    "related_systems": [
+      "SYS_DIGESTIVE_001",
+      "SYS_HORMONAL_001"
+    ],
+    "root_cause_refs": [
+      "RCE_THYROID_WEIGHT_001",
+      "RCE_DYSBIOSIS_GUT_001",
+      "RCE_MAGNESIUM_SLEEP_001",
+      "RCE_HYDRATION_GUT_001"
+    ],
+    "symptom_cluster_refs": [
+      "SCL_THYROID_001",
+      "SCL_GUT_001"
+    ]
+  },
+  "SYM_MUSCLEWEAKNESS_001": {
+    "id": "SYM_MUSCLEWEAKNESS_001",
+    "node_type": "symptom",
+    "version": "1.0",
+    "name": "Muscle Weakness",
+    "parent_system": "SYS_MUSCULOSKELETAL_001",
+    "definition": "A lack of muscle strength, often feeling like extra effort is required to move.",
+    "severity_scale": {
+      "mild": "Slightly less stamina",
+      "moderate": "Difficulty with stairs or carrying groceries",
+      "severe": "Cannot stand up from chair easily"
+    },
+    "red_flags": [
+      "Sudden onset weakness on one side \u2192 ER",
+      "Progressive worsening \u2192 Neuro consult"
+    ],
+    "identification_patterns": [
+      "Difficulty lifting arms above head"
+    ],
+    "related_systems": [
+      "SYS_MUSCULOSKELETAL_001",
+      "SYS_ENERGY_001"
+    ],
+    "root_cause_refs": [
+      "RCE_VITD_ENERGY_001",
+      "RCE_PROTEIN_HAIR_001"
+    ],
+    "symptom_cluster_refs": [
+      "SCL_VITD_001",
+      "SCL_PROTEIN_001"
+    ]
+  },
+  "SYM_JOINTPAIN_001": {
+    "id": "SYM_JOINTPAIN_001",
+    "node_type": "symptom",
+    "version": "1.0",
+    "name": "Joint Pain",
+    "parent_system": "SYS_MUSCULOSKELETAL_001",
+    "definition": "Discomfort, aches, or soreness in any of the body's joints.",
+    "severity_scale": {
+      "mild": "Occasional ache after activity",
+      "moderate": "Needs NSAIDs occasionally",
+      "severe": "Daily pain affecting mobility"
+    },
+    "red_flags": [
+      "Hot, swollen joint \u2192 rule out infection",
+      "Morning stiffness > 1 hour \u2192 rule out RA"
+    ],
+    "identification_patterns": [
+      "Pain worsening with weather changes",
+      "Crepitus (clicking/grinding)"
+    ],
+    "related_systems": [
+      "SYS_MUSCULOSKELETAL_001"
+    ],
+    "root_cause_refs": [
+      "RCE_OMEGA3_SKIN_001",
+      "RCE_VITD_ENERGY_001"
+    ],
+    "symptom_cluster_refs": [
+      "SCL_INFLAMMATORY_001"
+    ]
+  },
+  "SYM_SHORTBREATH_001": {
+    "id": "SYM_SHORTBREATH_001",
+    "node_type": "symptom",
+    "version": "1.0",
+    "name": "Shortness of Breath",
+    "parent_system": "SYS_CARDIOMETABOLIC_001",
+    "definition": "Feeling like you cannot breathe in enough air.",
+    "severity_scale": {
+      "mild": "Winded after stairs",
+      "moderate": "Winded walking on flat ground",
+      "severe": "Breathless at rest"
+    },
+    "red_flags": [
+      "Sudden onset \u2192 ER (rule out PE/MI)",
+      "Associated with chest pain \u2192 ER"
+    ],
+    "related_systems": [
+      "SYS_CARDIOMETABOLIC_001",
+      "SYS_ENERGY_001"
+    ],
+    "root_cause_refs": [
+      "RCE_IRON_ENERGY_001",
+      "RCE_B12_ENERGY_001"
+    ],
+    "symptom_cluster_refs": [
+      "SCL_IRON_001",
+      "SCL_CARDIO_001"
+    ]
+  },
+  "SYM_WEIGHTLOSS_001": {
+    "id": "SYM_WEIGHTLOSS_001",
+    "node_type": "symptom",
+    "version": "1.0",
+    "name": "Unexplained Weight Loss",
+    "parent_system": "SYS_WEIGHT_001",
+    "definition": "A noticeable drop in body weight that occurs without trying.",
+    "severity_scale": {
+      "mild": "1-2 kg without trying",
+      "moderate": "3-5 kg over a few months",
+      "severe": ">5% body weight loss in 6 months"
+    },
+    "red_flags": [
+      "Rapid unintended loss \u2192 refer to oncology/GI",
+      "Associated with night sweats \u2192 refer urgently"
+    ],
+    "related_systems": [
+      "SYS_WEIGHT_001",
+      "SYS_DIGESTIVE_001",
+      "SYS_HORMONAL_001"
+    ],
+    "root_cause_refs": [
+      "RCE_THYROID_HORMONAL_001",
+      "RCE_DYSBIOSIS_GUT_001"
+    ],
+    "symptom_cluster_refs": [
+      "SCL_THYROID_HYPER_001",
+      "SCL_GUT_001"
+    ]
+  },
+  "SYM_ACID_REFLUX_001": {
+    "id": "SYM_ACID_REFLUX_001",
+    "node_type": "symptom",
+    "version": "1.0",
+    "name": "Acid Reflux / Heartburn",
+    "parent_system": "SYS_DIGESTIVE_001",
+    "definition": "A burning sensation in the lower chest (heartburn), often accompanied by a sour or bitter taste in the throat and mouth.",
+    "severity_scale": {
+      "mild": "Occasional burning after heavy meals",
+      "moderate": "Frequent symptoms, requires antacids",
+      "severe": "Daily symptoms, causes sleep disruption or dysphagia"
+    },
+    "red_flags": [
+      "Difficulty swallowing (dysphagia)",
+      "Unexplained weight loss"
+    ],
+    "related_systems": [
+      "SYS_DIGESTIVE_001"
+    ],
+    "root_cause_refs": [
+      "RCE_DYSBIOSIS_GUT_001"
+    ],
+    "symptom_cluster_refs": [
+      "SCL_GUT_001"
+    ]
+  }
+}

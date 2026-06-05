@@ -1,0 +1,151 @@
+{
+  "_meta": {
+    "layer": "11_RECOVERY",
+    "version": "1.0",
+    "description": "Biological timelines for tissue healing and the physical modalities that accelerate systemic recovery.",
+    "nodes": [
+      "REC_FOLLICLE_001",
+      "REC_SKIN_001",
+      "REC_GUT_001",
+      "REC_MUSCLE_001",
+      "REC_HPA_001",
+      "REC_METABOLIC_001",
+      "REC_SLEEP_001",
+      "REC_THERMAL_001",
+      "REC_COLD_001",
+      "REC_PARASYMPATHETIC_001",
+      "REC_NUTRITIONAL_001",
+      "REC_MASSAGE_001",
+      "REC_NATURE_001"
+    ]
+  },
+  "REC_FOLLICLE_001": {
+    "id": "REC_FOLLICLE_001",
+    "node_type": "recovery_timeline",
+    "version": "1.0",
+    "name": "Hair Follicle Recovery Timeline",
+    "expected_duration": "3 to 6 months minimum",
+    "biological_bottleneck": "Hair operates in distinct phases. Once a stressor pushes hair into the Telogen (resting) phase, it remains dormant for ~100 days before falling out. A new Anagen (growth) phase cannot begin until this cycle completes. Visible density improvement takes 6+ months due to the average growth rate of 1cm per month.",
+    "required_nutrients": ["NUT_IRON_001", "NUT_PROTEIN_001", "NUT_VITD_001", "NUT_ZINC_001"],
+    "disruptors": ["STR_CHRONIC_001", "HOR_CORTISOL_001", "HOR_DHT_001", "INF_CHRONIC_001"],
+    "associated_systems": ["SYS_HAIR_001", "BIO_FOLLICLE_001"]
+  },
+  "REC_SKIN_001": {
+    "id": "REC_SKIN_001",
+    "node_type": "recovery_timeline",
+    "version": "1.0",
+    "name": "Skin/Epidermal Turnover Timeline",
+    "expected_duration": "28 to 40 days",
+    "biological_bottleneck": "Stem cells in the basal layer must divide, migrate upwards through the stratum spinosum and granulosum, keratinise, and finally shed (desquamation). This turnover rate slows dramatically with age (can take up to 60 days post-menopause).",
+    "required_nutrients": ["NUT_VITC_001 (Collagen)", "NUT_ZINC_001", "NUT_OMEGA3_001"],
+    "disruptors": ["HOR_CORTISOL_001 (Degrades collagen)", "HOR_IGF1_001 (Causes hyper-keratinisation)"],
+    "associated_systems": ["SYS_SKIN_001", "BIO_EPIDERMIS_001", "BIO_DERMIS_001"]
+  },
+  "REC_GUT_001": {
+    "id": "REC_GUT_001",
+    "node_type": "recovery_timeline",
+    "version": "1.0",
+    "name": "Gut Lining & Microbiome Recovery",
+    "expected_duration": "3-5 days (lining), 3-6 months (microbiome)",
+    "biological_bottleneck": "The intestinal epithelial cells (enterocytes) have the fastest turnover in the body (3-5 days). However, healing Leaky Gut requires closing tight junctions, and rebuilding a depleted mucosal layer and diverse microbiome takes months of sustained prebiotic feeding and stress removal.",
+    "required_nutrients": ["NUT_PROTEIN_001 (Specifically L-Glutamine)", "NUT_ZINC_001 (Tight junctions)"],
+    "disruptors": ["STR_CHRONIC_001", "GUT_DYSBIOSIS_001", "MEDS_ANTIBIOTICS_001"],
+    "associated_systems": ["SYS_DIGESTIVE_001", "BIO_GUTLINING_001", "BIO_MICROBIOME_001"]
+  },
+  "REC_MUSCLE_001": {
+    "id": "REC_MUSCLE_001",
+    "node_type": "recovery_timeline",
+    "version": "1.0",
+    "name": "Muscle & Connective Tissue Recovery",
+    "expected_duration": "48-72 hours (muscle), 3-6 months (tendons/ligaments)",
+    "biological_bottleneck": "Muscle tissue has massive blood supply and satellite cells, allowing rapid repair. Connective tissues (tendons/ligaments) are virtually avascular, meaning nutrient delivery is painfully slow, requiring months to remodel collagen matrices after injury.",
+    "required_nutrients": ["NUT_PROTEIN_001", "NUT_VITC_001 (Collagen cross-linking)"],
+    "disruptors": ["SLP_DEPRIVATION_001", "OXI_STRESS_001"],
+    "associated_systems": ["SYS_MUSCULOSKELETAL_001", "BIO_MUSCLE_001", "BIO_BONE_001"]
+  },
+  "REC_HPA_001": {
+    "id": "REC_HPA_001",
+    "node_type": "recovery_timeline",
+    "version": "1.0",
+    "name": "HPA Axis / Adrenal Recovery",
+    "expected_duration": "3 to 12 months",
+    "biological_bottleneck": "Chronic stress downregulates glucocorticoid receptors in the brain, causing feedback resistance. Upregulating these receptors and restoring the natural diurnal cortisol curve takes massive, sustained parasympathetic input and removal of the stressor.",
+    "required_nutrients": ["NUT_MAGNESIUM_001", "NUT_B5_001", "NUT_VITC_001"],
+    "disruptors": ["STR_CHRONIC_001", "SLP_CORTISOL_RHYTHM_001"],
+    "associated_systems": ["SYS_HORMONAL_001", "BIO_ADRENAL_001", "BIO_PITUITARY_001"]
+  },
+  "REC_METABOLIC_001": {
+    "id": "REC_METABOLIC_001",
+    "node_type": "recovery_timeline",
+    "version": "1.0",
+    "name": "Metabolic / Insulin Sensitivity Recovery",
+    "expected_duration": "2 weeks to 3 months",
+    "biological_bottleneck": "Insulin receptor sensitivity can improve within days via exercise (GLUT4 translocation). However, clearing ectopic fat from the liver and restoring beta-cell function in the pancreas takes months of dietary adherence and weight management.",
+    "required_nutrients": ["NUT_CHROMIUM_001", "NUT_MAGNESIUM_001", "NUT_OMEGA3_001"],
+    "disruptors": ["NUT_CARBS_001 (High refined sugar)", "SLP_DEPRIVATION_001", "STR_CIRCADIAN_001"],
+    "associated_systems": ["SYS_METABOLIC_001", "SYS_CARDIOMETABOLIC_001", "BIO_PANCREAS_001", "BIO_LIVER_001"]
+  },
+  "REC_SLEEP_001": {
+    "id": "REC_SLEEP_001",
+    "node_type": "recovery_modality",
+    "version": "1.0",
+    "name": "Deep Sleep Repair",
+    "mechanism": "The ultimate recovery state. During NREM Stage 3 (Slow-Wave Sleep), brain waves slow, cortisol drops, and the pituitary gland releases ~70% of the body's daily Growth Hormone (GH). This GH pulse is the absolute requirement for repairing muscle, skin, and hair follicles.",
+    "impacts": ["REC_FOLLICLE_001", "REC_MUSCLE_001", "REC_SKIN_001"],
+    "dependencies": ["SLP_DEEPSLEEP_001"]
+  },
+  "REC_THERMAL_001": {
+    "id": "REC_THERMAL_001",
+    "node_type": "recovery_modality",
+    "version": "1.0",
+    "name": "Heat Therapy / Sauna",
+    "mechanism": "Induces mild thermic stress, triggering the release of Heat Shock Proteins (HSPs). HSPs act as molecular chaperones to refold damaged proteins inside cells. Also induces massive vasodilation, increasing blood flow and nutrient delivery to skin and muscles.",
+    "impacts": ["REC_MUSCLE_001", "REC_SKIN_001", "SYS_CARDIOMETABOLIC_001"],
+    "dependencies": []
+  },
+  "REC_COLD_001": {
+    "id": "REC_COLD_001",
+    "node_type": "recovery_modality",
+    "version": "1.0",
+    "name": "Cold Exposure / Ice Baths",
+    "mechanism": "Acute cold shock causes rapid vasoconstriction (flushing out metabolic waste like lactic acid), followed by a massive release of Norepinephrine (improving focus and mood). Reduces acute inflammation and activates Brown Adipose Tissue (BAT) for thermogenesis.",
+    "impacts": ["REC_MUSCLE_001", "SYS_INFLAMMATION_001", "SYS_METABOLIC_001"],
+    "dependencies": []
+  },
+  "REC_PARASYMPATHETIC_001": {
+    "id": "REC_PARASYMPATHETIC_001",
+    "node_type": "recovery_modality",
+    "version": "1.0",
+    "name": "Nervous System Reset (Breathwork/Meditation)",
+    "mechanism": "Slow, diaphragmatic breathing mechanically stimulates the Vagus nerve. This releases Acetylcholine, which instantly acts as a brake on the sympathetic nervous system (fight-or-flight), rapidly dropping heart rate, blood pressure, and cortisol levels.",
+    "impacts": ["REC_HPA_001", "REC_GUT_001 (Restores motility)"],
+    "dependencies": ["EXE_YOGA_001"]
+  },
+  "REC_NUTRITIONAL_001": {
+    "id": "REC_NUTRITIONAL_001",
+    "node_type": "recovery_modality",
+    "version": "1.0",
+    "name": "Post-Stress Cellular Refeeding",
+    "mechanism": "Stress and intense exercise massively deplete glycogen, amino acids, and minerals (especially Magnesium and Zinc). Active refeeding with highly bioavailable, anti-inflammatory nutrients is required to shift the body from a catabolic (breakdown) state to an anabolic (build) state.",
+    "impacts": ["REC_MUSCLE_001", "REC_METABOLIC_001", "REC_HPA_001"],
+    "dependencies": ["NUT_PROTEIN_001", "NUT_CARBS_001"]
+  },
+  "REC_MASSAGE_001": {
+    "id": "REC_MASSAGE_001",
+    "node_type": "recovery_modality",
+    "version": "1.0",
+    "name": "Massage & Myofascial Release",
+    "mechanism": "Mechanical manipulation of tissues. Increases local blood flow, promotes lymphatic drainage (clearing cellular waste), and breaks down fascial adhesions. Also triggers oxytocin and endorphin release, lowering systemic stress.",
+    "impacts": ["REC_MUSCLE_001", "REC_HPA_001", "SYS_INFLAMMATION_001"],
+    "dependencies": []
+  },
+  "REC_NATURE_001": {
+    "id": "REC_NATURE_001",
+    "node_type": "recovery_modality",
+    "version": "1.0",
+    "name": "Nature Exposure / Grounding",
+    "mechanism": "Sunlight exposure anchors the circadian rhythm (SCN) and produces Vitamin D. Forest bathing (exposure to plant phytoncides) has been shown clinically to lower cortisol, blood pressure, and increase Natural Killer (NK) immune cell activity.",
+    "impacts": ["REC_HPA_001", "REC_SLEEP_001 (Via circadian anchoring)", "SYS_IMMUNE_001"],
+    "dependencies": ["SLP_CIRCADIAN_001"]
+  }
+}

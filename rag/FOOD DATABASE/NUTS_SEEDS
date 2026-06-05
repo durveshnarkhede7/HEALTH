@@ -1,0 +1,223 @@
+{
+  "_meta": {
+    "layer": "21_FOOD_DATABASE",
+    "category": "Nuts and Seeds",
+    "serving_size_standard": "Per 100g / Per 30g (1 Ounce)",
+    "description": "Nature's fat and mineral stores. Extremely calorie-dense. They contain heavy defense mechanisms (phytic acid, tannins, enzyme inhibitors) to prevent animals from digesting the seed. Preparation is everything.",
+    "nodes": [
+      "FOOD_NUT_ALMOND_001",
+      "FOOD_NUT_WALNUT_001",
+      "FOOD_NUT_CASHEW_001",
+      "FOOD_NUT_PISTACHIO_001",
+      "FOOD_SEED_FLAX_001",
+      "FOOD_SEED_CHIA_SABJA_001",
+      "FOOD_SEED_PUMPKIN_001",
+      "FOOD_SEED_SESAME_001",
+      "FOOD_NUT_BRAZIL_001",
+      "FOOD_SEED_SUNFLOWER_001"
+    ]
+  },
+  "FOOD_NUT_ALMOND_001": {
+    "id": "FOOD_NUT_ALMOND_001",
+    "name": "Almonds (Badam)",
+    "category": "Nuts and Seeds",
+    "serving_size_reference": "Per 30g (~23 almonds)",
+    "nutritional_values": {
+      "macronutrients": { "protein": "6g", "carbohydrates": "6g", "fiber": "3.5g", "fat": "14g" },
+      "micronutrients": {
+        "vitamin_e": "7.3mg (37% DV - Massive)",
+        "magnesium": "76mg",
+        "riboflavin_b2": "0.3mg"
+      }
+    },
+    "biological_impact": {
+      "skin_brain": "The highest natural source of Vitamin E (Alpha-tocopherol), a fat-soluble antioxidant that protects brain lipids and skin cell membranes from oxidative stress (BIO_EPIDERMIS_001)."
+    },
+    "anti_nutrients": "The brown skin contains heavy Tannins and Phytic Acid, which completely block the absorption of iron, zinc, and calcium.",
+    "preparation_rules": "Ayurveda was 100% correct: Almonds MUST be soaked overnight and the brown skin MUST be peeled off. Eating unsoaked almonds with the skin on locks up the nutrients and causes severe digestive heat/acne.",
+    "related_nodes": ["BIO_EPIDERMIS_001", "NUT_MAGNESIUM_001"]
+  },
+  "FOOD_NUT_WALNUT_001": {
+    "id": "FOOD_NUT_WALNUT_001",
+    "name": "Walnuts (Akhrot)",
+    "category": "Nuts and Seeds",
+    "serving_size_reference": "Per 30g (~14 halves)",
+    "nutritional_values": {
+      "macronutrients": { "protein": "4.3g", "carbohydrates": "3.9g", "fiber": "1.9g", "fat": "18.5g" },
+      "micronutrients": {
+        "omega_3_ala": "2500mg",
+        "copper": "0.5mg",
+        "manganese": "1.0mg"
+      }
+    },
+    "biological_impact": {
+      "brain_health": "Contains the plant-based Omega-3 (ALA). While ALA converts poorly to DHA in the brain (only 5% conversion rate), walnuts are also rich in polyphenols that reduce neuroinflammation.",
+      "heart_health": "High polyunsaturated fats improve endothelial function."
+    },
+    "anti_nutrients": "High Phytic Acid.",
+    "preparation_rules": "Must be soaked overnight. The soaking water turns brown from the tannins and phytic acid. Discard the water.",
+    "related_nodes": ["NUT_FATTYACID_001", "SYS_CARDIOMETABOLIC_001"]
+  },
+  "FOOD_NUT_CASHEW_001": {
+    "id": "FOOD_NUT_CASHEW_001",
+    "name": "Cashews (Kaju)",
+    "category": "Nuts and Seeds",
+    "serving_size_reference": "Per 30g (~18 cashews)",
+    "nutritional_values": {
+      "macronutrients": { "protein": "5g", "carbohydrates": "9g (High for a nut)", "fiber": "1g", "fat": "12g" },
+      "micronutrients": {
+        "copper": "0.6mg",
+        "zinc": "1.6mg",
+        "iron": "1.9mg"
+      }
+    },
+    "biological_impact": {
+      "blood_sugar": "Cashews have 3x the carbohydrates of almonds or walnuts. Eating a large handful of cashews WILL spike insulin (BSG_POSTPRANDIAL_001)."
+    },
+    "anti_nutrients": "Lower in phytic acid than almonds, but high in oxalates.",
+    "preparation_rules": "Roasted cashews have a higher GI. Limit consumption if diabetic. Patients with kidney stones (calcium oxalate) should avoid cashews entirely.",
+    "related_nodes": ["BSG_POSTPRANDIAL_001", "HYD_KIDNEY_001"]
+  },
+  "FOOD_NUT_PISTACHIO_001": {
+    "id": "FOOD_NUT_PISTACHIO_001",
+    "name": "Pistachios (Pista)",
+    "category": "Nuts and Seeds",
+    "serving_size_reference": "Per 30g (~49 kernels)",
+    "nutritional_values": {
+      "macronutrients": { "protein": "6g", "carbohydrates": "8g", "fiber": "3g", "fat": "13g" },
+      "micronutrients": {
+        "vitamin_b6": "0.5mg",
+        "copper": "0.4mg",
+        "melatonin": "Massive amounts (for a plant)"
+      }
+    },
+    "biological_impact": {
+      "sleep_aid": "Pistachios are one of the most melatonin-dense foods on Earth. Eating a handful 2 hours before bed directly improves sleep latency and deep sleep architecture (SLP_DEEPSLEEP_001).",
+      "eye_health": "The green/purple colors are Lutein and Zeaxanthin (macular antioxidants)."
+    },
+    "anti_nutrients": "Salt (if bought roasted and salted).",
+    "preparation_rules": "Buy raw, unsalted pistachios in the shell. The act of shelling them slows down consumption, preventing calorie overeating.",
+    "related_nodes": ["SLP_DEEPSLEEP_001", "SYS_NERVOUS_001"]
+  },
+  "FOOD_SEED_FLAX_001": {
+    "id": "FOOD_SEED_FLAX_001",
+    "name": "Flaxseeds (Alsi)",
+    "category": "Nuts and Seeds",
+    "serving_size_reference": "Per 10g (1 Tablespoon)",
+    "nutritional_values": {
+      "macronutrients": { "protein": "1.8g", "carbohydrates": "2.9g", "fiber": "2.8g", "fat": "4.2g" },
+      "micronutrients": {
+        "omega_3_ala": "2350mg",
+        "lignans": "Highest dietary source",
+        "magnesium": "39mg"
+      }
+    },
+    "biological_impact": {
+      "estrogen_modulation": "Flaxseeds contain Lignans (phytoestrogens). They modulate estrogen levels — raising it in menopausal women, and blocking toxic estrogen in women with PCOS/Endometriosis (HOR_ESTROGEN_001)."
+    },
+    "anti_nutrients": "Contains Cyanogenic Glycosides (can release cyanide in massive doses) and Phytic Acid.",
+    "preparation_rules": "WHOLE FLAXSEEDS CANNOT BE DIGESTED. They will pass straight through the gut intact. You MUST dry roast them slightly and grind them into a powder to absorb the Omega-3s and Lignans.",
+    "related_nodes": ["HOR_ESTROGEN_001", "MED_PCOS_001", "NUT_FATTYACID_001"]
+  },
+  "FOOD_SEED_CHIA_SABJA_001": {
+    "id": "FOOD_SEED_CHIA_SABJA_001",
+    "name": "Chia / Basil Seeds (Sabja)",
+    "category": "Nuts and Seeds",
+    "serving_size_reference": "Per 10g (1 Tablespoon, Dry)",
+    "nutritional_values": {
+      "macronutrients": { "protein": "1.6g", "carbohydrates": "4.2g", "fiber": "3.4g", "fat": "3g" },
+      "micronutrients": {
+        "calcium": "63mg",
+        "magnesium": "33mg",
+        "omega_3_ala": "1750mg"
+      }
+    },
+    "biological_impact": {
+      "blood_sugar_buffer": "Both seeds are heavily mucilaginous (form a gel in water). When consumed before a meal, this gel coats the stomach lining, physically slowing down the absorption of carbohydrates and preventing insulin spikes.",
+      "cooling_effect": "Sabja (Basil seeds) are revered in Ayurveda for extreme 'cooling' (pitta-pacifying) properties, used in Falooda during summer."
+    },
+    "anti_nutrients": "High fiber can cause severe bloating if introduced too quickly.",
+    "preparation_rules": "NEVER eat dry. MUST be soaked in water for at least 15-30 minutes until fully expanded. Eating dry chia can cause esophageal blockage.",
+    "related_nodes": ["BSG_POSTPRANDIAL_001", "HYD_ELECTROLYTE_001"]
+  },
+  "FOOD_SEED_PUMPKIN_001": {
+    "id": "FOOD_SEED_PUMPKIN_001",
+    "name": "Pumpkin Seeds (Kaddu Ke Beej)",
+    "category": "Nuts and Seeds",
+    "serving_size_reference": "Per 30g (~1 Ounce)",
+    "nutritional_values": {
+      "macronutrients": { "protein": "8.5g", "carbohydrates": "4g", "fiber": "1.7g", "fat": "14g" },
+      "micronutrients": {
+        "magnesium": "156mg (Massive - 37% DV)",
+        "zinc": "2.2mg",
+        "iron": "2.5mg"
+      }
+    },
+    "biological_impact": {
+      "prostate_testosterone": "The high Zinc and Magnesium content makes this the ultimate male health seed. Supports prostate health and testosterone synthesis (HOR_TESTOSTERONE_001).",
+      "parasite_cleanse": "Contains Cucurbitacin, an amino acid that paralyses tapeworms and intestinal parasites, allowing them to be flushed from the gut."
+    },
+    "anti_nutrients": "Phytic acid.",
+    "preparation_rules": "Dry roasting reduces the phytic acid and makes the zinc more bioavailable.",
+    "related_nodes": ["HOR_TESTOSTERONE_001", "NUT_MAGNESIUM_001", "GUT_DYSBIOSIS_001"]
+  },
+  "FOOD_SEED_SESAME_001": {
+    "id": "FOOD_SEED_SESAME_001",
+    "name": "Sesame Seeds (Til - Black and White)",
+    "category": "Nuts and Seeds",
+    "serving_size_reference": "Per 30g",
+    "nutritional_values": {
+      "macronutrients": { "protein": "5g", "carbohydrates": "7g", "fiber": "3.3g", "fat": "15g" },
+      "micronutrients": {
+        "calcium": "293mg (Massive - 29% DV)",
+        "iron": "4.3mg",
+        "magnesium": "105mg"
+      }
+    },
+    "biological_impact": {
+      "bone_density": "One of the highest non-dairy sources of calcium on Earth. Black sesame seeds have more calcium and antioxidants than white.",
+      "thermogenesis": "Highly 'Ushna' (heating) in Ayurveda. Generates intense body heat, which is why Til Laddoos are eaten during Makar Sankranti in peak winter."
+    },
+    "anti_nutrients": "Very high Phytic Acid and Oxalates in the seed hull.",
+    "preparation_rules": "Must be roasted to destroy phytic acid. Chewing them thoroughly is mandatory, otherwise they pass through undigested.",
+    "related_nodes": ["NUT_CALCIUM_001", "BIO_EPIDERMIS_001"]
+  },
+  "FOOD_NUT_BRAZIL_001": {
+    "id": "FOOD_NUT_BRAZIL_001",
+    "name": "Brazil Nuts",
+    "category": "Nuts and Seeds",
+    "serving_size_reference": "Per 1 Nut (5g)",
+    "nutritional_values": {
+      "macronutrients": { "protein": "0.7g", "carbohydrates": "0.6g", "fiber": "0.4g", "fat": "3.3g" },
+      "micronutrients": {
+        "selenium": "96mcg (175% DV per SINGLE nut)"
+      }
+    },
+    "biological_impact": {
+      "thyroid_healing": "The single most concentrated food source of Selenium on Earth. Essential for converting inactive T4 to active T3, making it the ultimate Hashimoto's (MED_HASHIMOTOS_001) functional food."
+    },
+    "anti_nutrients": "Selenium Toxicity.",
+    "preparation_rules": "STRICT DOSE LIMIT: Never eat more than 2-3 Brazil nuts per day. Eating a handful can cause acute Selenium toxicity (hair loss, garlic breath, nerve damage).",
+    "related_nodes": ["HOR_THYROID_001", "MED_HASHIMOTOS_001", "NUT_SELENIUM_001"]
+  },
+  "FOOD_SEED_SUNFLOWER_001": {
+    "id": "FOOD_SEED_SUNFLOWER_001",
+    "name": "Sunflower Seeds (Surajmukhi Ke Beej)",
+    "category": "Nuts and Seeds",
+    "serving_size_reference": "Per 30g (~1 Ounce)",
+    "nutritional_values": {
+      "macronutrients": { "protein": "5.8g", "carbohydrates": "6g", "fiber": "2.4g", "fat": "14g" },
+      "micronutrients": {
+        "vitamin_e": "10mg (66% DV - Massive)",
+        "selenium": "15mcg",
+        "manganese": "0.6mg"
+      }
+    },
+    "biological_impact": {
+      "antioxidant": "Massive Vitamin E content protects cellular membranes from lipid peroxidation."
+    },
+    "anti_nutrients": "High in Omega-6 (Linoleic acid).",
+    "preparation_rules": "Eat raw or dry-roasted. Do NOT use sunflower oil (which is industrially processed and oxidized), but eating the whole seed is very healthy.",
+    "related_nodes": ["NUT_FATTYACID_001", "BIO_EPIDERMIS_001"]
+  }
+}

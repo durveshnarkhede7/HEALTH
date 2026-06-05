@@ -1,0 +1,74 @@
+{
+  "_meta": {
+    "layer": "21_FOOD_DATABASE",
+    "category": "Beverages and Teas",
+    "serving_size_standard": "Per 1 Cup (240ml)",
+    "description": "Beverages dictate the biological absorption of the food they are paired with. Tannins, caffeine, and catechins have profound, immediate effects on the nervous system and nutrient bioavailability.",
+    "nodes": [
+      "FOOD_BEV_INDIAN_CHAI_001",
+      "FOOD_BEV_COFFEE_001",
+      "FOOD_BEV_GREENTEA_001"
+    ]
+  },
+  "FOOD_BEV_INDIAN_CHAI_001": {
+    "id": "FOOD_BEV_INDIAN_CHAI_001",
+    "name": "Indian Milk Tea (Chai)",
+    "category": "Beverages and Teas",
+    "serving_size_reference": "1 Cup (Made with CTC black tea, milk, sugar)",
+    "nutritional_values": {
+      "macronutrients": { "protein": "3g", "carbohydrates": "15g (Mostly added sugar)", "fiber": "0g", "fat": "3.5g" },
+      "micronutrients": {
+        "caffeine": "40-60mg",
+        "tannins": "Very High"
+      }
+    },
+    "biological_impact": {
+      "iron_blockade": "Tannins in black tea bind to non-haem iron in the stomach, completely blocking its absorption. Drinking chai with meals (e.g., Poha or Dal) is a leading cause of Iron Deficiency Anemia in Indian women (MED_IRON_DEFICIENCY_ANAEMIA_001).",
+      "acid_reflux": "Boiling tea leaves for a long time (the traditional Indian way) extracts maximum tannins, which are highly acidic and trigger severe acidity and GERD on an empty stomach."
+    },
+    "anti_nutrients": "Tannins.",
+    "preparation_rules": "NEVER drink chai with or immediately after an iron-rich meal. Maintain a 1-hour gap. Adding ginger/cardamom (Masala Chai) mitigates some of the gastric acidity.",
+    "related_nodes": ["MED_IRON_DEFICIENCY_ANAEMIA_001", "GUT_DYSBIOSIS_001"]
+  },
+  "FOOD_BEV_COFFEE_001": {
+    "id": "FOOD_BEV_COFFEE_001",
+    "name": "Coffee (Filter / Instant)",
+    "category": "Beverages and Teas",
+    "serving_size_reference": "1 Cup (Black)",
+    "nutritional_values": {
+      "macronutrients": { "protein": "0g", "carbohydrates": "0g", "fiber": "0g", "fat": "0g" },
+      "micronutrients": {
+        "caffeine": "95-150mg",
+        "chlorogenic_acid": "High"
+      }
+    },
+    "biological_impact": {
+      "cortisol_spike": "Caffeine blocks adenosine receptors and artificially spikes Cortisol (the stress hormone). Drinking coffee first thing in the morning on an empty stomach disrupts the natural circadian cortisol awakening response (HOR_CORTISOL_001).",
+      "antioxidant": "Chlorogenic acid in coffee is a potent antioxidant that improves insulin sensitivity if drunk black."
+    },
+    "anti_nutrients": "Phytic acid (if beans are poorly roasted).",
+    "preparation_rules": "Wait 90 minutes after waking up before drinking coffee to allow natural cortisol to clear adenosine. Stop drinking by 2 PM to protect deep sleep (SLP_DEEPSLEEP_001).",
+    "related_nodes": ["HOR_CORTISOL_001", "SLP_DEEPSLEEP_001"]
+  },
+  "FOOD_BEV_GREENTEA_001": {
+    "id": "FOOD_BEV_GREENTEA_001",
+    "name": "Green Tea / Matcha",
+    "category": "Beverages and Teas",
+    "serving_size_reference": "1 Cup",
+    "nutritional_values": {
+      "macronutrients": { "protein": "0g", "carbohydrates": "0g", "fiber": "0g", "fat": "0g" },
+      "micronutrients": {
+        "caffeine": "30-50mg",
+        "l_theanine": "Significant",
+        "egcg": "Massive"
+      }
+    },
+    "biological_impact": {
+      "nervous_system": "Contains L-Theanine, an amino acid that crosses the blood-brain barrier and increases Alpha brain waves. It perfectly balances the caffeine, providing calm focus without the coffee 'jitter' (SYS_NERVOUS_001).",
+      "fat_burning": "EGCG (Epigallocatechin gallate) is a potent catechin that actively promotes fat oxidation."
+    },
+    "anti_nutrients": "Tannins (lower than black tea, but still present).",
+    "preparation_rules": "Never steep green tea in boiling water (100°C) — it burns the delicate leaves and makes it extremely bitter. Steep at 80°C for exactly 2 minutes.",
+    "related_nodes": ["SYS_NERVOUS_001", "BIO_LIVER_001"]
+  }
+}

@@ -1,0 +1,174 @@
+{
+  "_meta": {
+    "layer": "08_SLEEP",
+    "version": "1.0",
+    "description": "System governing circadian rhythm, sleep architecture, and all nocturnal tissue repair and hormonal secretion processes.",
+    "nodes": [
+      "SLP_BIOLOGY_001",
+      "SLP_CIRCADIAN_001",
+      "SLP_DEEPSLEEP_001",
+      "SLP_REM_001",
+      "SLP_INSOMNIA_001",
+      "SLP_DEPRIVATION_001",
+      "SLP_LATEEATING_001",
+      "SLP_BLUELIGHT_001",
+      "SLP_APNEA_001",
+      "SLP_CAFFEINE_001",
+      "SLP_GUTHORMONE_001",
+      "SLP_CORTISOL_RHYTHM_001",
+      "SLP_NUTRIENT_001",
+      "SLP_SHIFT_WORK_001",
+      "SLP_TEMPERATURE_001"
+    ]
+  },
+  "SLP_BIOLOGY_001": {
+    "id": "SLP_BIOLOGY_001",
+    "node_type": "sleep",
+    "version": "1.0",
+    "name": "Sleep Architecture",
+    "definition": "The foundation of sleep stages, moving through NREM 1-3 and REM in 90-minute cycles. Essential for physical and mental restoration.",
+    "biology_refs": ["BIO_CIRCADIAN_001", "BIO_PINEAL_001"],
+    "dependencies": ["HOR_MELATONIN_001", "HOR_CORTISOL_001"],
+    "impacts": ["SYS_HORMONAL_001", "SYS_METABOLIC_001"]
+  },
+  "SLP_CIRCADIAN_001": {
+    "id": "SLP_CIRCADIAN_001",
+    "node_type": "sleep",
+    "version": "1.0",
+    "name": "Circadian Rhythm",
+    "definition": "The 24-hour master internal clock located in the suprachiasmatic nucleus (SCN). Dictates the timing of all hormonal releases.",
+    "biology_refs": ["BIO_CIRCADIAN_001"],
+    "dependencies": ["Light exposure", "HOR_MELATONIN_001", "HOR_CORTISOL_001"],
+    "impacts": ["SLP_BIOLOGY_001", "SYS_METABOLIC_001"]
+  },
+  "SLP_DEEPSLEEP_001": {
+    "id": "SLP_DEEPSLEEP_001",
+    "node_type": "sleep",
+    "version": "1.0",
+    "name": "Deep Sleep (Slow-Wave)",
+    "definition": "The critical repair phase of sleep (NREM 3). Responsible for 70% of Growth Hormone secretion, tissue repair, and immune system strengthening.",
+    "biology_refs": ["BIO_MITOCHONDRIA_001", "BIO_FOLLICLE_001", "BIO_DERMIS_001"],
+    "dependencies": ["SLP_TEMPERATURE_001", "SLP_CIRCADIAN_001"],
+    "impacts": ["HOR_GH_001", "HOR_IGF1_001", "SYS_HAIR_001", "SYS_SKIN_001"]
+  },
+  "SLP_REM_001": {
+    "id": "SLP_REM_001",
+    "node_type": "sleep",
+    "version": "1.0",
+    "name": "REM Sleep",
+    "definition": "Rapid Eye Movement sleep. Crucial for memory consolidation, emotional processing, and brain detoxification.",
+    "biology_refs": ["BIO_BRAIN_001"],
+    "dependencies": ["SLP_BIOLOGY_001"],
+    "impacts": ["SYM_BRAINFOG_001"]
+  },
+  "SLP_INSOMNIA_001": {
+    "id": "SLP_INSOMNIA_001",
+    "node_type": "sleep",
+    "version": "1.0",
+    "name": "Insomnia",
+    "definition": "Inability to fall asleep, stay asleep, or achieve restorative sleep. The most common sleep complaint.",
+    "biology_refs": ["BIO_CIRCADIAN_001", "BIO_ADRENAL_001"],
+    "triggers": ["SLP_CORTISOL_RHYTHM_001", "SLP_CAFFEINE_001", "SLP_BLUELIGHT_001"],
+    "impacts": ["SYM_POORSLEEP_001", "SYM_FATIGUE_001", "SLP_DEPRIVATION_001"]
+  },
+  "SLP_DEPRIVATION_001": {
+    "id": "SLP_DEPRIVATION_001",
+    "node_type": "sleep",
+    "version": "1.0",
+    "name": "Chronic Sleep Deprivation",
+    "definition": "Consistently getting less than 7 hours of sleep. A primary driver of insulin resistance, high cortisol, and systemic inflammation.",
+    "biology_refs": ["BIO_ADRENAL_001", "BIO_PANCREAS_001"],
+    "triggers": ["SLP_INSOMNIA_001", "SLP_SHIFT_WORK_001", "Lifestyle"],
+    "impacts": ["HOR_INSULIN_001", "HOR_CORTISOL_001", "SYM_WEIGHTGAIN_001", "SYS_METABOLIC_001"]
+  },
+  "SLP_LATEEATING_001": {
+    "id": "SLP_LATEEATING_001",
+    "node_type": "sleep",
+    "version": "1.0",
+    "name": "Late-Night Eating",
+    "definition": "Consuming food within 2-3 hours of bedtime. Spikes insulin, which blunts the natural nocturnal Growth Hormone release.",
+    "biology_refs": ["BIO_PANCREAS_001", "BIO_DIGESTIVE_001"],
+    "triggers": ["NUT_CARBS_001", "STR_CHRONIC_001"],
+    "impacts": ["HOR_INSULIN_001", "HOR_GH_001", "SLP_DEEPSLEEP_001", "SYM_ACNE_001"]
+  },
+  "SLP_BLUELIGHT_001": {
+    "id": "SLP_BLUELIGHT_001",
+    "node_type": "sleep",
+    "version": "1.0",
+    "name": "Blue Light Disruption",
+    "definition": "Exposure to screens and artificial light before bed. Suppresses melatonin production by 50%+ and delays sleep onset.",
+    "biology_refs": ["BIO_CIRCADIAN_001", "BIO_PINEAL_001"],
+    "triggers": ["Screen time", "Artificial lighting"],
+    "impacts": ["HOR_MELATONIN_001", "SLP_INSOMNIA_001", "SLP_CIRCADIAN_001"]
+  },
+  "SLP_APNEA_001": {
+    "id": "SLP_APNEA_001",
+    "node_type": "sleep",
+    "version": "1.0",
+    "name": "Sleep Apnea",
+    "definition": "Repeated breathing interruptions during sleep. Fragments sleep architecture, completely eliminating deep sleep and causing massive oxidative stress.",
+    "biology_refs": ["BIO_RESPIRATORY_001", "BIO_CARDIOVASCULAR_001"],
+    "triggers": ["SYM_WEIGHTGAIN_001", "Anatomy"],
+    "impacts": ["SLP_DEEPSLEEP_001", "OXI_STRESS_001", "SYM_FATIGUE_001", "SYS_CARDIOMETABOLIC_001"]
+  },
+  "SLP_CAFFEINE_001": {
+    "id": "SLP_CAFFEINE_001",
+    "node_type": "sleep",
+    "version": "1.0",
+    "name": "Caffeine & Sleep",
+    "definition": "Caffeine blocks adenosine receptors, preventing the biological drive for sleep. A 6-hour half-life means afternoon tea/coffee disrupts nighttime sleep.",
+    "biology_refs": ["BIO_BRAIN_001"],
+    "triggers": ["Tea", "Coffee", "Energy Drinks"],
+    "impacts": ["SLP_INSOMNIA_001", "SLP_DEEPSLEEP_001"]
+  },
+  "SLP_GUTHORMONE_001": {
+    "id": "SLP_GUTHORMONE_001",
+    "node_type": "sleep",
+    "version": "1.0",
+    "name": "Gut-Sleep Axis",
+    "definition": "90% of serotonin (the precursor to melatonin) is produced in the gut. Gut dysbiosis directly impairs the body's ability to produce sleep hormones.",
+    "biology_refs": ["BIO_MICROBIOME_001", "BIO_GUTLINING_001"],
+    "triggers": ["GUT_DYSBIOSIS_001", "GUT_LEAKYGUT_001"],
+    "impacts": ["HOR_MELATONIN_001", "SLP_INSOMNIA_001"]
+  },
+  "SLP_CORTISOL_RHYTHM_001": {
+    "id": "SLP_CORTISOL_RHYTHM_001",
+    "node_type": "sleep",
+    "version": "1.0",
+    "name": "Cortisol-Sleep Disruption",
+    "definition": "A reversed or flattened cortisol curve, leading to high cortisol at night ('wired and tired'). Completely blocks the onset of sleep.",
+    "biology_refs": ["BIO_ADRENAL_001"],
+    "triggers": ["STR_CHRONIC_001"],
+    "impacts": ["HOR_CORTISOL_001", "SLP_INSOMNIA_001", "SYM_POORSLEEP_001"]
+  },
+  "SLP_NUTRIENT_001": {
+    "id": "SLP_NUTRIENT_001",
+    "node_type": "sleep",
+    "version": "1.0",
+    "name": "Sleep Nutrients",
+    "definition": "The biochemical building blocks of sleep, including Magnesium, Vitamin B6, Tryptophan, and Glycine. Deficiencies directly impair sleep quality.",
+    "biology_refs": ["BIO_BRAIN_001", "BIO_NERVOUS_001"],
+    "triggers": ["NUT_MAGNESIUM_001", "NUT_B6_001", "NUT_ZINC_001"],
+    "impacts": ["SLP_DEEPSLEEP_001", "HOR_MELATONIN_001"]
+  },
+  "SLP_SHIFT_WORK_001": {
+    "id": "SLP_SHIFT_WORK_001",
+    "node_type": "sleep",
+    "version": "1.0",
+    "name": "Shift Work",
+    "definition": "Working irregular or night hours. Chronically disrupts the circadian rhythm, increasing the risk for metabolic syndrome, hair loss, and gut issues.",
+    "biology_refs": ["BIO_CIRCADIAN_001"],
+    "triggers": ["Lifestyle", "Occupation"],
+    "impacts": ["SLP_CIRCADIAN_001", "SLP_DEPRIVATION_001", "SYS_METABOLIC_001"]
+  },
+  "SLP_TEMPERATURE_001": {
+    "id": "SLP_TEMPERATURE_001",
+    "node_type": "sleep",
+    "version": "1.0",
+    "name": "Thermoregulation",
+    "definition": "Core body temperature must drop by 1-2 degrees for deep sleep to initiate. Hot environments or poor thermoregulation block slow-wave sleep.",
+    "biology_refs": ["BIO_NERVOUS_001", "BIO_SKIN_001"],
+    "triggers": ["Environment", "HOR_THYROID_001"],
+    "impacts": ["SLP_DEEPSLEEP_001", "SLP_INSOMNIA_001"]
+  }
+}

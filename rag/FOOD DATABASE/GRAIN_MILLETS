@@ -1,0 +1,470 @@
+{
+  "_meta": {
+    "layer": "21_FOOD_DATABASE",
+    "category": "Grains and Millets",
+    "serving_size_standard": "Per 100g (Raw/Uncooked Weight)",
+    "description": "The staple carbohydrate sources of the Indian diet. Critical for understanding glycaemic load, insulin spikes, and gluten/phytate-driven gut inflammation.",
+    "nodes": [
+      "FOOD_GRAIN_WHEAT_001",
+      "FOOD_GRAIN_WHITERICE_001",
+      "FOOD_GRAIN_BROWNRICE_001",
+      "FOOD_GRAIN_RAGI_001",
+      "FOOD_GRAIN_JOWAR_001",
+      "FOOD_GRAIN_BAJRA_001",
+      "FOOD_GRAIN_OATS_001",
+      "FOOD_GRAIN_AMARANTH_001",
+      "FOOD_GRAIN_QUINOA_001",
+      "FOOD_GRAIN_FOXTAIL_001",
+      "FOOD_GRAIN_BARLEY_001",
+      "FOOD_GRAIN_LITTLE_001",
+      "FOOD_GRAIN_BARNYARD_001",
+      "FOOD_GRAIN_KODO_001",
+      "FOOD_GRAIN_PROSO_001",
+      "FOOD_GRAIN_CORN_001",
+      "FOOD_GRAIN_JOWAR_001"
+    ]
+  },
+  "FOOD_GRAIN_WHEAT_001": {
+    "id": "FOOD_GRAIN_WHEAT_001",
+    "name": "Whole Wheat (Atta)",
+    "category": "Grains and Millets",
+    "serving_size_reference": "Per 100g (Raw)",
+    "nutritional_values": {
+      "macronutrients": {
+        "protein": "13g",
+        "carbohydrates": "71g",
+        "fiber": "12g",
+        "fat": "2.5g"
+      },
+      "micronutrients": {
+        "magnesium": "137mg",
+        "iron": "3.9mg",
+        "zinc": "2.6mg",
+        "calcium": "34mg"
+      }
+    },
+    "biological_impact": {
+      "blood_sugar": "Contains Amylopectin A (a highly branched starch). It breaks down into glucose exceptionally fast, causing massive insulin spikes (BSG_POSTPRANDIAL_001).",
+      "gut_health": "Contains Gluten (gliadin). Triggers the release of zonulin in the gut, breaking tight junctions. In genetically susceptible people (GEN_HLA_DQ_001), it guarantees Leaky Gut (GUT_LEAKYGUT_001)."
+    },
+    "anti_nutrients": "Contains Wheat Germ Agglutinin (WGA), a lectin that can bind to the insulin receptor and drive systemic inflammation. Also contains phytates blocking its own iron/zinc.",
+    "preparation_rules": "Modern dwarf wheat has exponentially higher gluten than ancient strains (Khapli/Emmer). If a patient has an autoimmune disease (MED_HASHIMOTOS_001), wheat must be 100% eliminated.",
+    "related_nodes": ["BSG_POSTPRANDIAL_001", "GUT_LEAKYGUT_001", "GEN_HLA_DQ_001"]
+  },
+  "FOOD_GRAIN_WHITERICE_001": {
+    "id": "FOOD_GRAIN_WHITERICE_001",
+    "name": "White Rice (Polished)",
+    "category": "Grains and Millets",
+    "serving_size_reference": "Per 100g (Raw)",
+    "nutritional_values": {
+      "macronutrients": {
+        "protein": "7g",
+        "carbohydrates": "80g",
+        "fiber": "1.3g",
+        "fat": "0.6g"
+      },
+      "micronutrients": {
+        "magnesium": "25mg (Severely depleted due to polishing)",
+        "iron": "0.8mg",
+        "zinc": "1.1mg",
+        "calcium": "10mg"
+      }
+    },
+    "biological_impact": {
+      "blood_sugar": "Extremely high Glycaemic Index. Hits the bloodstream as pure glucose within 30 minutes, requiring a massive insulin dump from the pancreas (BIO_PANCREAS_001).",
+      "gut_health": "Very low anti-nutrients. It is practically pre-digested, making it very safe for people with severely damaged guts (IBS), unlike wheat."
+    },
+    "anti_nutrients": "None (the polishing removes the bran where the phytates live).",
+    "preparation_rules": "The Resistant Starch Hack: If white rice is cooked, cooled in the fridge overnight (12 hours), and reheated, the starch molecules crystallize. This 'Resistant Starch' cannot be digested as glucose, lowering the glycaemic impact by up to 50% and acting as food for gut bacteria (GUT_MICROBIOME_001).",
+    "related_nodes": ["BSG_POSTPRANDIAL_001", "BSG_INSULIN_RESISTANCE_001", "GUT_MICROBIOME_001"]
+  },
+  "FOOD_GRAIN_BROWNRICE_001": {
+    "id": "FOOD_GRAIN_BROWNRICE_001",
+    "name": "Brown Rice",
+    "category": "Grains and Millets",
+    "serving_size_reference": "Per 100g (Raw)",
+    "nutritional_values": {
+      "macronutrients": {
+        "protein": "8g",
+        "carbohydrates": "77g",
+        "fiber": "3.5g",
+        "fat": "2.9g"
+      },
+      "micronutrients": {
+        "magnesium": "143mg",
+        "iron": "1.5mg",
+        "zinc": "2.0mg",
+        "calcium": "23mg"
+      }
+    },
+    "biological_impact": {
+      "blood_sugar": "Slightly lower GI than white rice due to the fiber in the bran layer, but the total Glycaemic Load is identical. It still spikes insulin heavily.",
+      "toxicity": "The bran layer (which is kept intact) absorbs Arsenic (ENV_WATER_QUALITY_001) from the flooded paddy fields. Brown rice typically has 80% more heavy metal arsenic than white rice."
+    },
+    "anti_nutrients": "Very high in Phytic Acid (Phytates). While it technically has more magnesium than white rice, the phytates bind it, making it biologically useless to the body.",
+    "preparation_rules": "Must be soaked for at least 12-24 hours in acidic water (lemon/vinegar) to break down the phytates and leach out the arsenic before cooking.",
+    "related_nodes": ["ENV_WATER_QUALITY_001", "GUT_DYSBIOSIS_001"]
+  },
+  "FOOD_GRAIN_RAGI_001": {
+    "id": "FOOD_GRAIN_RAGI_001",
+    "name": "Ragi (Finger Millet)",
+    "category": "Grains and Millets",
+    "serving_size_reference": "Per 100g (Raw)",
+    "nutritional_values": {
+      "macronutrients": {
+        "protein": "7.3g",
+        "carbohydrates": "72g",
+        "fiber": "11.5g",
+        "fat": "1.3g"
+      },
+      "micronutrients": {
+        "calcium": "344mg (Massively high - 10x higher than wheat/rice)",
+        "iron": "3.9mg",
+        "magnesium": "137mg",
+        "zinc": "2.3mg"
+      }
+    },
+    "biological_impact": {
+      "bone_health": "The highest non-dairy calcium source in the Indian diet. Critical for children and menopausal women (LFS_MENOPAUSE_001) for bone density.",
+      "blood_sugar": "Low GI. The dense dietary fiber (polyphenols) slows down stomach emptying, blunting the insulin spike significantly."
+    },
+    "anti_nutrients": "High in tannins and phytates. If eaten unsprouted, the massive 344mg of calcium will NOT be absorbed.",
+    "preparation_rules": "Sprouting (Malting) Ragi is non-negotiable. Sprouting increases calcium bioavailability by 20% and iron by 50% while destroying the anti-nutrients.",
+    "related_nodes": ["NUT_CALCIUM_001", "BIO_COLLAGEN_001", "BSG_POSTPRANDIAL_001"]
+  },
+  "FOOD_GRAIN_JOWAR_001": {
+    "id": "FOOD_GRAIN_JOWAR_001",
+    "name": "Jowar (Sorghum)",
+    "category": "Grains and Millets",
+    "serving_size_reference": "Per 100g (Raw)",
+    "nutritional_values": {
+      "macronutrients": {
+        "protein": "11g",
+        "carbohydrates": "72g",
+        "fiber": "10g",
+        "fat": "3.3g"
+      },
+      "micronutrients": {
+        "iron": "4.1mg",
+        "magnesium": "165mg",
+        "calcium": "28mg",
+        "potassium": "350mg"
+      }
+    },
+    "biological_impact": {
+      "gut_health": "100% Gluten-free. Excellent for Celiac and Hashimoto's patients. High insoluble fiber sweeps the colon, preventing constipation (SYM_CONSTIPATION_001).",
+      "blood_sugar": "Complex carbohydrate structure. Excellent for diabetic (MED_TYPE2_DIABETES_001) patients as a roti replacement for wheat."
+    },
+    "anti_nutrients": "Moderate tannins.",
+    "preparation_rules": "Needs hot water to bind into a dough (since it lacks the sticky gluten of wheat). Excellent as a summer millet (cooling effect).",
+    "related_nodes": ["MED_TYPE2_DIABETES_001", "GUT_MICROBIOME_001"]
+  },
+  "FOOD_GRAIN_BAJRA_001": {
+    "id": "FOOD_GRAIN_BAJRA_001",
+    "name": "Bajra (Pearl Millet)",
+    "category": "Grains and Millets",
+    "serving_size_reference": "Per 100g (Raw)",
+    "nutritional_values": {
+      "macronutrients": {
+        "protein": "11.6g",
+        "carbohydrates": "67g",
+        "fiber": "11.5g",
+        "fat": "5g"
+      },
+      "micronutrients": {
+        "iron": "8.0mg (Extremely high)",
+        "magnesium": "114mg",
+        "zinc": "3.1mg",
+        "calcium": "42mg"
+      }
+    },
+    "biological_impact": {
+      "iron_status": "One of the highest iron-containing grains. Crucial for combating Iron Deficiency Anaemia (MED_IRON_DEFICIENCY_ANAEMIA_001) in Indian women.",
+      "thermogenesis": "Traditionally a winter millet in India. It produces a lot of metabolic heat (thermogenic) when digested."
+    },
+    "anti_nutrients": "High in Phytic Acid. Contains goitrogens (which can suppress thyroid function if eaten in massive quantities raw).",
+    "preparation_rules": "Always cook thoroughly (destroys goitrogens). Must be eaten with Ghee (fat) to slow digestion and allow the iron to absorb.",
+    "related_nodes": ["MED_IRON_DEFICIENCY_ANAEMIA_001", "NUT_IRON_001", "HOR_THYROID_001"]
+  },
+  "FOOD_GRAIN_OATS_001": {
+    "id": "FOOD_GRAIN_OATS_001",
+    "name": "Oats (Rolled / Steel Cut)",
+    "category": "Grains and Millets",
+    "serving_size_reference": "Per 100g (Raw)",
+    "nutritional_values": {
+      "macronutrients": {
+        "protein": "16.9g",
+        "carbohydrates": "66g",
+        "fiber": "10.6g",
+        "fat": "6.9g"
+      },
+      "micronutrients": {
+        "magnesium": "177mg",
+        "iron": "4.7mg",
+        "zinc": "3.9mg",
+        "potassium": "429mg"
+      }
+    },
+    "biological_impact": {
+      "cholesterol_management": "Contains Beta-Glucan, a specific soluble fiber that binds to bile acids (cholesterol) in the gut and pulls them out of the body in stool. Forces the liver to pull cholesterol from the blood to make new bile (lowers LDL).",
+      "blood_sugar": "Steel-cut oats have a low GI. However, 'Instant Oats' or 'Oat Flour' hit the blood like pure sugar. The physical structure of the grain dictates the insulin response."
+    },
+    "anti_nutrients": "High in Avenin (a protein similar to gluten). While technically gluten-free, 20% of Celiac patients cross-react to avenin and experience severe gut inflammation.",
+    "preparation_rules": "Never eat instant/powdered oats. Always use steel-cut or thick-rolled oats and boil them thoroughly.",
+    "related_nodes": ["SYS_CARDIOMETABOLIC_001", "GUT_LEAKYGUT_001"]
+  },
+  "FOOD_GRAIN_AMARANTH_001": {
+    "id": "FOOD_GRAIN_AMARANTH_001",
+    "name": "Amaranth (Rajgira)",
+    "category": "Grains and Millets",
+    "serving_size_reference": "Per 100g (Raw)",
+    "nutritional_values": {
+      "macronutrients": {
+        "protein": "13.6g",
+        "carbohydrates": "65g",
+        "fiber": "6.7g",
+        "fat": "7.0g"
+      },
+      "micronutrients": {
+        "calcium": "159mg",
+        "iron": "7.6mg",
+        "magnesium": "248mg (Incredibly high)",
+        "zinc": "2.9mg"
+      }
+    },
+    "biological_impact": {
+      "protein_quality": "Unlike most grains, Rajgira is a COMPLETE protein. It contains high levels of Lysine (the amino acid usually missing in grains). Excellent for strict vegetarians.",
+      "energy_metabolism": "The massive magnesium content (248mg) acts directly on mitochondrial ATP production (OXI_MITOCHONDRIAL_001)."
+    },
+    "anti_nutrients": "Saponins and Phytates.",
+    "preparation_rules": "Traditionally eaten during fasting (Navratri) in India because it provides dense sustained energy without the heavy inflammatory load of wheat. Popping/roasting the seeds destroys the saponins.",
+    "related_nodes": ["NUT_PROTEIN_001", "NUT_MAGNESIUM_001", "OXI_MITOCHONDRIAL_001"]
+  },
+  "FOOD_GRAIN_QUINOA_001": {
+    "id": "FOOD_GRAIN_QUINOA_001",
+    "name": "Quinoa",
+    "category": "Grains and Millets",
+    "serving_size_reference": "Per 100g (Raw)",
+    "nutritional_values": {
+      "macronutrients": {
+        "protein": "14g",
+        "carbohydrates": "64g",
+        "fiber": "7g",
+        "fat": "6g"
+      },
+      "micronutrients": {
+        "magnesium": "197mg",
+        "iron": "4.6mg",
+        "zinc": "3.1mg",
+        "folate": "184mcg"
+      }
+    },
+    "biological_impact": {
+      "protein_quality": "Complete protein containing all 9 essential amino acids. High in Quercetin (a potent antioxidant and mast cell stabilizer).",
+      "blood_sugar": "Low GI compared to white rice, but still a carbohydrate-dense food. Overeating it will spike insulin."
+    },
+    "anti_nutrients": "The outer coating is covered in toxic Saponins. Saponins foam up in water and literally poke holes in the gut lining (like soap), driving severe Leaky Gut if not removed.",
+    "preparation_rules": "MUST be vigorously washed and rinsed in a fine mesh strainer until the water runs completely clear (no foam) before cooking.",
+    "related_nodes": ["GUT_LEAKYGUT_001", "NUT_PROTEIN_001"]
+  },
+  "FOOD_GRAIN_FOXTAIL_001": {
+    "id": "FOOD_GRAIN_FOXTAIL_001",
+    "name": "Foxtail Millet (Kangni)",
+    "category": "Grains and Millets",
+    "serving_size_reference": "Per 100g (Raw)",
+    "nutritional_values": {
+      "macronutrients": {
+        "protein": "12.3g",
+        "carbohydrates": "60g",
+        "fiber": "8g",
+        "fat": "4g"
+      },
+      "micronutrients": {
+        "iron": "2.8mg",
+        "magnesium": "81mg",
+        "calcium": "31mg",
+        "zinc": "2.4mg"
+      }
+    },
+    "biological_impact": {
+      "nervous_system": "Exceptionally high in Vitamin B1 (Thiamine) and B3 (Niacin). Supports the myelin sheath (nerve coating) and prevents peripheral neuropathy in diabetics.",
+      "blood_sugar": "Has a very low glycaemic index, making it one of the absolute best rice replacements for reversing MED_TYPE2_DIABETES_001."
+    },
+    "anti_nutrients": "Low relative to wheat.",
+    "preparation_rules": "Requires soaking for at least 6 hours to soften the tough outer fibrous layer for digestion.",
+    "related_nodes": ["MED_TYPE2_DIABETES_001", "SYS_NERVOUS_001"]
+  },
+  "FOOD_GRAIN_BARLEY_001": {
+    "id": "FOOD_GRAIN_BARLEY_001",
+    "name": "Barley (Jau)",
+    "category": "Grains and Millets",
+    "serving_size_reference": "Per 100g (Raw)",
+    "nutritional_values": {
+      "macronutrients": {
+        "protein": "12.5g",
+        "carbohydrates": "73g",
+        "fiber": "17.3g (Massive)",
+        "fat": "2.3g"
+      },
+      "micronutrients": {
+        "magnesium": "133mg",
+        "iron": "3.6mg",
+        "zinc": "2.8mg",
+        "selenium": "37.7mcg"
+      }
+    },
+    "biological_impact": {
+      "kidney_health": "Traditionally used in India as 'Jau ka Paani' (Barley water) to flush the kidneys and prevent urinary tract infections (UTIs) by acting as a gentle diuretic.",
+      "gut_health": "The massive 17.3g of fiber feeds beneficial lactobacilli in the colon."
+    },
+    "anti_nutrients": "Contains Gluten (like wheat). Cannot be consumed by Celiac or Hashimoto's patients.",
+    "preparation_rules": "Pearl barley has the bran removed (less fiber). Hulled barley retains the bran but requires 12 hours of soaking and a long boil.",
+    "related_nodes": ["HYD_KIDNEY_001", "GUT_MICROBIOME_001", "INF_AUTOIMMUNE_001"]
+  },
+  "FOOD_GRAIN_LITTLE_001": {
+    "id": "FOOD_GRAIN_LITTLE_001",
+    "name": "Little Millet (Kutki)",
+    "category": "Grains and Millets",
+    "serving_size_reference": "Per 100g (Raw)",
+    "nutritional_values": {
+      "macronutrients": {
+        "protein": "9.7g",
+        "carbohydrates": "60.9g",
+        "fiber": "7.6g",
+        "fat": "4.7g"
+      },
+      "micronutrients": {
+        "iron": "9.3mg (Extremely High)",
+        "zinc": "3.7mg",
+        "magnesium": "133mg"
+      }
+    },
+    "biological_impact": {
+      "hormonal_balance": "Contains potent phytoestrogens and high iron, traditionally used in Ayurveda to treat PCOS (MED_PCOS_001) and irregular periods."
+    },
+    "anti_nutrients": "Moderate phytates.",
+    "preparation_rules": "Requires 6-8 hours of soaking to unlock the massive 9.3mg of iron.",
+    "related_nodes": ["MED_PCOS_001", "MED_IRON_DEFICIENCY_ANAEMIA_001"]
+  },
+  "FOOD_GRAIN_BARNYARD_001": {
+    "id": "FOOD_GRAIN_BARNYARD_001",
+    "name": "Barnyard Millet (Sanwa / Samak / Vrat Ke Chawal)",
+    "category": "Grains and Millets",
+    "serving_size_reference": "Per 100g (Raw)",
+    "nutritional_values": {
+      "macronutrients": {
+        "protein": "11.2g",
+        "carbohydrates": "65.5g",
+        "fiber": "10.1g (Very High)",
+        "fat": "3.9g"
+      },
+      "micronutrients": {
+        "iron": "15.2mg (The highest of all millets)",
+        "calcium": "20mg",
+        "phosphorus": "280mg"
+      }
+    },
+    "biological_impact": {
+      "blood_sugar": "The lowest glycaemic index of all millets. Highly recommended for Type 2 Diabetes (MED_TYPE2_DIABETES_001)."
+    },
+    "anti_nutrients": "Low phytic acid compared to wheat.",
+    "preparation_rules": "Traditionally eaten during Indian fasting (Navratri) because it provides sustained energy without causing insulin crashes.",
+    "related_nodes": ["MED_TYPE2_DIABETES_001", "BSG_INSULIN_RESISTANCE_001"]
+  },
+  "FOOD_GRAIN_KODO_001": {
+    "id": "FOOD_GRAIN_KODO_001",
+    "name": "Kodo Millet (Kodon)",
+    "category": "Grains and Millets",
+    "serving_size_reference": "Per 100g (Raw)",
+    "nutritional_values": {
+      "macronutrients": {
+        "protein": "8.3g",
+        "carbohydrates": "65.9g",
+        "fiber": "9g",
+        "fat": "1.4g"
+      },
+      "micronutrients": {
+        "calcium": "27mg",
+        "iron": "0.5mg",
+        "magnesium": "147mg"
+      }
+    },
+    "biological_impact": {
+      "nervous_system": "Exceptionally high in Lecithin. Excellent for strengthening the nervous system (SYS_NERVOUS_001) and memory."
+    },
+    "anti_nutrients": "Tough seed coat contains tannins.",
+    "preparation_rules": "Requires 12 hours of soaking. Known as the 'coarse' millet.",
+    "related_nodes": ["SYS_NERVOUS_001"]
+  },
+  "FOOD_GRAIN_PROSO_001": {
+    "id": "FOOD_GRAIN_PROSO_001",
+    "name": "Proso Millet (Chena / Barri)",
+    "category": "Grains and Millets",
+    "serving_size_reference": "Per 100g (Raw)",
+    "nutritional_values": {
+      "macronutrients": {
+        "protein": "12.5g",
+        "carbohydrates": "70g",
+        "fiber": "2.2g (Lowest fiber millet)",
+        "fat": "1.1g"
+      },
+      "micronutrients": {
+        "calcium": "14mg",
+        "iron": "0.8mg",
+        "zinc": "1.4mg"
+      }
+    },
+    "biological_impact": {
+      "digestion": "Because it has the lowest fiber of all millets, it is the easiest to digest for people with severe gut inflammation (INF_GUT_001) who cannot tolerate roughage."
+    },
+    "anti_nutrients": "Very low.",
+    "preparation_rules": "Can be cooked quickly without extensive soaking. Often used to make millet upma.",
+    "related_nodes": ["INF_GUT_001", "GUT_DYSBIOSIS_001"]
+  },
+  "FOOD_GRAIN_CORN_001": {
+    "id": "FOOD_GRAIN_CORN_001",
+    "name": "Corn / Maize (Makki)",
+    "category": "Grains and Millets",
+    "serving_size_reference": "Per 100g (Raw / Cornmeal)",
+    "nutritional_values": {
+      "macronutrients": {
+        "protein": "9.4g",
+        "carbohydrates": "74g",
+        "fiber": "7.3g",
+        "fat": "4.7g"
+      },
+      "micronutrients": {
+        "vitamin_b3": "3.6mg (Unavailable without Nixtamalization)",
+        "magnesium": "127mg",
+        "iron": "2.7mg"
+      }
+    },
+    "biological_impact": {
+      "blood_sugar": "High Glycaemic Index. Breaks down very quickly into sugar. Makki ki Roti will spike blood sugar heavily unless paired with enormous amounts of fat (White Butter/Ghee) and fiber (Sarson ka Saag)."
+    },
+    "anti_nutrients": "The Vitamin B3 (Niacin) in corn is tightly bound to hemicellulose. If eaten untreated, the body cannot absorb the B3, leading to Pellagra (Vitamin B3 deficiency).",
+    "preparation_rules": "Must be eaten with massive fats (ghee) to blunt the sugar spike. Ancient Mesoamericans treated corn with alkaline lime water (Nixtamalization) to release the B3; modern Indian Makki does not use this process, so the B3 remains unabsorbed.",
+    "related_nodes": ["BSG_POSTPRANDIAL_001", "SYS_NERVOUS_001"]
+  },
+  "FOOD_GRAIN_JOWAR_001": {
+    "id": "FOOD_GRAIN_JOWAR_001",
+    "name": "Jowar (Sorghum)",
+    "category": "Grains and Millets",
+    "serving_size_reference": "Per 100g (Raw)",
+    "nutritional_values": {
+      "macronutrients": { "protein": "10.4g", "carbohydrates": "72g", "fiber": "9.7g", "fat": "3.3g" },
+      "micronutrients": {
+        "iron": "4.1mg",
+        "magnesium": "165mg",
+        "zinc": "1.6mg"
+      }
+    },
+    "biological_impact": {
+      "blood_sugar": "Complex carbohydrates with high fiber digest slowly, making Jowar Roti vastly superior to Wheat Roti for insulin management (BSG_INSULIN_RESISTANCE_001).",
+      "inflammation": "100% gluten-free, preventing the intestinal permeability (leaky gut) caused by zonulin release in sensitive individuals."
+    },
+    "anti_nutrients": "Contains tannins in the outer hull which can slightly reduce protein absorption.",
+    "preparation_rules": "Traditional Bhakri/Roti is the best method. Excellent winter/summer staple due to its cooling nature in Ayurveda (compared to heating Bajra).",
+    "related_nodes": ["BSG_INSULIN_RESISTANCE_001", "INF_GUT_001"]
+  }
+}

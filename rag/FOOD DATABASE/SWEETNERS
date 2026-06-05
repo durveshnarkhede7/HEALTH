@@ -1,0 +1,88 @@
+{
+  "_meta": {
+    "layer": "21_FOOD_DATABASE",
+    "category": "Sweeteners",
+    "serving_size_standard": "Per 1 Tablespoon (15g)",
+    "description": "Sweeteners are the primary driver of the modern metabolic crisis. Understanding the biological difference between fructose (liver processed) and glucose (muscle processed), and the toxic transformation of heated honey, is vital.",
+    "nodes": [
+      "FOOD_SWEET_HONEY_001",
+      "FOOD_SWEET_JAGGERY_001",
+      "FOOD_SWEET_SUGAR_001",
+      "FOOD_SWEET_STEVIA_001"
+    ]
+  },
+  "FOOD_SWEET_HONEY_001": {
+    "id": "FOOD_SWEET_HONEY_001",
+    "name": "Raw Honey (Shahad)",
+    "category": "Sweeteners",
+    "serving_size_reference": "1 Tablespoon (21g)",
+    "nutritional_values": {
+      "macronutrients": { "protein": "0g", "carbohydrates": "17g (Fructose and Glucose)", "fiber": "0g", "fat": "0g" },
+      "micronutrients": {
+        "enzymes": "Diastase, Invertase (In raw honey only)",
+        "antioxidants": "Flavonoids, Phenolic acids"
+      }
+    },
+    "biological_impact": {
+      "antimicrobial": "Raw honey contains natural hydrogen peroxide and a low pH, making it a potent antibacterial agent for sore throats (INF_IMMUNE_001)."
+    },
+    "anti_nutrients": "Botulinum spores (Lethal to infants under 1 year old).",
+    "preparation_rules": "AYURVEDIC WARNING: Never heat honey above 40°C. Heating destroys the enzymes and alters the molecular structure, creating a sticky, toxic substance known as 'Ama' which clogs cellular channels. NEVER put honey in hot tea or use it for baking.",
+    "related_nodes": ["INF_IMMUNE_001", "GUT_DYSBIOSIS_001"]
+  },
+  "FOOD_SWEET_JAGGERY_001": {
+    "id": "FOOD_SWEET_JAGGERY_001",
+    "name": "Jaggery (Gud)",
+    "category": "Sweeteners",
+    "serving_size_reference": "1 Tablespoon (15g)",
+    "nutritional_values": {
+      "macronutrients": { "protein": "0g", "carbohydrates": "14g (Mostly Sucrose)", "fiber": "0g", "fat": "0g" },
+      "micronutrients": {
+        "iron": "1.6mg",
+        "magnesium": "12mg",
+        "potassium": "150mg"
+      }
+    },
+    "biological_impact": {
+      "insulin_spike": "While Jaggery contains trace minerals (unlike white sugar), it is biologically still sucrose. It spikes blood sugar and insulin (BSG_POSTPRANDIAL_001) almost exactly as fast as white sugar.",
+      "digestion": "Traditionally eaten after meals in rural India because the trace magnesium aids digestive muscle contractions."
+    },
+    "anti_nutrients": "Often adulterated with chalk or chemical clarifiers.",
+    "preparation_rules": "A healthier alternative to white sugar due to trace minerals, but MUST be strictly limited by diabetics. The 'Jaggery is healthy sugar' myth is functionally false for insulin resistance.",
+    "related_nodes": ["BSG_POSTPRANDIAL_001", "MED_TYPE2_DIABETES_001"]
+  },
+  "FOOD_SWEET_SUGAR_001": {
+    "id": "FOOD_SWEET_SUGAR_001",
+    "name": "White Refined Sugar (Cheeni)",
+    "category": "Sweeteners",
+    "serving_size_reference": "1 Tablespoon (12g)",
+    "nutritional_values": {
+      "macronutrients": { "protein": "0g", "carbohydrates": "12g (Pure Sucrose = 50% Fructose, 50% Glucose)", "fiber": "0g", "fat": "0g" },
+      "micronutrients": { "all_minerals": "0mg (Completely stripped of all nutrients)" }
+    },
+    "biological_impact": {
+      "fatty_liver": "The Fructose half of sugar goes directly to the liver. In excess, the liver converts it instantly into triglycerides (fat), driving Non-Alcoholic Fatty Liver Disease (MED_FATTY_LIVER_001).",
+      "inflammation": "Massive glucose spikes cause glycation (sugar binding to proteins), stiffening blood vessels and wrinkling skin (BIO_COLLAGEN_001)."
+    },
+    "anti_nutrients": "Pure, empty calories that actively deplete cellular magnesium to be metabolized.",
+    "preparation_rules": "MUST be systematically eliminated from the diet to reverse any chronic inflammatory or metabolic disease.",
+    "related_nodes": ["MED_FATTY_LIVER_001", "BSG_INSULIN_RESISTANCE_001", "INF_CHRONIC_001"]
+  },
+  "FOOD_SWEET_STEVIA_001": {
+    "id": "FOOD_SWEET_STEVIA_001",
+    "name": "Stevia (Meethi Tulsi)",
+    "category": "Sweeteners",
+    "serving_size_reference": "1 Pinch (Equivalent to 1 Tbsp sugar)",
+    "nutritional_values": {
+      "macronutrients": { "protein": "0g", "carbohydrates": "0g", "fiber": "0g", "fat": "0g" },
+      "micronutrients": { "steviol_glycosides": "Active sweetening compounds" }
+    },
+    "biological_impact": {
+      "insulin_neutral": "Does not enter the bloodstream as glucose. Zero calorie, zero insulin spike.",
+      "gut_microbiome": "Unlike artificial sweeteners (Aspartame, Sucralose) which actively destroy gut bacteria, natural Stevia leaf extract appears neutral to the microbiome."
+    },
+    "anti_nutrients": "Commercial stevia is often heavily processed with Erythritol or Maltodextrin (which DOES spike blood sugar).",
+    "preparation_rules": "Must buy 100% pure stevia extract. Has a bitter aftertaste if overdosed. The safest sweetener for severe diabetics.",
+    "related_nodes": ["MED_TYPE2_DIABETES_001", "GUT_MICROBIOME_001"]
+  }
+}

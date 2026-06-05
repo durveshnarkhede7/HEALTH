@@ -1,0 +1,175 @@
+{
+  "_meta": {
+    "layer": "20_LIFE_STAGES",
+    "version": "1.0",
+    "description": "Biological eras that dictate massive shifts in baseline hormones, metabolism, and nutrient requirements. A physiological state that is diseased in one life stage (e.g., insulin resistance) may be biologically required in another (e.g., pregnancy).",
+    "nodes": [
+      "LFS_PUBERTY_001",
+      "LFS_REPRODUCTIVE_FEMALE_001",
+      "LFS_REPRODUCTIVE_MALE_001",
+      "LFS_PREGNANCY_001",
+      "LFS_POSTPARTUM_001",
+      "LFS_PERIMENOPAUSE_001",
+      "LFS_MENOPAUSE_001",
+      "LFS_ANDROPAUSE_001",
+      "LFS_SENESCENCE_001"
+    ]
+  },
+  "LFS_PUBERTY_001": {
+    "id": "LFS_PUBERTY_001",
+    "node_type": "life_stage",
+    "version": "1.0",
+    "name": "Puberty (The Anabolic Surge)",
+    "biological_shift": "Massive exponential increase in Growth Hormone (GH), IGF-1, Sex Hormones (Testosterone, Estrogen), and Insulin.",
+    "metabolic_vulnerabilities": [
+      "Physiological Insulin Resistance: The body becomes naturally insulin resistant to partition circulating glucose away from fat cells and towards rapidly growing bone and muscle tissue.",
+      "Adipocyte Hyperplasia: If an Indian teenager consumes a highly processed, high-sugar diet during this specific window, the insulin resistance turns pathological. The body creates millions of NEW fat cells (hyperplasia) rather than just filling existing ones. This permanently locks in a higher 'Fat Cell Count' for the rest of their life, pre-disposing them to severe adult obesity."
+    ],
+    "symptom_manifestation": [
+      "SYM_ACNE_001 (Driven by the GH/IGF-1/Insulin surge hitting the sebaceous glands)",
+      "SYM_WEIGHTGAIN_001 (If diet is poor)"
+    ],
+    "related_nodes": ["HOR_IGF1_001", "BSG_INSULIN_RESISTANCE_001", "BIO_SEBACEOUSGLAND_001"]
+  },
+  "LFS_REPRODUCTIVE_FEMALE_001": {
+    "id": "LFS_REPRODUCTIVE_FEMALE_001",
+    "node_type": "life_stage",
+    "version": "1.0",
+    "name": "Female Reproductive Years (The 28-Day Cycle)",
+    "biological_shift": "A continuous 28-day wave of fluctuating Estrogen and Progesterone, entirely altering metabolism week by week.",
+    "metabolic_vulnerabilities": [
+      "Follicular Phase (Days 1-14): Estrogen dominant. The female body is highly insulin sensitive and preferentially burns carbohydrates for fuel. Cortisol is low. This is the optimal time for high-intensity exercise (HIIT) and higher carbohydrate intake.",
+      "Luteal Phase (Days 15-28): Progesterone dominant. The body temperature rises. The female body becomes naturally insulin resistant to prepare the uterine lining for potential pregnancy. It shifts to preferentially burning fat for fuel. Carbohydrate tolerance plummets, causing extreme sugar cravings if the diet isn't adjusted. Serotonin drops, causing PMS mood swings."
+    ],
+    "symptom_manifestation": [
+      "SYM_FATIGUE_001 (In luteal phase if eating too many carbs)",
+      "SYM_ACNE_001 (Premenstrual acne due to progesterone/testosterone spikes when estrogen drops)"
+    ],
+    "related_nodes": ["HOR_ESTROGEN_001", "HOR_PROGESTERONE_001", "BSG_INSULIN_RESISTANCE_001"]
+  },
+  "LFS_REPRODUCTIVE_MALE_001": {
+    "id": "LFS_REPRODUCTIVE_MALE_001",
+    "node_type": "life_stage",
+    "version": "1.0",
+    "name": "Male Reproductive Years",
+    "biological_shift": "Relatively stable, continuous androgen production driven by a 24-hour circadian cycle, rather than a 28-day cycle.",
+    "metabolic_vulnerabilities": [
+      "Circadian Dependence: Testosterone peaks between 6 AM and 8 AM and slowly declines throughout the day. This production is 100% dependent on entering Deep Sleep (SLP_DEEPSLEEP_001) the night before.",
+      "DHT Sensitivity: The onset of genetic sensitivity to DHT (Androgenetic Alopecia) typically begins in the mid-20s for Indian men, driven by the sustained peak of 5-alpha reductase activity."
+    ],
+    "symptom_manifestation": [
+      "SYM_HAIRFALL_001 (Onset of male pattern baldness)",
+      "SYM_FATIGUE_001 (If circadian rhythm is broken by night shifts)"
+    ],
+    "related_nodes": ["HOR_TESTOSTERONE_001", "HOR_DHT_001", "SLP_CIRCADIAN_001"]
+  },
+  "LFS_PREGNANCY_001": {
+    "id": "LFS_PREGNANCY_001",
+    "node_type": "life_stage",
+    "version": "1.0",
+    "name": "Pregnancy (The Incubator Phase)",
+    "biological_shift": "The placenta takes over hormone production. Massive, sustained increases in Estrogen, Progesterone, and HCG. The immune system is heavily suppressed.",
+    "metabolic_vulnerabilities": [
+      "Gestational Insulin Resistance: The placenta secretes Human Placental Lactogen (hPL), which actively blocks the mother's insulin. This is a brilliant biological adaptation to keep glucose in the blood longer, so it crosses the placenta to feed the baby. If the mother eats a high-sugar diet, this crosses into Gestational Diabetes.",
+      "Nutrient Parasitism: The fetus prioritizes its own survival over the mother. If the mother's diet lacks calcium, the fetus will literally dissolve the mother's bones and teeth to build its own skeleton. Severe depletion of DHA, Iron, Folate, and Choline is common.",
+      "Immune Shift: The mother's immune system shifts from Th1 (cellular defense) to Th2 (antibody defense) to prevent her body from rejecting the genetically foreign fetus. Many women with autoimmune diseases (like Hashimoto's) suddenly feel 'cured' during pregnancy because of this suppression."
+    ],
+    "symptom_manifestation": [
+      "Thick, lustrous hair (High estrogen locks all hair follicles in the anagen growth phase, zero shedding).",
+      "SYM_FATIGUE_001",
+      "SYM_WEIGHTGAIN_001"
+    ],
+    "related_nodes": ["BSG_INSULIN_RESISTANCE_001", "NUT_CALCIUM_001", "INF_AUTOIMMUNE_001"]
+  },
+  "LFS_POSTPARTUM_001": {
+    "id": "LFS_POSTPARTUM_001",
+    "node_type": "life_stage",
+    "version": "1.0",
+    "name": "Postpartum (The Hormonal Crash)",
+    "biological_shift": "The delivery of the placenta triggers the most violent hormonal drop a human being will ever experience. Estrogen and Progesterone plummet 100-fold within 48 hours.",
+    "metabolic_vulnerabilities": [
+      "Postpartum Telogen Effluvium: Without the high estrogen to hold them in place, 30-50% of the hair follicles instantly enter the resting phase (Telogen). Exactly 3 to 4 months later, they all fall out simultaneously in massive clumps.",
+      "Postpartum Thyroiditis: The immune system, which was suppressed for 9 months, aggressively rebounds (shifting back to Th1). In genetically susceptible women (HLA-DQ), this rebound triggers a violent autoimmune attack on the thyroid gland, often misdiagnosed as standard 'new mom fatigue'.",
+      "Severe Nutrient Deficit: Lactation requires 500-700 extra calories a day and massive amounts of water, calcium, and protein. The mother is usually utterly depleted of Iron and B12."
+    ],
+    "symptom_manifestation": [
+      "SYM_HAIRFALL_001 (Severe shedding at month 3-4)",
+      "SYM_FATIGUE_001",
+      "SYM_ANXIETY_001 (Postpartum depression driven by progesterone crash)"
+    ],
+    "related_nodes": ["MED_TELOGEN_EFFLUVIUM_001", "MED_HASHIMOTOS_001", "HOR_PROGESTERONE_001"]
+  },
+  "LFS_PERIMENOPAUSE_001": {
+    "id": "LFS_PERIMENOPAUSE_001",
+    "node_type": "life_stage",
+    "version": "1.0",
+    "name": "Perimenopause (The Chaotic Decade: Ages 40-50)",
+    "biological_shift": "The ovaries begin to sputter and fail. They do not fail gracefully. Ovulation becomes erratic.",
+    "metabolic_vulnerabilities": [
+      "Estrogen Dominance: Because the woman is not ovulating every month, she produces zero Progesterone for that cycle. However, her ovaries are still wildly pumping out Estrogen (sometimes 2-3x normal levels). This creates a massive, unopposed ratio of Estrogen to Progesterone.",
+      "Symptom Explosion: Without calming Progesterone (which converts to Allopregnanolone in the brain), the woman experiences severe anxiety, insomnia, rage, and heart palpitations. The high, unopposed Estrogen causes heavy, prolonged menstrual bleeding (fibroids) and tender breasts.",
+      "Metabolic slowdown: Cortisol rises to compensate for the failing ovaries, driving visceral belly fat accumulation."
+    ],
+    "symptom_manifestation": [
+      "SYM_ANXIETY_001",
+      "SYM_POORSLEEP_001",
+      "SYM_WEIGHTGAIN_001 (Specifically 'Meno-pot' belly fat)",
+      "SYM_HAIRFALL_001 (Diffuse thinning)"
+    ],
+    "related_nodes": ["HOR_PROGESTERONE_001", "HOR_ESTROGEN_001", "STR_CHRONIC_001"]
+  },
+  "LFS_MENOPAUSE_001": {
+    "id": "LFS_MENOPAUSE_001",
+    "node_type": "life_stage",
+    "version": "1.0",
+    "name": "Menopause (The Estrogen Flatline: Age 50+)",
+    "biological_shift": "Defined as 12 consecutive months without a period. The ovaries have completely shut down. Estrogen and Progesterone flatline. Testosterone (produced by the adrenals) remains.",
+    "metabolic_vulnerabilities": [
+      "Cardiovascular Shock: Estrogen is heavily cardioprotective (keeps blood vessels flexible) and insulin-sensitizing. When it vanishes, a woman's risk of heart attack instantly spikes to match a man's, and her insulin resistance skyrockets.",
+      "Collagen Collapse: Estrogen is required for Fibroblasts to make collagen and hyaluronic acid. In the first 5 years of menopause, women lose 30% of their skin collagen. Skin becomes paper-thin, dry, and wrinkly. Hair shafts become brittle and snap easily.",
+      "Androgen Dominance: With estrogen gone, the remaining adrenal testosterone is now unopposed. It converts to DHT, causing male-pattern hair loss (Androgenetic Alopecia) and facial hair growth in women."
+    ],
+    "symptom_manifestation": [
+      "SYM_AGEING_001 (Rapid collagen loss)",
+      "SYM_DRYSKIN_001",
+      "SYM_THINHAIR_001",
+      "Hot flashes (Hypothalamus screaming for estrogen)"
+    ],
+    "related_nodes": ["BIO_COLLAGEN_001", "MED_ANDROGENETIC_ALOPECIA_001", "SYS_CARDIOMETABOLIC_001"]
+  },
+  "LFS_ANDROPAUSE_001": {
+    "id": "LFS_ANDROPAUSE_001",
+    "node_type": "life_stage",
+    "version": "1.0",
+    "name": "Andropause (Male Aging: Age 45+)",
+    "biological_shift": "Unlike menopause, male hormones do not crash overnight. Total Testosterone declines slowly (1-2% per year after age 30).",
+    "metabolic_vulnerabilities": [
+      "The SHBG Trap: As men age, the liver produces more Sex Hormone Binding Globulin (SHBG). SHBG binds to testosterone, rendering it biologically inactive. A 55-year-old man may have 'normal' Total Testosterone on a lab report, but his FREE (active) Testosterone is virtually zero.",
+      "Aromatase Upregulation: As men gain visceral fat (due to insulin resistance), the fat cells produce the 'Aromatase' enzyme. Aromatase literally steals the man's remaining testosterone and converts it into Estrogen. This causes 'man-boobs' (gynecomastia), severe loss of libido, and depression."
+    ],
+    "symptom_manifestation": [
+      "SYM_FATIGUE_001",
+      "SYM_WEIGHTGAIN_001 (Belly fat)",
+      "Loss of morning erections (classic sign of Free T crash)"
+    ],
+    "related_nodes": ["HOR_SHBG_001", "HOR_ESTROGEN_001", "HOR_TESTOSTERONE_001"]
+  },
+  "LFS_SENESCENCE_001": {
+    "id": "LFS_SENESCENCE_001",
+    "node_type": "life_stage",
+    "version": "1.0",
+    "name": "Senescence (Elderly: Age 65+)",
+    "biological_shift": "Cellular senescence (zombie cells) accumulation, telomere shortening, and systemic decline in organ function.",
+    "metabolic_vulnerabilities": [
+      "Anabolic Resistance: Elderly muscles require significantly MORE protein (leucine) to trigger muscle synthesis (mTOR) than young muscles. Failure to meet this causes Sarcopenia (severe muscle wasting), leading to frailty and falls.",
+      "Achlorhydria (No Stomach Acid): By age 65, parietal cells in the stomach produce 50% less acid. Without strong acid, the elderly cannot digest protein or ionize Iron/B12. Severe, unexplainable anaemia and neurological decline in the elderly are almost entirely driven by this hidden gut failure, not a poor diet.",
+      "Immunosenescence: The thymus gland shrinks to fat (thymic involution), halting production of naive T-cells. The immune system forgets how to fight novel viruses and becomes chronically, uselessly inflamed ('Inflammaging')."
+    ],
+    "symptom_manifestation": [
+      "SYM_FATIGUE_001",
+      "SYM_BRAINFOG_001",
+      "SYM_DRYSKIN_001"
+    ],
+    "related_nodes": ["GUT_HYPOCHLORHYDRIA_001", "NUT_PROTEIN_001", "INF_CHRONIC_001"]
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "_meta": {
+    "layer": "21_FOOD_DATABASE",
+    "category": "Eggs",
+    "serving_size_standard": "Per whole egg (50g) / Per 100g",
+    "description": "The most nutritionally complete single food on Earth. The biology of the yolk vs white, pastured vs commercial, and raw vs cooked proteins are all critical distinctions the AI must understand.",
+    "nodes": [
+      "FOOD_EGG_WHOLE_001",
+      "FOOD_EGG_YOLK_001",
+      "FOOD_EGG_WHITE_001"
+    ]
+  },
+  "FOOD_EGG_WHOLE_001": {
+    "id": "FOOD_EGG_WHOLE_001",
+    "name": "Whole Egg (Pastured / Country Chicken)",
+    "category": "Eggs",
+    "serving_size_reference": "Per 100g (Raw / ~2 medium eggs)",
+    "nutritional_values": {
+      "macronutrients": { "protein": "13g", "carbohydrates": "1.1g", "fiber": "0g", "fat": "11g" },
+      "micronutrients": {
+        "vitamin_d": "37 IU (One of the very few food sources of Vitamin D)",
+        "vitamin_b12": "1.1mcg (89% DV)",
+        "choline": "294mg (53% DV - Critically important)",
+        "lutein_zeaxanthin": "252mcg",
+        "selenium": "30mcg",
+        "iodine": "27mcg"
+      }
+    },
+    "biological_impact": {
+      "brain_health": "The single most important food source of Choline, which is required for Acetylcholine (memory neurotransmitter) synthesis and to prevent fatty liver (GEN_PEMT_001).",
+      "eye_health": "Lutein and Zeaxanthin accumulate in the macula of the eye, preventing Age-Related Macular Degeneration.",
+      "complete_protein": "Contains all 9 essential amino acids in perfect ratios. The Biological Value (BV) of an egg is 100 — the gold standard by which all other proteins are measured."
+    },
+    "anti_nutrients": "None in the yolk. Avidin in the raw egg white (see FOOD_EGG_WHITE_001).",
+    "preparation_rules": "Pastured desi chicken eggs have 3-6x more Vitamin D and Omega-3 than commercial factory eggs. Soft-boiled or poached is optimal (preserves the lecithin in the yolk). Hard-boiling oxidizes the cholesterol. NEVER count egg cholesterol as cardiovascular risk — the Dietary Cholesterol-Serum Cholesterol link is scientifically debunked.",
+    "related_nodes": ["NUT_METHYLATION_001", "GEN_PEMT_001", "SYS_NERVOUS_001"]
+  },
+  "FOOD_EGG_YOLK_001": {
+    "id": "FOOD_EGG_YOLK_001",
+    "name": "Egg Yolk",
+    "category": "Eggs",
+    "serving_size_reference": "Per 100g (~5 yolks)",
+    "nutritional_values": {
+      "macronutrients": { "protein": "15.9g", "carbohydrates": "3.6g", "fiber": "0g", "fat": "27g" },
+      "micronutrients": {
+        "choline": "820mg",
+        "vitamin_a": "1442 IU",
+        "vitamin_d": "218 IU",
+        "vitamin_k2": "15mcg (MK-4)",
+        "selenium": "56mcg"
+      }
+    },
+    "biological_impact": {
+      "vitamin_k2": "The MK-4 form of Vitamin K2 in the yolk directly activates Matrix Gla Protein (MGP), which physically removes calcium from arteries (prevents calcification/atherosclerosis).",
+      "fat_soluble_vitamins": "The yolk houses ALL of the egg's fat-soluble vitamins (A, D, E, K). Eating only egg whites while discarding the yolk discards 100% of the most critical micronutrients."
+    },
+    "anti_nutrients": "None.",
+    "preparation_rules": "NEVER discard the yolk. The egg white of the 1990s 'low cholesterol diet' advice was based on completely debunked science.",
+    "related_nodes": ["NUT_VITAMIND_001", "SYS_CARDIOMETABOLIC_001", "GEN_PEMT_001"]
+  },
+  "FOOD_EGG_WHITE_001": {
+    "id": "FOOD_EGG_WHITE_001",
+    "name": "Egg White (Albumen)",
+    "category": "Eggs",
+    "serving_size_reference": "Per 100g (~3-4 whites)",
+    "nutritional_values": {
+      "macronutrients": { "protein": "10.9g", "carbohydrates": "0.7g", "fiber": "0g", "fat": "0.2g" },
+      "micronutrients": { "selenium": "20mcg", "riboflavin_b2": "0.4mg" }
+    },
+    "biological_impact": {
+      "pure_protein": "Almost pure albumin protein. Very rapidly absorbed. Used by athletes post-workout.",
+      "biotin_theft": "RAW egg white contains Avidin, a glycoprotein that binds Biotin (Vitamin B7) with extreme affinity, making it completely unabsorbable."
+    },
+    "anti_nutrients": "Avidin (in RAW state only).",
+    "preparation_rules": "Cooking destroys Avidin completely. Eating raw egg whites long-term causes severe Biotin (B7) deficiency manifesting as catastrophic hair loss and dermatitis. NEVER eat raw egg whites. The 'Rocky' raw egg shake is biologically harmful.",
+    "related_nodes": ["NUT_BIOTIN_001", "SYM_HAIRFALL_001"]
+  }
+}

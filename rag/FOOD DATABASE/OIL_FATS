@@ -1,0 +1,141 @@
+{
+  "_meta": {
+    "layer": "21_FOOD_DATABASE",
+    "category": "Oils and Fats",
+    "serving_size_standard": "Per 15ml (1 Tablespoon)",
+    "description": "The foundation of all Indian cooking. The shift from traditional cold-pressed (Kachi Ghani) oils and Ghee to industrial refined seed oils in the 1980s is the primary driver of India's metabolic syndrome epidemic.",
+    "nodes": [
+      "FOOD_OIL_MUSTARD_001",
+      "FOOD_OIL_COCONUT_001",
+      "FOOD_OIL_SESAME_001",
+      "FOOD_OIL_GROUNDNUT_001",
+      "FOOD_OIL_REFINED_SEED_001",
+      "FOOD_OIL_OLIVE_001"
+    ]
+  },
+  "FOOD_OIL_MUSTARD_001": {
+    "id": "FOOD_OIL_MUSTARD_001",
+    "name": "Mustard Oil (Kachi Ghani / Cold Pressed)",
+    "category": "Oils and Fats",
+    "serving_size_reference": "Per 15ml (1 Tbsp)",
+    "nutritional_values": {
+      "macronutrients": { "protein": "0g", "carbohydrates": "0g", "fiber": "0g", "fat": "14g" },
+      "fatty_acid_profile": {
+        "saturated_fat": "1.6g (11%)",
+        "monounsaturated_fat_mufa": "8.3g (59%)",
+        "polyunsaturated_fat_pufa": "2.9g (21%)",
+        "omega_6_to_3_ratio": "1.2 : 1 (Incredible balance)"
+      }
+    },
+    "biological_impact": {
+      "cardiovascular": "One of the healthiest fatty acid profiles on Earth. The extremely low Omega-6 to Omega-3 ratio reduces systemic inflammation. The high MUFA content protects the heart (SYS_CARDIOMETABOLIC_001)."
+    },
+    "anti_nutrients": "Erucic Acid (FDA considers it toxic in massive doses, but traditional Indian epidemiology shows zero harm from centuries of use).",
+    "preparation_rules": "MUST be 'Kachi Ghani' (wood-pressed). It has a high smoke point (250°C) making it perfect for deep frying. Traditionally 'smoked' before cooking to remove pungency.",
+    "related_nodes": ["SYS_CARDIOMETABOLIC_001", "NUT_FATTYACID_001"]
+  },
+  "FOOD_OIL_COCONUT_001": {
+    "id": "FOOD_OIL_COCONUT_001",
+    "name": "Coconut Oil (Cold Pressed / Virgin)",
+    "category": "Oils and Fats",
+    "serving_size_reference": "Per 15ml (1 Tbsp)",
+    "nutritional_values": {
+      "macronutrients": { "protein": "0g", "carbohydrates": "0g", "fiber": "0g", "fat": "14g" },
+      "fatty_acid_profile": {
+        "saturated_fat": "12g (85-90% Saturated)",
+        "monounsaturated_fat_mufa": "0.8g",
+        "polyunsaturated_fat_pufa": "0.2g",
+        "lauric_acid": "49% of total fat"
+      }
+    },
+    "biological_impact": {
+      "metabolism": "Contains Medium Chain Triglycerides (MCTs). MCTs bypass the lymphatic system and go directly to the liver to be burned as energy (ketones), making it very hard to store as body fat.",
+      "antimicrobial": "Lauric acid converts to Monolaurin in the body, which destroys the lipid envelopes of viruses and pathogenic bacteria in the gut (GUT_DYSBIOSIS_001)."
+    },
+    "anti_nutrients": "None.",
+    "preparation_rules": "Extremely stable at high temperatures due to being saturated. Will not oxidize easily. However, APOE4 gene carriers (GEN_APOE_001) must strictly avoid it as it spikes their LDL cholesterol catastrophically.",
+    "related_nodes": ["GEN_APOE_001", "GUT_DYSBIOSIS_001", "SYS_NERVOUS_001"]
+  },
+  "FOOD_OIL_SESAME_001": {
+    "id": "FOOD_OIL_SESAME_001",
+    "name": "Sesame Oil (Til / Gingelly Oil - Cold Pressed)",
+    "category": "Oils and Fats",
+    "serving_size_reference": "Per 15ml (1 Tbsp)",
+    "nutritional_values": {
+      "macronutrients": { "protein": "0g", "carbohydrates": "0g", "fiber": "0g", "fat": "14g" },
+      "fatty_acid_profile": {
+        "saturated_fat": "2g (14%)",
+        "monounsaturated_fat_mufa": "5.6g (40%)",
+        "polyunsaturated_fat_pufa": "5.8g (41%)",
+        "lignans": "High in Sesamin and Sesamolin"
+      }
+    },
+    "biological_impact": {
+      "blood_pressure": "Sesamin (a unique lignan) has been clinically proven to lower blood pressure and protect the liver from oxidative damage (BIO_LIVER_001)."
+    },
+    "anti_nutrients": "High Omega-6 content if used in excess.",
+    "preparation_rules": "Excellent for medium heat cooking. Very common in South Indian and Asian cooking. Often used for body massage (Abhyanga) in Ayurveda to calm the nervous system.",
+    "related_nodes": ["BIO_LIVER_001", "SYS_CARDIOMETABOLIC_001"]
+  },
+  "FOOD_OIL_GROUNDNUT_001": {
+    "id": "FOOD_OIL_GROUNDNUT_001",
+    "name": "Groundnut / Peanut Oil (Cold Pressed)",
+    "category": "Oils and Fats",
+    "serving_size_reference": "Per 15ml (1 Tbsp)",
+    "nutritional_values": {
+      "macronutrients": { "protein": "0g", "carbohydrates": "0g", "fiber": "0g", "fat": "14g" },
+      "fatty_acid_profile": {
+        "saturated_fat": "2.4g (17%)",
+        "monounsaturated_fat_mufa": "6.5g (46%)",
+        "polyunsaturated_fat_pufa": "4.5g (32%)"
+      }
+    },
+    "biological_impact": {
+      "heart_health": "A very balanced oil, similar to olive oil in its high MUFA content, but with a much higher smoke point."
+    },
+    "anti_nutrients": "High in Omega-6 (Linoleic acid) which can be inflammatory if Omega-3 intake is low.",
+    "preparation_rules": "Must be cold-pressed. Refined peanut oil undergoes chemical extraction that strips away all Vitamin E and antioxidants. Excellent for deep frying.",
+    "related_nodes": ["NUT_FATTYACID_001"]
+  },
+  "FOOD_OIL_REFINED_SEED_001": {
+    "id": "FOOD_OIL_REFINED_SEED_001",
+    "name": "Refined Seed Oils (Sunflower, Safflower, Rice Bran, Soybean)",
+    "category": "Oils and Fats",
+    "serving_size_reference": "Per 15ml (1 Tbsp)",
+    "nutritional_values": {
+      "macronutrients": { "protein": "0g", "carbohydrates": "0g", "fiber": "0g", "fat": "14g" },
+      "fatty_acid_profile": {
+        "saturated_fat": "Very Low",
+        "monounsaturated_fat_mufa": "Low to Moderate",
+        "polyunsaturated_fat_pufa": "Extremely High (mostly Omega-6 Linoleic Acid)"
+      }
+    },
+    "biological_impact": {
+      "systemic_inflammation": "The extraction process involves Hexane solvent, bleaching, and deodorization at 260°C. This destroys the fragile PUFA bonds, creating toxic Aldehydes (HNE) and Trans Fats before the oil even hits the pan.",
+      "insulin_resistance": "Massive excess of Omega-6 Linoleic acid incorporates into cellular mitochondrial membranes, causing mitochondrial dysfunction and driving systemic insulin resistance (BSG_INSULIN_RESISTANCE_001)."
+    },
+    "anti_nutrients": "Toxic Aldehydes, Hexane residue.",
+    "preparation_rules": "WARNING: MUST BE STRICTLY ELIMINATED FROM THE DIET. Never use for cooking, especially deep frying. Reheating these oils creates exponential amounts of carcinogenic compounds.",
+    "related_nodes": ["BSG_INSULIN_RESISTANCE_001", "INF_CHRONIC_001", "OXI_MITOCHONDRIAL_001"]
+  },
+  "FOOD_OIL_OLIVE_001": {
+    "id": "FOOD_OIL_OLIVE_001",
+    "name": "Extra Virgin Olive Oil (EVOO)",
+    "category": "Oils and Fats",
+    "serving_size_reference": "Per 15ml (1 Tbsp)",
+    "nutritional_values": {
+      "macronutrients": { "protein": "0g", "carbohydrates": "0g", "fiber": "0g", "fat": "14g" },
+      "fatty_acid_profile": {
+        "saturated_fat": "2g (14%)",
+        "monounsaturated_fat_mufa": "10g (73% Oleic Acid - Massive)",
+        "polyunsaturated_fat_pufa": "1.5g (11%)"
+      }
+    },
+    "biological_impact": {
+      "longevity": "Oleic acid and the polyphenol 'Oleocanthal' are highly anti-inflammatory, acting similarly to Ibuprofen in the body. The cornerstone of the Mediterranean diet."
+    },
+    "anti_nutrients": "None.",
+    "preparation_rules": "NEVER USE FOR INDIAN COOKING (Tadka/Frying). EVOO has a very low smoke point (190°C). Heating it destroys the delicate polyphenols. Use exclusively cold (on salads) or drizzled over food after cooking.",
+    "related_nodes": ["SYS_CARDIOMETABOLIC_001"]
+  }
+}

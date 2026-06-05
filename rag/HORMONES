@@ -1,0 +1,305 @@
+{
+  "HOR_INSULIN_001": {
+    "id": "HOR_INSULIN_001",
+    "node_type": "hormone",
+    "version": "1.0",
+    "name": "Insulin",
+    "biology_refs": ["BIO_PANCREAS_001", "BIO_LIVER_001", "BIO_ADIPOSE_001"],
+    "definition": "Peptide hormone produced by beta cells of the pancreas. Its primary role is to lower blood glucose by facilitating its uptake into cells, and it acts as the body's primary fat-storage signal.",
+    "triggers": {
+      "excess": ["NUT_CARBS_001 (High glycaemic index foods/sugar)", "SLP_DEEPSLEEP_001 (Sleep deprivation induces acute insulin resistance)", "High dairy intake (whey spikes insulin independent of glucose)"]
+    },
+    "downstream_effects": {
+      "excess": [
+        "Triggers liver to increase HOR_IGF1_001 production",
+        "Decreases SHBG (Sex Hormone Binding Globulin), leaving more free testosterone in blood",
+        "Directly stimulates ovarian theca cells to produce excess HOR_TESTOSTERONE_001 (PCOS pathway)",
+        "Increases sebum production in BIO_SEBGLAND_001"
+      ]
+    },
+    "antagonists": ["NUT_MAGNESIUM_001 (Improves receptor sensitivity)", "EXE_RESISTANCE_001 (Muscles absorb glucose without needing insulin)", "Fasting/Low-carb diet"],
+    "symptom_refs": ["SYM_ACNE_001", "SYM_WEIGHTGAIN_001", "SYM_FATIGUE_001", "SYM_IRREGULARPERIODS_001"]
+  },
+  "HOR_GLUCAGON_001": {
+    "id": "HOR_GLUCAGON_001",
+    "node_type": "hormone",
+    "version": "1.0",
+    "name": "Glucagon",
+    "biology_refs": ["BIO_PANCREAS_001", "BIO_LIVER_001"],
+    "definition": "Peptide hormone produced by alpha cells of the pancreas. It acts antagonistically to insulin, raising blood glucose by stimulating the liver to break down glycogen and make new glucose (gluconeogenesis).",
+    "triggers": {
+      "increase": ["Fasting", "Hypoglycaemia (low blood sugar)", "NUT_PROTEIN_001 (Protein ingestion without carbs)"]
+    },
+    "downstream_effects": {
+      "functional": ["Triggers fat burning (lipolysis) in BIO_ADIPOSE_001", "Maintains blood sugar during sleep"]
+    },
+    "antagonists": ["HOR_INSULIN_001 (Directly suppresses glucagon secretion)", "NUT_CARBS_001"],
+    "symptom_refs": ["SYM_WEIGHTLOSS_001"]
+  },
+  "HOR_CORTISOL_001": {
+    "id": "HOR_CORTISOL_001",
+    "node_type": "hormone",
+    "version": "1.0",
+    "name": "Cortisol",
+    "biology_refs": ["BIO_ADRENAL_001"],
+    "definition": "Steroid hormone (glucocorticoid) released in response to stress and low blood glucose. Follows a diurnal rhythm (highest in morning, lowest at midnight). Essential for life but destructive when chronically elevated.",
+    "triggers": {
+      "excess": ["STR_CHRONIC_001 (Psychological stress)", "Inflammation (INF_CHRONIC_001)", "Sleep deprivation"]
+    },
+    "downstream_effects": {
+      "excess": [
+        "Causes systemic insulin resistance (raises blood sugar to 'fuel the fight')",
+        "Degrades BIO_COLLAGEN_001 in skin (causes thinning/aging)",
+        "Suppresses TSH, reducing HOR_THYROID_001 production",
+        "Shifts hair cycle: pushes BIO_FOLLICLE_001 prematurely into telogen",
+        "Suppresses secretory IgA in gut → GUT_LEAKYGUT_001"
+      ]
+    },
+    "antagonists": ["Deep breathing/Vagus nerve stimulation", "NUT_MAGNESIUM_001", "HOR_MELATONIN_001"],
+    "symptom_refs": ["SYM_HAIRFALL_001", "SYM_POORSLEEP_001", "SYM_WEIGHTGAIN_001", "SYM_FATIGUE_001"]
+  },
+  "HOR_THYROID_001": {
+    "id": "HOR_THYROID_001",
+    "node_type": "hormone",
+    "version": "1.0",
+    "name": "Thyroid Hormones (T4 and T3)",
+    "biology_refs": ["BIO_THYROID_001", "BIO_MITOCHONDRIA_001"],
+    "definition": "T4 is the inactive prohormone; T3 is the active hormone. They bind to nuclear receptors in almost every cell in the body, directly regulating the basal metabolic rate and mitochondrial ATP production.",
+    "triggers": {
+      "deficiency": ["NUT_IODINE_001 deficiency", "NUT_SELENIUM_001 deficiency", "Hashimoto's (Autoimmune destruction)", "High HOR_CORTISOL_001"]
+    },
+    "downstream_effects": {
+      "deficiency": [
+        "BIO_MITOCHONDRIA_001 produce less ATP (profound fatigue)",
+        "Slowed gut motility (GUT_MOTILITY_001)",
+        "Reduced cell division in BIO_MATRIX_001 (causes diffuse hair thinning/loss)",
+        "Reduced skin oil production (SYM_DRYSKIN_001)"
+      ]
+    },
+    "antagonists": ["Goitrogens (block iodine)", "Fluoride", "Heavy metals"],
+    "symptom_refs": ["SYM_FATIGUE_001", "SYM_WEIGHTGAIN_001", "SYM_HAIRFALL_001", "SYM_CONSTIPATION_001", "SYM_DRYSKIN_001"]
+  },
+  "HOR_ESTROGEN_001": {
+    "id": "HOR_ESTROGEN_001",
+    "node_type": "hormone",
+    "version": "1.0",
+    "name": "Estrogen",
+    "biology_refs": ["BIO_OVARY_001"],
+    "definition": "Primary female sex hormone. Essential for reproduction, but also highly protective of bone density, cardiovascular health, and hair follicles.",
+    "triggers": {
+      "excess_or_dominance": ["Poor liver clearance", "Constipation (reabsorption from gut)", "Endocrine disrupting chemicals (Xenoestrogens)"],
+      "deficiency": ["Menopause", "Postpartum drop"]
+    },
+    "downstream_effects": {
+      "deficiency": [
+        "Massive synchronised hair shedding (Postpartum Telogen Effluvium)",
+        "Loss of collagen in BIO_DERMIS_001 (wrinkles)",
+        "Bone density loss"
+      ],
+      "functional": [
+        "Prolongs the Anagen (growth) phase in BIO_FOLLICLE_001",
+        "Opposes androgen action at the skin/scalp"
+      ]
+    },
+    "antagonists": ["HOR_PROGESTERONE_001 (balances estrogen)", "Fibre (binds estrogen in gut for excretion)"],
+    "symptom_refs": ["SYM_HAIRFALL_001", "SYM_IRREGULARPERIODS_001"]
+  },
+  "HOR_PROGESTERONE_001": {
+    "id": "HOR_PROGESTERONE_001",
+    "node_type": "hormone",
+    "version": "1.0",
+    "name": "Progesterone",
+    "biology_refs": ["BIO_OVARY_001"],
+    "definition": "Steroid hormone produced primarily by the corpus luteum after ovulation. It is the calming, stabilising counter-balance to estrogen.",
+    "triggers": {
+      "deficiency": ["Lack of ovulation (Anovulation in PCOS)", "High HOR_CORTISOL_001 (Cortisol steal - body prioritises stress hormone production over sex hormones)"]
+    },
+    "downstream_effects": {
+      "deficiency": [
+        "Leads to 'Estrogen Dominance' symptoms",
+        "Poor sleep (progesterone acts on GABA receptors to induce calm)",
+        "Increased PMS and anxiety"
+      ]
+    },
+    "antagonists": ["HOR_CORTISOL_001"],
+    "symptom_refs": ["SYM_POORSLEEP_001", "SYM_IRREGULARPERIODS_001"]
+  },
+  "HOR_TESTOSTERONE_001": {
+    "id": "HOR_TESTOSTERONE_001",
+    "node_type": "hormone",
+    "version": "1.0",
+    "name": "Testosterone",
+    "biology_refs": ["BIO_OVARY_001", "BIO_ADRENAL_001"],
+    "definition": "Primary male sex hormone, but vital in females for libido, muscle mass, and energy. In excess (e.g., female PCOS), it drives male-pattern symptoms.",
+    "triggers": {
+      "excess_in_females": ["High HOR_INSULIN_001 (stimulates ovaries)", "High HOR_LH_001"]
+    },
+    "downstream_effects": {
+      "excess_in_females": [
+        "Gets converted to HOR_DHT_001 in skin/scalp",
+        "Increases sebum production → SYM_ACNE_001",
+        "Causes hirsutism (facial hair growth)"
+      ]
+    },
+    "antagonists": ["SHBG (binds free testosterone)", "Spearmint tea (anti-androgenic)"],
+    "symptom_refs": ["SYM_ACNE_001", "SYM_OILYSKIN_001", "SYM_IRREGULARPERIODS_001"]
+  },
+  "HOR_DHT_001": {
+    "id": "HOR_DHT_001",
+    "node_type": "hormone",
+    "version": "1.0",
+    "name": "Dihydrotestosterone (DHT)",
+    "biology_refs": ["BIO_FOLLICLE_001", "BIO_SEBGLAND_001", "BIO_DERMALPAPILLA_001"],
+    "definition": "A highly potent androgen derived from testosterone via the 5-alpha reductase (5-AR) enzyme. It is 3 to 6 times more potent than testosterone.",
+    "triggers": {
+      "excess": ["Genetics (Androgenetic alopecia increases receptor sensitivity)", "High free testosterone"]
+    },
+    "downstream_effects": {
+      "excess": [
+        "Binds to receptors in BIO_DERMALPAPILLA_001, causing follicle miniaturisation",
+        "Shortens anagen phase, causing progressive thinning",
+        "Massively upregulates BIO_SEBGLAND_001, causing cystic acne and oily scalp"
+      ]
+    },
+    "antagonists": ["NUT_ZINC_001 (natural 5-AR inhibitor)", "Finasteride/Dutasteride (medical 5-AR inhibitors)", "Saw Palmetto"],
+    "symptom_refs": ["SYM_HAIRTHIN_001", "SYM_HAIRFALL_001", "SYM_ACNE_001", "SYM_OILYSKIN_001", "SYM_SCALPDRY_001"]
+  },
+  "HOR_IGF1_001": {
+    "id": "HOR_IGF1_001",
+    "node_type": "hormone",
+    "version": "1.0",
+    "name": "Insulin-like Growth Factor 1 (IGF-1)",
+    "biology_refs": ["BIO_LIVER_001", "BIO_SEBGLAND_001"],
+    "definition": "Protein hormone produced mainly in the liver. Highly anabolic, promoting cell growth and proliferation.",
+    "triggers": {
+      "excess": ["High HOR_INSULIN_001", "Dairy consumption (milk naturally contains bovine IGF-1 and stimulates human IGF-1)", "High glycaemic diet"]
+    },
+    "downstream_effects": {
+      "excess": [
+        "Causes hyper-proliferation of sebocytes (cells that make oil)",
+        "Causes hyper-keratinisation (dead skin cells sticking together, blocking pores)",
+        "Result: The perfect storm for inflammatory acne"
+      ]
+    },
+    "antagonists": ["Low GI diet", "Dairy elimination", "Fasting"],
+    "symptom_refs": ["SYM_ACNE_001", "SYM_OILYSKIN_001"]
+  },
+  "HOR_MELATONIN_001": {
+    "id": "HOR_MELATONIN_001",
+    "node_type": "hormone",
+    "version": "1.0",
+    "name": "Melatonin",
+    "biology_refs": ["BIO_CIRCADIAN_001", "BIO_MICROBIOME_001"],
+    "definition": "The 'hormone of darkness'. Regulates the sleep-wake cycle. Also one of the body's most powerful endogenous antioxidants.",
+    "triggers": {
+      "deficiency": ["Blue light exposure at night (screens)", "Lack of daytime sunlight", "Serotonin deficiency (melatonin is made from serotonin, which is 90% made in the gut)"]
+    },
+    "downstream_effects": {
+      "functional": [
+        "Initiates sleep architecture (SLP_BIOLOGY_001)",
+        "Scavenges free radicals in brain and hair follicle",
+        "Directly opposes cortisol"
+      ]
+    },
+    "antagonists": ["Blue light", "HOR_CORTISOL_001", "Alcohol"],
+    "symptom_refs": ["SYM_POORSLEEP_001", "SYM_FATIGUE_001"]
+  },
+  "HOR_GH_001": {
+    "id": "HOR_GH_001",
+    "node_type": "hormone",
+    "version": "1.0",
+    "name": "Growth Hormone",
+    "biology_refs": ["BIO_PITUITARY_001", "BIO_SLOWWAVE_001"],
+    "definition": "Peptide hormone that stimulates growth, cell reproduction, and cell regeneration.",
+    "triggers": {
+      "functional": ["Deep sleep (70% of daily GH is secreted during stage 3/4 slow-wave sleep)", "Fasting", "High intensity exercise"]
+    },
+    "downstream_effects": {
+      "deficiency": [
+        "Poor tissue repair (skin looks aged/dull)",
+        "Loss of muscle mass",
+        "Slow hair growth"
+      ]
+    },
+    "antagonists": ["HOR_INSULIN_001 (Eating before bed spikes insulin, which blunts the sleep GH spike)", "Lack of deep sleep"],
+    "symptom_refs": ["SYM_POORSLEEP_001", "SYM_MUSCLEWEAKNESS_001"]
+  },
+  "HOR_LEPTIN_001": {
+    "id": "HOR_LEPTIN_001",
+    "node_type": "hormone",
+    "version": "1.0",
+    "name": "Leptin",
+    "biology_refs": ["BIO_ADIPOSE_001"],
+    "definition": "The 'satiety hormone' produced by fat cells. Tells the brain 'we have enough energy stored, stop eating'.",
+    "triggers": {
+      "resistance": ["High triglycerides (blocks leptin crossing blood-brain barrier)", "Chronic inflammation", "Fructose overconsumption"]
+    },
+    "downstream_effects": {
+      "resistance": [
+        "Brain perceives starvation despite excess body fat",
+        "Uncontrollable appetite and cravings",
+        "Reduces metabolic rate to 'conserve energy'"
+      ]
+    },
+    "antagonists": ["Inflammation"],
+    "symptom_refs": ["SYM_WEIGHTGAIN_001", "SYM_LOWENERGY_001"]
+  },
+  "HOR_LH_001": {
+    "id": "HOR_LH_001",
+    "node_type": "hormone",
+    "version": "1.0",
+    "name": "Luteinizing Hormone (LH)",
+    "biology_refs": ["BIO_PITUITARY_001", "BIO_OVARY_001"],
+    "definition": "Hormone that triggers ovulation in women and stimulates testosterone production.",
+    "triggers": {
+      "excess": ["PCOS dysregulation (often high LH to FSH ratio, like 3:1 instead of 1:1)"]
+    },
+    "downstream_effects": {
+      "excess": [
+        "Constant stimulation of ovarian theca cells → overproduction of HOR_TESTOSTERONE_001",
+        "Failure to ovulate (follicle arrests)"
+      ]
+    },
+    "antagonists": [],
+    "symptom_refs": ["SYM_IRREGULARPERIODS_001", "SYM_ACNE_001"]
+  },
+  "HOR_DHEA_001": {
+    "id": "HOR_DHEA_001",
+    "node_type": "hormone",
+    "version": "1.0",
+    "name": "DHEA-S",
+    "biology_refs": ["BIO_ADRENAL_001"],
+    "definition": "The most abundant circulating steroid hormone. An adrenal androgen that serves as a precursor to testosterone and estrogen.",
+    "triggers": {
+      "excess": ["Chronic stress (Adrenal PCOS phenotype)"]
+    },
+    "downstream_effects": {
+      "excess": [
+        "Converts to testosterone and DHT",
+        "Causes acne, hair loss, and hirsutism without ovarian cysts (Adrenal PCOS)"
+      ]
+    },
+    "antagonists": ["Stress reduction"],
+    "symptom_refs": ["SYM_HAIRFALL_001", "SYM_ACNE_001"]
+  },
+  "HOR_ADRENALINE_001": {
+    "id": "HOR_ADRENALINE_001",
+    "node_type": "hormone",
+    "version": "1.0",
+    "name": "Adrenaline (Epinephrine)",
+    "biology_refs": ["BIO_ADRENAL_001"],
+    "definition": "Acute fight-or-flight hormone. Causes immediate physiological changes to prepare the body for survival.",
+    "triggers": {
+      "excess": ["Acute stress", "Caffeine overdose", "Hypoglycaemia (low blood sugar crash)"]
+    },
+    "downstream_effects": {
+      "excess": [
+        "Instantly shunts blood away from the gut (BIO_SMALLINTESTINE_001)",
+        "Stops digestion completely (causes severe bloating if eating while stressed)",
+        "Spikes heart rate and anxiety"
+      ]
+    },
+    "antagonists": ["Parasympathetic activation (rest and digest)"],
+    "symptom_refs": ["SYM_BLOATING_001", "SYM_POORSLEEP_001"]
+  }
+}

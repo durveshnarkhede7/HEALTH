@@ -1,0 +1,872 @@
+{
+  "_meta": {
+    "layer": "04_NUTRITION",
+    "layer_number": 4,
+    "version": "2.0",
+    "description": "Single source of truth for all nutrient nodes in HealthSync. Each NUT_ node stores the nutrient's biochemical role, body systems affected, deficiency mechanisms, Indian-diet-specific context, absorption dependencies, and cross-references to Biology, Systems, Symptoms, and Pathways layers. Macronutrients, micronutrients, and the full B-complex are included here.",
+    "total_nodes": 22,
+    "node_type": "nutrition",
+    "anti_duplication_rule": "Biological mechanisms live in 02_BIOLOGY. Hormone functions live in 07_HORMONES. Symptom definitions live in 03_SYMPTOMS. This layer stores ONLY the nutrient definition, its biochemical roles, Indian dietary context, deficiency chain, and cross-layer references by node ID.",
+    "nodes": [
+      "NUT_IRON_001",
+      "NUT_ZINC_001",
+      "NUT_PROTEIN_001",
+      "NUT_VITD_001",
+      "NUT_B12_001",
+      "NUT_BIOTIN_001",
+      "NUT_FOLATE_001",
+      "NUT_SELENIUM_001",
+      "NUT_OMEGA3_001",
+      "NUT_VITC_001",
+      "NUT_MAGNESIUM_001",
+      "NUT_CALCIUM_001",
+      "NUT_COENZYME_001",
+      "NUT_COPPER_001",
+      "NUT_CARBS_001",
+      "NUT_FATS_001",
+      "NUT_B1_001",
+      "NUT_B2_001",
+      "NUT_B3_001",
+      "NUT_B5_001",
+      "NUT_B6_001",
+      "NUT_CHROMIUM_001"
+    ]
+  },
+
+  "NUT_IRON_001": {
+    "id": "NUT_IRON_001",
+    "node_type": "nutrition",
+    "version": "2.0",
+    "name": "Iron",
+    "category": "mineral",
+    "forms": ["haem iron (Fe2+, animal sources)", "non-haem iron (Fe3+, plant sources)"],
+    "rda": {
+      "adult_male": "8 mg/day",
+      "adult_female_premenopausal": "18 mg/day",
+      "pregnant": "27 mg/day",
+      "note": "Haem iron has 15-35% absorption rate. Non-haem iron has 2-20%. Most Indian diets are non-haem dominant."
+    },
+    "indian_diet_context": "Indian diets are predominantly plant-based, providing non-haem iron only. Phytates in wheat, rice, and legumes severely inhibit iron absorption. Tea and coffee consumed with meals further block non-haem iron. Menstruating women on vegetarian diets are at very high risk of sub-clinical iron deficiency. Ferritin below 70 ng/mL is the functional hair-loss threshold — well above anaemia cutoff.",
+    "biochemical_roles": {
+      "oxygen_transport": "Component of haemoglobin (4 iron atoms per molecule) — carries oxygen from lungs to all tissues. Myoglobin in muscle also requires iron for intracellular oxygen storage.",
+      "DNA_synthesis": "Ribonucleotide reductase (RNR), the rate-limiting enzyme in deoxyribonucleotide synthesis, requires a diferric-tyrosyl radical active site. Iron deficiency halts DNA synthesis in all rapidly dividing cells — hair matrix, gut epithelium, bone marrow.",
+      "mitochondrial_ETC": "Iron-sulphur clusters in Complex I, II, and III of the electron transport chain require iron. Deficiency reduces ATP synthesis independent of anaemia.",
+      "thyroid_hormone_synthesis": "Thyroid peroxidase (TPO), the enzyme that iodates tyrosine residues to form T3/T4, is an iron-dependent haem enzyme. Iron deficiency impairs TPO activity and can produce functional hypothyroidism even with adequate iodine.",
+      "collagen_hydroxylation_support": "Prolyl hydroxylase also has some dependency on cofactor availability in the iron-linked metabolic network.",
+      "immune_function": "Iron is required for myeloperoxidase in neutrophils and for NK cell cytotoxicity. Deficiency increases infection susceptibility."
+    },
+    "deficiency_chain": {
+      "stage_1_storage_depletion": "Serum ferritin falls below 30 ng/mL — storage iron depleted. No symptoms yet.",
+      "stage_2_functional_depletion": "Ferritin below 70 ng/mL — hair matrix RNR activity impaired. Hair loss begins before anaemia. Fatigue from ETC dysfunction begins.",
+      "stage_3_anaemia": "Haemoglobin falls below 12 g/dL (women) or 13 g/dL (men) — classical iron deficiency anaemia. Pallor, breathlessness, palpitations.",
+      "lag_to_hair_recovery": "After iron correction, hair matrix resumes activity in 2-4 weeks but visible regrowth takes 3-6 months due to telogen and anagen timeline."
+    },
+    "absorption_ref": "ABS_IRON_001",
+    "enhancers": ["Vitamin C (reduces Fe3+ to Fe2+)", "Animal protein (haem iron)", "Citric acid"],
+    "inhibitors": ["Phytates (grains, legumes)", "Polyphenols (tea, coffee)", "Calcium (competitive transport)", "Zinc (high-dose supplements)"],
+    "system_refs": ["SYS_HAIR_001", "SYS_ENERGY_001", "SYS_METABOLIC_001"],
+    "biology_refs": ["BIO_FOLLICLE_001", "BIO_MATRIX_001", "BIO_HAIRBULB_001", "BIO_MITOCHONDRIA_001", "BIO_ETC_001"],
+    "symptom_refs": ["SYM_HAIRFALL_001", "SYM_FATIGUE_001", "SYM_BRAINFOG_001"],
+    "pathway_refs": ["PATH_IRON_HAIR_001", "PATH_IRON_ENERGY_001"],
+    "lab_marker_refs": ["LAB_FERRITIN_001", "LAB_SERUM_IRON_001", "LAB_TIBC_001", "LAB_CBC_001"],
+    "tags": ["iron", "ferritin", "haemoglobin", "RNR", "DNA synthesis", "hair loss", "fatigue", "anaemia", "phytates", "Indian vegetarian"]
+  },
+
+  "NUT_ZINC_001": {
+    "id": "NUT_ZINC_001",
+    "node_type": "nutrition",
+    "version": "2.0",
+    "name": "Zinc",
+    "category": "mineral",
+    "forms": ["zinc gluconate", "zinc picolinate", "zinc citrate", "zinc from food"],
+    "rda": {
+      "adult_male": "11 mg/day",
+      "adult_female": "8 mg/day",
+      "note": "Bioavailability from plant sources is 20-30% lower than animal sources due to phytates. Supplemental zinc above 40 mg/day competes with copper absorption."
+    },
+    "indian_diet_context": "Zinc is found in meat, shellfish (especially oysters), and legumes. Indian vegetarian diets rely on legumes as the main zinc source, but legume phytates significantly reduce bioavailability. Soaking and fermenting legumes can partially reduce phytate content. Deficiency is common in Indian vegetarians.",
+    "biochemical_roles": {
+      "gene_transcription": "Over 2,500 human transcription factors contain zinc finger domains (C2H2, RING, LIM types). Zinc deficiency globally impairs gene expression across all cell types — hair keratinocytes, skin cells, immune cells.",
+      "5alpha_reductase_inhibition": "Zinc inhibits 5-alpha reductase type II enzyme, which converts testosterone to DHT in the dermal papilla. Zinc deficiency increases local DHT production, accelerating follicle miniaturisation.",
+      "keratin_synthesis": "Zinc finger proteins regulate KRT gene expression in hair matrix keratinocytes. Deficiency produces structurally weak, brittle hair shafts prone to mid-shaft breakage.",
+      "collagen_synthesis": "Zinc is cofactor for collagenase and matrix metalloproteinases (MMPs) that remodel collagen. Required for proper cross-linking of collagen triple helices.",
+      "skin_antimicrobial": "Zinc inhibits P. acnes growth directly. Required for beta-defensin synthesis in keratinocytes. Anti-seborrhoeic — reduces sebum production and sebaceous gland hyperactivity.",
+      "wound_healing": "Required for keratinocyte migration, fibroblast proliferation, and angiogenesis during wound closure.",
+      "immune_function": "Critical for T-cell development, NK cell activity, and cytokine production. Zinc deficiency impairs both innate and adaptive immunity.",
+      "insulin_co_secretion": "Zinc is co-secreted with insulin from pancreatic beta cells. Required for insulin crystal formation and storage in secretory granules."
+    },
+    "deficiency_chain": {
+      "primary_effects": "Impaired transcription factor activity across all tissues. Hair: brittle shafts and increased DHT activity. Skin: reduced antimicrobial defence, acne worsening. Immune: increased infection susceptibility.",
+      "signs": "Diffuse hair loss, brittle nails, rough skin, poor wound healing, white spots on nails (leukonychia), taste and smell loss in severe deficiency.",
+      "acrodermatitis_enteropathica": "Genetic zinc absorption disorder — severe deficiency produces perioral and perigenital dermatitis, alopecia, diarrhoea."
+    },
+    "absorption_ref": "ABS_ZINC_001",
+    "enhancers": ["Animal protein", "Citric acid"],
+    "inhibitors": ["Phytates", "High-dose iron", "Calcium"],
+    "system_refs": ["SYS_HAIR_001", "SYS_SKIN_001", "SYS_HORMONAL_001"],
+    "biology_refs": ["BIO_FOLLICLE_001", "BIO_DERMALPAPILLA_001", "BIO_MATRIX_001", "BIO_EPIDERMIS_001", "BIO_COLLAGEN_001", "BIO_SEBGLAND_001"],
+    "symptom_refs": ["SYM_HAIRFALL_001", "SYM_ACNE_001"],
+    "pathway_refs": ["PATH_DHT_HAIR_001"],
+    "lab_marker_refs": ["LAB_SERUM_ZINC_001"],
+    "tags": ["zinc", "DHT", "5-alpha reductase", "keratin", "acne", "wound healing", "zinc finger", "phytates", "immune"]
+  },
+
+  "NUT_PROTEIN_001": {
+    "id": "NUT_PROTEIN_001",
+    "node_type": "nutrition",
+    "version": "2.0",
+    "name": "Dietary Protein",
+    "category": "macronutrient",
+    "forms": ["complete protein (all essential amino acids)", "incomplete protein (plant-based, missing one or more EAA)"],
+    "rda": {
+      "sedentary_adult": "0.8 g/kg body weight/day",
+      "active_adult": "1.2-1.6 g/kg/day",
+      "note": "Optimal hair and muscle protein synthesis requires 1.2-1.6 g/kg/day. Indian vegetarian sources (dal, lentils, paneer, curd) are often incomplete proteins and must be combined."
+    },
+    "indian_diet_context": "Indian diets are carbohydrate-heavy (rice, roti, potato) with protein as a secondary element. Most protein comes from dal, legumes, paneer, and curd — all incomplete proteins. Protein adequacy is commonly assumed but often sub-threshold for optimal hair and muscle synthesis. Vegetarian Indian women are at highest risk for protein insufficiency relative to their physiological needs (menstruation, postpartum).",
+    "biochemical_roles": {
+      "keratin_substrate": "Hair cortex keratin is 95% protein by dry weight. Contains 14-22% cysteine — higher than any other tissue protein. Methionine and cysteine are rate-limiting substrates for keratin disulphide bond formation.",
+      "collagen_precursor": "Procollagen chains require glycine (every third position), proline, and hydroxyproline. Dietary protein provides these amino acids. Collagen accounts for 30% of total body protein.",
+      "muscle_protein_synthesis": "Branched-chain amino acids (BCAAs — leucine, isoleucine, valine) activate mTORC1 signalling in muscle. Leucine is the primary mTORC1 trigger. Adequate protein maintains muscle mass and insulin sensitivity.",
+      "enzyme_and_hormone_precursors": "All enzymes are proteins. Hormones including insulin, GH, and thyroid-binding proteins are proteins or protein-derived. Neurotransmitters (serotonin from tryptophan, dopamine from tyrosine) are amino acid derivatives.",
+      "triage_in_deficiency": "In protein deficiency, body prioritises albumin, immune proteins, cardiac tissue over hair keratin. Hair loss is an early clinical sign of protein insufficiency — the body sacrifices hair first.",
+      "IGF1_axis": "Dietary protein intake (especially leucine and dairy protein) stimulates hepatic IGF-1 production. IGF-1 promotes anagen phase maintenance in follicles and muscle protein synthesis."
+    },
+    "deficiency_chain": {
+      "early": "Reduced hair shaft diameter and strength. Nail brittleness. Subtle muscle mass decline.",
+      "moderate": "Telogen effluvium — diffuse hair shedding 2-3 months after protein restriction begins. Muscle loss accelerates. Immune suppression.",
+      "severe": "Kwashiorkor (oedema, hypoalbuminaemia), severe immune failure."
+    },
+    "absorption_ref": "ABS_PROTEIN_001",
+    "key_amino_acids": ["cysteine", "methionine", "leucine", "glycine", "proline", "tryptophan", "lysine", "tyrosine"],
+    "system_refs": ["SYS_HAIR_001", "SYS_SKIN_001", "SYS_MUSCULOSKELETAL_001", "SYS_ENERGY_001"],
+    "biology_refs": ["BIO_FOLLICLE_001", "BIO_MATRIX_001", "BIO_HAIRBULB_001", "BIO_DERMIS_001", "BIO_COLLAGEN_001", "BIO_MUSCLE_001"],
+    "symptom_refs": ["SYM_HAIRFALL_001", "SYM_HAIRTHIN_001", "SYM_FATIGUE_001"],
+    "pathway_refs": ["PATH_PROTEIN_HAIR_001"],
+    "lab_marker_refs": ["LAB_ALBUMIN_001", "LAB_TOTAL_PROTEIN_001"],
+    "tags": ["protein", "keratin", "cysteine", "methionine", "leucine", "collagen", "hair loss", "muscle", "mTORC1", "IGF-1", "Indian vegetarian"]
+  },
+
+  "NUT_VITD_001": {
+    "id": "NUT_VITD_001",
+    "node_type": "nutrition",
+    "version": "2.0",
+    "name": "Vitamin D",
+    "category": "fat-soluble vitamin",
+    "forms": ["D2 (ergocalciferol — plant)", "D3 (cholecalciferol — animal, skin synthesis)"],
+    "rda": {
+      "adult": "600-800 IU/day dietary",
+      "optimal_serum": "40-60 ng/mL (100-150 nmol/L)",
+      "note": "Most Indian adults have levels below 20 ng/mL. Dark skin requires 3-5x longer sun exposure to synthesise equivalent D3. Indoor lifestyle has worsened this further."
+    },
+    "indian_diet_context": "Despite high sun exposure geographically, Indian populations have paradoxically high Vitamin D deficiency rates (60-80% in urban populations). Reasons: melanin in darker skin reduces D3 synthesis efficiency; most time spent indoors; cultural clothing covering skin; low dietary D3 (few Indian foods are naturally rich — primarily fatty fish). Supplementation is almost universally necessary.",
+    "biochemical_roles": {
+      "VDR_anagen_gate": "Vitamin D receptor (VDR) in hair follicle bulge stem cells acts as the molecular gatekeeper for anagen initiation. VDR activation reduces BMP4/7 inhibitory signalling, allowing Wnt signals to activate quiescent bulge stem cells. VDR knockout mice show complete hair cycling arrest — confirming this is non-negotiable.",
+      "immune_modulation": "1,25(OH)2D3 binds VDR in immune cells (T cells, dendritic cells, macrophages), inducing tolerogenic responses. Reduces Th1/Th17 inflammatory cytokine production. Relevant to autoimmune hair loss (alopecia areata) and inflammatory skin conditions.",
+      "antimicrobial_peptide_induction": "Vitamin D directly induces cathelicidin (LL-37) and beta-defensin gene expression in keratinocytes and macrophages — frontline innate immune defence against bacteria and viruses.",
+      "calcium_phosphorus_homeostasis": "The primary classical role — regulates intestinal calcium and phosphorus absorption. Drives bone mineralisation via osteocalcin and RANKL/OPG axis regulation.",
+      "muscle_function": "VDR in muscle cells regulates calcium handling for contraction-relaxation cycling. Vitamin D deficiency linked to proximal muscle weakness, increased fall risk, impaired athletic performance.",
+      "insulin_sensitisation": "VDR activation in pancreatic beta cells maintains insulin secretion. In adipose tissue and muscle, Vitamin D supports GLUT4 expression and insulin receptor signalling."
+    },
+    "deficiency_chain": {
+      "serum_below_20_ng": "Impaired calcium absorption, secondary hyperparathyroidism begins. VDR-mediated anagen gating fails — hair cycling disrupted.",
+      "serum_below_30_ng": "Functional deficiency — immune suppression, reduced AMP production, increased inflammation.",
+      "severe_below_10_ng": "Osteomalacia (adults), rickets (children), severe muscle weakness."
+    },
+    "absorption_ref": "ABS_VITD_001",
+    "synthesis_pathway": "Skin 7-dehydrocholesterol → UV-B converts to previtamin D3 → thermal isomerisation to D3 → liver 25-hydroxylation (25(OH)D3, measured form) → kidney 1-alpha-hydroxylation → 1,25(OH)2D3 (active calcitriol)",
+    "system_refs": ["SYS_HAIR_001", "SYS_SKIN_001", "SYS_ENERGY_001", "SYS_MUSCULOSKELETAL_001", "SYS_CARDIOMETABOLIC_001"],
+    "biology_refs": ["BIO_FOLLICLE_001", "BIO_EPIDERMIS_001", "BIO_BONE_001", "BIO_MUSCLE_001"],
+    "symptom_refs": ["SYM_HAIRFALL_001", "SYM_FATIGUE_001", "SYM_DRYSKIN_001"],
+    "pathway_refs": ["PATH_VITD_HAIR_001"],
+    "lab_marker_refs": ["LAB_VITD_001"],
+    "tags": ["vitamin D", "VDR", "anagen", "bulge stem cells", "calcium", "bone", "immune", "cathelicidin", "Indian deficiency", "sun exposure"]
+  },
+
+  "NUT_B12_001": {
+    "id": "NUT_B12_001",
+    "node_type": "nutrition",
+    "version": "2.0",
+    "name": "Vitamin B12 (Cobalamin)",
+    "category": "water-soluble vitamin",
+    "forms": ["methylcobalamin (active form)", "adenosylcobalamin (mitochondrial form)", "cyanocobalamin (synthetic supplement)"],
+    "rda": {
+      "adult": "2.4 mcg/day",
+      "note": "Methylcobalamin is the preferred supplement form — directly bioavailable. Cyanocobalamin requires hepatic conversion. Absorption requires intrinsic factor from stomach parietal cells — gastric achlorhydria and PPI use impair this severely."
+    },
+    "indian_diet_context": "B12 is found ONLY in animal products — meat, fish, eggs, dairy. Strict vegetarians and vegans (a significant portion of the Indian population) have no dietary B12 source. Even lacto-vegetarians relying solely on dairy may have borderline intake. Serum B12 below 200 pg/mL is clinical deficiency. Hair and neurological effects begin at 300-400 pg/mL subclinical range.",
+    "biochemical_roles": {
+      "methionine_synthase_cofactor": "B12 (as methylcobalamin) is the essential cofactor for methionine synthase — the enzyme that converts homocysteine to methionine. This reaction is the gateway to SAM (S-adenosylmethionine) production — the universal methyl donor for DNA methylation, histone methylation, and epigenetic gene regulation.",
+      "DNA_methylation_in_matrix": "In hair matrix keratinocytes, B12-dependent DNA methylation regulates KRT gene expression, p63 transcription, and epigenetic stability. Deficiency → hypomethylation → dysregulated gene expression → impaired matrix cell division and differentiation.",
+      "homocysteine_accumulation": "B12 deficiency elevates homocysteine — a pro-inflammatory, endothelium-damaging amino acid. High homocysteine impairs microvascular blood flow to follicles, damages collagen crosslinks, and is an independent cardiovascular risk factor.",
+      "myelin_synthesis": "Adenosylcobalamin is required for methylmalonyl-CoA mutase — converting methylmalonyl-CoA to succinyl-CoA in mitochondria. Required for myelin maintenance. Deficiency → subacute combined degeneration of spinal cord.",
+      "melanocyte_protection": "B12-dependent methylation protects melanocyte stem cell DNA from oxidative damage. Deficiency → impaired DNA repair in melanocytes → premature melanocyte stem cell depletion → premature greying.",
+      "red_blood_cell_maturation": "B12 deficiency prevents normal RBC nuclear DNA synthesis → megaloblastic anaemia — large, immature cells that cannot carry oxygen efficiently."
+    },
+    "deficiency_chain": {
+      "early_subclinical": "Elevated homocysteine, reduced SAM. Hair matrix methylation impaired. Fatigue from megaloblastic changes in early erythrocyte precursors.",
+      "moderate": "Macrocytosis, megaloblastic anaemia, diffuse hair loss, premature greying.",
+      "severe_neurological": "Subacute combined degeneration — tingling in hands/feet, weakness, cognitive impairment, psychiatric symptoms."
+    },
+    "absorption_ref": "ABS_B12_001",
+    "absorption_barrier": "Requires intrinsic factor (IF) from gastric parietal cells for ileal absorption. PPIs, H2 blockers, atrophic gastritis, H. pylori — all reduce IF production → B12 malabsorption even with adequate dietary intake.",
+    "system_refs": ["SYS_HAIR_001", "SYS_ENERGY_001", "SYS_DIGESTIVE_001"],
+    "biology_refs": ["BIO_MATRIX_001", "BIO_HAIRBULB_001", "BIO_MITOCHONDRIA_001"],
+    "symptom_refs": ["SYM_HAIRFALL_001", "SYM_FATIGUE_001", "SYM_BRAINFOG_001"],
+    "pathway_refs": ["PATH_B12_HAIR_001", "PATH_B12_ENERGY_001"],
+    "lab_marker_refs": ["LAB_B12_001", "LAB_HOMOCYSTEINE_001", "LAB_MCV_001"],
+    "tags": ["B12", "cobalamin", "methylation", "SAM", "homocysteine", "methionine synthase", "greying", "megaloblastic", "vegetarian", "intrinsic factor", "Indian vegetarian"]
+  },
+
+  "NUT_BIOTIN_001": {
+    "id": "NUT_BIOTIN_001",
+    "node_type": "nutrition",
+    "version": "2.0",
+    "name": "Biotin (Vitamin B7)",
+    "category": "water-soluble vitamin",
+    "forms": ["free biotin", "protein-bound biotin (biocytin)"],
+    "rda": {
+      "adult": "30 mcg/day (Adequate Intake)",
+      "note": "True biotin deficiency is rare in healthy individuals as gut bacteria synthesise biotin. Deficiency most commonly occurs with raw egg white consumption (avidin blocks absorption), prolonged antibiotic use, or genetic biotinidase deficiency."
+    },
+    "indian_diet_context": "Biotin is widespread in egg yolks, nuts, liver, and legumes. Indian vegetarian diets that include egg and nuts are generally adequate. Hair loss attributed to 'biotin deficiency' is significantly overstated in marketing — actual deficiency is uncommon. High-dose biotin supplements interfere with thyroid function lab tests (TSH assay) — clinically important in India where thyroid disease is prevalent.",
+    "biochemical_roles": {
+      "carboxylase_cofactor": "Biotin is covalently attached to 5 carboxylase enzymes: acetyl-CoA carboxylase (fatty acid synthesis), pyruvate carboxylase (gluconeogenesis), propionyl-CoA carboxylase (odd-chain fatty acid catabolism), methylcrotonyl-CoA carboxylase (leucine catabolism), and 3-methylglutaconyl-CoA hydratase.",
+      "fatty_acid_synthesis": "Acetyl-CoA carboxylase (ACC) is the rate-limiting enzyme for fatty acid synthesis. Biotin deficiency impairs ACC → reduced fatty acid synthesis → impaired sebum production and cell membrane phospholipid assembly.",
+      "gluconeogenesis": "Pyruvate carboxylase converts pyruvate to oxaloacetate — the first step in gluconeogenesis. Biotin deficiency impairs fasting glucose maintenance.",
+      "hair_and_nail_keratin": "Biotin deficiency specifically impairs keratin infrastructure in a way that mimics fragile nails and hair. However, supplementation only helps if TRUE deficiency exists — not in biotin-replete individuals.",
+      "gene_expression_regulation": "Biotin regulates transcription of specific gene sets involved in cell cycle control and inflammation (via histone biotinylation — an epigenetic mark)."
+    },
+    "deficiency_chain": {
+      "genuine_deficiency_signs": "Brittle nails, diffuse hair loss, erythematous scaly rash (especially around body orifices), neurological symptoms (depression, numbness).",
+      "lab_interference_warning": "High-dose biotin (5-10 mg/day) interferes with competitive immunoassay platforms used for TSH, free T4, troponin, and PTH — can cause falsely low TSH and falsely elevated free T4, simulating hyperthyroidism."
+    },
+    "absorption_ref": "ABS_BIOTIN_001",
+    "system_refs": ["SYS_HAIR_001", "SYS_SKIN_001", "SYS_METABOLIC_001"],
+    "biology_refs": ["BIO_FOLLICLE_001", "BIO_EPIDERMIS_001"],
+    "symptom_refs": ["SYM_HAIRFALL_001", "SYM_DRYSKIN_001"],
+    "pathway_refs": [],
+    "lab_marker_refs": ["LAB_BIOTIN_001"],
+    "tags": ["biotin", "B7", "carboxylase", "fatty acid synthesis", "hair", "brittle nails", "lab interference", "TSH assay", "avidin", "keratin"]
+  },
+
+  "NUT_FOLATE_001": {
+    "id": "NUT_FOLATE_001",
+    "node_type": "nutrition",
+    "version": "2.0",
+    "name": "Folate (Vitamin B9)",
+    "category": "water-soluble vitamin",
+    "forms": ["dietary folate (5-methyltetrahydrofolate)", "folic acid (synthetic, supplement/fortification)", "methylfolate (5-MTHF, active form)"],
+    "rda": {
+      "adult": "400 mcg DFE/day",
+      "pregnant": "600 mcg DFE/day (neural tube defect prevention)",
+      "note": "MTHFR C677T gene variant impairs folic acid → MTHF conversion. Methylfolate (5-MTHF) supplements bypass this. Relevant to ~30-40% of Indian population who carry MTHFR variants."
+    },
+    "indian_diet_context": "Folate is found in green leafy vegetables (spinach, methi, palak), legumes, and fortified foods. Indian diets in states with high leafy vegetable consumption (South India) have better folate status. North Indian diets heavy in wheat chapati and dal may be borderline. Prolonged cooking destroys folate — pressure-cooking vegetables for long durations reduces folate by 50-70%.",
+    "biochemical_roles": {
+      "one_carbon_cycle": "Folate is the central carrier of one-carbon units in the methylation cycle. 5-MTHF donates its methyl group to B12 (methionine synthase reaction) → regenerates methionine → feeds SAM production.",
+      "nucleotide_synthesis": "N5,N10-methylenetetrahydrofolate provides the one-carbon unit for thymidylate synthase → deoxythymidine monophosphate (dTMP) synthesis. Without folate, DNA replication is blocked — same mechanism as in hair matrix, gut epithelium, and bone marrow.",
+      "DNA_repair": "Folate deficiency leads to uracil misincorporation into DNA (due to dTMP shortage) → strand breaks → genome instability in all rapidly dividing cells.",
+      "homocysteine_regulation": "Works with B12 in remethylation of homocysteine. Folate deficiency elevates homocysteine even if B12 is normal.",
+      "neural_tube_closure": "Critical in weeks 3-4 of pregnancy for neural tube closure. Deficiency → spina bifida, anencephaly.",
+      "MTHFR_gene_variants": "MTHFR C677T reduces enzyme activity by 40-70% → impaired methylfolate production → elevated homocysteine. Common in Indian populations. Requires direct methylfolate supplementation."
+    },
+    "deficiency_chain": {
+      "early": "Elevated homocysteine, macrocytosis (large RBCs), reduced SAM.",
+      "moderate": "Megaloblastic anaemia, diffuse hair shedding, impaired immune function.",
+      "pregnancy": "Neural tube defects in offspring if deficient in first trimester."
+    },
+    "absorption_ref": "ABS_FOLATE_001",
+    "system_refs": ["SYS_HAIR_001", "SYS_ENERGY_001", "SYS_HORMONAL_001"],
+    "biology_refs": ["BIO_MATRIX_001", "BIO_HAIRBULB_001", "BIO_MITOCHONDRIA_001"],
+    "symptom_refs": ["SYM_HAIRFALL_001", "SYM_FATIGUE_001"],
+    "pathway_refs": ["PATH_B12_HAIR_001"],
+    "lab_marker_refs": ["LAB_SERUM_FOLATE_001", "LAB_RBC_FOLATE_001", "LAB_HOMOCYSTEINE_001"],
+    "tags": ["folate", "B9", "MTHFR", "methylation", "one-carbon cycle", "homocysteine", "neural tube", "nucleotide synthesis", "hair matrix", "5-MTHF"]
+  },
+
+  "NUT_SELENIUM_001": {
+    "id": "NUT_SELENIUM_001",
+    "node_type": "nutrition",
+    "version": "2.0",
+    "name": "Selenium",
+    "category": "trace mineral",
+    "forms": ["selenomethionine (organic, plant/animal)", "selenocysteine (in selenoproteins)", "sodium selenite (inorganic supplement)"],
+    "rda": {
+      "adult": "55 mcg/day",
+      "upper_limit": "400 mcg/day (selenosis risk above this)",
+      "note": "Selenium content in food is entirely determined by soil selenium content — varies widely by geography. Indian soils are generally selenium-adequate but coastal regions and certain states have variability."
+    },
+    "indian_diet_context": "Selenium in India comes primarily from grains (wheat, rice — absorbing soil selenium), eggs, fish, and garlic. Brazilian nuts (highest known food source) are not part of traditional Indian diets. Moderate intake is generally maintained in mixed diets but stricter vegetarians may be borderline.",
+    "biochemical_roles": {
+      "glutathione_peroxidase": "Selenium is the active site atom in glutathione peroxidase (GPx1, GPx2, GPx3, GPx4) — the primary antioxidant enzyme family that reduces hydrogen peroxide and lipid peroxides to water and lipid alcohols. Without selenium, GPx is non-functional — free radical cascade proceeds unchecked.",
+      "thyroid_deiodinase": "Selenoprotein deiodinases (DIO1, DIO2, DIO3) catalyse T4 → T3 conversion. Selenium deficiency impairs active thyroid hormone production even when T4 is normal — producing functional hypothyroidism.",
+      "thioredoxin_reductase": "TrxR1/TrxR2 are selenium-containing enzymes that regenerate thioredoxin — required for ribonucleotide reductase activity and for recycling other antioxidants (Vitamin C, Vitamin E) back to active forms.",
+      "immune_regulation": "Selenium regulates NF-kB inflammatory signalling. Deficiency → pro-inflammatory bias → increased cytokine production. Selenium at optimal levels suppresses excessive inflammation.",
+      "sperm_function": "Selenoprotein P and GPx5 protect sperm from lipid peroxidation. Selenium deficiency is associated with male infertility."
+    },
+    "deficiency_chain": {
+      "early": "Increased oxidative stress in follicles and skin. Thyroid function impairment (reduced T4→T3 conversion).",
+      "moderate": "Keshan disease (cardiomyopathy — in severe selenium-deficient regions), Kashin-Beck disease (bone/joint degeneration).",
+      "follicle_effect": "Elevated ROS in follicle → perifollicular inflammation → accelerated miniaturisation."
+    },
+    "absorption_ref": "ABS_SELENIUM_001",
+    "system_refs": ["SYS_HAIR_001", "SYS_SKIN_001", "SYS_HORMONAL_001"],
+    "biology_refs": ["BIO_FOLLICLE_001", "BIO_THYROID_001", "BIO_MITOCHONDRIA_001"],
+    "symptom_refs": ["SYM_HAIRFALL_001", "SYM_FATIGUE_001"],
+    "pathway_refs": [],
+    "lab_marker_refs": ["LAB_SERUM_SELENIUM_001"],
+    "tags": ["selenium", "GPx", "glutathione peroxidase", "deiodinase", "T3", "thyroid", "antioxidant", "thioredoxin", "ROS", "hair follicle"]
+  },
+
+  "NUT_OMEGA3_001": {
+    "id": "NUT_OMEGA3_001",
+    "node_type": "nutrition",
+    "version": "2.0",
+    "name": "Omega-3 Fatty Acids",
+    "category": "essential fatty acid",
+    "forms": ["ALA (alpha-linolenic acid — plant)", "EPA (eicosapentaenoic acid — marine)", "DHA (docosahexaenoic acid — marine)"],
+    "rda": {
+      "ALA": "1.6 g/day men, 1.1 g/day women",
+      "EPA_DHA_combined": "250-500 mg/day",
+      "note": "ALA from flaxseed, walnuts, mustard oil — but conversion to EPA/DHA is only 5-10% efficient. Marine EPA/DHA from fatty fish or algae supplements are far more bioavailable."
+    },
+    "indian_diet_context": "Indian diets are severely imbalanced in omega-6 to omega-3 ratio — typically 15:1 to 30:1 (optimal is 4:1 to 1:1). Reasons: heavy use of refined sunflower oil, groundnut oil, vanaspati (trans fats) — all high omega-6. Mustard oil (traditional) has better omega-3 ratio. Coastal populations eating fish have better status. Northern vegetarians are most deficient in EPA/DHA. This imbalance drives systemic inflammation.",
+    "biochemical_roles": {
+      "anti_inflammatory_eicosanoids": "EPA is converted to Series-3 prostaglandins and thromboxanes, and Series-5 leukotrienes — all anti-inflammatory, vasodilatory, and platelet-anti-aggregating. Competes with omega-6 arachidonic acid (AA) for COX and LOX enzymes, reducing pro-inflammatory AA-derived eicosanoid production.",
+      "resolvin_and_protectin_synthesis": "EPA and DHA are precursors to resolvins (RvE series from EPA, RvD series from DHA) and protectins (from DHA) — specialised pro-resolution mediators that actively terminate inflammation and promote tissue repair.",
+      "skin_barrier_ceramides": "Omega-3 fatty acids are incorporated into ceramide and phospholipid structures of the skin barrier. Higher omega-3 content → more fluid, permeable, effective barrier → reduced TEWL. Omega-3 deficiency → dry, reactive, inflamed skin.",
+      "sebum_modulation": "EPA/DHA reduce sebaceous gland lipogenesis by downregulating SREBP-1c. Shift sebum composition towards less comedogenic lipid profile. Reduce IGF-1 driven sebum overproduction.",
+      "scalp_follicle_vasodilation": "EPA-derived prostaglandin E3 and prostacyclin I3 vasodilate follicular microvasculature → improved nutrient delivery to dermal papilla and hair matrix.",
+      "brain_DHA": "DHA constitutes 40% of total brain polyunsaturated fatty acids. Required for neuronal membrane fluidity, synaptic signalling, and neuroprotection. Deficiency → brain fog, depression, cognitive decline.",
+      "triglyceride_reduction": "EPA/DHA reduce hepatic VLDL synthesis and increase lipoprotein lipase activity → lower serum triglycerides by 20-50% at pharmacological doses."
+    },
+    "deficiency_chain": {
+      "early": "Dry, flaky skin. Increased skin reactivity. Rising serum triglycerides.",
+      "chronic": "Systemic pro-inflammatory state. Worsened acne and skin inflammation. Cognitive fatigue and brain fog. Increased cardiovascular risk."
+    },
+    "absorption_ref": "ABS_OMEGA3_001",
+    "system_refs": ["SYS_HAIR_001", "SYS_SKIN_001", "SYS_CARDIOMETABOLIC_001", "SYS_ENERGY_001"],
+    "biology_refs": ["BIO_FOLLICLE_001", "BIO_DERMALPAPILLA_001", "BIO_EPIDERMIS_001", "BIO_SEBGLAND_001"],
+    "symptom_refs": ["SYM_ACNE_001", "SYM_DRYSKIN_001", "SYM_BRAINFOG_001"],
+    "pathway_refs": ["PATH_OMEGA3_SKIN_001"],
+    "lab_marker_refs": ["LAB_TRIGLYCERIDES_001", "LAB_OMEGA3_INDEX_001"],
+    "tags": ["omega-3", "EPA", "DHA", "ALA", "anti-inflammatory", "resolvins", "skin barrier", "sebum", "brain", "triglycerides", "omega-6 ratio", "Indian diet", "sunflower oil"]
+  },
+
+  "NUT_VITC_001": {
+    "id": "NUT_VITC_001",
+    "node_type": "nutrition",
+    "version": "2.0",
+    "name": "Vitamin C (Ascorbic Acid)",
+    "category": "water-soluble vitamin",
+    "forms": ["L-ascorbic acid (dietary and supplement)", "sodium ascorbate (buffered supplement)"],
+    "rda": {
+      "adult_male": "90 mg/day",
+      "adult_female": "75 mg/day",
+      "upper_limit": "2000 mg/day",
+      "note": "Humans cannot synthesise Vitamin C (lost GULO enzyme). Must be entirely dietary. Smokers need 35 mg/day more. Indian diets with amla (Indian gooseberry — highest natural Vitamin C food) and fresh citrus are often adequate."
+    },
+    "indian_diet_context": "Indian diets containing fresh fruits, amla, guava, and raw vegetables provide excellent Vitamin C. However, Vitamin C is heat-labile — prolonged cooking destroys it. Cooked vegetable-only diets without fresh fruit may be inadequate. Also critical as an iron absorption enhancer — consuming Vitamin C with iron-rich meals significantly improves non-haem iron uptake.",
+    "biochemical_roles": {
+      "collagen_hydroxylation": "Vitamin C is the essential cofactor for prolyl hydroxylase and lysyl hydroxylase — the enzymes that hydroxylate proline and lysine residues in procollagen chains. Hydroxylated residues form stable crosslinks between collagen triple helices. Without Vitamin C → unhydroxylated procollagen → unstable, poorly crosslinked collagen → scurvy.",
+      "iron_absorption_enhancement": "Reduces Fe3+ (non-haem iron) to Fe2+ in the gut lumen — dramatically increasing non-haem iron absorption. This synergy is critical for Indian vegetarian diets. Taking Vitamin C with iron-rich dal/legume meals is a key practical intervention.",
+      "antioxidant_activity": "Ascorbate is the primary water-soluble antioxidant in plasma and cytoplasm. Directly scavenges superoxide, hydroxyl radical, and singlet oxygen. Regenerates oxidised Vitamin E back to active tocopherol — sparing Vitamin E.",
+      "catecholamine_synthesis": "Required for dopamine beta-hydroxylase — converts dopamine to noradrenaline. Supports stress response neurotransmitter production.",
+      "carnitine_synthesis": "Required for two hydroxylation steps in carnitine biosynthesis. Carnitine transports long-chain fatty acids into mitochondria for beta-oxidation. Vitamin C deficiency → impaired carnitine synthesis → fatigue from reduced fat oxidation.",
+      "immune_function": "Concentrates in leucocytes (50-100x plasma levels). Supports neutrophil chemotaxis, phagocytosis, and oxidative burst. Stimulates interferon production."
+    },
+    "deficiency_chain": {
+      "early_subclinical": "Easy bruising, slow wound healing, bleeding gums (perifollicular haemorrhages).",
+      "scurvy": "Severe deficiency (weeks without Vitamin C) — follicular hyperkeratosis, haemorrhages, perifollicular bleeding, corkscrew hairs, gum necrosis, anaemia from impaired collagen and iron metabolism."
+    },
+    "absorption_ref": "ABS_VITC_001",
+    "system_refs": ["SYS_SKIN_001", "SYS_HAIR_001", "SYS_ENERGY_001"],
+    "biology_refs": ["BIO_DERMIS_001", "BIO_COLLAGEN_001", "BIO_EPIDERMIS_001"],
+    "symptom_refs": ["SYM_DRYSKIN_001", "SYM_HAIRFALL_001"],
+    "pathway_refs": [],
+    "lab_marker_refs": ["LAB_SERUM_VITC_001"],
+    "tags": ["vitamin C", "ascorbic acid", "collagen", "prolyl hydroxylase", "iron absorption", "antioxidant", "scurvy", "carnitine", "amla", "immune"]
+  },
+
+  "NUT_MAGNESIUM_001": {
+    "id": "NUT_MAGNESIUM_001",
+    "node_type": "nutrition",
+    "version": "2.0",
+    "name": "Magnesium",
+    "category": "mineral",
+    "forms": ["magnesium glycinate (best absorbed)", "magnesium citrate", "magnesium oxide (poor absorption)", "dietary magnesium"],
+    "rda": {
+      "adult_male": "400-420 mg/day",
+      "adult_female": "310-320 mg/day",
+      "note": "60% of body magnesium is in bone. Only 1% in serum — serum magnesium is a poor marker of body magnesium status. Red blood cell (RBC) magnesium is a better functional marker."
+    },
+    "indian_diet_context": "Magnesium is found in green leafy vegetables, nuts, seeds, whole grains, and legumes. Traditional Indian diets with dal, sabzi, and whole grains can be adequate. Refined white rice and white flour (maida) diets lose magnesium during processing. Rising consumption of ultra-processed foods in urban India is reducing magnesium intake. High sugar and stress deplete magnesium rapidly.",
+    "biochemical_roles": {
+      "ATP_cofactor": "Magnesium is required for ALL ATP-utilising reactions as Mg-ATP complex. Over 300 enzymatic reactions require Mg2+ as cofactor. Without magnesium, cells cannot use ATP — producing functional energy deficiency even with adequate ATP production.",
+      "DNA_RNA_synthesis": "Mg2+ stabilises DNA double helix structure and is essential for DNA/RNA polymerase activity. Required for ribosome assembly and protein synthesis.",
+      "insulin_signalling": "Mg2+ is required for insulin receptor tyrosine kinase activity — the first step in insulin signal transduction. Magnesium deficiency produces insulin receptor resistance independent of glucose levels. Key link to insulin resistance in carbohydrate-heavy diets.",
+      "muscle_relaxation": "Ca2+ triggers muscle contraction; Mg2+ is the physiological calcium antagonist that drives muscle relaxation. Mg deficiency → muscle cramping, spasms, restless legs.",
+      "cardiac_rhythm": "Magnesium stabilises cardiac membrane potential by regulating K+ and Ca2+ channels. Deficiency → cardiac arrhythmias (especially ventricular).",
+      "sleep_and_GABA": "Mg2+ is an NMDA receptor antagonist and GABA potentiator — produces calming/inhibitory CNS effects. Magnesium deficiency → increased NMDA activity → anxiety, light sleep, insomnia.",
+      "cortisol_regulation": "Magnesium downregulates hypothalamic-pituitary-adrenal (HPA) axis reactivity. Deficiency → exaggerated cortisol response to stress → worsened stress-induced hair loss.",
+      "bone_mineralisation": "40-60% of magnesium is in bone. Required for hydroxyapatite crystal formation and PTH/Vitamin D signalling in bone metabolism."
+    },
+    "deficiency_chain": {
+      "early": "Muscle cramps, fatigue, sleep disturbance, anxiety, insulin resistance worsening.",
+      "moderate": "Cardiac arrhythmias, hypertension, chronic headaches.",
+      "severe": "Hypocalcaemia (magnesium required for PTH secretion), tetany, seizures."
+    },
+    "absorption_ref": "ABS_MAGNESIUM_001",
+    "system_refs": ["SYS_ENERGY_001", "SYS_MUSCULOSKELETAL_001", "SYS_METABOLIC_001", "SYS_CARDIOMETABOLIC_001", "SYS_SLEEP_001"],
+    "biology_refs": ["BIO_MITOCHONDRIA_001", "BIO_MUSCLE_001", "BIO_BONE_001", "BIO_PANCREAS_001"],
+    "symptom_refs": ["SYM_FATIGUE_001", "SYM_POORSLEEP_001"],
+    "pathway_refs": [],
+    "lab_marker_refs": ["LAB_SERUM_MAGNESIUM_001", "LAB_RBC_MAGNESIUM_001"],
+    "tags": ["magnesium", "ATP", "insulin resistance", "muscle cramps", "sleep", "GABA", "NMDA", "cortisol", "bone", "cardiac rhythm", "insulin signalling"]
+  },
+
+  "NUT_CALCIUM_001": {
+    "id": "NUT_CALCIUM_001",
+    "node_type": "nutrition",
+    "version": "2.0",
+    "name": "Calcium",
+    "category": "mineral",
+    "forms": ["calcium carbonate (food-form)", "calcium citrate (best absorbed without food)", "dietary calcium"],
+    "rda": {
+      "adult_19_50": "1000 mg/day",
+      "adult_female_51plus": "1200 mg/day",
+      "note": "Calcium absorption depends critically on Vitamin D status. Without adequate 25(OH)D, intestinal calcium absorption drops from 30-40% to 10-15%. Excess calcium without magnesium can impair magnesium absorption."
+    },
+    "indian_diet_context": "Indian dairy consumption (milk, curd, paneer, buttermilk) provides the primary dietary calcium source. Vegetarian diets without dairy may be calcium-deficient. Ragi (finger millet) is a notable non-dairy calcium source used in South India. Excessive tea with meals (oxalate and tannins) can reduce calcium absorption from co-consumed foods.",
+    "biochemical_roles": {
+      "bone_mineralisation": "99% of body calcium is in bone as hydroxyapatite [Ca10(PO4)6(OH)2]. Bone serves as the calcium reservoir — when serum calcium falls, PTH triggers bone resorption via osteoclasts to restore serum levels.",
+      "muscle_contraction": "Calcium triggers actin-myosin cross-bridge formation in all muscle types (skeletal, cardiac, smooth). Tropomyosin-calcium binding exposes myosin binding sites on actin — initiating contraction.",
+      "nerve_impulse_transmission": "Calcium influx through VGCC (voltage-gated calcium channels) triggers neurotransmitter vesicle fusion at synaptic terminals.",
+      "enzyme_activation": "Calmodulin (calcium-binding protein) activates numerous kinases (CaM kinase II, myosin light chain kinase) and phosphatases (calcineurin) upon calcium binding.",
+      "blood_coagulation": "Required cofactor for multiple coagulation cascade enzymes (factors VII, IX, X, prothrombin).",
+      "intracellular_signalling": "IP3-mediated calcium release from ER is a universal second-messenger system for hormone signalling (insulin secretion, aldosterone secretion, catecholamine release)."
+    },
+    "deficiency_chain": {
+      "early": "Secondary hyperparathyroidism, increased bone resorption, reduced bone density.",
+      "long_term": "Osteopenia → osteoporosis. Stress fractures, vertebral compression fractures.",
+      "acute_severe": "Hypocalcaemic tetany, laryngospasm, seizures, positive Chvostek and Trousseau signs."
+    },
+    "absorption_ref": "ABS_CALCIUM_001",
+    "system_refs": ["SYS_MUSCULOSKELETAL_001", "SYS_HORMONAL_001"],
+    "biology_refs": ["BIO_BONE_001", "BIO_MUSCLE_001"],
+    "symptom_refs": [],
+    "pathway_refs": [],
+    "lab_marker_refs": ["LAB_SERUM_CALCIUM_001", "LAB_DEXA_001"],
+    "tags": ["calcium", "bone", "hydroxyapatite", "osteoporosis", "muscle contraction", "PTH", "Vitamin D dependency", "dairy", "ragi"]
+  },
+
+  "NUT_COENZYME_001": {
+    "id": "NUT_COENZYME_001",
+    "node_type": "nutrition",
+    "version": "2.0",
+    "name": "Coenzyme Q10 (Ubiquinone)",
+    "category": "fat-soluble vitamin-like compound",
+    "forms": ["ubiquinone (oxidised)", "ubiquinol (reduced, active antioxidant form)"],
+    "rda": {
+      "note": "No established RDA. Body synthesises CoQ10 via mevalonate pathway (same as cholesterol). Statins inhibit this pathway — statin users are commonly CoQ10-depleted. Supplementation range: 100-300 mg/day."
+    },
+    "indian_diet_context": "CoQ10 is found in organ meats (heart, liver), fatty fish, beef, and some plant sources (broccoli, spinach, legumes — in lower amounts). Indian vegetarian diets have low dietary CoQ10. Additionally, CoQ10 body synthesis declines with age. Statin use (common in Indian adults with metabolic syndrome) dramatically reduces CoQ10 production — explaining statin-induced muscle fatigue.",
+    "biochemical_roles": {
+      "ETC_electron_carrier": "CoQ10 is the mobile electron carrier in the inner mitochondrial membrane, shuttling electrons from Complex I and Complex II to Complex III. Without CoQ10, the electron transport chain halts — ATP synthesis from OXPHOS stops entirely.",
+      "ATP_synthesis_prerequisite": "As the electron shuttle between complexes, CoQ10 is absolutely required for oxidative phosphorylation. Its absence produces profound mitochondrial energy failure — manifesting as fatigue, muscle weakness, and organ dysfunction.",
+      "antioxidant_in_membranes": "Ubiquinol (reduced CoQ10) is the only endogenously synthesised lipid-soluble antioxidant that can be regenerated. It quenches lipid peroxyl radicals in mitochondrial membranes — protecting against mitochondrial lipid peroxidation cascade.",
+      "vitamin_E_regeneration": "Ubiquinol reduces oxidised Vitamin E (tocopheroxyl radical) back to active tocopherol — sparing Vitamin E antioxidant capacity."
+    },
+    "deficiency_chain": {
+      "statin_induced": "HMG-CoA reductase inhibition by statins blocks mevalonate pathway → reduced CoQ10 synthesis → mitochondrial dysfunction in muscle → statin myopathy, fatigue.",
+      "age_related": "CoQ10 synthesis peaks in mid-twenties, declines 50% by age 70. Correlates with increased mitochondrial dysfunction and reduced energy in aging."
+    },
+    "absorption_ref": "ABS_COQ10_001",
+    "system_refs": ["SYS_ENERGY_001", "SYS_CARDIOMETABOLIC_001", "SYS_MUSCULOSKELETAL_001"],
+    "biology_refs": ["BIO_MITOCHONDRIA_001", "BIO_ETC_001", "BIO_MUSCLE_001"],
+    "symptom_refs": ["SYM_FATIGUE_001"],
+    "pathway_refs": [],
+    "lab_marker_refs": ["LAB_COQ10_001"],
+    "tags": ["CoQ10", "ubiquinone", "ubiquinol", "ETC", "electron transport chain", "ATP", "statin", "mitochondria", "antioxidant", "energy"]
+  },
+
+  "NUT_COPPER_001": {
+    "id": "NUT_COPPER_001",
+    "node_type": "nutrition",
+    "version": "2.0",
+    "name": "Copper",
+    "category": "trace mineral",
+    "forms": ["copper gluconate", "copper bisglycinate", "dietary copper"],
+    "rda": {
+      "adult": "900 mcg/day",
+      "upper_limit": "10 mg/day",
+      "note": "High-dose zinc supplementation (above 50 mg/day) strongly inhibits copper absorption via intestinal metallothionein upregulation — can cause iatrogenic copper deficiency."
+    },
+    "indian_diet_context": "Copper is found in organ meats, shellfish, nuts (cashews, peanuts), seeds, chocolate, and legumes. Indian diets with dal, peanuts, and sesame seeds provide reasonable copper. However, high-dose zinc supplementation (popular for hair loss in India) commonly induces copper deficiency — causing a new problem while treating another.",
+    "biochemical_roles": {
+      "tyrosinase_activity": "Copper is the catalytic metal centre of tyrosinase — the enzyme that converts L-tyrosine to melanin (both eumelanin and phaeomelanin). Copper deficiency directly impairs melanin synthesis → premature greying and depigmentation.",
+      "cytochrome_c_oxidase": "Copper is essential for Cytochrome C Oxidase (Complex IV) — the terminal electron acceptor in the ETC, which transfers electrons to molecular oxygen. Copper deficiency → Complex IV failure → ETC impairment.",
+      "lysyl_oxidase": "Copper-dependent enzyme that crosslinks collagen and elastin fibres. Without copper, newly synthesised collagen and elastin are weak and easily degradable → poor skin and vascular integrity.",
+      "superoxide_dismutase": "Cu/Zn-SOD (SOD1) is a copper and zinc containing enzyme — the primary cytoplasmic superoxide scavenger. Copper deficiency impairs SOD1 activity → increased ROS.",
+      "ceruloplasmin": "Copper-containing plasma protein with ferroxidase activity — converts Fe2+ to Fe3+ for transferrin binding and iron transport. Copper deficiency impairs iron mobilisation from stores — can produce iron-deficiency symptoms even when iron stores are adequate.",
+      "dopamine_beta_hydroxylase": "Copper-dependent enzyme converting dopamine to noradrenaline. Deficiency impairs catecholamine balance."
+    },
+    "deficiency_chain": {
+      "primary_signs": "Premature greying, hypopigmentation, anaemia (from impaired iron mobilisation), neutropenia, bone demineralisation.",
+      "neurological": "Myelopathy with subacute combined degeneration pattern (similar to B12 deficiency).",
+      "iatrogenic": "Most common cause in supplemented populations — excessive zinc intake suppressing copper absorption."
+    },
+    "absorption_ref": "ABS_COPPER_001",
+    "system_refs": ["SYS_HAIR_001", "SYS_SKIN_001", "SYS_ENERGY_001"],
+    "biology_refs": ["BIO_HAIRBULB_001", "BIO_COLLAGEN_001", "BIO_ETC_001"],
+    "symptom_refs": ["SYM_HAIRFALL_001"],
+    "pathway_refs": [],
+    "lab_marker_refs": ["LAB_SERUM_COPPER_001", "LAB_CERULOPLASMIN_001"],
+    "tags": ["copper", "tyrosinase", "melanin", "greying", "lysyl oxidase", "collagen", "Complex IV", "ceruloplasmin", "zinc-induced deficiency", "SOD"]
+  },
+
+  "NUT_CARBS_001": {
+    "id": "NUT_CARBS_001",
+    "node_type": "nutrition",
+    "version": "2.0",
+    "name": "Carbohydrates",
+    "category": "macronutrient",
+    "forms": [
+      "simple sugars (glucose, fructose, sucrose — rapid glycaemic impact)",
+      "refined starches (white rice, white flour/maida — high GI)",
+      "complex carbohydrates (whole grains, legumes — lower GI)",
+      "dietary fibre (soluble and insoluble — not digested)"
+    ],
+    "rda": {
+      "general": "45-65% of total calorie intake from carbohydrates",
+      "fibre": "25-38 g/day",
+      "note": "Glycaemic index (GI) and glycaemic load (GL) matter far more than total carbohydrate quantity for metabolic outcomes. Refined carbohydrates (high GI/GL) drive insulin spikes and downstream hormonal consequences."
+    },
+    "indian_diet_context": "Indian diets are predominantly carbohydrate-heavy, often comprising 60-75% of total calories. Primary carbohydrate sources: white rice (South India), wheat chapati/bread (North India), potato, sugar in chai, sweetmeats (mithai). Refined grain consumption is extremely high — white rice and maida (refined wheat flour) dominate urban Indian diets. Fibre intake is often low despite plant-based nature, because dal and sabji portions have declined while refined grains increased. This dietary pattern drives insulin resistance, PCOS, acne, and metabolic syndrome at scale across India.",
+    "biochemical_roles": {
+      "primary_energy_substrate": "Glucose (from carbohydrate digestion) is the primary fuel for brain, RBCs (exclusively), and muscles during moderate-high intensity activity. Pyruvate from glycolysis enters TCA cycle for ATP generation.",
+      "glycogen_storage": "Excess glucose is stored as glycogen in liver (100-120g) and muscle (300-400g). Muscle glycogen is the primary fuel for exercise. Liver glycogen maintains blood glucose between meals.",
+      "insulin_stimulation": "Carbohydrate digestion and glucose absorption are the primary triggers for pancreatic insulin secretion. The glucose → insulin axis is the central regulatory mechanism of postprandial metabolism.",
+      "IGF1_axis_via_insulin": "Chronic high insulin → increased hepatic IGF-1 production → IGF-1 stimulates sebaceous gland lipogenesis via IGF-1R → increased sebum → worsened acne. This is the primary biochemical mechanism linking high-glycaemic Indian diets to facial acne.",
+      "insulin_resistance_mechanism": "Chronic refined carbohydrate overconsumption → repeated large insulin spikes → progressive downregulation of insulin receptors (GLUT4 internalisation) → insulin resistance → pancreatic beta cell compensation (hyperinsulinaemia) → eventual beta cell exhaustion.",
+      "glucotoxicity": "Chronic hyperglycaemia → advanced glycation end products (AGEs) — non-enzymatic glycation of proteins (including collagen and keratin) → stiff, damaged proteins → skin stiffness, impaired collagen repair, accelerated ageing.",
+      "androgen_excess_via_insulin": "Hyperinsulinaemia → reduced sex hormone binding globulin (SHBG) production by liver → increased free testosterone and DHT availability → worsened androgenetic alopecia in genetically susceptible individuals, and androgen-driven acne.",
+      "PCOS_link": "Insulin resistance is the central driver of PCOS in the majority of Indian PCOS cases. Hyperinsulinaemia → excess LH secretion → ovarian androgen overproduction → anovulation, hirsutism, acne, and hair loss."
+    },
+    "excess_carbohydrate_consequences": {
+      "hair": "Insulin-mediated DHT elevation accelerates follicle miniaturisation. Glucotoxic keratin damage weakens shaft structure. High glycaemic load worsens telogen effluvium by elevating cortisol.",
+      "skin": "IGF-1 driven sebaceous lipogenesis → acne. AGE-mediated collagen glycation → premature skin ageing. High-GI diet specifically correlated with acne severity in multiple clinical trials.",
+      "muscle": "Intramyocellular lipid accumulation from repeated insulin-driven lipogenesis → skeletal muscle insulin resistance → reduced glucose uptake → worsened metabolic syndrome.",
+      "energy": "Postprandial reactive hypoglycaemia after high-GI meals — rapid glucose spike then crash → fatigue, brain fog 1-2 hours after eating.",
+      "weight": "Chronic hyperinsulinaemia inhibits lipolysis (fat breakdown) and stimulates lipogenesis (fat storage) — both simultaneously — producing progressive weight gain and visceral fat accumulation.",
+      "metabolic": "Progressive insulin resistance → prediabetes → type 2 diabetes — the primary carbohydrate-driven metabolic disease burden in India."
+    },
+    "protective_carbohydrate_choices": {
+      "low_GI": "Brown rice, hand-pounded rice, ragi (finger millet), barley, oats, jowar, bajra — traditional Indian grains with lower GI than white rice or maida.",
+      "fibre_pairing": "Eating dal or vegetables with carbohydrates slows glucose absorption — reduces glycaemic spike.",
+      "fat_protein_pairing": "Adding ghee, nuts, or curd to carbohydrate-heavy meals reduces GI of the meal."
+    },
+    "system_refs": ["SYS_METABOLIC_001", "SYS_ENERGY_001", "SYS_WEIGHT_001", "SYS_SKIN_001", "SYS_HAIR_001", "SYS_HORMONAL_001"],
+    "biology_refs": ["BIO_PANCREAS_001", "BIO_MITOCHONDRIA_001", "BIO_SEBGLAND_001", "BIO_MUSCLE_001", "BIO_FOLLICLE_001", "BIO_DERMIS_001"],
+    "symptom_refs": ["SYM_ACNE_001", "SYM_WEIGHTGAIN_001", "SYM_FATIGUE_001", "SYM_BRAINFOG_001", "SYM_HAIRFALL_001"],
+    "pathway_refs": ["PATH_INSULIN_ACNE_001", "PATH_PCOS_HAIR_001"],
+    "lab_marker_refs": ["LAB_FASTING_GLUCOSE_001", "LAB_HBA1C_001", "LAB_FASTING_INSULIN_001", "LAB_HOMA_IR_001", "LAB_TRIGLYCERIDES_001"],
+    "tags": ["carbohydrates", "glucose", "insulin", "glycaemic index", "IGF-1", "sebum", "acne", "insulin resistance", "PCOS", "AGEs", "glycation", "white rice", "maida", "Indian diet", "metabolic syndrome", "DHT", "SHBG"]
+  },
+
+  "NUT_FATS_001": {
+    "id": "NUT_FATS_001",
+    "node_type": "nutrition",
+    "version": "2.0",
+    "name": "Dietary Fats",
+    "category": "macronutrient",
+    "forms": [
+      "saturated fatty acids (SFA — ghee, coconut oil, dairy, meat)",
+      "monounsaturated fatty acids (MUFA — olive oil, avocado, mustard oil)",
+      "polyunsaturated fatty acids (PUFA — omega-3 from fish/flax; omega-6 from sunflower/groundnut oil)",
+      "trans fatty acids (TFA — vanaspati, partially hydrogenated oils — harmful)",
+      "medium-chain triglycerides (MCT — coconut oil)"
+    ],
+    "rda": {
+      "total_fat": "20-35% of total calories",
+      "saturated": "Less than 10% of total calories",
+      "trans_fat": "Less than 1% of total calories (ideally zero)",
+      "note": "Quality of fat matters far more than quantity. Omega-6:omega-3 ratio is the critical metabolic variable — not total fat intake."
+    },
+    "indian_diet_context": "Indian cooking fats have shifted dramatically over the past 50 years: traditional ghee, mustard oil, and coconut oil (regional) were replaced by cheap refined sunflower oil, groundnut oil, and vanaspati (partially hydrogenated trans fat). This shift created a massive omega-6 overload and trans fat burden. Ghee has been unfairly demonised — it is rich in butyrate (gut-protective), CLA (anti-inflammatory), and fat-soluble vitamins. The modern Indian fat landscape is high omega-6, high trans fat, low omega-3 — a driver of systemic inflammation, cardiovascular disease, and metabolic dysfunction.",
+    "biochemical_roles": {
+      "cell_membrane_structure": "All cell membranes are phospholipid bilayers. The fatty acid composition of dietary fat directly determines membrane fluidity, receptor function, and cellular responsiveness. Omega-3 incorporation → more fluid membranes → better insulin receptor function. Trans fat incorporation → rigid, dysfunctional membranes → insulin resistance.",
+      "fat_soluble_vitamin_absorption": "Dietary fat is essential for absorption of Vitamins A, D, E, and K (fat-soluble vitamins). Low-fat diets impair absorption of these critical micronutrients — particularly Vitamin D (already deficient in Indian populations).",
+      "steroid_hormone_synthesis": "All steroid hormones (cortisol, testosterone, estrogen, progesterone, aldosterone, Vitamin D) are synthesised from cholesterol — a fat-derived molecule. Dietary fat provides cholesterol and fatty acid precursors for this synthesis.",
+      "skin_barrier_lipid_composition": "Stratum corneum lipid bilayer contains ceramides, cholesterol, and free fatty acids in specific ratios. Dietary fat composition determines fatty acid profiles incorporated into skin ceramides. Adequate MUFA and omega-3 → fluid, effective barrier. Trans fat and excess omega-6 → rigid, pro-inflammatory barrier.",
+      "sebum_composition": "Sebum is predominantly triglycerides, wax esters, squalene, and free fatty acids. Omega-6 excess (linoleic acid deficit relative to oleic acid in sebum) → more comedogenic sebum composition → increased acne pathogenesis. Omega-3 and oleic acid-rich diets normalise sebum fatty acid ratios.",
+      "eicosanoid_precursors": "The ratio of omega-6 AA (arachidonic acid) to omega-3 EPA determines the balance between pro-inflammatory Series 2 prostaglandins and anti-inflammatory Series 3 prostaglandins. Indian diets heavily skewed toward omega-6 → chronic pro-inflammatory eicosanoid production.",
+      "brain_and_myelin": "Brain is 60% fat by dry weight. DHA (omega-3) is the dominant structural fatty acid in neuronal membranes. Myelin sheath is 70% lipid. Dietary fat quality directly affects neurological function and cognitive capacity.",
+      "beta_oxidation_energy": "Fatty acids undergo beta-oxidation in mitochondria to produce acetyl-CoA → TCA cycle → ATP. Fats are the primary energy substrate during low-intensity activity and fasting. Each fatty acid carbon produces more ATP than glucose — fat is 2.5x more energy-dense.",
+      "intramuscular_fat_and_insulin_resistance": "Excess dietary fat (particularly SFA from trans fats and excess omega-6 PUFA) stored as intramuscular triglycerides (IMTG) → diacylglycerol (DAG) and ceramide accumulation in muscle → serine phosphorylation of IRS-1 (insulin receptor substrate) → blocks PI3K-Akt signalling → skeletal muscle insulin resistance.",
+      "trans_fat_damage": "Trans fatty acids (vanaspati, partially hydrogenated oils) incorporate into cell membranes and displace natural fatty acids → membrane rigidity → impaired receptor signalling → pro-inflammatory cytokine production (TNF-alpha, IL-6) → systemic low-grade inflammation."
+    },
+    "fat_type_effects_summary": {
+      "ghee_saturated": "Rich in butyrate (short-chain FA — feeds colonocytes, anti-inflammatory), CLA (conjugated linoleic acid — anti-inflammatory, anti-cancer), Vitamin A, D, E, K2. Stable at high temperatures. Traditional cooking fat — protective in moderate quantities.",
+      "mustard_oil": "High in MUFA (oleic acid) and ALA (omega-3). Low omega-6. Traditional North/East Indian cooking fat — one of the healthiest traditional options.",
+      "coconut_oil": "High in medium-chain triglycerides (MCT — lauric acid, caprylic acid). MCTs absorbed directly to liver, rapidly metabolised. Anti-microbial (lauric acid). Stable at high heat.",
+      "refined_sunflower_oil": "Extremely high omega-6 (linoleic acid 65-75%). Unstable at high heat → forms aldehydes and oxidised lipids when reused for deep frying. Primary driver of omega-6:omega-3 imbalance in modern Indian diets.",
+      "vanaspati": "Partially hydrogenated vegetable oil — contains high trans fatty acids. Inflammatory, atherogenic, insulin-resistance promoting. Should be eliminated."
+    },
+    "system_refs": ["SYS_METABOLIC_001", "SYS_SKIN_001", "SYS_HAIR_001", "SYS_ENERGY_001", "SYS_CARDIOMETABOLIC_001", "SYS_WEIGHT_001"],
+    "biology_refs": ["BIO_MITOCHONDRIA_001", "BIO_EPIDERMIS_001", "BIO_DERMIS_001", "BIO_SEBGLAND_001", "BIO_MUSCLE_001"],
+    "symptom_refs": ["SYM_ACNE_001", "SYM_DRYSKIN_001", "SYM_WEIGHTGAIN_001", "SYM_BRAINFOG_001"],
+    "pathway_refs": ["PATH_OMEGA3_SKIN_001", "PATH_INSULIN_ACNE_001"],
+    "lab_marker_refs": ["LAB_LIPID_PROFILE_001", "LAB_TRIGLYCERIDES_001", "LAB_LDL_001", "LAB_HDL_001"],
+    "tags": ["dietary fat", "omega-6", "omega-3", "trans fat", "vanaspati", "ghee", "mustard oil", "sunflower oil", "cell membrane", "sebum", "beta-oxidation", "insulin resistance", "saturated fat", "MUFA", "Indian cooking oils", "ceramides", "eicosanoids"]
+  },
+
+  "NUT_B1_001": {
+    "id": "NUT_B1_001",
+    "node_type": "nutrition",
+    "version": "2.0",
+    "name": "Vitamin B1 (Thiamine)",
+    "category": "water-soluble vitamin",
+    "forms": ["thiamine pyrophosphate (TPP — active cofactor form)", "thiamine mononitrate (supplement)", "thiamine HCl (supplement)"],
+    "rda": {
+      "adult_male": "1.2 mg/day",
+      "adult_female": "1.1 mg/day",
+      "note": "Requirements increase proportionally with carbohydrate intake — high-carb diets use more thiamine. This is specifically relevant to Indian diets. Cooking and boiling destroy thiamine. Chronic alcohol use causes severe thiamine deficiency."
+    },
+    "indian_diet_context": "Thiamine is found in whole grains, legumes, nuts, and pork. White rice (the dominant staple in South India) has had thiamine removed during milling — historically causing epidemic beriberi in Asian countries eating polished rice. Modern Indian rice is often thiamine-fortified, but absorption and retention vary. High carbohydrate consumption increases thiamine demand. Tea and raw fish contain thiaminase enzyme which destroys thiamine.",
+    "biochemical_roles": {
+      "pyruvate_dehydrogenase_complex": "TPP is the essential cofactor for pyruvate dehydrogenase (PDH) — the gateway enzyme converting pyruvate to acetyl-CoA for entry into the TCA cycle. Without B1, glycolysis ends at pyruvate which accumulates as lactate — blocking mitochondrial energy production from glucose.",
+      "alpha_ketoglutarate_dehydrogenase": "TPP cofactor for alpha-ketoglutarate dehydrogenase in the TCA cycle — step converting alpha-KG to succinyl-CoA. B1 deficiency blocks the TCA cycle at this step.",
+      "transketolase_in_PPP": "TPP is the cofactor for transketolase in the pentose phosphate pathway — required for NADPH production (antioxidant defence) and nucleotide synthesis.",
+      "branched_chain_alpha_keto_acid_dehydrogenase": "TPP cofactor for BCKDH — dehydrogenase complex metabolising branched-chain amino acids (leucine, isoleucine, valine). B1 deficiency impairs BCAA catabolism.",
+      "nerve_conduction": "Thiamine is required for myelin synthesis and for sodium/potassium ATPase activity in neuronal membranes — maintaining nerve impulse propagation.",
+      "carbohydrate_to_energy_gateway": "Because PDH requires B1, every gram of carbohydrate consumed requires thiamine to be converted to ATP. High carbohydrate diets without adequate B1 produce a relative thiamine deficiency state — glucose accumulates as pyruvate/lactate instead of entering the TCA cycle."
+    },
+    "deficiency_chain": {
+      "dry_beriberi": "Peripheral neuropathy — tingling, numbness, burning feet, muscle weakness. Symmetric ascending pattern.",
+      "wet_beriberi": "Cardiac involvement — high-output cardiac failure, oedema, tachycardia.",
+      "wernicke_encephalopathy": "Acute neurological emergency from severe B1 deficiency — classically in chronic alcoholics. Triad: confusion, ataxia, ophthalmoplegia. Fatal if untreated.",
+      "subclinical": "Fatigue, brain fog, post-meal energy crash (because carbohydrate energy conversion is impaired), irritability."
+    },
+    "absorption_ref": "ABS_B1_001",
+    "system_refs": ["SYS_ENERGY_001", "SYS_METABOLIC_001"],
+    "biology_refs": ["BIO_MITOCHONDRIA_001", "BIO_ETC_001"],
+    "symptom_refs": ["SYM_FATIGUE_001", "SYM_BRAINFOG_001"],
+    "pathway_refs": ["PATH_IRON_ENERGY_001", "PATH_B12_ENERGY_001"],
+    "lab_marker_refs": ["LAB_RBC_TRANSKETOLASE_001"],
+    "tags": ["B1", "thiamine", "thiamine pyrophosphate", "PDH", "pyruvate dehydrogenase", "TCA cycle", "beriberi", "Wernicke", "carbohydrate metabolism", "white rice", "energy", "Indian diet"]
+  },
+
+  "NUT_B2_001": {
+    "id": "NUT_B2_001",
+    "node_type": "nutrition",
+    "version": "2.0",
+    "name": "Vitamin B2 (Riboflavin)",
+    "category": "water-soluble vitamin",
+    "forms": ["FMN (flavin mononucleotide — active)", "FAD (flavin adenine dinucleotide — active)", "riboflavin (dietary)"],
+    "rda": {
+      "adult_male": "1.3 mg/day",
+      "adult_female": "1.1 mg/day",
+      "note": "Light-sensitive — riboflavin degrades rapidly when exposed to sunlight. Milk left in sunlight loses most riboflavin within 2 hours. Good sources: dairy, eggs, organ meats, leafy greens."
+    },
+    "indian_diet_context": "Riboflavin is found in dairy, eggs, meat, fish, and dark green vegetables. Indian lacto-vegetarian diets with adequate milk and curd are generally replete. However, dairy avoidance (vegan diets, lactose intolerance) without replacement significantly risks B2 deficiency. Milling of grains removes B2. Common in populations relying heavily on polished rice without dairy.",
+    "biochemical_roles": {
+      "ETC_complexes": "FAD (derived from riboflavin) is the electron acceptor in Complex I (NADH dehydrogenase) and the prosthetic group of Complex II (succinate dehydrogenase). Without riboflavin, both Complex I and Complex II fail → ETC halts → ATP synthesis blocked.",
+      "fatty_acid_oxidation": "FAD is the electron acceptor in acyl-CoA dehydrogenase — the first step of mitochondrial beta-oxidation. B2 deficiency impairs fat metabolism for energy.",
+      "TCA_cycle": "FAD is the cofactor for succinate dehydrogenase (Complex II) — converting succinate to fumarate in the TCA cycle.",
+      "glutathione_reductase": "FAD is required by glutathione reductase to regenerate oxidised glutathione (GSSG) back to reduced glutathione (GSH). B2 deficiency → impaired antioxidant regeneration → increased oxidative stress.",
+      "MTHFR_cofactor": "Riboflavin is an essential cofactor for MTHFR (methylenetetrahydrofolate reductase) — the enzyme impaired by MTHFR C677T polymorphism. B2 supplementation partially restores MTHFR activity in variant carriers.",
+      "B6_activation": "Riboflavin (as FMN) is required by pyridoxine-5'-phosphate oxidase to activate Vitamin B6 (pyridoxine → pyridoxal-5-phosphate). B2 deficiency indirectly causes B6 deficiency.",
+      "hair_keratinocyte_energy": "FAD-dependent enzymes support mitochondrial energy in hair matrix keratinocytes. B2 deficiency → reduced matrix energy → impaired keratin synthesis.",
+      "sebaceous_lipid_metabolism": "FAD-dependent fatty acid beta-oxidation in sebaceous glands affects lipid composition and sebum production."
+    },
+    "deficiency_chain": {
+      "signs": "Cracked lips (angular cheilitis — corners of mouth), glossitis (inflamed tongue), seborrhoeic dermatitis, corneal vascularisation (eye capillary invasion), anaemia (normocytic).",
+      "hair_effect": "Reduced keratinocyte energy → increased shedding and reduced shaft quality.",
+      "secondary_deficiencies": "B6 deficiency (B2 required for B6 activation), impaired glutathione regeneration."
+    },
+    "absorption_ref": "ABS_B2_001",
+    "system_refs": ["SYS_ENERGY_001", "SYS_HAIR_001", "SYS_SKIN_001"],
+    "biology_refs": ["BIO_MITOCHONDRIA_001", "BIO_ETC_001", "BIO_MATRIX_001", "BIO_SEBGLAND_001"],
+    "symptom_refs": ["SYM_FATIGUE_001", "SYM_HAIRFALL_001", "SYM_ACNE_001"],
+    "pathway_refs": ["PATH_IRON_ENERGY_001"],
+    "lab_marker_refs": ["LAB_ERYTHROCYTE_GLUTATHIONE_REDUCTASE_001"],
+    "tags": ["B2", "riboflavin", "FAD", "FMN", "Complex I", "Complex II", "ETC", "glutathione", "MTHFR", "B6 activation", "angular cheilitis", "beta-oxidation", "energy"]
+  },
+
+  "NUT_B3_001": {
+    "id": "NUT_B3_001",
+    "node_type": "nutrition",
+    "version": "2.0",
+    "name": "Vitamin B3 (Niacin / Nicotinamide)",
+    "category": "water-soluble vitamin",
+    "forms": [
+      "nicotinic acid (niacin — produces flush, raises HDL)",
+      "nicotinamide (niacinamide — no flush, used topically for skin)",
+      "NAD+ (nicotinamide adenine dinucleotide — active cellular form)",
+      "NADP+ (nicotinamide adenine dinucleotide phosphate — active cellular form)"
+    ],
+    "rda": {
+      "adult_male": "16 mg NE/day",
+      "adult_female": "14 mg NE/day",
+      "note": "60 mg tryptophan can be converted to 1 mg niacin (NE = niacin equivalent). Diets high in tryptophan (dairy, eggs, turkey) provide niacin equivalents. Maize-based diets without alkaline processing cause pellagra (niacin deficiency disease)."
+    },
+    "indian_diet_context": "Niacin is found in meat, fish, poultry, and groundnuts (peanuts — one of the best vegetarian sources). Traditional Indian diets with dal, peanuts, and whole grains provide reasonable niacin via tryptophan conversion. Diets heavily dependent on maize (corn) without nixtamalisation risk pellagra. Urban Indian diets with reduced whole grains and increased refined grains may have borderline niacin. Niacinamide is widely used in Indian skincare for hyperpigmentation and acne.",
+    "biochemical_roles": {
+      "NAD_NADH_redox": "NAD+ is the universal electron acceptor in cellular metabolism — accepts electrons (becomes NADH) in glycolysis, TCA cycle (4 NADH per glucose), and beta-oxidation. NADH then donates electrons to Complex I of the ETC → drives ATP synthesis. NAD+ is the most central electron carrier in all of metabolism.",
+      "SIRT_activation": "NAD+ is the essential substrate for sirtuins (SIRT1-7) — NAD+-dependent deacetylases that regulate cellular aging, mitochondrial biogenesis, inflammation, and stress response. High NAD+ → active sirtuins → better cellular health and longevity signalling.",
+      "PARP_activity": "NAD+ is consumed by PARP-1 (Poly ADP-ribose polymerase) during DNA damage repair. Heavy DNA damage rapidly depletes NAD+ → energy crisis.",
+      "NADP_NADPH_antioxidant": "NADP+ accepts electrons to form NADPH — the primary electron donor for anabolic reactions (fatty acid synthesis, steroid synthesis) and for glutathione reductase (regenerating GSH from GSSG). NADPH is essential for the body's antioxidant defence network.",
+      "niacinamide_skin_barrier": "Niacinamide (topical and oral) inhibits melanosome transfer from melanocytes to keratinocytes → reduces skin pigmentation and dark spots. Stimulates ceramide and fatty acid synthesis in the epidermis → improves skin barrier. Reduces sebaceous lipogenesis → reduces acne.",
+      "cholesterol_and_lipids_nicotinic_acid": "Pharmacological doses of nicotinic acid (1-3g/day) reduce VLDL synthesis, raise HDL cholesterol, and lower triglycerides — via inhibition of DGAT2 (diacylglycerol acyltransferase 2) in liver.",
+      "insulin_sensitivity": "Nicotinamide riboside and NAD+ precursors improve insulin sensitivity by enhancing mitochondrial function and SIRT1 activity in muscle and adipose tissue."
+    },
+    "deficiency_chain": {
+      "pellagra": "Classic niacin deficiency disease — 4 Ds: Dermatitis (photosensitive symmetric rash — Casal's necklace), Diarrhoea, Dementia, Death. Historically associated with maize-only diets without nixtamalisation.",
+      "subclinical": "Fatigue, cognitive impairment, anxiety, skin sensitivity to light, mouth inflammation (glossitis, cheilitis).",
+      "modern_relevance": "Subclinical NAD+ depletion is increasingly recognised in metabolic syndrome, DNA damage accumulation, and ageing."
+    },
+    "absorption_ref": "ABS_B3_001",
+    "system_refs": ["SYS_ENERGY_001", "SYS_SKIN_001", "SYS_METABOLIC_001", "SYS_CARDIOMETABOLIC_001"],
+    "biology_refs": ["BIO_MITOCHONDRIA_001", "BIO_ETC_001", "BIO_EPIDERMIS_001", "BIO_SEBGLAND_001"],
+    "symptom_refs": ["SYM_FATIGUE_001", "SYM_ACNE_001", "SYM_BRAINFOG_001"],
+    "pathway_refs": ["PATH_IRON_ENERGY_001"],
+    "lab_marker_refs": ["LAB_NAD_RATIO_001"],
+    "tags": ["B3", "niacin", "nicotinamide", "niacinamide", "NAD+", "NADH", "NADPH", "sirtuin", "PARP", "pellagra", "skin barrier", "ceramide", "acne", "cholesterol", "energy", "tryptophan", "groundnut"]
+  },
+
+  "NUT_B5_001": {
+    "id": "NUT_B5_001",
+    "node_type": "nutrition",
+    "version": "2.0",
+    "name": "Vitamin B5 (Pantothenic Acid)",
+    "category": "water-soluble vitamin",
+    "forms": ["pantothenic acid", "calcium pantothenate (supplement)", "dexpanthenol (topical provitamin B5)"],
+    "rda": {
+      "adult": "5 mg/day (Adequate Intake)",
+      "note": "Deficiency is extremely rare as B5 is found in almost all foods (name 'pantothenic' from Greek pantothen — from everywhere). Isolated deficiency most commonly from experimental restriction or specific syndromes."
+    },
+    "indian_diet_context": "Pantothenic acid is present in virtually every food — eggs, meat, dairy, avocado, whole grains, legumes, broccoli, mushrooms. Indian diets are unlikely to be deficient in B5 unless severely restricted. However, B5 is important here because of its role in Coenzyme A synthesis — the central cofactor in fat and carbohydrate metabolism — critical given India's high-fat, high-carbohydrate dietary pattern.",
+    "biochemical_roles": {
+      "coenzyme_A_synthesis": "Pantothenic acid is the core structural component of Coenzyme A (CoA). CoA is the universal thioester carrier in metabolism — acetyl-CoA, malonyl-CoA, succinyl-CoA, and fatty acyl-CoAs all require CoA. Without B5, CoA cannot be synthesised — effectively stopping fat oxidation, the TCA cycle, and fatty acid synthesis.",
+      "acetyl_CoA_production": "Pyruvate → Acetyl-CoA (via PDH, requiring B1 and CoA). Acetyl-CoA → TCA cycle. Acetyl-CoA is also the substrate for cholesterol synthesis, ketone body synthesis, and acetylcholine synthesis.",
+      "fatty_acid_synthesis_and_oxidation": "Fatty acid synthesis requires malonyl-CoA (CoA-derived). Beta-oxidation requires fatty acyl-CoA. Both directions of fat metabolism require CoA — making B5 critical for fat metabolism in both lipogenesis and lipolysis.",
+      "steroid_and_hormone_synthesis": "All steroid hormones are synthesised from acetyl-CoA → HMG-CoA → cholesterol → steroid hormones. CoA (B5-derived) is required at the first step.",
+      "acyl_carrier_protein": "Pantothenic acid is a component of acyl carrier protein (ACP) — the protein that carries fatty acid chains during synthesis.",
+      "wound_healing_and_skin": "Dexpanthenol (topical B5) converts to pantothenic acid in skin → stimulates keratinocyte proliferation and migration → promotes wound healing. Used in many Indian wound care and skin care products.",
+      "sebaceous_gland_regulation": "B5 has been proposed to regulate coenzyme A availability in sebaceous glands — affecting fatty acid composition of sebum. Some evidence suggests high-dose B5 reduces acne by altering sebaceous CoA-dependent lipid production."
+    },
+    "deficiency_chain": {
+      "experimental_deficiency_signs": "Burning feet syndrome, fatigue, headache, nausea, paraesthesias. Adrenal insufficiency in extreme deficiency.",
+      "practical_note": "True dietary deficiency in humans eating any varied diet is essentially impossible. B5 is relevant here primarily for its metabolic significance in CoA synthesis, not as a common deficiency nutrient."
+    },
+    "absorption_ref": "ABS_B5_001",
+    "system_refs": ["SYS_ENERGY_001", "SYS_METABOLIC_001", "SYS_SKIN_001", "SYS_HORMONAL_001"],
+    "biology_refs": ["BIO_MITOCHONDRIA_001", "BIO_SEBGLAND_001", "BIO_EPIDERMIS_001"],
+    "symptom_refs": ["SYM_FATIGUE_001", "SYM_ACNE_001"],
+    "pathway_refs": [],
+    "lab_marker_refs": [],
+    "tags": ["B5", "pantothenic acid", "Coenzyme A", "acetyl-CoA", "fatty acid synthesis", "beta-oxidation", "steroid hormones", "dexpanthenol", "sebum", "wound healing", "TCA cycle"]
+  },
+
+  "NUT_B6_001": {
+    "id": "NUT_B6_001",
+    "node_type": "nutrition",
+    "version": "2.0",
+    "name": "Vitamin B6 (Pyridoxine)",
+    "category": "water-soluble vitamin",
+    "forms": ["pyridoxine (plant sources)", "pyridoxal (animal sources)", "pyridoxamine (animal sources)", "pyridoxal-5-phosphate (PLP — active form)"],
+    "rda": {
+      "adult_19_50": "1.3 mg/day",
+      "adult_51plus_male": "1.7 mg/day",
+      "adult_51plus_female": "1.5 mg/day",
+      "upper_limit": "100 mg/day (neuropathy risk at chronic high doses)",
+      "note": "PLP (pyridoxal-5-phosphate) is the active cofactor form. Activation requires B2 (riboflavin) as cofactor for pyridoxine-5'-phosphate oxidase. B2 deficiency therefore indirectly causes B6 deficiency."
+    },
+    "indian_diet_context": "B6 is found in poultry, fish, potatoes, chickpeas (chana dal — a major Indian food), bananas, and nuts. Indian diets with dal (especially chana), potatoes, and mixed vegetables generally provide reasonable B6. It is one of the more B-vitamins adequate in traditional Indian diets. However, PCOS patients, those on oral contraceptives, and people with inflammatory conditions all have higher B6 demands.",
+    "biochemical_roles": {
+      "amino_acid_metabolism": "PLP is the cofactor for over 100 enzymatic reactions — the majority involving amino acid transamination, decarboxylation, and racemisation. It is the most versatile vitamin cofactor in all of metabolism.",
+      "homocysteine_remethylation_transsulphuration": "PLP is required for cystathionine beta-synthase (CBS) and cystathionine gamma-lyase — the transsulphuration pathway converting homocysteine to cysteine. B6 deficiency elevates homocysteine even when B12 and folate are normal.",
+      "neurotransmitter_synthesis": "PLP is required for DOPA decarboxylase (dopamine synthesis from DOPA), glutamate decarboxylase (GABA from glutamate), aromatic amino acid decarboxylase (serotonin from 5-HTP). B6 deficiency → low GABA, dopamine, and serotonin → anxiety, depression, insomnia.",
+      "haem_synthesis": "PLP is the cofactor for delta-aminolevulinic acid synthase (ALAS) — the rate-limiting enzyme in haem synthesis. B6 deficiency → sideroblastic anaemia (iron-containing ring sideroblasts — iron present but cannot be incorporated into haem).",
+      "glycogen_metabolism": "PLP is the cofactor for glycogen phosphorylase — mobilising glucose from glycogen stores in muscle and liver. Required for gluconeogenesis from amino acids.",
+      "immune_function": "PLP regulates lymphocyte proliferation and antibody production. B6 deficiency → immune suppression.",
+      "PCOS_and_hormonal_relevance": "B6 supports progesterone receptor sensitivity and reduces oestrogen dominance by supporting liver phase II oestrogen detoxification. Commonly supplemented in PCOS management.",
+      "hair_keratinocyte_metabolism": "B6 is required for amino acid transamination reactions in hair matrix keratinocytes — providing the correct amino acid mix for keratin synthesis, particularly for cysteine biosynthesis via the transsulphuration pathway."
+    },
+    "deficiency_chain": {
+      "early": "Peripheral neuropathy (despite B6 also being neurotoxic at excess doses), dermatitis (seborrhoeic pattern around eyes, nose, mouth — strikingly similar to B2 deficiency), glossitis.",
+      "haematological": "Microcytic, hypochromic sideroblastic anaemia — responds to B6 supplementation.",
+      "neurological": "Irritability, confusion, depression from impaired neurotransmitter synthesis.",
+      "elevated_homocysteine": "Via impaired transsulphuration pathway."
+    },
+    "absorption_ref": "ABS_B6_001",
+    "system_refs": ["SYS_HAIR_001", "SYS_ENERGY_001", "SYS_HORMONAL_001"],
+    "biology_refs": ["BIO_MATRIX_001", "BIO_MITOCHONDRIA_001"],
+    "symptom_refs": ["SYM_HAIRFALL_001", "SYM_FATIGUE_001"],
+    "pathway_refs": [],
+    "lab_marker_refs": ["LAB_PLASMA_PLP_001", "LAB_HOMOCYSTEINE_001"],
+    "tags": ["B6", "pyridoxine", "PLP", "pyridoxal-5-phosphate", "transamination", "homocysteine", "neurotransmitter", "serotonin", "GABA", "dopamine", "haem", "sideroblastic anaemia", "PCOS", "cysteine", "keratin"]
+  },
+
+  "NUT_CHROMIUM_001": {
+    "id": "NUT_CHROMIUM_001",
+    "node_type": "nutrition",
+    "version": "2.0",
+    "name": "Chromium",
+    "category": "trace mineral",
+    "forms": ["chromium picolinate (supplement)", "chromium nicotinate", "dietary trivalent chromium (Cr3+)"],
+    "rda": {
+      "adult_male": "35 mcg/day (Adequate Intake)",
+      "adult_female": "25 mcg/day (Adequate Intake)",
+      "note": "Only trivalent chromium (Cr3+) is nutritionally relevant. Hexavalent chromium (Cr6+) is an industrial toxin and carcinogen. No established RDA — Adequate Intake only, reflecting limited evidence on human requirements."
+    },
+    "indian_diet_context": "Chromium is found in brewer's yeast, whole grains, nuts, broccoli, and meat. High refined sugar and white flour consumption (dominant in Indian urban diets) depletes chromium through increased urinary excretion. Stress also increases chromium loss. Given India's epidemic of insulin resistance and type 2 diabetes, chromium is highly relevant despite being a trace mineral.",
+    "biochemical_roles": {
+      "insulin_signalling_potentiation": "Chromodulin (a chromium-containing oligopeptide) amplifies insulin receptor tyrosine kinase activity — enhancing downstream insulin signalling at GLUT4 translocation and glucose uptake steps. Works synergistically with insulin to improve cellular glucose uptake.",
+      "glucose_tolerance": "Chromium supplementation has been shown in clinical trials to reduce fasting glucose, reduce HbA1c, and improve insulin sensitivity in type 2 diabetics and prediabetics — particularly relevant to India's massive prediabetic population.",
+      "GLUT4_upregulation": "Chromium increases GLUT4 transporter expression on muscle cell membranes — directly improving glucose uptake independent of insulin receptor signalling cascade.",
+      "lipid_metabolism": "Some evidence suggests chromium reduces LDL cholesterol and raises HDL, and may reduce triglyceride levels — via improved insulin sensitivity and reduced hyperinsulinaemia-driven VLDL synthesis.",
+      "appetite_regulation": "Chromium may reduce carbohydrate cravings by stabilising blood glucose swings — particularly relevant for high-carbohydrate Indian diets.",
+      "PCOS_relevance": "Chromium supplementation has been studied in PCOS — improving insulin sensitivity, reducing androgen levels, and regularising menstrual cycles in insulin-resistant PCOS patients."
+    },
+    "deficiency_chain": {
+      "signs": "Impaired glucose tolerance, insulin resistance, elevated triglycerides. Often subclinical and attributed to other causes.",
+      "depletion_factors": "High refined sugar intake, physical trauma, infection, strenuous exercise, pregnancy — all increase chromium excretion."
+    },
+    "absorption_ref": "ABS_CHROMIUM_001",
+    "system_refs": ["SYS_METABOLIC_001", "SYS_WEIGHT_001", "SYS_HORMONAL_001"],
+    "biology_refs": ["BIO_PANCREAS_001", "BIO_MUSCLE_001"],
+    "symptom_refs": ["SYM_WEIGHTGAIN_001", "SYM_FATIGUE_001"],
+    "pathway_refs": ["PATH_INSULIN_ACNE_001"],
+    "lab_marker_refs": ["LAB_FASTING_GLUCOSE_001", "LAB_HBA1C_001", "LAB_FASTING_INSULIN_001"],
+    "tags": ["chromium", "chromodulin", "insulin sensitivity", "GLUT4", "glucose tolerance", "insulin resistance", "prediabetes", "PCOS", "triglycerides", "carbohydrate cravings", "Indian diet"]
+  },
+  "NUT_IODINE_001": {
+    "id": "NUT_IODINE_001",
+    "node_type": "nutrition",
+    "version": "1.0",
+    "name": "Iodine",
+    "category": "trace_mineral",
+    "rda": {
+      "adult_male": "150 mcg/day",
+      "adult_female": "150 mcg/day"
+    },
+    "indian_diet_context": "Crucial for India due to widespread soil depletion. Iodized salt is the main source, but goitrogens (like cabbage/cauliflower) can block uptake.",
+    "biochemical_roles": {
+      "thyroid_hormone_synthesis": "Essential component of T3 and T4 thyroid hormones."
+    },
+    "deficiency_chain": {
+      "signs": "Goiter, hypothyroidism, fatigue, weight gain, hair loss.",
+      "depletion_factors": "Soil depletion, goitrogens, fluoride/bromide exposure."
+    },
+    "absorption_ref": "ABS_IODINE_001",
+    "system_refs": ["SYS_HORMONAL_001", "SYS_METABOLIC_001", "SYS_HAIR_001"],
+    "biology_refs": ["BIO_THYROID_001"],
+    "symptom_refs": ["SYM_FATIGUE_001", "SYM_WEIGHTGAIN_001", "SYM_HAIRFALL_001"],
+    "pathway_refs": [],
+    "lab_marker_refs": [],
+    "tags": ["iodine", "thyroid", "T3", "T4", "hypothyroidism"]
+  }
+}

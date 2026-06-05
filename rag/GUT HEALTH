@@ -1,0 +1,253 @@
+{
+  "_meta": {
+    "layer": "06_GUT_HEALTH",
+    "version": "1.0",
+    "description": "Gut dysfunctions, pathogens, and their effects."
+  },
+  "GUT_DYSBIOSIS_001": {
+    "id": "GUT_DYSBIOSIS_001",
+    "node_type": "gut_health",
+    "version": "1.0",
+    "condition": "Gut Dysbiosis",
+    "biology_refs": ["BIO_MICROBIOME_001", "BIO_GUTLINING_001"],
+    "definition": "Imbalance in the microbial community of the gut, characterised by a loss of beneficial bacteria (e.g., Lactobacillus, Bifidobacterium) and an overgrowth of pathogenic microbes.",
+    "primary_triggers_india": [
+      "Frequent, unprescribed antibiotic use (e.g., for viral colds)",
+      "Diet high in ultra-processed foods and refined sugar (maida, mithai)",
+      "Low intake of diverse dietary fibre (reliance on white rice/wheat only)"
+    ],
+    "root_cause_refs": ["RCE_DYSBIOSIS_GUT_001"],
+    "downstream_effects": {
+      "systemic": ["INF_CHRONIC_001"],
+      "hormonal": ["Estrogen dominance due to beta-glucuronidase overactivity"],
+      "absorption_blocks": ["Reduced SCFA (butyrate) production", "Impaired B-vitamin synthesis (B12, Biotin)"],
+      "symptom_refs": ["SYM_BLOATING_001", "SYM_CONSTIPATION_001", "SYM_BRAINFOG_001"]
+    }
+  },
+  "GUT_LEAKYGUT_001": {
+    "id": "GUT_LEAKYGUT_001",
+    "node_type": "gut_health",
+    "version": "1.0",
+    "condition": "Intestinal Permeability (Leaky Gut)",
+    "biology_refs": ["BIO_GUTLINING_001"],
+    "definition": "Loss of tight junction integrity in the intestinal epithelium, allowing incompletely digested proteins, toxins, and endotoxins (LPS) to enter the bloodstream.",
+    "primary_triggers_india": [
+      "Gluten sensitivity (frequent chapati consumption in susceptible individuals)",
+      "Chronic stress (elevated cortisol degrades secretory IgA)",
+      "Frequent use of NSAIDs (painkillers)",
+      "Zinc deficiency (Zinc is structurally required for tight junctions)"
+    ],
+    "root_cause_refs": ["RCE_LEAKYGUT_001"],
+    "downstream_effects": {
+      "systemic": ["INF_CHRONIC_001", "Autoimmune triggers (e.g., Hashimoto's thyroiditis)"],
+      "absorption_blocks": ["ABS_ZINC_001", "ABS_IRON_001", "General micromineral malabsorption"],
+      "symptom_refs": ["SYM_BRAINFOG_001", "SYM_JOINTPAIN_001", "SYM_ACNE_001", "SYM_FATIGUE_001"]
+    }
+  },
+  "GUT_MALABSORPTION_001": {
+    "id": "GUT_MALABSORPTION_001",
+    "node_type": "gut_health",
+    "version": "1.0",
+    "condition": "Nutrient Malabsorption Syndrome",
+    "biology_refs": ["BIO_SMALLINTESTINE_001"],
+    "definition": "Inability of the small intestine to absorb nutrients effectively, despite adequate dietary intake. Can be selective (e.g., iron only) or global.",
+    "primary_triggers_india": [
+      "Celiac disease (autoimmune blunting of intestinal villi from gluten)",
+      "Tropical sprue (endemic to India, post-infectious malabsorption)",
+      "Chronic Giardiasis/Parasites"
+    ],
+    "root_cause_refs": ["RCE_MALABSORPTION_001"],
+    "downstream_effects": {
+      "systemic": ["Severe fatigue", "Muscle wasting", "Osteoporosis"],
+      "absorption_blocks": ["ABS_IRON_001", "ABS_B12_001", "ABS_VITD_001", "ABS_CALCIUM_001", "ABS_PROTEIN_001"],
+      "symptom_refs": ["SYM_FATIGUE_001", "SYM_WEIGHTLOSS_001", "SYM_HAIRFALL_001", "SYM_MUSCLEWEAKNESS_001"]
+    }
+  },
+  "GUT_IBS_001": {
+    "id": "GUT_IBS_001",
+    "node_type": "gut_health",
+    "version": "1.0",
+    "condition": "Irritable Bowel Syndrome (IBS)",
+    "biology_refs": ["BIO_GUTLINING_001", "BIO_MICROBIOME_001"],
+    "definition": "Functional gastrointestinal disorder characterised by abdominal pain and altered bowel habits without visible structural damage.",
+    "subtypes": ["IBS-C (Constipation predominant)", "IBS-D (Diarrhoea predominant)", "IBS-M (Mixed)"],
+    "primary_triggers_india": [
+      "Gut-brain axis dysfunction (high stress/anxiety)",
+      "Post-infectious IBS (following severe gastroenteritis/food poisoning)",
+      "FODMAP intolerance (onions, garlic, specific dals)"
+    ],
+    "root_cause_refs": ["RCE_IBS_001"],
+    "downstream_effects": {
+      "systemic": ["Visceral hypersensitivity (pain from normal gas)"],
+      "absorption_blocks": ["Rapid transit (IBS-D) impairs time-dependent absorption like water and electrolytes"],
+      "symptom_refs": ["SYM_BLOATING_001", "SYM_CONSTIPATION_001"]
+    }
+  },
+  "GUT_SIBO_001": {
+    "id": "GUT_SIBO_001",
+    "node_type": "gut_health",
+    "version": "1.0",
+    "condition": "Small Intestinal Bacterial Overgrowth (SIBO)",
+    "biology_refs": ["BIO_SMALLINTESTINE_001", "BIO_MICROBIOME_001"],
+    "definition": "Excessive colonic bacteria abnormally residing in the small intestine. These bacteria prematurely ferment carbohydrates, creating massive gas before digestion completes.",
+    "primary_triggers_india": [
+      "Low stomach acid (fails to sterilise incoming food)",
+      "Slow migrating motor complex (MMC) preventing gut 'sweeping'",
+      "Chronic use of antacids (PPIs like Pantoprazole)"
+    ],
+    "root_cause_refs": ["RCE_SIBO_001"],
+    "downstream_effects": {
+      "systemic": ["Severe post-prandial bloating (look 'pregnant' after eating)"],
+      "absorption_blocks": [
+        "ABS_B12_001 (bacteria consume B12 before host can absorb it)",
+        "ABS_IRON_001",
+        "ABS_FATS_001 (bacteria deconjugate bile acids, causing fat malabsorption)"
+      ],
+      "symptom_refs": ["SYM_BLOATING_001", "SYM_BRAINFOG_001", "SYM_FATIGUE_001"]
+    }
+  },
+  "GUT_HYPOCHLORHYDRIA_001": {
+    "id": "GUT_HYPOCHLORHYDRIA_001",
+    "node_type": "gut_health",
+    "version": "1.0",
+    "condition": "Hypochlorhydria (Low Stomach Acid)",
+    "biology_refs": ["BIO_STOMACH_001"],
+    "definition": "Insufficient production of hydrochloric acid (HCl) by gastric parietal cells. HCl is mandatory for protein breakdown, mineral solubilisation, and pathogen destruction.",
+    "primary_triggers_india": [
+      "Widespread, chronic overuse of PPIs (Omeprazole, Pantoprazole) for any gastric discomfort",
+      "H. Pylori infection (suppresses acid production to survive)",
+      "Aging (acid production drops by 40% over age 60)",
+      "Chronic stress (sympathetic nervous system suppresses digestion)"
+    ],
+    "root_cause_refs": ["RCE_LOW_ACID_001"],
+    "downstream_effects": {
+      "systemic": ["Increased susceptibility to food poisoning and SIBO"],
+      "absorption_blocks": [
+        "ABS_PROTEIN_001 (pepsinogen cannot activate to pepsin)",
+        "ABS_B12_001 (B12 cannot be cleaved from food proteins)",
+        "ABS_IRON_001 (Fe3+ cannot solubilise)",
+        "ABS_CALCIUM_001",
+        "ABS_ZINC_001"
+      ],
+      "symptom_refs": ["SYM_BLOATING_001", "SYM_ACID_REFLUX_001", "SYM_HAIRFALL_001", "SYM_FATIGUE_001"]
+    }
+  },
+  "GUT_MOTILITY_001": {
+    "id": "GUT_MOTILITY_001",
+    "node_type": "gut_health",
+    "version": "1.0",
+    "condition": "Motility Dysfunction (Slow Transit)",
+    "biology_refs": ["BIO_COLON_001"],
+    "definition": "Slowed peristalsis and migrating motor complex (MMC) activity, leading to prolonged retention of faeces, water reabsorption, and dry, hard stools.",
+    "primary_triggers_india": [
+      "Hypothyroidism (low T3 directly slows smooth muscle contraction in gut)",
+      "Sedentary lifestyle",
+      "Dehydration",
+      "Magnesium deficiency (needed for smooth muscle relaxation)"
+    ],
+    "root_cause_refs": ["RCE_MOTILITY_001"],
+    "downstream_effects": {
+      "systemic": ["Autointoxication (reabsorption of toxins/estrogen from stool)"],
+      "absorption_blocks": ["Nutrient absorption mostly complete; primary issue is toxin reabsorption"],
+      "symptom_refs": ["SYM_CONSTIPATION_001", "SYM_BLOATING_001", "SYM_ACNE_001"]
+    }
+  },
+  "GUT_AMOEBIASIS_001": {
+    "id": "GUT_AMOEBIASIS_001",
+    "node_type": "gut_health",
+    "version": "1.0",
+    "condition": "Chronic Amoebiasis / Parasitic Infection",
+    "biology_refs": ["BIO_COLON_001", "BIO_GUTLINING_001"],
+    "definition": "Infection of the intestines primarily by Entamoeba histolytica or Giardia. Often presents as chronic, low-grade infection in endemic areas.",
+    "primary_triggers_india": [
+      "Contaminated drinking water or street food",
+      "Poor hand hygiene",
+      "Low stomach acid failing to kill cysts upon ingestion"
+    ],
+    "root_cause_refs": ["RCE_PARASITE_001"],
+    "downstream_effects": {
+      "systemic": ["Chronic immune activation", "Weight loss"],
+      "absorption_blocks": ["ABS_IRON_001 (blood loss in stool)", "ABS_FATS_001 (Giardia coats intestinal wall, blocking fat absorption)"],
+      "symptom_refs": ["SYM_CONSTIPATION_001", "SYM_BLOATING_001", "SYM_FATIGUE_001", "SYM_WEIGHTLOSS_001"]
+    }
+  },
+  "GUT_H_PYLORI_001": {
+    "id": "GUT_H_PYLORI_001",
+    "node_type": "gut_health",
+    "version": "1.0",
+    "condition": "Helicobacter Pylori Infection",
+    "biology_refs": ["BIO_STOMACH_001"],
+    "definition": "Bacterial infection of the stomach lining. H. pylori secretes urease to neutralise stomach acid, surviving in the harsh environment and causing chronic inflammation (gastritis) and ulcers.",
+    "primary_triggers_india": [
+      "Extremely high endemic prevalence (up to 70-80% of adults)",
+      "Transmitted via contaminated food/water or saliva"
+    ],
+    "root_cause_refs": ["RCE_HPYLORI_001"],
+    "downstream_effects": {
+      "systemic": ["Gastric ulcers", "Increased risk of gastric cancer"],
+      "absorption_blocks": [
+        "ABS_IRON_001 (micro-bleeding from ulcers + hypochlorhydria)",
+        "ABS_B12_001 (destruction of parietal cells → loss of Intrinsic Factor)"
+      ],
+      "symptom_refs": ["SYM_ACID_REFLUX_001", "SYM_FATIGUE_001", "SYM_BLOATING_001"]
+    }
+  },
+  "GUT_LACTOSE_INTOLERANCE_001": {
+    "id": "GUT_LACTOSE_INTOLERANCE_001",
+    "node_type": "gut_health",
+    "version": "1.0",
+    "condition": "Lactose Intolerance",
+    "biology_refs": ["BIO_SMALLINTESTINE_001"],
+    "definition": "Inability to digest lactose (milk sugar) due to a deficiency in the brush border enzyme lactase. Undigested lactose ferments in the colon, drawing in water.",
+    "primary_triggers_india": [
+      "Genetics: High prevalence in South and East India (up to 70% of adults lose lactase persistence)",
+      "Secondary to Leaky Gut/Celiac (brush border damage wipes out lactase enzymes temporarily)"
+    ],
+    "root_cause_refs": ["RCE_LACTOSE_001"],
+    "downstream_effects": {
+      "systemic": ["Osmotic diarrhoea"],
+      "absorption_blocks": ["Rapid transit time flushes out nutrients before absorption"],
+      "symptom_refs": ["SYM_BLOATING_001"]
+    }
+  },
+  "GUT_CANDIDA_001": {
+    "id": "GUT_CANDIDA_001",
+    "node_type": "gut_health",
+    "version": "1.0",
+    "condition": "Candida / Fungal Overgrowth",
+    "biology_refs": ["BIO_MICROBIOME_001", "BIO_GUTLINING_001"],
+    "definition": "Opportunistic overgrowth of Candida albicans (a normal resident yeast) in the GI tract, shifting from yeast to invasive hyphal form.",
+    "primary_triggers_india": [
+      "Repeated broad-spectrum antibiotic courses (kills competing bacteria)",
+      "High sugar / high refined-carb diet (feeds the yeast)",
+      "Oral contraceptives or high estrogen (promotes yeast growth)",
+      "Immunosuppression or chronic stress"
+    ],
+    "root_cause_refs": ["RCE_CANDIDA_001"],
+    "downstream_effects": {
+      "systemic": ["Acetaldehyde production by yeast crosses blood-brain barrier → severe brain fog", "Sugar cravings"],
+      "absorption_blocks": ["Hyphal form damages intestinal lining → GUT_LEAKYGUT_001 → ABS_ZINC_001 block"],
+      "symptom_refs": ["SYM_BRAINFOG_001", "SYM_FATIGUE_001", "SYM_BLOATING_001"]
+    }
+  },
+  "GUT_ACID_REFLUX_001": {
+    "id": "GUT_ACID_REFLUX_001",
+    "node_type": "gut_health",
+    "version": "1.0",
+    "condition": "GERD / Acid Reflux",
+    "biology_refs": ["BIO_STOMACH_001", "BIO_ESOPHAGUS_001"],
+    "definition": "Relaxation of the Lower Esophageal Sphincter (LES) allowing stomach contents to flow backwards into the esophagus. Paradoxically, often caused by LOW stomach acid (which fails to trigger LES closure) rather than high acid.",
+    "primary_triggers_india": [
+      "Late dinners and sleeping immediately after eating",
+      "High intake of oily, deep-fried foods and heavy spices (relaxes LES)",
+      "Intra-abdominal pressure (central obesity, tight clothing)",
+      "Hypochlorhydria (GUT_HYPOCHLORHYDRIA_001)"
+    ],
+    "root_cause_refs": ["RCE_GERD_001"],
+    "downstream_effects": {
+      "systemic": ["Esophageal inflammation", "Chronic cough", "Vicious cycle: Patient takes PPIs for relief, which worsens the underlying hypochlorhydria"],
+      "absorption_blocks": ["Secondary to PPI use: ABS_B12_001, ABS_IRON_001, ABS_PROTEIN_001"],
+      "symptom_refs": ["SYM_ACID_REFLUX_001"]
+    }
+  }
+}

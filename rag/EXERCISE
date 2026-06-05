@@ -1,0 +1,182 @@
+{
+  "_meta": {
+    "layer": "10_EXERCISE",
+    "version": "1.0",
+    "description": "Physical activity modalities and their systemic biological, hormonal, and metabolic impacts.",
+    "nodes": [
+      "EXE_RESISTANCE_001",
+      "EXE_AEROBIC_001",
+      "EXE_HIIT_001",
+      "EXE_YOGA_001",
+      "EXE_NEAT_001",
+      "EXE_MOBILITY_001"
+    ]
+  },
+  "EXE_RESISTANCE_001": {
+    "id": "EXE_RESISTANCE_001",
+    "node_type": "exercise",
+    "version": "1.0",
+    "name": "Resistance / Strength Training",
+    "definition": "Exercise that causes muscles to contract against an external resistance (weights, bands, bodyweight) with the expectation of increases in strength, mass, and/or endurance.",
+    "indian_context": "Increasingly popular in urban gyms, though culturally often secondary to walking/yoga. Critical for combating India's high rates of sarcopenia and osteopenia.",
+    "biological_impacts": {
+      "hormonal": [
+        "HOR_TESTOSTERONE_001 (Acute post-workout spike)",
+        "HOR_GH_001 (Massive release during deep sleep following workout)",
+        "HOR_INSULIN_001 (Dramatically improves insulin sensitivity)"
+      ],
+      "cellular": [
+        "BIO_MUSCLE_001 (Myofibrillar hypertrophy, increased glycogen storage capacity)",
+        "BIO_BONE_001 (Mechanical loading stimulates osteoblasts, increasing density)"
+      ],
+      "systemic": [
+        "SYS_METABOLIC_001 (Increases Basal Metabolic Rate by adding metabolically active tissue)"
+      ]
+    },
+    "synergies": ["EXE_AEROBIC_001 (Concurrent training is optimal for longevity)"],
+    "contraindications": [
+      "STR_PHYSICAL_001 (Can worsen severe overtraining/burnout)",
+      "SYM_JOINTPAIN_001 (If form is poor or load exceeds tissue tolerance)"
+    ],
+    "nutrient_demands": [
+      "NUT_PROTEIN_001 (Crucial for muscle protein synthesis)",
+      "NUT_MAGNESIUM_001 (Required for muscle relaxation and ATP production)",
+      "NUT_ZINC_001"
+    ],
+    "symptom_relief": ["SYM_FATIGUE_001", "SYM_WEIGHTGAIN_001", "SYM_MUSCLEWEAKNESS_001"]
+  },
+  "EXE_AEROBIC_001": {
+    "id": "EXE_AEROBIC_001",
+    "node_type": "exercise",
+    "version": "1.0",
+    "name": "Aerobic / LISS (Zone 2 Cardio)",
+    "definition": "Low-Intensity Steady-State exercise (walking, light jogging, cycling, swimming) performed at 60-70% of max heart rate where one can still hold a conversation.",
+    "indian_context": "The most common deliberate exercise form in India (morning walks). Excellent baseline, but insufficient alone for preserving muscle mass.",
+    "biological_impacts": {
+      "hormonal": [
+        "HOR_CORTISOL_001 (Actively clears circulating cortisol when done at low intensity)",
+        "HOR_INSULIN_001 (Improves resting sensitivity)"
+      ],
+      "cellular": [
+        "BIO_MITOCHONDRIA_001 (The primary driver of mitochondrial biogenesis and fat oxidation capacity)",
+        "BIO_CARDIOVASCULAR_001 (Improves endothelial function and stroke volume)"
+      ],
+      "systemic": [
+        "SYS_CARDIOMETABOLIC_001 (Lowers resting heart rate and blood pressure)"
+      ]
+    },
+    "synergies": ["EXE_RESISTANCE_001"],
+    "contraindications": ["None for light walking; moderate intensity should be cleared for severe cardiac conditions."],
+    "nutrient_demands": [
+      "NUT_CARBS_001 (For prolonged sessions)",
+      "NUT_IRON_001 (Needed for haemoglobin to transport oxygen)"
+    ],
+    "symptom_relief": ["SYM_FATIGUE_001", "SYM_POORSLEEP_001", "SYM_SHORTBREATH_001"]
+  },
+  "EXE_HIIT_001": {
+    "id": "EXE_HIIT_001",
+    "node_type": "exercise",
+    "version": "1.0",
+    "name": "High-Intensity Interval Training (HIIT)",
+    "definition": "Repeated bouts of very high intensity (85-100% max HR) interspersed with recovery periods.",
+    "indian_context": "Popular for 'quick fat loss', but frequently abused by highly stressed, sleep-deprived individuals, leading to worsened hormonal profiles.",
+    "biological_impacts": {
+      "hormonal": [
+        "HOR_ADRENALINE_001 (Massive acute spike)",
+        "HOR_CORTISOL_001 (High acute spike)",
+        "HOR_GH_001 (Highest stimulus among all exercise forms if recovery is adequate)"
+      ],
+      "cellular": [
+        "BIO_MITOCHONDRIA_001 (Improves efficiency)",
+        "BIO_MUSCLE_001 (Increases fast-twitch muscle fibre recruitment)"
+      ],
+      "systemic": [
+        "SYS_CARDIOMETABOLIC_001 (Rapidly increases VO2 max)"
+      ]
+    },
+    "synergies": ["SLP_DEEPSLEEP_001 (Absolutely mandatory for recovery)"],
+    "contraindications": [
+      "STR_CHRONIC_001 (Adding HIIT to an already stressed nervous system causes HPA axis burnout)",
+      "SLP_DEPRIVATION_001 (Massively increases injury risk)",
+      "SYM_JOINTPAIN_001"
+    ],
+    "nutrient_demands": [
+      "NUT_CARBS_001 (Glycogen dependent; cannot be performed maximally on zero carbs)",
+      "NUT_B_VITAMINS (Crucial for rapid ATP turnover)"
+    ],
+    "symptom_relief": ["SYM_WEIGHTGAIN_001 (Time-efficient)"]
+  },
+  "EXE_YOGA_001": {
+    "id": "EXE_YOGA_001",
+    "node_type": "exercise",
+    "version": "1.0",
+    "name": "Yoga & Pranayama",
+    "definition": "A practice integrating physical postures (Asanas), breath control (Pranayama), and meditation to connect mind and body.",
+    "indian_context": "Deeply rooted cultural practice. Crucial for countering the hyper-sympathetic dominance of modern Indian urban life.",
+    "biological_impacts": {
+      "hormonal": [
+        "HOR_CORTISOL_001 (Dramatically lowers baseline cortisol)",
+        "HOR_MELATONIN_001 (Improves nocturnal release via reduced stress)",
+        "HOR_PROGESTERONE_001 (Preserves progesterone by halting 'cortisol steal')"
+      ],
+      "cellular": [
+        "BIO_NERVOUS_001 (Directly stimulates the Vagus nerve, increasing parasympathetic tone)",
+        "BIO_GUTLINING_001 (Reduces stress-induced permeability)"
+      ],
+      "systemic": [
+        "SYS_SLEEP_001",
+        "SYS_DIGESTIVE_001"
+      ]
+    },
+    "synergies": ["EXE_RESISTANCE_001 (Perfect active recovery on rest days)"],
+    "contraindications": ["None, though extreme poses require supervision."],
+    "nutrient_demands": [],
+    "symptom_relief": ["SYM_POORSLEEP_001", "SYM_BLOATING_001", "SYM_FATIGUE_001", "SYM_JOINTPAIN_001"]
+  },
+  "EXE_NEAT_001": {
+    "id": "EXE_NEAT_001",
+    "node_type": "exercise",
+    "version": "1.0",
+    "name": "Non-Exercise Activity Thermogenesis (NEAT)",
+    "definition": "The energy expended for everything we do that is not sleeping, eating, or sports-like exercise (walking to work, typing, yard work, fidgeting).",
+    "indian_context": "Urban Indian lifestyles have seen a catastrophic drop in NEAT due to desk jobs, long commutes, and delivery apps. Often, 'Active Couch Potato' syndrome occurs (1 hour gym, 14 hours sitting).",
+    "biological_impacts": {
+      "hormonal": [
+        "HOR_INSULIN_001 (Constant low-level muscle activation prevents insulin resistance better than a single intense workout)",
+        "HOR_LEPTIN_001 (Helps regulate satiety signals)"
+      ],
+      "cellular": [
+        "BIO_MUSCLE_001 (Constant lipid oxidation in slow-twitch fibres)"
+      ],
+      "systemic": [
+        "SYS_WEIGHT_001 (Accounts for 15-30% of total daily energy expenditure, vastly outpacing formal exercise)"
+      ]
+    },
+    "synergies": ["All exercise types (NEAT is the foundation)"],
+    "contraindications": ["None"],
+    "nutrient_demands": [],
+    "symptom_relief": ["SYM_WEIGHTGAIN_001", "SYM_CONSTIPATION_001", "SYM_LOWENERGY_001"]
+  },
+  "EXE_MOBILITY_001": {
+    "id": "EXE_MOBILITY_001",
+    "node_type": "exercise",
+    "version": "1.0",
+    "name": "Mobility & Pilates",
+    "definition": "Exercises focusing on active range of motion, deep core stability, and structural alignment.",
+    "indian_context": "Essential for desk-workers suffering from tech-neck, rounded shoulders, and tight hip flexors.",
+    "biological_impacts": {
+      "hormonal": [],
+      "cellular": [
+        "BIO_BONE_001 (Improves joint capsule health via synovial fluid circulation)",
+        "BIO_MUSCULOSKELETAL_001 (Realigns fascia and tendons)"
+      ],
+      "systemic": [
+        "SYS_MUSCULOSKELETAL_001"
+      ]
+    },
+    "synergies": ["EXE_RESISTANCE_001 (Allows for safe lifting under load)"],
+    "contraindications": ["Acute herniated discs or severe structural injuries (requires physio)"],
+    "nutrient_demands": ["NUT_VITC_001 (For collagen synthesis)"],
+    "symptom_relief": ["SYM_JOINTPAIN_001"]
+  }
+}

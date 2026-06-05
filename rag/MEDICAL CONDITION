@@ -1,0 +1,179 @@
+{
+  "_meta": {
+    "layer": "17_MEDICAL_CONDITIONS",
+    "version": "1.0",
+    "description": "The capstone layer mapping complex diseases as 'routing hubs' that connect a clinical diagnosis down to its foundational biological, hormonal, inflammatory, and nutritional root causes.",
+    "nodes": [
+      "MED_TYPE2_DIABETES_001",
+      "MED_PCOS_001",
+      "MED_HASHIMOTOS_001",
+      "MED_HYPOTHYROID_001",
+      "MED_ANDROGENETIC_ALOPECIA_001",
+      "MED_TELOGEN_EFFLUVIUM_001",
+      "MED_IRON_DEFICIENCY_ANAEMIA_001",
+      "MED_METABOLIC_SYNDROME_001",
+      "MED_FATTY_LIVER_001",
+      "MED_ACNE_VULGARIS_001"
+    ]
+  },
+  "MED_TYPE2_DIABETES_001": {
+    "id": "MED_TYPE2_DIABETES_001",
+    "node_type": "medical_condition",
+    "version": "1.0",
+    "name": "Type 2 Diabetes Mellitus",
+    "definition": "A chronic metabolic disease characterised by beta-cell exhaustion and severe systemic insulin resistance, leading to chronically elevated blood glucose levels and widespread vascular/neurological damage.",
+    "why_standard_treatment_fails": "Standard treatment (like Sulfonylureas or exogenous insulin) forcefully squeezes the remaining beta cells to produce more insulin, or adds external insulin, to push glucose into already overstuffed cells. This lowers blood sugar but worsens the underlying hyperinsulinaemia and insulin resistance. It treats the symptom (high glucose) while accelerating the root cause (insulin resistance).",
+    "root_cause_pathways": [
+      "BSG_INSULIN_RESISTANCE_001 (The primary driver)",
+      "INF_METABOLIC_001 (Visceral fat driving systemic inflammation)",
+      "BIO_PANCREAS_001 (Beta cell destruction via glucotoxicity and oxidative stress)"
+    ],
+    "indian_context": "India has 100+ million diabetics. South Asians develop diabetes at a much lower BMI than Caucasians (the 'Thin-Fat' phenotype) due to genetically smaller beta-cell reserves and higher propensity for visceral fat storage. The traditional carbohydrate-heavy Indian diet combined with modern sedentary lifestyles causes rapid beta-cell burnout.",
+    "resolution_focus": ["EXE_RESISTANCE_001 (Building muscle as a glucose sink)", "NUT_CARBS_001 (Low glycaemic load)", "SLP_DEEPSLEEP_001"],
+    "symptom_refs": ["SYM_FATIGUE_001", "SYM_NUMBNESS_001", "SYM_BLURREDVISION_001", "SYM_WEIGHTGAIN_001"]
+  },
+  "MED_PCOS_001": {
+    "id": "MED_PCOS_001",
+    "node_type": "medical_condition",
+    "version": "1.0",
+    "name": "Polycystic Ovary Syndrome (PCOS)",
+    "definition": "A complex endocrine and metabolic disorder in women characterised by hyperandrogenism (excess testosterone/DHT), ovulatory dysfunction (irregular periods), and polycystic ovarian morphology.",
+    "why_standard_treatment_fails": "Standard treatment heavily relies on oral contraceptive pills (OCPs). OCPs do not 'regulate' the cycle; they shut down ovarian function entirely and induce a synthetic withdrawal bleed. This masks the symptoms (acne, missing periods) while completely ignoring the severe insulin resistance driving the disease. When the patient stops the pill to conceive, symptoms return aggressively.",
+    "root_cause_pathways": [
+      "BSG_INSULIN_RESISTANCE_001 (High insulin forces ovarian theca cells to overproduce testosterone)",
+      "HOR_SHBG_001 (Insulin suppresses liver SHBG, leaving more free testosterone in the blood)",
+      "HOR_TESTOSTERONE_001 (The direct cause of the acne, hirsutism, and hair loss)"
+    ],
+    "indian_context": "PCOS affects up to 1 in 5 Indian women. It is overwhelmingly driven by the Indian carbohydrate-heavy diet and sedentary lifestyle causing hyperinsulinaemia, often in women who do not appear 'overweight' (Lean PCOS).",
+    "resolution_focus": ["BSG_INSULIN_RESISTANCE_001 management", "NUT_CHROMIUM_001", "NUT_MAGNESIUM_001", "EXE_RESISTANCE_001"],
+    "symptom_refs": ["SYM_PCOS_001", "SYM_ACNE_001", "SYM_HAIRFALL_001", "SYM_WEIGHTGAIN_001", "SYM_THINHAIR_001"]
+  },
+  "MED_HASHIMOTOS_001": {
+    "id": "MED_HASHIMOTOS_001",
+    "node_type": "medical_condition",
+    "version": "1.0",
+    "name": "Hashimoto's Thyroiditis",
+    "definition": "An autoimmune disease where the body's immune system produces antibodies (TPO and TgAb) that attack and progressively destroy the thyroid gland, leading to hypothyroidism.",
+    "why_standard_treatment_fails": "Doctors typically only prescribe synthetic T4 (Levothyroxine) to replace the missing hormone. They almost never address the immune system. The immune system continues attacking the thyroid in the background, requiring progressively higher doses of medication over the years until the gland is completely destroyed.",
+    "root_cause_pathways": [
+      "INF_AUTOIMMUNE_001 (The actual disease process)",
+      "GUT_LEAKYGUT_001 (Intestinal permeability allows proteins like gluten into the blood, triggering molecular mimicry)",
+      "NUT_SELENIUM_001 (Deficiency prevents the thyroid from neutralizing H2O2 during hormone synthesis, causing oxidative damage that attracts the immune system)"
+    ],
+    "indian_context": "There is an explosion of Hashimoto's among Indian women. The combination of chronic stress, iodine imbalances, widespread vitamin D deficiency (crucial for immune tolerance), and gut dysbiosis from pesticide-laden food creates the perfect storm for autoimmunity.",
+    "resolution_focus": ["Gluten/Dairy elimination (to stop molecular mimicry)", "GUT_LEAKYGUT_001 repair", "NUT_SELENIUM_001", "NUT_VITAMIND_001"],
+    "symptom_refs": ["SYM_FATIGUE_001", "SYM_WEIGHTGAIN_001", "SYM_HAIRFALL_001", "SYM_CONSTIPATION_001", "SYM_DRYSKIN_001"]
+  },
+  "MED_HYPOTHYROID_001": {
+    "id": "MED_HYPOTHYROID_001",
+    "node_type": "medical_condition",
+    "version": "1.0",
+    "name": "Non-Autoimmune Hypothyroidism",
+    "definition": "A state of insufficient active thyroid hormone (T3) at the cellular level, slowing down the basal metabolic rate of every cell in the body.",
+    "why_standard_treatment_fails": "Standard treatment only prescribes T4 (Levothyroxine). However, T4 is inactive. It must be converted to T3 (the active hormone) primarily in the liver and gut. If the patient has a sluggish liver, gut issues, or nutrient deficiencies, they cannot convert T4 to T3. Their blood tests look 'normal' on T4 medication, but they still feel exhausted and lose hair.",
+    "root_cause_pathways": [
+      "HOR_THYROID_001 (Specifically, the failure of Deiodinase enzymes to convert T4 to T3)",
+      "BIO_LIVER_001 (Where 60% of conversion happens)",
+      "STR_CHRONIC_001 (Cortisol forces T4 to convert into Reverse T3, an inactive blocker hormone)"
+    ],
+    "indian_context": "Rampant across India. Often misdiagnosed or poorly managed because doctors only test TSH and rarely test Free T3 or Reverse T3. The high prevalence of fatty liver in India severely compromises T4 to T3 conversion.",
+    "resolution_focus": ["BIO_LIVER_001 support", "STR_CHRONIC_001 management", "NUT_ZINC_001", "NUT_SELENIUM_001"],
+    "symptom_refs": ["SYM_FATIGUE_001", "SYM_WEIGHTGAIN_001", "SYM_HAIRFALL_001", "SYM_CONSTIPATION_001", "SYM_DRYSKIN_001"]
+  },
+  "MED_ANDROGENETIC_ALOPECIA_001": {
+    "id": "MED_ANDROGENETIC_ALOPECIA_001",
+    "node_type": "medical_condition",
+    "version": "1.0",
+    "name": "Androgenetic Alopecia (Male & Female Pattern Hair Loss)",
+    "definition": "Progressive miniaturisation of the hair follicle driven by genetic sensitivity to DHT (Dihydrotestosterone) combined with micro-inflammation and oxidative stress.",
+    "why_standard_treatment_fails": "Standard topical minoxidil forces vasodilation and forces the hair into the anagen (growth) phase. However, it does absolutely nothing to stop the DHT binding, the insulin-driven androgen excess, or the perifollicular fibrosis (scarring) occurring around the follicle. Once minoxidil is stopped, all the artificially retained hair falls out simultaneously.",
+    "root_cause_pathways": [
+      "HOR_DHT_001 (Binds to dermal papilla receptors, shrinking the follicle)",
+      "BSG_HAIR_SKIN_AXIS_001 (Hyperinsulinaemia drives up 5-alpha reductase activity, converting more testosterone to DHT)",
+      "INF_SCALP_001 (Perifollicular inflammation causes fibrosis/scarring, permanently choking the blood supply)"
+    ],
+    "indian_context": "Balding is occurring a full decade earlier in Indian men (20s instead of 30s) due to the compounding effects of severe air pollution (OXI_FOLLICLE_001), high metabolic syndrome, and hard water (ENV_WATER_QUALITY_001) adding surface inflammation to the genetic predisposition.",
+    "resolution_focus": ["BSG_INSULIN_RESISTANCE_001 (to lower systemic androgens)", "INF_SCALP_001 resolution", "DHT blocking pathways"],
+    "symptom_refs": ["SYM_THINHAIR_001", "SYM_HAIRFALL_001", "SYM_DANDRUFF_001"]
+  },
+  "MED_TELOGEN_EFFLUVIUM_001": {
+    "id": "MED_TELOGEN_EFFLUVIUM_001",
+    "node_type": "medical_condition",
+    "version": "1.0",
+    "name": "Telogen Effluvium (Reactive Hair Shedding)",
+    "definition": "A massive, diffuse shedding of hair occurring 2-3 months after a severe physiological or psychological shock. The stressor forces up to 30-50% of anagen (growing) hairs prematurely into the telogen (resting/falling) phase.",
+    "why_standard_treatment_fails": "Patients are often given biotin gummies and expensive shampoos. Biotin has zero impact on stress-induced hair cycle disruption, and shampoos cannot reach the hair matrix where the biological reset occurred 3 months prior. The treatment must address the adrenal and nutritional recovery.",
+    "root_cause_pathways": [
+      "INF_ACUTE_001 (Massive cytokine storm from a viral infection forces the follicle to shut down to conserve energy)",
+      "HOR_CORTISOL_001 (Severe stress directly halts follicle proliferation)",
+      "NUT_IRON_001 (Sudden drop in ferritin deprives the rapidly dividing matrix cells of oxygen)"
+    ],
+    "indian_context": "Explosive outbreaks of Telogen Effluvium occur in India 2-3 months after the monsoon viral season (Dengue, Typhoid, Chikungunya, Covid). Dengue is particularly destructive to hair because it causes massive acute inflammation and depletes platelets and systemic nutrients.",
+    "resolution_focus": ["REC_FOLLICLE_001 (Understanding the mandatory 3-6 month recovery timeline)", "REC_HPA_001", "NUT_PROTEIN_001"],
+    "symptom_refs": ["SYM_HAIRFALL_001"]
+  },
+  "MED_IRON_DEFICIENCY_ANAEMIA_001": {
+    "id": "MED_IRON_DEFICIENCY_ANAEMIA_001",
+    "node_type": "medical_condition",
+    "version": "1.0",
+    "name": "Iron Deficiency Anaemia",
+    "definition": "A state where the body lacks sufficient iron to produce adequate haemoglobin, leading to reduced oxygen transport to tissues and failure of mitochondrial ATP production.",
+    "why_standard_treatment_fails": "Doctors prescribe high-dose oral iron salts (ferrous sulphate) without checking stomach acid or gut inflammation. In a compromised gut, unabsorbed iron feeds pathogenic bacteria and causes severe constipation. In the blood, unbound iron acts as a pro-oxidant (Fenton reaction), causing massive oxidative stress. Iron should never be given without addressing gut absorption and antioxidant capacity.",
+    "root_cause_pathways": [
+      "GUT_HYPOCHLORHYDRIA_001 (Low stomach acid makes it impossible to ionize and absorb dietary iron)",
+      "INF_CHRONIC_001 (Inflammation raises hepcidin, a liver hormone that blocks iron absorption from the gut to 'hide' it from pathogens)",
+      "OXI_FREE_RADICAL_001 (The oxidative damage caused by blind iron supplementation)"
+    ],
+    "indian_context": "Over 50% of Indian women are anaemic. The vegetarian diet provides mostly non-heme iron (which is poorly absorbed and blocked by phytates in dal/grains). Combined with widespread low stomach acid (from stress and H. pylori) and chronic inflammation, the iron simply cannot enter the bloodstream.",
+    "resolution_focus": ["GUT_HYPOCHLORHYDRIA_001 resolution (Apple Cider Vinegar/Betaine HCl)", "NUT_VITC_001 (Enhances non-heme absorption)", "Managing Hepcidin (reducing inflammation)"],
+    "symptom_refs": ["SYM_FATIGUE_001", "SYM_HAIRFALL_001", "SYM_BRAINFOG_001", "SYM_POORSLEEP_001"]
+  },
+  "MED_METABOLIC_SYNDROME_001": {
+    "id": "MED_METABOLIC_SYNDROME_001",
+    "node_type": "medical_condition",
+    "version": "1.0",
+    "name": "Metabolic Syndrome",
+    "definition": "A cluster of conditions occurring together: central obesity (belly fat), high blood pressure, high blood sugar, high serum triglycerides, and low HDL cholesterol.",
+    "why_standard_treatment_fails": "Treated as five separate diseases. The patient is given a statin for cholesterol, a beta-blocker for blood pressure, and metformin for sugar. None of these address the single unifying root cause: hyperinsulinaemia driving metabolic inflammation.",
+    "root_cause_pathways": [
+      "BSG_INSULIN_RESISTANCE_001 (The core engine of the syndrome)",
+      "INF_METABOLIC_001 (Visceral fat secreting adipokines)",
+      "SYS_CARDIOMETABOLIC_001"
+    ],
+    "indian_context": "The 'Thin-Fat Indian'. South Asians have a genetic tendency to store fat viscerally (around internal organs) rather than subcutaneously. Thus, an Indian with a 'normal' BMI can have severe Metabolic Syndrome. Waist-to-height ratio is a far better marker for Indians than BMI.",
+    "resolution_focus": ["BSG_INSULIN_RESISTANCE_001 management", "EXE_RESISTANCE_001", "NUT_CARBS_001"],
+    "symptom_refs": ["SYM_WEIGHTGAIN_001", "SYM_FATIGUE_001"]
+  },
+  "MED_FATTY_LIVER_001": {
+    "id": "MED_FATTY_LIVER_001",
+    "node_type": "medical_condition",
+    "version": "1.0",
+    "name": "Non-Alcoholic Fatty Liver Disease (NAFLD)",
+    "definition": "The accumulation of excess fat in liver cells in people who drink little or no alcohol. It progresses from simple steatosis to NASH (inflammation) to cirrhosis.",
+    "why_standard_treatment_fails": "Patients are often told to 'eat less fat'. NAFLD is NOT caused by eating dietary fat. It is caused by eating excess refined carbohydrates and fructose, which the liver converts into triglycerides via 'de novo lipogenesis'. Cutting dietary fat while maintaining high carbohydrate intake accelerates the disease.",
+    "root_cause_pathways": [
+      "BSG_POSTPRANDIAL_001 (Excess glucose directly converted to liver fat)",
+      "BSG_INSULIN_RESISTANCE_001 (Hepatic insulin resistance prevents the liver from stopping glucose production)",
+      "GUT_LEAKYGUT_001 (LPS endotoxins travel from the gut directly to the liver via the portal vein, driving liver inflammation - NASH)"
+    ],
+    "indian_context": "NAFLD is reaching epidemic proportions in urban India, even among strict teetotalers (non-drinkers) and vegetarians. The high intake of fructose (from sweets, packaged juices) and refined carbs (maida) is the direct driver.",
+    "resolution_focus": ["Fructose/Sugar elimination", "NUT_CHOLINE_001 (Required to export fat out of the liver)", "EXE_RESISTANCE_001"],
+    "symptom_refs": ["SYM_FATIGUE_001", "SYM_WEIGHTGAIN_001", "SYM_BRAINFOG_001"]
+  },
+  "MED_ACNE_VULGARIS_001": {
+    "id": "MED_ACNE_VULGARIS_001",
+    "node_type": "medical_condition",
+    "version": "1.0",
+    "name": "Acne Vulgaris (Hormonal/Metabolic Acne)",
+    "definition": "A chronic inflammatory skin condition involving the hyperproliferation of keratinocytes, excess sebum production, and colonization by C. acnes bacteria in the hair follicle.",
+    "why_standard_treatment_fails": "Dermatologists prescribe topical retinoids and oral antibiotics. Antibiotics destroy the gut microbiome (GUT_DYSBIOSIS_001), leading to worsened systemic inflammation once stopped. Topicals treat the surface but ignore the Insulin → IGF-1 hormonal pathway driving the excess sebum production from the inside.",
+    "root_cause_pathways": [
+      "BSG_HAIR_SKIN_AXIS_001 (Insulin spikes trigger IGF-1, which binds to sebaceous glands causing massive lipogenesis/oil production)",
+      "HOR_TESTOSTERONE_001 (Androgens enlarge the sebaceous gland)",
+      "INF_GUT_001 (Gut inflammation reflects directly on the skin via the gut-skin axis)"
+    ],
+    "indian_context": "Adult-onset acne is surging among Indian women. The combination of dairy (whey in milk spikes insulin/IGF-1), high glycaemic index Indian sweets, and PCOS-driven androgen excess makes standard surface treatments completely ineffective long-term.",
+    "resolution_focus": ["BSG_POSTPRANDIAL_001 control (Low GI diet)", "Dairy elimination", "NUT_ZINC_001 (Natural DHT blocker and anti-inflammatory)"],
+    "symptom_refs": ["SYM_ACNE_001"]
+  }
+}

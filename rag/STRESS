@@ -1,0 +1,160 @@
+{
+  "_meta": {
+    "layer": "09_STRESS",
+    "version": "1.0",
+    "description": "Biological and psychological stress drivers and their physiological cascades.",
+    "nodes": [
+      "STR_CHRONIC_001",
+      "STR_ACUTE_001",
+      "STR_PHYSICAL_001",
+      "STR_NUTRITIONAL_001",
+      "STR_CIRCADIAN_001",
+      "STR_TRAUMA_001"
+    ]
+  },
+  "STR_CHRONIC_001": {
+    "id": "STR_CHRONIC_001",
+    "node_type": "stress",
+    "version": "1.0",
+    "name": "Chronic Psychological Stress",
+    "definition": "Long-term, inescapable psychological pressure that keeps the HPA axis continuously activated without a recovery period.",
+    "indian_context": "Epidemic in urban India due to intense academic competition (JEE/NEET), high-pressure corporate/IT jobs, long commutes, and complex joint-family dynamics.",
+    "biological_mechanism": "Continuous CRH release from hypothalamus → continuous ACTH from pituitary → sustained cortisol output from adrenals. Leads to glucocorticoid receptor resistance.",
+    "hormonal_impacts": [
+      "HOR_CORTISOL_001 (Chronically elevated)",
+      "HOR_DHEA_001 (Elevated, causing adrenal PCOS)",
+      "HOR_PROGESTERONE_001 (Depleted via 'cortisol steal')",
+      "HOR_THYROID_001 (Suppressed T4 to T3 conversion)"
+    ],
+    "gut_impacts": [
+      "GUT_LEAKYGUT_001 (Cortisol degrades secretory IgA)",
+      "GUT_HYPOCHLORHYDRIA_001 (Sympathetic state halts digestion)",
+      "GUT_MOTILITY_001 (Slowed transit)"
+    ],
+    "sleep_impacts": [
+      "SLP_INSOMNIA_001",
+      "SLP_CORTISOL_RHYTHM_001 (High evening cortisol prevents sleep onset)"
+    ],
+    "nutrient_depletions": [
+      "NUT_MAGNESIUM_001 (Burned rapidly during stress response)",
+      "NUT_VITC_001 (Adrenals consume massive amounts to make cortisol)",
+      "NUT_B5_001"
+    ],
+    "symptom_refs": ["SYM_HAIRFALL_001", "SYM_FATIGUE_001", "SYM_WEIGHTGAIN_001", "SYM_POORSLEEP_001"]
+  },
+  "STR_ACUTE_001": {
+    "id": "STR_ACUTE_001",
+    "node_type": "stress",
+    "version": "1.0",
+    "name": "Acute Stress / Fight-or-Flight",
+    "definition": "Short-term, immediate sympathetic nervous system activation in response to a perceived immediate threat.",
+    "indian_context": "Traffic rage, sudden deadlines, acute arguments.",
+    "biological_mechanism": "Immediate release of adrenaline (epinephrine) and noradrenaline from the adrenal medulla. Shunts blood away from digestion and skin towards muscles and brain.",
+    "hormonal_impacts": [
+      "HOR_ADRENALINE_001 (Spiked)"
+    ],
+    "gut_impacts": [
+      "GUT_HYPOCHLORHYDRIA_001 (Immediate shutdown of stomach acid production)",
+      "GUT_IBS_001 (Can trigger acute IBS-D episodes)"
+    ],
+    "sleep_impacts": [
+      "SLP_INSOMNIA_001 (If acute stress happens near bedtime)"
+    ],
+    "nutrient_depletions": [],
+    "symptom_refs": ["SYM_BLOATING_001", "SYM_POORSLEEP_001"]
+  },
+  "STR_PHYSICAL_001": {
+    "id": "STR_PHYSICAL_001",
+    "node_type": "stress",
+    "version": "1.0",
+    "name": "Physical / Biomechanical Stress",
+    "definition": "Stress placed on the body through physical trauma, surgery, severe illness (like Dengue or severe Covid), or extreme overtraining without recovery.",
+    "indian_context": "Post-viral syndromes (dengue, chikungunya) are massive triggers for physical stress and subsequent hair loss.",
+    "biological_mechanism": "Massive systemic inflammatory response. The body diverts all energy and nutrients away from non-essential functions (like hair growth and reproduction) to survival and repair.",
+    "hormonal_impacts": [
+      "HOR_CORTISOL_001"
+    ],
+    "gut_impacts": [
+      "GUT_LEAKYGUT_001 (Severe physical trauma instantly increases gut permeability)"
+    ],
+    "sleep_impacts": [
+      "SLP_DEEPSLEEP_001 (Body requires vastly more deep sleep to repair)"
+    ],
+    "nutrient_depletions": [
+      "NUT_PROTEIN_001",
+      "NUT_IRON_001",
+      "NUT_ZINC_001"
+    ],
+    "symptom_refs": ["SYM_HAIRFALL_001", "SYM_FATIGUE_001", "SYM_MUSCLEWEAKNESS_001"]
+  },
+  "STR_NUTRITIONAL_001": {
+    "id": "STR_NUTRITIONAL_001",
+    "node_type": "stress",
+    "version": "1.0",
+    "name": "Nutritional Stress (Starvation/Crash Diets)",
+    "definition": "Severe caloric restriction, extreme fasting, or severe macronutrient deprivation.",
+    "indian_context": "Extreme pre-wedding crash diets or prolonged, unguided religious fasting.",
+    "biological_mechanism": "Hypothalamus detects low energy availability (low leptin, low insulin, low blood sugar) and triggers a starvation response. Basal metabolic rate plummets.",
+    "hormonal_impacts": [
+      "HOR_THYROID_001 (Drastic reduction in T3 to conserve energy)",
+      "HOR_LH_001 (Pulsatility stops, causing amenorrhea)",
+      "HOR_LEPTIN_001 (Drops significantly)"
+    ],
+    "gut_impacts": [
+      "GUT_MOTILITY_001 (Slows down to extract maximum calories, causing constipation)"
+    ],
+    "sleep_impacts": [
+      "SLP_INSOMNIA_001 (High adrenaline/cortisol from low blood sugar prevents sleep)"
+    ],
+    "nutrient_depletions": [
+      "NUT_IRON_001",
+      "NUT_B12_001",
+      "NUT_PROTEIN_001"
+    ],
+    "symptom_refs": ["SYM_WEIGHTLOSS_001", "SYM_HAIRFALL_001", "SYM_IRREGULARPERIODS_001", "SYM_CONSTIPATION_001"]
+  },
+  "STR_CIRCADIAN_001": {
+    "id": "STR_CIRCADIAN_001",
+    "node_type": "stress",
+    "version": "1.0",
+    "name": "Circadian Disruption Stress",
+    "definition": "Living out of sync with the natural light-dark cycle (shift work, severe jet lag, staying up very late).",
+    "indian_context": "Massive BPO/IT sector working US/UK shifts. Late-night smartphone usage.",
+    "biological_mechanism": "Misalignment between the central SCN clock (brain) and peripheral clocks (liver, gut, muscle). Results in eating when insulin sensitivity is lowest.",
+    "hormonal_impacts": [
+      "HOR_MELATONIN_001 (Suppressed)",
+      "HOR_INSULIN_001 (Severe nocturnal insulin resistance)",
+      "HOR_CORTISOL_001 (Reversed curve - high at night, low in morning)"
+    ],
+    "gut_impacts": [
+      "GUT_DYSBIOSIS_001 (Microbiome has its own circadian rhythm which gets destroyed)"
+    ],
+    "sleep_impacts": [
+      "SLP_CIRCADIAN_001",
+      "SLP_DEPRIVATION_001"
+    ],
+    "nutrient_depletions": [],
+    "symptom_refs": ["SYM_WEIGHTGAIN_001", "SYM_POORSLEEP_001", "SYM_FATIGUE_001"]
+  },
+  "STR_TRAUMA_001": {
+    "id": "STR_TRAUMA_001",
+    "node_type": "stress",
+    "version": "1.0",
+    "name": "Emotional Trauma / PTSD",
+    "definition": "Deeply ingrained psychological trauma that permanently alters the baseline reactivity of the nervous system.",
+    "indian_context": "Childhood trauma, abusive environments, severe loss.",
+    "biological_mechanism": "Permanently lowers the threshold for amygdala activation. The body remains in a constant state of hyper-vigilance. Over time, adrenal output may completely crash (hypocortisolism/HPA axis exhaustion).",
+    "hormonal_impacts": [
+      "HOR_CORTISOL_001 (Can be chronically high, or completely crashed/flatlined)"
+    ],
+    "gut_impacts": [
+      "GUT_IBS_001 (Strongest link to gut-brain axis disorders)"
+    ],
+    "sleep_impacts": [
+      "SLP_REM_001 (Disturbed REM sleep, nightmares)",
+      "SLP_INSOMNIA_001"
+    ],
+    "nutrient_depletions": [],
+    "symptom_refs": ["SYM_FATIGUE_001", "SYM_POORSLEEP_001", "SYM_BRAINFOG_001"]
+  }
+}

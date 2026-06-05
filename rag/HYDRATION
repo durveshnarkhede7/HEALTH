@@ -1,0 +1,228 @@
+{
+  "_meta": {
+    "layer": "15_HYDRATION",
+    "version": "1.0",
+    "description": "The complete water and electrolyte regulation system — cellular hydration, kidney physiology, electrolyte balance, and tissue-specific dehydration damage pathways.",
+    "nodes": [
+      "HYD_CELLULAR_001",
+      "HYD_ELECTROLYTE_001",
+      "HYD_KIDNEY_001",
+      "HYD_DEHYDRATION_001",
+      "HYD_OVERHYDRATION_001",
+      "HYD_HAIR_SKIN_001",
+      "HYD_DIGESTION_001",
+      "HYD_BRAIN_001",
+      "HYD_BLOOD_VISCOSITY_001",
+      "HYD_EXERCISE_001"
+    ]
+  },
+  "HYD_CELLULAR_001": {
+    "id": "HYD_CELLULAR_001",
+    "node_type": "hydration",
+    "version": "1.0",
+    "name": "Cellular Hydration (Master Definition)",
+    "definition": "Water constitutes 55-65% of total body weight and is the solvent for every single biochemical reaction in the body. Hydration is NOT simply about drinking water — it is about the distribution of water between the intracellular fluid (ICF — 2/3 of total body water, inside cells) and extracellular fluid (ECF — 1/3, outside cells including plasma and interstitial fluid). This distribution is controlled entirely by electrolyte gradients.",
+    "mechanism": {
+      "osmolarity_regulation": "Blood osmolarity is maintained between 275-295 mOsm/kg. When osmolarity rises (dehydration, salt intake), hypothalamic osmoreceptors trigger: (1) ADH (antidiuretic hormone / vasopressin) release from the posterior pituitary → kidneys retain water, and (2) thirst sensation. When osmolarity drops (overhydration), ADH is suppressed → kidneys excrete dilute urine.",
+      "water_distribution": "Water moves across cell membranes by osmosis — always towards higher solute concentration. Sodium (Na+) is the primary extracellular cation that holds water OUTSIDE cells. Potassium (K+) is the primary intracellular cation that holds water INSIDE cells. The Na+/K+ ATPase pump (consuming ~30% of all resting energy) maintains this gradient. Cellular hydration = adequate intracellular potassium.",
+      "aquaporins": "Water crosses cell membranes through aquaporin protein channels (AQP1-AQP13). Different tissues express different aquaporins. Kidney collecting ducts express AQP2 (regulated by ADH). Skin expresses AQP3 (critical for skin moisture). Brain expresses AQP4 (involved in glymphatic waste clearance during sleep).",
+      "daily_turnover": "The average adult turns over ~2.5-3L of water daily: ~1.5L urine, ~0.5L insensible loss (breathing, skin evaporation), ~0.2L sweat (more in hot climates), ~0.2L faeces. Minimum water intake to avoid kidney stress: ~1.5L/day. Optimal intake in Indian climate: 2.5-3.5L/day depending on activity level and temperature."
+    },
+    "indian_context": "India's hot and humid climate increases insensible water losses significantly. Many Indians chronically underhydrate because: (1) tea/coffee are consumed instead of water (caffeine is a mild diuretic), (2) filtered/RO water strips essential minerals, (3) the habit of drinking water only when thirsty — but thirst is a LATE indicator of dehydration (triggered only at 1-2% body water deficit).",
+    "hormonal_regulators": [
+      "ADH/Vasopressin (Primary — retains water at kidneys)",
+      "Aldosterone (Retains sodium → water follows sodium)",
+      "HOR_CORTISOL_001 (Has mineralocorticoid activity — retains sodium and water, which is why stress causes water retention and bloating)",
+      "ANP/BNP (Atrial Natriuretic Peptide — promotes sodium and water excretion when blood volume is too high)"
+    ],
+    "symptom_refs": ["SYM_FATIGUE_001", "SYM_DRYSKIN_001", "SYM_HEADACHE_001"]
+  },
+  "HYD_ELECTROLYTE_001": {
+    "id": "HYD_ELECTROLYTE_001",
+    "node_type": "hydration",
+    "version": "1.0",
+    "name": "Electrolyte Balance",
+    "definition": "Electrolytes are minerals that dissolve into charged ions in body fluids. They are NOT optional supplements — they are the physical forces that control water distribution, nerve conduction, muscle contraction, and heart rhythm. Without electrolytes, drinking water is biologically useless because it cannot enter cells.",
+    "electrolytes": {
+      "sodium_Na": {
+        "role": "Primary extracellular cation. Controls extracellular fluid volume and blood pressure. Required for nerve impulse transmission (action potentials). Normal range: 135-145 mEq/L.",
+        "deficiency_hyponatremia": "Serum Na+ below 135 mEq/L. Caused by excessive plain water intake without sodium (water intoxication), excessive sweating with only water replacement, or SIADH. Symptoms: nausea, headache, confusion, seizures. Severe hyponatremia is life-threatening.",
+        "indian_context": "Common during extreme summer heat when labourers drink large volumes of plain water without salt replacement. Also common in elderly on diuretics."
+      },
+      "potassium_K": {
+        "role": "Primary intracellular cation. Controls INTRACELLULAR hydration (the hydration that actually matters for cellular function). Essential for maintaining resting membrane potential (-70mV) in every cell. Critical for cardiac rhythm — both hypo- and hyperkalaemia can cause fatal arrhythmias. Normal range: 3.5-5.0 mEq/L.",
+        "deficiency_hypokalemia": "Caused by: excessive tea/coffee (caffeine increases renal K+ loss), chronic diarrhoea, high-sodium low-potassium diet (processed foods). Symptoms: muscle cramps, weakness, constipation, cardiac arrhythmia.",
+        "indian_context": "The traditional Indian diet (coconut water, bananas, dal, sabzi) is naturally potassium-rich. The modern urban Indian diet (processed snacks, excessive chai, low vegetables) is severely potassium-depleted while being sodium-excessive."
+      },
+      "magnesium_Mg": {
+        "role": "Required for Na+/K+ ATPase pump function. Without magnesium, the pump cannot maintain the sodium-potassium gradient → cellular dehydration regardless of water intake. Also required for >300 enzymatic reactions. See NUT_MAGNESIUM_001.",
+        "indian_context": "Magnesium deficiency is epidemic in India. Ref: NUT_MAGNESIUM_001."
+      },
+      "chloride_Cl": {
+        "role": "Primary extracellular anion. Travels with sodium. Essential for stomach acid production (HCl). Chronic chloride deficiency → metabolic alkalosis → impaired digestion.",
+        "indian_context": "Adequate from salt intake in most Indian diets."
+      },
+      "bicarbonate_HCO3": {
+        "role": "Primary blood pH buffer. Maintains blood pH at 7.35-7.45. Produced by kidneys and pancreas.",
+        "indian_context": "Relevant in chronic kidney disease — rising prevalence in India."
+      }
+    },
+    "nutritional_connection": [
+      "NUT_MAGNESIUM_001 (Powers the Na+/K+ pump that controls all water distribution)",
+      "NUT_ZINC_001 (Carbonic anhydrase — CO2/bicarbonate balance)"
+    ]
+  },
+  "HYD_KIDNEY_001": {
+    "id": "HYD_KIDNEY_001",
+    "node_type": "hydration",
+    "version": "1.0",
+    "name": "Kidney Water Regulation",
+    "definition": "The kidneys filter approximately 180 litres of blood per day through ~1 million nephrons per kidney. They reabsorb 99% of this filtrate, excreting only 1-2L as urine. The kidney is the master organ of hydration — it determines moment-to-moment water balance.",
+    "mechanism": {
+      "glomerular_filtration": "Blood enters the glomerulus under pressure → plasma water, electrolytes, glucose, amino acids, and small molecules are filtered into Bowman's capsule. Large proteins and blood cells are retained. GFR (Glomerular Filtration Rate) ~120 mL/min = ~180L/day.",
+      "proximal_tubule": "Reabsorbs 65-70% of filtered water obligatorily (follows sodium reabsorption). Also reabsorbs glucose (via SGLT2), amino acids, and bicarbonate. This is constitutive — not regulated by hormones.",
+      "loop_of_henle": "Creates the medullary concentration gradient (osmotic engine) that allows the kidney to produce concentrated urine. Descending limb: permeable to water (water leaves). Ascending limb: impermeable to water, actively pumps NaCl out. This countercurrent mechanism allows urine concentration up to 1200 mOsm/kg.",
+      "collecting_duct_ADH": "ADH (vasopressin) from the posterior pituitary binds V2 receptors → inserts AQP2 water channels into the collecting duct membrane → water is reabsorbed → concentrated urine. Without ADH → dilute urine (diabetes insipidus). This is the final fine-tuning step.",
+      "aldosterone_RAAS": "Low blood volume or low sodium → kidneys secrete renin → angiotensinogen → angiotensin I → ACE converts to angiotensin II → stimulates aldosterone from adrenal cortex → collecting duct reabsorbs sodium → water follows sodium. The Renin-Angiotensin-Aldosterone System (RAAS) is the long-term blood pressure and volume regulator."
+    },
+    "indian_context": "India has a rapidly growing burden of chronic kidney disease (CKD), driven by uncontrolled diabetes and hypertension. Additionally, chronic dehydration in hot climates concentrates urine → increases kidney stone risk (India has one of the highest kidney stone prevalence rates globally, especially in the 'stone belt' of Rajasthan, Gujarat, Maharashtra, and Punjab).",
+    "downstream_effects": [
+      "Kidney stones (calcium oxalate most common — concentrated urine allows crystal nucleation)",
+      "Urinary tract infections (concentrated urine = less flushing of bacteria)",
+      "Chronic kidney disease progression (dehydration accelerates nephron loss)"
+    ]
+  },
+  "HYD_DEHYDRATION_001": {
+    "id": "HYD_DEHYDRATION_001",
+    "node_type": "hydration",
+    "version": "1.0",
+    "name": "Dehydration (Systemic Effects)",
+    "definition": "A state where total body water deficit exceeds 1% of body weight. Even 1-2% dehydration (before thirst is perceived) causes measurable cognitive decline, fatigue, and reduced physical performance.",
+    "severity_stages": {
+      "mild_1_2_percent": "Thirst onset. Reduced concentration and cognitive performance. Darker urine. Mild headache. 10-15% reduction in aerobic exercise capacity. Most urban Indians are chronically at this stage without realising it.",
+      "moderate_3_5_percent": "Severe thirst. Dry mouth and mucous membranes. Reduced urine output. Heart rate rises (blood volume drops → heart compensates). Significant muscle weakness and cramping. Constipation worsens dramatically (colon reabsorbs water from stool).",
+      "severe_6_plus_percent": "Medical emergency. Sunken eyes, no tears, very rapid pulse. Confusion, delirium. Kidney shutdown (anuria). Hypotension. Heat stroke risk. Can be fatal if untreated."
+    },
+    "biological_cascade": {
+      "blood_viscosity": "Dehydration → plasma volume drops → blood becomes more viscous → heart works harder to pump thicker blood → increased cardiovascular strain. See HYD_BLOOD_VISCOSITY_001.",
+      "cortisol_spike": "Dehydration is a physiological stressor → HPA axis activation → HOR_CORTISOL_001 elevation → all downstream cortisol damage (insulin resistance, muscle breakdown, hair loss). Chronic mild dehydration is a chronically active cortisol trigger that is almost never identified.",
+      "digestive_shutdown": "Water is essential for: (1) saliva production (amylase for carb digestion), (2) HCl production in stomach (requires H+ and Cl-), (3) pancreatic bicarbonate secretion, (4) bile fluidity, (5) intestinal mucus layer maintenance. Dehydration → GUT_HYPOCHLORHYDRIA_001, constipation, and impaired nutrient absorption.",
+      "toxin_accumulation": "Reduced renal filtration → waste products (urea, creatinine, uric acid) accumulate → metabolic burden increases → liver and kidney stress.",
+      "nutrient_transport_failure": "Blood is the delivery system for all nutrients. Reduced plasma volume → reduced nutrient delivery to hair follicles, skin, and all peripheral tissues."
+    },
+    "indian_context": "Chronic mild dehydration is arguably the most widespread and most overlooked health issue in India. Contributing factors: (1) Hot climate year-round in most of India, (2) Chai/coffee consumed as primary beverages instead of water, (3) Cultural habit of drinking water only when thirsty, (4) Poor access to clean drinking water in many areas, (5) RO water stripping essential minerals (demineralised water is less hydrating because it lacks electrolytes).",
+    "symptom_refs": ["SYM_FATIGUE_001", "SYM_HEADACHE_001", "SYM_CONSTIPATION_001", "SYM_DRYSKIN_001", "SYM_BRAINFOG_001"]
+  },
+  "HYD_OVERHYDRATION_001": {
+    "id": "HYD_OVERHYDRATION_001",
+    "node_type": "hydration",
+    "version": "1.0",
+    "name": "Overhydration / Water Intoxication",
+    "definition": "Excessive water intake without proportional electrolyte intake, diluting serum sodium below 135 mEq/L (hyponatraemia). Contrary to popular belief, 'drinking more water' is NOT always beneficial and can be dangerous.",
+    "mechanism": {
+      "dilutional_hyponatraemia": "Drinking large volumes of plain water → serum sodium drops → osmotic gradient shifts water INTO cells → cell swelling. In the brain (enclosed by the rigid skull), swelling causes increased intracranial pressure → headache, nausea, confusion, seizures. Fatal cases have occurred in athletes and people following extreme 'detox' water challenges.",
+      "kidney_excretion_limit": "Healthy kidneys can excrete a maximum of ~0.8-1L of water per hour. Drinking faster than this rate → water retention → dilution of electrolytes.",
+      "ADH_suppression_failure": "In SIADH (syndrome of inappropriate ADH secretion) — caused by certain medications, tumours, or CNS disorders — ADH remains elevated even when osmolarity is low → kidneys cannot excrete excess water → progressive hyponatraemia."
+    },
+    "indian_context": "The 'drink 4 litres a day' social media advice is dangerous without context. Many Indians force-drink large volumes of plain RO water (which has been stripped of all minerals) throughout the day, potentially causing dilutional hyponatraemia. Proper hydration requires BOTH water AND electrolytes.",
+    "resolution": "Add a pinch of rock salt (sendha namak) and a squeeze of lemon to water. Consume coconut water, buttermilk (chaas), or nimbu-paani with salt for electrolyte-balanced hydration.",
+    "symptom_refs": ["SYM_HEADACHE_001", "SYM_NAUSEA_001", "SYM_BLOATING_001"]
+  },
+  "HYD_HAIR_SKIN_001": {
+    "id": "HYD_HAIR_SKIN_001",
+    "node_type": "hydration",
+    "version": "1.0",
+    "name": "Hydration → Hair & Skin Connection",
+    "definition": "Water is a structural and functional requirement for both the hair follicle and the epidermis. Dehydration does not just make skin 'dry on the surface' — it disrupts the cellular machinery of hair growth and skin renewal at the molecular level.",
+    "hair_pathways": {
+      "dermal_papilla_perfusion": "The dermal papilla receives nutrients exclusively via a single capillary loop. Dehydration → reduced plasma volume → reduced blood flow through this capillary → nutrient and oxygen starvation of the matrix cells. Since matrix cells divide every 12-24 hours and have zero reserve capacity, even mild perfusion reduction slows hair growth rate.",
+      "keratin_synthesis": "Keratin protein synthesis (the structural material of hair) is a hydration-dependent process. The tertiary folding of keratin polypeptides requires water molecules to form hydrogen bonds. Dehydrated keratin → misfolded, weak protein → brittle, dull hair with reduced tensile strength and elasticity.",
+      "sebum_quality": "Adequate hydration maintains sebum fluidity. Dehydrated sebum becomes thick and waxy → blocks follicle ostia → creates a microenvironment favourable for Malassezia fungus → dandruff and follicular inflammation (INF_SCALP_001).",
+      "scalp_microbiome": "The scalp microbiome requires a specific moisture level to maintain balance. Chronic scalp dehydration (from hard water, excessive shampooing, or low humidity) shifts the microbiome towards pathogenic species."
+    },
+    "skin_pathways": {
+      "aquaporin_3_AQP3": "AQP3 is the primary water channel in keratinocytes (skin cells). AQP3 transports both water and glycerol into epidermal cells. Glycerol is the natural moisturising factor (NMF) of skin. Reduced AQP3 expression (from aging, UV damage, or chronic dehydration) → dry, rough, prematurely aged skin.",
+      "epidermal_turnover": "Cell division in the basal layer requires adequate intracellular hydration. Dehydrated basal cells divide more slowly → epidermal turnover extends from 28 to 40+ days → dull, accumulated dead skin → uneven tone and texture.",
+      "collagen_hydration": "Collagen fibres in the dermis require water molecules to maintain their triple-helix structure and flexibility. Dehydrated collagen → rigid, brittle fibres → wrinkles and loss of elasticity. This is distinct from glycation-induced collagen damage (OXI_GLYCATION_001) but compounds it.",
+      "transepidermal_water_loss_TEWL": "The skin loses water by evaporation through the stratum corneum (TEWL). A healthy lipid barrier (ceramides, cholesterol, fatty acids) minimises TEWL. Disrupted barrier (harsh soaps, hot water, dry climate) → excessive TEWL → surface dehydration → eczema, flaking, irritation."
+    },
+    "indian_context": "Indian women frequently present with dry, dull skin and brittle hair that is attributed to 'weather' or 'products,' when the root cause is chronic systemic dehydration compounded by hard water externally. Additionally, excessive hot water bathing (common in winter) strips the lipid barrier, dramatically increasing TEWL.",
+    "nutritional_connection": [
+      "NUT_OMEGA3_001 (Required for lipid barrier integrity — reduces TEWL)",
+      "NUT_VITC_001 (Required for collagen synthesis in the dermis)",
+      "NUT_ZINC_001 (Required for AQP3 expression regulation)"
+    ],
+    "symptom_refs": ["SYM_DRYSKIN_001", "SYM_HAIRFALL_001", "SYM_THINHAIR_001", "SYM_DANDRUFF_001"]
+  },
+  "HYD_DIGESTION_001": {
+    "id": "HYD_DIGESTION_001",
+    "node_type": "hydration",
+    "version": "1.0",
+    "name": "Hydration → Digestive Function",
+    "definition": "The entire digestive tract is a water-intensive system. From saliva to bile to intestinal secretions, the GI tract secretes approximately 7-9 litres of fluid daily into the lumen (most of which is reabsorbed). Dehydration compromises every stage of digestion.",
+    "mechanism": {
+      "saliva": "Saliva production: 1-1.5L/day. Contains salivary amylase (carbohydrate digestion begins in the mouth), mucins (lubrication), lysozyme (antimicrobial). Dehydration → reduced saliva → impaired carb digestion, dry mouth, increased oral bacterial load, bad breath (halitosis).",
+      "stomach_acid": "Gastric acid (HCl) production requires: hydrogen ions (H+) from water (H2O), chloride ions (Cl-), and adequate blood flow to the parietal cells. Dehydration → reduced parietal cell perfusion → reduced HCl output → GUT_HYPOCHLORHYDRIA_001 → impaired protein digestion, reduced mineral absorption, increased infection risk.",
+      "pancreatic_secretions": "The pancreas produces 1.5-2L/day of bicarbonate-rich fluid to neutralise stomach acid in the duodenum. This alkaline environment is essential for pancreatic enzyme function (lipase, trypsin, amylase). Dehydration → reduced bicarbonate secretion → acidic duodenal pH → enzyme inactivation → fat and protein maldigestion.",
+      "bile_fluidity": "Bile produced by the liver (500-1000mL/day) requires adequate water to remain fluid. Concentrated, dehydrated bile → cholesterol supersaturation → gallstone formation (cholelithiasis). India has rising gallstone prevalence, especially in North Indian women.",
+      "intestinal_mucus": "The intestinal mucus layer (MUC2 mucin gel) is 95% water. Dehydration → thinner, less protective mucus → bacterial contact with epithelium → inflammation → increased permeability (GUT_LEAKYGUT_001).",
+      "colonic_water_reabsorption": "The colon reabsorbs 1.5-2L of water daily from intestinal contents. When the body is dehydrated, the colon becomes aggressively water-absorptive → extracts maximum water from stool → hard, dry, compacted stool → constipation. This is the single most common cause of constipation in India."
+    },
+    "indian_context": "The Indian habit of drinking chai (a diuretic) as the first beverage of the day, often on an empty stomach, starts the day in a dehydration deficit. Compounded by low water intake throughout the day, the entire digestive tract operates at sub-optimal hydration levels, contributing to India's epidemic of constipation, bloating, acidity, and gallstones.",
+    "gut_refs": ["GUT_HYPOCHLORHYDRIA_001", "GUT_LEAKYGUT_001", "GUT_MOTILITY_001"],
+    "symptom_refs": ["SYM_CONSTIPATION_001", "SYM_BLOATING_001", "SYM_ACIDREFLUX_001"]
+  },
+  "HYD_BRAIN_001": {
+    "id": "HYD_BRAIN_001",
+    "node_type": "hydration",
+    "version": "1.0",
+    "name": "Hydration → Brain & Cognitive Function",
+    "definition": "The brain is 75% water by weight. It has no water storage capacity and is exquisitely sensitive to even minor dehydration. A 1-2% reduction in body water causes measurable cognitive impairment equivalent to staying awake for 36 hours.",
+    "mechanism": {
+      "cognitive_decline": "Dehydration → reduced cerebral blood flow → reduced oxygen and glucose delivery to neurons → impaired neurotransmitter synthesis (serotonin, dopamine, GABA all require aqueous enzymatic reactions) → poor concentration, memory impairment, slowed reaction time.",
+      "glymphatic_system": "During deep sleep (SLP_DEEPSLEEP_001), the brain's glymphatic system activates — cerebrospinal fluid (CSF) flushes through the brain parenchyma via AQP4 water channels in astrocyte endfeet → clears metabolic waste including beta-amyloid. Dehydration → reduced CSF volume → impaired glymphatic clearance → accumulated neurotoxic waste → brain fog upon waking.",
+      "blood_brain_barrier": "Adequate hydration maintains the integrity of tight junctions in brain endothelial cells. Chronic dehydration → BBB permeability increase → peripheral inflammatory molecules enter the brain → neuroinflammation (INF_NEURO_001).",
+      "cortisol_amplification": "Dehydration is a physiological stressor that activates the HPA axis. Studies show that even 2% dehydration elevates cortisol levels. This cortisol → further brain inflammation → worse cognitive function. The dehydration-cortisol-brain fog loop is one of the most underdiagnosed causes of poor mental performance."
+    },
+    "indian_context": "Students preparing for competitive exams (JEE, NEET, UPSC) in hot Indian climates often drink excessive chai and minimal water, creating chronic dehydration → elevated cortisol → poor concentration → worse performance → more stress → more chai. Breaking this cycle with simple water intake can significantly improve cognitive output.",
+    "sleep_refs": ["SLP_DEEPSLEEP_001 (Glymphatic clearance requires adequate hydration)"],
+    "symptom_refs": ["SYM_BRAINFOG_001", "SYM_HEADACHE_001", "SYM_FATIGUE_001"]
+  },
+  "HYD_BLOOD_VISCOSITY_001": {
+    "id": "HYD_BLOOD_VISCOSITY_001",
+    "node_type": "hydration",
+    "version": "1.0",
+    "name": "Blood Viscosity & Cardiovascular Impact",
+    "definition": "Blood is approximately 55% plasma (which is 92% water). Dehydration reduces plasma volume, increasing the concentration of red blood cells and proteins in the remaining plasma — making the blood thicker (increased viscosity). This has direct cardiovascular and microcirculatory consequences.",
+    "mechanism": {
+      "haematocrit_rise": "Haematocrit (percentage of blood volume occupied by RBCs) rises with dehydration. Normal haematocrit: 36-48%. Even a 2-3% rise significantly increases blood viscosity. Thicker blood → greater resistance to flow → heart must pump harder → elevated blood pressure and heart rate.",
+      "microcirculation_impact": "Capillaries in the dermal papilla of hair follicles, the skin papillary dermis, and the kidney glomeruli are only 5-10 micrometres wide. RBCs (7-8 micrometres) must deform to pass through. In viscous, dehydrated blood → RBC stacking (rouleaux formation) → reduced capillary flow → nutrient delivery failure to hair, skin, and kidneys.",
+      "clotting_risk": "Dehydration increases platelet aggregation and blood coagulability. Risk of deep vein thrombosis (DVT) rises significantly during dehydration — this is why long flights and bedridden patients are at elevated clot risk.",
+      "morning_cardiovascular_events": "Heart attacks and strokes are most common between 6-10 AM. One contributing factor: 6-8 hours of sleep without water intake → morning dehydration → peak blood viscosity → highest clot risk of the day."
+    },
+    "indian_context": "India has rising cardiovascular disease mortality. Chronic mild dehydration is an unrecognised contributing factor. The morning habit of drinking chai (a diuretic) before water compounds the post-sleep dehydration peak. A simple intervention — drinking 500mL of plain water upon waking BEFORE chai — could measurably reduce morning cardiovascular risk.",
+    "downstream_effects": [
+      "BIO_FOLLICLE_001 (Reduced capillary perfusion to dermal papilla)",
+      "SYS_CARDIOMETABOLIC_001 (Increased cardiac workload)",
+      "HYD_KIDNEY_001 (Concentrated blood → kidney filtration stress)"
+    ]
+  },
+  "HYD_EXERCISE_001": {
+    "id": "HYD_EXERCISE_001",
+    "node_type": "hydration",
+    "version": "1.0",
+    "name": "Exercise Hydration & Electrolyte Loss",
+    "definition": "Physical activity dramatically increases water and electrolyte losses through sweat. Sweat is a hypotonic fluid containing sodium (20-80 mEq/L), potassium (5-10 mEq/L), chloride, and trace minerals (zinc, iron, magnesium). Replacing only water without electrolytes during exercise worsens hyponatraemia.",
+    "mechanism": {
+      "sweat_composition": "Sweat rate: 0.5-2.0L/hour depending on exercise intensity, temperature, and humidity. Indian hot climate → sweat rates towards the upper range. Sweat sodium concentration varies genetically — 'salty sweaters' lose up to 80 mEq/L, producing white salt stains on clothes.",
+      "performance_decline": "1% body weight water loss → 5-10% performance decline. 2% → 20-25% decline. 3% → risk of heat illness. Performance decline is due to reduced plasma volume → reduced stroke volume → heart rate rises → cardiac output cannot meet muscle oxygen demand.",
+      "thermoregulation": "Water is essential for evaporative cooling (sweating). Dehydration → reduced sweat output → body temperature rises → risk of heat exhaustion and heat stroke. Core temperature above 40°C → protein denaturation begins → medical emergency.",
+      "post_exercise_rehydration": "Full rehydration requires consuming 150% of fluid lost during exercise (because kidneys continue excreting during rehydration). Must include sodium to retain the water — plain water without sodium → rapid excretion → incomplete rehydration.",
+      "mineral_losses": "Chronic heavy sweaters lose significant zinc and iron through sweat over weeks/months of training. This contributes to exercise-induced zinc deficiency (weakened immunity) and iron deficiency (exercise-induced anaemia) — both commonly seen in Indian athletes.",
+      "electrolyte_replacement": "Optimal rehydration drink: water + sodium (1/4 tsp salt per 500mL) + potassium (coconut water or banana) + glucose (small amount to activate SGLT1 sodium-glucose co-transport for faster intestinal absorption). Commercial sports drinks often contain excessive sugar."
+    },
+    "indian_context": "Indian gyms and outdoor exercisers in 35-45°C heat face extreme dehydration risk. Traditional Indian rehydration drinks (nimbu-paani with salt and sugar, coconut water, buttermilk/chaas) are scientifically superior to many commercial electrolyte drinks because they provide the correct sodium-potassium-glucose ratio naturally.",
+    "exercise_refs": ["EXE_RESISTANCE_001", "EXE_AEROBIC_001", "EXE_HIIT_001"],
+    "nutrient_refs": ["NUT_ZINC_001", "NUT_IRON_001", "NUT_MAGNESIUM_001"]
+  }
+}

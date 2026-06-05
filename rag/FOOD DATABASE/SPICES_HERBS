@@ -1,0 +1,223 @@
+{
+  "_meta": {
+    "layer": "21_FOOD_DATABASE",
+    "category": "Spices and Herbs",
+    "serving_size_standard": "Per 1 Teaspoon (~2g) or 1 Tablespoon",
+    "description": "The functional medicine cabinet of the Indian kitchen. Spices are not used for calories; they are potent pharmacological agents that modulate enzymes, digestion, and gene expression.",
+    "nodes": [
+      "FOOD_SPICE_TURMERIC_001",
+      "FOOD_SPICE_CUMIN_001",
+      "FOOD_SPICE_CORIANDER_001",
+      "FOOD_SPICE_BLACKPEPPER_001",
+      "FOOD_SPICE_CINNAMON_001",
+      "FOOD_SPICE_METHI_SEED_001",
+      "FOOD_SPICE_AJWAIN_001",
+      "FOOD_SPICE_HING_001",
+      "FOOD_SPICE_CLOVE_001",
+      "FOOD_SPICE_CARDAMOM_001",
+      "FOOD_SPICE_FENNEL_001",
+      "FOOD_SPICE_CURRYLEAF_001"
+    ]
+  },
+  "FOOD_SPICE_TURMERIC_001": {
+    "id": "FOOD_SPICE_TURMERIC_001",
+    "name": "Turmeric (Haldi)",
+    "category": "Spices and Herbs",
+    "serving_size_reference": "1 Teaspoon (2g)",
+    "pharmacological_profile": {
+      "active_compound": "Curcumin (2-5% by weight)",
+      "mechanism": "Potent inhibitor of COX-2 and LOX enzymes (the pathways that create inflammation)."
+    },
+    "biological_impact": {
+      "systemic_inflammation": "Curcumin is biologically equivalent to pharmaceutical anti-inflammatories without the gut-destroying side effects. Modulates the immune system heavily (INF_CHRONIC_001)."
+    },
+    "anti_nutrients": "Extremely poor bioavailability. The liver conjugates and excretes Curcumin almost immediately.",
+    "preparation_rules": "THE PIPERINE SYNERGY: You MUST consume turmeric with Black Pepper. Piperine in black pepper inhibits the liver enzyme UGTs, boosting Curcumin absorption by 2000%. Curcumin is also fat-soluble; it must be cooked in Ghee or Oil.",
+    "related_nodes": ["INF_CHRONIC_001", "SYM_JOINTPAIN_001"]
+  },
+  "FOOD_SPICE_CUMIN_001": {
+    "id": "FOOD_SPICE_CUMIN_001",
+    "name": "Cumin (Jeera)",
+    "category": "Spices and Herbs",
+    "serving_size_reference": "1 Teaspoon (2g)",
+    "pharmacological_profile": {
+      "active_compound": "Cuminaldehyde",
+      "mechanism": "Stimulates the secretion of pancreatic enzymes and bile from the liver."
+    },
+    "biological_impact": {
+      "digestion": "Instantly accelerates the digestion of heavy fats and proteins. Boiling jeera in water (Jeera Paani) is a rapid treatment for acute bloating (SYM_BLOATING_001)."
+    },
+    "anti_nutrients": "None.",
+    "preparation_rules": "Must be 'bloomed' in hot oil/ghee (Tadka) to release the volatile oils into the fat, or dry-roasted and crushed.",
+    "related_nodes": ["SYM_BLOATING_001", "BIO_LIVER_001"]
+  },
+  "FOOD_SPICE_CORIANDER_001": {
+    "id": "FOOD_SPICE_CORIANDER_001",
+    "name": "Coriander Seeds (Dhania)",
+    "category": "Spices and Herbs",
+    "serving_size_reference": "1 Tablespoon (5g)",
+    "pharmacological_profile": {
+      "active_compound": "Linalool",
+      "mechanism": "Acts as a potent 'cooling' (Pitta-pacifying) agent in the GI tract."
+    },
+    "biological_impact": {
+      "acid_reflux": "Balances the extreme heat of chili powder and turmeric in curries. Soothes gastric mucosa (GUT_DYSBIOSIS_001) and acts as a mild diuretic to flush kidneys.",
+      "thyroid": "Coriander seed water is a traditional remedy to support thyroid gland function."
+    },
+    "anti_nutrients": "None.",
+    "preparation_rules": "Almost always paired 2:1 with Cumin in Indian cooking to balance heating/cooling energies.",
+    "related_nodes": ["GUT_DYSBIOSIS_001", "HOR_THYROID_001"]
+  },
+  "FOOD_SPICE_BLACKPEPPER_001": {
+    "id": "FOOD_SPICE_BLACKPEPPER_001",
+    "name": "Black Pepper (Kaali Mirch)",
+    "category": "Spices and Herbs",
+    "serving_size_reference": "1/2 Teaspoon (1g)",
+    "pharmacological_profile": {
+      "active_compound": "Piperine",
+      "mechanism": "Inhibits Phase II liver detoxification enzymes (UGTs and CYP3A4)."
+    },
+    "biological_impact": {
+      "bioenhancer": "By slowing down the liver's ability to clear chemicals, it massively boosts the absorption of nutrients (like curcumin, selenium, and B-vitamins) into the blood.",
+      "stomach_acid": "Stimulates hydrochloric acid (HCl) production in the stomach, preventing protein putrefaction."
+    },
+    "anti_nutrients": "Can increase the absorption of pharmaceutical drugs to toxic levels if taken simultaneously.",
+    "preparation_rules": "Always grind fresh. Pre-ground pepper loses its volatile piperine to oxidation within weeks.",
+    "related_nodes": ["BIO_LIVER_001", "INF_CHRONIC_001"]
+  },
+  "FOOD_SPICE_CINNAMON_001": {
+    "id": "FOOD_SPICE_CINNAMON_001",
+    "name": "Cinnamon (Dalchini)",
+    "category": "Spices and Herbs",
+    "serving_size_reference": "1/2 Teaspoon (1g)",
+    "pharmacological_profile": {
+      "active_compound": "Cinnamaldehyde",
+      "mechanism": "Increases insulin sensitivity by acting directly on the insulin receptor in cells."
+    },
+    "biological_impact": {
+      "blood_sugar": "Clinically proven to lower fasting blood sugar by 10-29% in diabetics (MED_TYPE2_DIABETES_001). It mimics insulin, forcing glucose out of the blood and into muscle cells."
+    },
+    "anti_nutrients": "Coumarin (a potent liver toxin in high doses).",
+    "preparation_rules": "CRITICAL WARNING: 95% of cinnamon sold in India is 'Cassia' cinnamon, which is extremely high in toxic Coumarin. Taking Cassia daily for blood sugar WILL cause liver damage. You MUST buy 'Ceylon' (True) Cinnamon, which has zero Coumarin.",
+    "related_nodes": ["MED_TYPE2_DIABETES_001", "BSG_INSULIN_RESISTANCE_001", "BIO_LIVER_001"]
+  },
+  "FOOD_SPICE_METHI_SEED_001": {
+    "id": "FOOD_SPICE_METHI_SEED_001",
+    "name": "Fenugreek Seeds (Methi Dana)",
+    "category": "Spices and Herbs",
+    "serving_size_reference": "1 Teaspoon (4g)",
+    "pharmacological_profile": {
+      "active_compound": "Galactomannan (soluble fiber) and 4-hydroxyisoleucine",
+      "mechanism": "Slows gastric emptying and stimulates insulin secretion."
+    },
+    "biological_impact": {
+      "diabetes": "The ultimate anti-diabetic spice. The mucilaginous fiber coats the stomach, drastically lowering the GI of whatever meal you eat it with.",
+      "hormones": "Contains diosgenin (a phytoestrogen). Used to boost milk production in lactating mothers (LFS_REPRODUCTIVE_FEMALE_001)."
+    },
+    "anti_nutrients": "Extremely bitter.",
+    "preparation_rules": "Soak 1 tsp in water overnight. Drink the water and chew the gelled seeds first thing in the morning for massive blood sugar control.",
+    "related_nodes": ["MED_TYPE2_DIABETES_001", "LFS_REPRODUCTIVE_FEMALE_001"]
+  },
+  "FOOD_SPICE_AJWAIN_001": {
+    "id": "FOOD_SPICE_AJWAIN_001",
+    "name": "Carom Seeds (Ajwain)",
+    "category": "Spices and Herbs",
+    "serving_size_reference": "1/2 Teaspoon (1g)",
+    "pharmacological_profile": {
+      "active_compound": "Thymol",
+      "mechanism": "Potent antispasmodic and antibacterial."
+    },
+    "biological_impact": {
+      "gas_relief": "Instantly relieves severe intestinal spasms and gas (SYM_BLOATING_001). Thymol literally paralyzes pathogenic gut bacteria.",
+      "respiratory": "Inhaling ajwain steam opens up bronchial tubes during asthma or severe congestion."
+    },
+    "anti_nutrients": "None.",
+    "preparation_rules": "Always added to heavy, gas-producing foods like Besan (chickpea flour), Arbi (colocasia), or Parathas.",
+    "related_nodes": ["SYM_BLOATING_001"]
+  },
+  "FOOD_SPICE_HING_001": {
+    "id": "FOOD_SPICE_HING_001",
+    "name": "Asafoetida (Hing)",
+    "category": "Spices and Herbs",
+    "serving_size_reference": "A pinch (0.1g)",
+    "pharmacological_profile": {
+      "active_compound": "Ferulic Acid and sulfur compounds",
+      "mechanism": "Carminative (prevents formation of gas in the GI tract)."
+    },
+    "biological_impact": {
+      "dal_digestion": "Without Hing, complex lentils (Urad/Chana) ferment in the colon causing massive gas. Hing neutralizes the gas-producing oligosaccharides.",
+      "blood_pressure": "Acts as a potent blood thinner and vasodilator."
+    },
+    "anti_nutrients": "Commercial Hing is heavily diluted with wheat flour (Maida).",
+    "preparation_rules": "Gluten-sensitive (Celiac) patients MUST buy pure compounded Hing (Bandhani Hing) without wheat flour. Must be bloomed in hot ghee.",
+    "related_nodes": ["GUT_DYSBIOSIS_001", "SYM_BLOATING_001"]
+  },
+  "FOOD_SPICE_CLOVE_001": {
+    "id": "FOOD_SPICE_CLOVE_001",
+    "name": "Cloves (Laung)",
+    "category": "Spices and Herbs",
+    "serving_size_reference": "2-3 Cloves",
+    "pharmacological_profile": {
+      "active_compound": "Eugenol",
+      "mechanism": "A potent natural anesthetic and broad-spectrum antimicrobial."
+    },
+    "biological_impact": {
+      "dental_pain": "Chewing a clove instantly numbs tooth pain because Eugenol numbs nerve endings.",
+      "parasite_cleanse": "One of the only natural substances that can dissolve the hard shell of parasite eggs in the GI tract."
+    },
+    "anti_nutrients": "Eugenol is toxic to the liver in massive doses (don't drink pure clove oil).",
+    "preparation_rules": "Used whole in Garam Masala or rice. Remove before eating. Do not chew more than 2-3 daily.",
+    "related_nodes": ["INF_CHRONIC_001"]
+  },
+  "FOOD_SPICE_CARDAMOM_001": {
+    "id": "FOOD_SPICE_CARDAMOM_001",
+    "name": "Cardamom (Elaichi - Green)",
+    "category": "Spices and Herbs",
+    "serving_size_reference": "1-2 Pods",
+    "pharmacological_profile": {
+      "active_compound": "Cineole",
+      "mechanism": "Stimulates the mucosal lining of the stomach to produce more mucus, protecting against ulcers."
+    },
+    "biological_impact": {
+      "ulcer_healing": "Clinically shown to heal aspirin-induced stomach ulcers (GUT_DYSBIOSIS_001) better than some pharmaceuticals.",
+      "breath": "Kills the specific anaerobic bacteria in the mouth that cause bad breath."
+    },
+    "anti_nutrients": "None.",
+    "preparation_rules": "Crush the pod to expose the seeds right before use. Excellent addition to tea (Chai) to neutralize the acidity of the tannins in the tea leaves.",
+    "related_nodes": ["GUT_DYSBIOSIS_001"]
+  },
+  "FOOD_SPICE_FENNEL_001": {
+    "id": "FOOD_SPICE_FENNEL_001",
+    "name": "Fennel Seeds (Saunf)",
+    "category": "Spices and Herbs",
+    "serving_size_reference": "1 Teaspoon (2g)",
+    "pharmacological_profile": {
+      "active_compound": "Anethole",
+      "mechanism": "Relaxes the smooth muscle lining of the digestive tract."
+    },
+    "biological_impact": {
+      "digestion": "The ultimate Indian post-meal digestive (Mukhwas). Instantly relieves bloating, acid reflux, and stomach cramps (SYM_BLOATING_001).",
+      "hormones": "Acts as a mild phytoestrogen, traditionally used to regulate menstrual cycles and increase breast milk."
+    },
+    "anti_nutrients": "None.",
+    "preparation_rules": "Chew raw or dry-roasted after heavy meals. Fennel tea is excellent for IBS (Irritable Bowel Syndrome).",
+    "related_nodes": ["SYM_BLOATING_001", "GUT_DYSBIOSIS_001"]
+  },
+  "FOOD_SPICE_CURRYLEAF_001": {
+    "id": "FOOD_SPICE_CURRYLEAF_001",
+    "name": "Curry Leaves (Kadi Patta)",
+    "category": "Spices and Herbs",
+    "serving_size_reference": "5-10 Leaves",
+    "pharmacological_profile": {
+      "active_compound": "Mahanimbine and Carbazole Alkaloids",
+      "mechanism": "Protects insulin-producing cells of the pancreas from free radical damage."
+    },
+    "biological_impact": {
+      "blood_sugar": "Clinically proven to significantly lower fasting blood sugar levels. A massive functional medicine tool for Type 2 Diabetes (MED_TYPE2_DIABETES_001).",
+      "hair": "Directly stimulates hair follicles and prevents premature greying (SYM_HAIRFALL_001)."
+    },
+    "anti_nutrients": "None.",
+    "preparation_rules": "Must be chewed and swallowed. If you put it in Tadka and throw the leaves away while eating, you lose 90% of the medicinal benefit.",
+    "related_nodes": ["MED_TYPE2_DIABETES_001", "SYM_HAIRFALL_001"]
+  }
+}

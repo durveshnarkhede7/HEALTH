@@ -1,0 +1,212 @@
+{
+  "_meta": {
+    "layer": "18_MEDICATIONS",
+    "version": "1.0",
+    "description": "Biological mechanisms of common pharmaceutical interventions, detailing their specific drug-induced nutrient depletions and their impact on systemic metabolic, hormonal, and gut health.",
+    "nodes": [
+      "RX_METFORMIN_001",
+      "RX_ORAL_CONTRACEPTIVES_001",
+      "RX_PPI_001",
+      "RX_STATINS_001",
+      "RX_MINOXIDIL_001",
+      "RX_FINASTERIDE_001",
+      "RX_LEVOTHYROXINE_001",
+      "RX_ANTIBIOTICS_001",
+      "RX_CORTICOSTEROIDS_001",
+      "RX_ISOTRETINOIN_001"
+    ]
+  },
+  "RX_METFORMIN_001": {
+    "id": "RX_METFORMIN_001",
+    "node_type": "medication",
+    "version": "1.0",
+    "name": "Metformin",
+    "common_uses": ["Type 2 Diabetes", "PCOS", "Insulin Resistance"],
+    "mechanism_of_action": "Inhibits mitochondrial complex I in the liver, which transiently decreases ATP and increases AMP. This activates AMPK (the cellular energy sensor), leading to suppressed hepatic gluconeogenesis (stops the liver from dumping glucose into the blood). It also increases peripheral insulin sensitivity and alters the gut microbiome to increase GLP-1 secretion.",
+    "drug_induced_nutrient_depletion": [
+      "NUT_B12_001 (Metformin physically blocks the calcium-dependent absorption of the B12-Intrinsic Factor complex in the terminal ileum. Affects 10-30% of long-term users.)",
+      "NUT_FOLATE_001"
+    ],
+    "biological_consequences": [
+      "Peripheral neuropathy (burning/tingling in hands and feet) — often misdiagnosed as diabetic neuropathy when it is actually Metformin-induced B12 deficiency.",
+      "Megaloblastic anaemia (due to B12/Folate depletion).",
+      "Elevated Homocysteine (due to blocked methylation from B12 loss) → increased cardiovascular risk."
+    ],
+    "indian_context": "The most widely prescribed metabolic drug in India. Because the Indian diet is heavily vegetarian (lacking dietary B12), prescribing Metformin without concurrent sublingual B12 supplementation guarantees severe B12 deficiency over 2-3 years, directly causing the crushing fatigue many Indian diabetics experience.",
+    "related_nodes": ["BSG_INSULIN_RESISTANCE_001", "MED_TYPE2_DIABETES_001", "MED_PCOS_001"]
+  },
+  "RX_ORAL_CONTRACEPTIVES_001": {
+    "id": "RX_ORAL_CONTRACEPTIVES_001",
+    "node_type": "medication",
+    "version": "1.0",
+    "name": "Oral Contraceptive Pills (OCPs / Birth Control)",
+    "common_uses": ["PCOS symptom management", "Irregular periods", "Contraception"],
+    "mechanism_of_action": "Provides continuous synthetic estrogen (e.g., ethinyl estradiol) and synthetic progestin. This provides negative feedback to the hypothalamus and pituitary, completely shutting down FSH and LH production (HOR_LH_001, HOR_FSH_001). This shuts down ovarian function and stops ovulation. The 'period' on the pill is not a real period; it is a synthetic withdrawal bleed.",
+    "drug_induced_nutrient_depletion": [
+      "NUT_ZINC_001",
+      "NUT_B6_001 (Severely depleted, causing the classic 'pill depression')",
+      "NUT_FOLATE_001",
+      "NUT_MAGNESIUM_001",
+      "NUT_B12_001"
+    ],
+    "biological_consequences": [
+      "HOR_SHBG_001 (Synthetic estrogen forces the liver to produce massive amounts of SHBG, which binds up free testosterone. This clears up acne, but causes severe loss of libido and muscle mass.)",
+      "GUT_LEAKYGUT_001 (Synthetic estrogens disrupt gut tight junctions and alter the microbiome.)",
+      "Post-Pill PCOS: When the pill is stopped, the suppressed ovaries and pituitary often rebound violently, causing a massive surge in androgens → explosive acne and hair fall 3-6 months after stopping."
+    ],
+    "indian_context": "Routinely prescribed as the 'cure' for Indian women with PCOS. It completely masks the underlying insulin resistance while depleting the exact nutrients (Zinc, Magnesium) required for insulin sensitivity. When women stop the pill to conceive, they find themselves with worse PCOS than before.",
+    "related_nodes": ["MED_PCOS_001", "HOR_TESTOSTERONE_001", "HOR_ESTROGEN_001"]
+  },
+  "RX_PPI_001": {
+    "id": "RX_PPI_001",
+    "node_type": "medication",
+    "version": "1.0",
+    "name": "Proton Pump Inhibitors (Pantoprazole, Omeprazole)",
+    "common_uses": ["Acid Reflux (GERD)", "Gastritis", "Ulcers"],
+    "mechanism_of_action": "Irreversibly binds to and disables the H+/K+ ATPase enzyme system (the 'proton pump') in the gastric parietal cells. This completely shuts off stomach acid (HCl) production, raising stomach pH from a highly acidic 1.5 to a neutral 4.0-5.0.",
+    "drug_induced_nutrient_depletion": [
+      "NUT_IRON_001 (Dietary iron requires strong acid to be ionized from Fe3+ to the absorbable Fe2+ state.)",
+      "NUT_B12_001 (Requires strong acid to cleave B12 from dietary animal proteins.)",
+      "NUT_CALCIUM_001 (Requires acid for ionization. Long-term PPI use is directly linked to osteoporosis and bone fractures.)",
+      "NUT_MAGNESIUM_001 (FDA black box warning for severe hypomagnesemia with long-term PPI use.)"
+    ],
+    "biological_consequences": [
+      "GUT_HYPOCHLORHYDRIA_001 (Medically induced low stomach acid).",
+      "GUT_DYSBIOSIS_001 (Without the acid barrier, oral bacteria survive and colonize the small intestine, causing SIBO - Small Intestinal Bacterial Overgrowth).",
+      "Impaired protein digestion (pepsinogen cannot convert to active pepsin without acid)."
+    ],
+    "indian_context": "Prescribed like candy in India for literally any digestive complaint. Many Indians take 'Pan-D' (Pantoprazole + Domperidone) empty stomach every morning for years. This artificially induced achlorhydria is a massive, hidden root cause of India's epidemic of iron deficiency anaemia and severe B12 deficiency.",
+    "related_nodes": ["GUT_HYPOCHLORHYDRIA_001", "MED_IRON_DEFICIENCY_ANAEMIA_001"]
+  },
+  "RX_STATINS_001": {
+    "id": "RX_STATINS_001",
+    "node_type": "medication",
+    "version": "1.0",
+    "name": "Statins (Atorvastatin, Rosuvastatin)",
+    "common_uses": ["High Cholesterol", "Cardiovascular Disease Prevention"],
+    "mechanism_of_action": "Competitively inhibits HMG-CoA reductase, the rate-limiting enzyme in the liver's mevalonate pathway responsible for endogenous cholesterol synthesis. This lowers LDL cholesterol.",
+    "drug_induced_nutrient_depletion": [
+      "NUT_COQ10_001 (The mevalonate pathway ALSO produces Coenzyme Q10. By blocking the pathway to stop cholesterol, statins simultaneously block CoQ10 production. CoQ10 is essential for mitochondrial ATP production.)"
+    ],
+    "biological_consequences": [
+      "Statin-Induced Myopathy: Severe muscle pain, weakness, and fatigue directly caused by mitochondrial energy failure (lack of CoQ10) in muscle cells.",
+      "BSG_INSULIN_RESISTANCE_001 (Statins increase the risk of developing Type 2 Diabetes by ~10-20%, likely through mechanisms involving impaired beta-cell function and reduced insulin sensitivity.)",
+      "OXI_MITOCHONDRIAL_001 (Without CoQ10 acting as a membrane antioxidant and electron shuttle, mitochondrial ROS production increases.)"
+    ],
+    "indian_context": "Widely prescribed to Indians with Metabolic Syndrome. The characteristic statin-induced muscle pain and crushing fatigue often cause patients to become even more sedentary, worsening their underlying insulin resistance. Statins must ALWAYS be co-prescribed with CoQ10 supplementation, but this is rarely done in standard Indian practice.",
+    "related_nodes": ["SYS_CARDIOMETABOLIC_001", "MED_METABOLIC_SYNDROME_001", "OXI_MITOCHONDRIAL_001"]
+  },
+  "RX_MINOXIDIL_001": {
+    "id": "RX_MINOXIDIL_001",
+    "node_type": "medication",
+    "version": "1.0",
+    "name": "Topical Minoxidil",
+    "common_uses": ["Androgenetic Alopecia", "Hair Loss"],
+    "mechanism_of_action": "Originally an oral blood pressure medication. Applied topically, it acts as a potassium channel opener, hyperpolarizing cell membranes. This forces massive vasodilation of the capillaries feeding the dermal papilla of the hair follicle. It artificially forces follicles from the telogen (resting) phase into the anagen (growth) phase.",
+    "drug_induced_nutrient_depletion": [
+      "None specifically, as it is topical, but it depletes scalp microbiome balance due to the alcohol/propylene glycol vehicle."
+    ],
+    "biological_consequences": [
+      "The 'Minoxidil Shed': An initial massive shedding of hair within the first 2-4 weeks as old telogen hairs are pushed out by new anagen hairs.",
+      "Dependency: It does absolutely nothing to stop DHT (HOR_DHT_001) or reverse insulin resistance. It acts purely as life-support via forced blood flow. The moment application stops, the blood vessels shrink, and all DHT-damaged follicles die simultaneously, resulting in catastrophic hair loss.",
+      "Contact dermatitis: Severe scalp itching and inflammation (INF_SCALP_001) caused by the alcohol/propylene glycol carrier."
+    ],
+    "indian_context": "The first line of defence offered by dermatologists for ANY hair loss in India, even stress-induced Telogen Effluvium where it is not indicated. Patients are rarely warned that it is a lifelong commitment that does not address the metabolic root cause.",
+    "related_nodes": ["MED_ANDROGENETIC_ALOPECIA_001", "BIO_FOLLICLE_001", "INF_SCALP_001"]
+  },
+  "RX_FINASTERIDE_001": {
+    "id": "RX_FINASTERIDE_001",
+    "node_type": "medication",
+    "version": "1.0",
+    "name": "Finasteride / Dutasteride",
+    "common_uses": ["Male Pattern Baldness", "BPH (Enlarged Prostate)"],
+    "mechanism_of_action": "Competitive inhibitor of the 5-alpha reductase (5AR) enzyme (Type II for Finasteride; Types I & II for Dutasteride). This blocks the conversion of Testosterone into Dihydrotestosterone (DHT) — the androgen responsible for miniaturising hair follicles.",
+    "drug_induced_nutrient_depletion": [
+      "No direct mineral/vitamin depletion, but causes severe neuro-steroid depletion."
+    ],
+    "biological_consequences": [
+      "Systemic DHT Crash: DHT is the most potent male androgen, essential for libido, erectile function, and mood. Crashing DHT systemically causes sexual dysfunction in a significant percentage of men.",
+      "Neuro-steroid disruption: The 5AR enzyme is also required in the brain to synthesize neuro-steroids like Allopregnanolone (a potent GABA-A receptor modulator). Blocking 5AR strips the brain of Allopregnanolone, directly causing severe anxiety, depression, and 'brain fog'.",
+      "Post-Finasteride Syndrome (PFS): In some men, the sexual and neurological side effects persist permanently even after stopping the drug, due to epigenetic silencing of androgen receptors."
+    ],
+    "indian_context": "Prescribed heavily to young Indian men in their 20s facing early balding. The severe psychological side effects (anxiety/depression) are often dismissed by doctors or blamed on the stress of losing hair, rather than the neuro-steroid crash caused by the drug.",
+    "related_nodes": ["HOR_DHT_001", "HOR_TESTOSTERONE_001", "SYS_NERVOUS_001"]
+  },
+  "RX_LEVOTHYROXINE_001": {
+    "id": "RX_LEVOTHYROXINE_001",
+    "node_type": "medication",
+    "version": "1.0",
+    "name": "Levothyroxine (Thyronorm / Eltroxin)",
+    "common_uses": ["Hypothyroidism", "Hashimoto's Thyroiditis"],
+    "mechanism_of_action": "Provides a synthetic version of Thyroxine (T4), the inactive storage hormone naturally produced by the thyroid gland. It relies ENTIRELY on the patient's own body (specifically the liver and gut) to convert this inactive T4 into active Triiodothyronine (T3) via Deiodinase enzymes.",
+    "drug_induced_nutrient_depletion": [
+      "Increases the body's demand for Selenium and Zinc (the cofactors required for Deiodinase enzymes to convert the T4 into T3)."
+    ],
+    "biological_consequences": [
+      "Conversion Failure: If a patient has NAFLD (Fatty Liver), gut dysbiosis, or high cortisol (chronic stress), their liver cannot convert the synthetic T4 into T3. Instead, the body converts it into Reverse T3 (rT3), an inactive blocker hormone.",
+      "Medical Gaslighting: The medication normalizes the TSH (pituitary signal) in blood tests. The doctor declares the patient 'cured' based on the lab report, but the patient is still functionally hypothyroid at the cellular level (fatigue, weight gain, hair loss) because they lack active T3."
+    ],
+    "indian_context": "The standard of care in India. Doctors almost never prescribe T3 (Liothyronine) or Natural Desiccated Thyroid (NDT), and rarely check Free T3 levels. Given the massive prevalence of fatty liver and stress in India, T4-only monotherapy leaves millions of Indian women functionally hypothyroid despite taking their pill every morning.",
+    "related_nodes": ["MED_HYPOTHYROID_001", "HOR_THYROID_001", "BIO_LIVER_001"]
+  },
+  "RX_ANTIBIOTICS_001": {
+    "id": "RX_ANTIBIOTICS_001",
+    "node_type": "medication",
+    "version": "1.0",
+    "name": "Broad-Spectrum Antibiotics (Azithromycin, Amoxicillin)",
+    "common_uses": ["Bacterial Infections", "(Misused for) Viral Infections"],
+    "mechanism_of_action": "Various mechanisms (inhibiting cell wall synthesis, protein synthesis, or DNA replication) that kill bacteria. Broad-spectrum antibiotics kill both pathogenic (bad) and commensal (good) bacteria indiscriminately.",
+    "drug_induced_nutrient_depletion": [
+      "NUT_BIOTIN_001 (Gut bacteria synthesize Biotin; wiping them out causes secondary Biotin deficiency → hair fall).",
+      "NUT_VITAMINK_001 (Gut bacteria synthesize Vitamin K2)."
+    ],
+    "biological_consequences": [
+      "Microbiome Decimation: A single course of broad-spectrum antibiotics can permanently alter the gut microbiome (GUT_DYSBIOSIS_001), wiping out keystone species (like Bifidobacterium).",
+      "Yeast Overgrowth: By killing the bacteria that compete for space and nutrients, antibiotics allow opportunistic fungi (Candida albicans) to overgrow in the gut and vagina.",
+      "Immune Dysregulation: Since 70% of the immune system resides in the gut (GALT), wiping out the microbiome triggers systemic inflammation, leaky gut, and increases the risk of developing autoimmune conditions (INF_AUTOIMMUNE_001)."
+    ],
+    "indian_context": "India has one of the highest rates of antibiotic misuse globally. Pharmacists dispense them over-the-counter without prescriptions. They are routinely prescribed for common colds (viral) and mild diarrhea. This creates a massive, population-level microbiome deficit, directly feeding the epidemic of autoimmune diseases and severe gut issues.",
+    "related_nodes": ["GUT_MICROBIOME_001", "GUT_DYSBIOSIS_001", "INF_GUT_001"]
+  },
+  "RX_CORTICOSTEROIDS_001": {
+    "id": "RX_CORTICOSTEROIDS_001",
+    "node_type": "medication",
+    "version": "1.0",
+    "name": "Corticosteroids (Prednisolone, Dexamethasone)",
+    "common_uses": ["Severe Inflammation", "Autoimmune Flares", "Asthma", "Severe Allergies"],
+    "mechanism_of_action": "Synthetically mimics cortisol, binding to glucocorticoid receptors in every cell. This powerfully suppresses the transcription of inflammatory cytokines (TNF-alpha, IL-6), acting as a massive immunosuppressant and anti-inflammatory.",
+    "drug_induced_nutrient_depletion": [
+      "NUT_CALCIUM_001 (Severely decreases calcium absorption from the gut and increases urinary excretion).",
+      "NUT_VITAMIND_001 (Alters metabolism).",
+      "NUT_CHROMIUM_001 (Massively increases excretion, worsening insulin resistance)."
+    ],
+    "biological_consequences": [
+      "Iatrogenic Cushing's Syndrome: Moon face, buffalo hump, and rapid visceral fat accumulation.",
+      "Steroid-Induced Diabetes: Glucocorticoids massively stimulate liver gluconeogenesis while simultaneously causing severe peripheral insulin resistance. Blood sugar skyrockets within days of starting high-dose steroids.",
+      "Osteoporosis: Directly inhibits osteoblasts (bone-building cells) and stimulates osteoclasts (bone-destroying cells).",
+      "HPA Axis Suppression: Exogenous steroids tell the pituitary to stop making ACTH. The adrenal glands atrophy. If stopped abruptly without tapering, the patient experiences an adrenal crisis (cannot make their own cortisol)."
+    ],
+    "indian_context": "Often given in India as a 'quick fix' for joint pain, severe asthma, and autoimmune flares without addressing the root cause. Unregulated use (and hidden steroids in some fake 'ayurvedic' pain powders) causes massive, unexplainable weight gain and rapid onset of severe type 2 diabetes.",
+    "related_nodes": ["HOR_CORTISOL_001", "REC_HPA_001", "BSG_INSULIN_RESISTANCE_001"]
+  },
+  "RX_ISOTRETINOIN_001": {
+    "id": "RX_ISOTRETINOIN_001",
+    "node_type": "medication",
+    "version": "1.0",
+    "name": "Isotretinoin (Accutane)",
+    "common_uses": ["Severe, Nodulocystic Acne"],
+    "mechanism_of_action": "A synthetic Vitamin A derivative. It induces apoptosis (programmed cell death) in the sebocytes (the cells that make up the sebaceous gland). It physically shrinks the oil glands by up to 90%, stopping sebum production entirely. No sebum = no acne bacteria = no acne.",
+    "drug_induced_nutrient_depletion": [
+      "NUT_VITAMINE_001",
+      "NUT_FOLATE_001"
+    ],
+    "biological_consequences": [
+      "Permanent Mucosal Dryness: Without sebum, the skin barrier collapses (HYD_HAIR_SKIN_001). Extreme dry lips, dry eyes (meibomian gland dysfunction), and joint pain are universal. In some cases, the sebaceous glands never recover.",
+      "Liver Toxicity: Extremely hepatotoxic. Requires monthly liver function tests (LFTs) and lipid panels (it spikes triglycerides).",
+      "Teratogenicity: Extremely toxic to developing fetuses, causing severe birth defects. Strict pregnancy prevention is mandatory.",
+      "Depression Risk: Alters dopamine signaling in the brain; linked to severe depressive episodes in susceptible individuals."
+    ],
+    "indian_context": "Dermatologists in India increasingly prescribe it for mild-to-moderate hormonal acne because patients demand 'fast, permanent results.' It is a nuclear option that destroys the gland rather than addressing the high-carbohydrate, dairy-heavy diet driving the Insulin → IGF-1 → Sebum cascade.",
+    "related_nodes": ["BIO_SEBACEOUSGLAND_001", "BSG_HAIR_SKIN_AXIS_001", "BIO_LIVER_001"]
+  }
+}

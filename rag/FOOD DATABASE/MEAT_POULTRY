@@ -1,0 +1,173 @@
+{
+  "_meta": {
+    "layer": "21_FOOD_DATABASE",
+    "category": "Meat and Poultry",
+    "serving_size_standard": "Per 100g (Raw Weight)",
+    "description": "The primary source of complete protein, Haem Iron, Zinc, and Vitamin B12. The specific cut, cooking method, and sourcing dramatically alters the biological value and inflammatory load.",
+    "nodes": [
+      "FOOD_MEAT_CHICKEN_BREAST_001",
+      "FOOD_MEAT_CHICKEN_THIGH_001",
+      "FOOD_MEAT_MUTTON_001",
+      "FOOD_MEAT_LIVER_CHICKEN_001",
+      "FOOD_MEAT_LIVER_MUTTON_001",
+      "FOOD_MEAT_BONEMARROW_001",
+      "FOOD_MEAT_PORK_001"
+    ]
+  },
+  "FOOD_MEAT_CHICKEN_BREAST_001": {
+    "id": "FOOD_MEAT_CHICKEN_BREAST_001",
+    "name": "Chicken Breast (Skinless)",
+    "category": "Meat and Poultry",
+    "serving_size_reference": "Per 100g (Raw)",
+    "nutritional_values": {
+      "macronutrients": { "protein": "31g (Extremely High)", "carbohydrates": "0g", "fiber": "0g", "fat": "3.6g (Low)" },
+      "micronutrients": {
+        "niacin_b3": "14.8mg",
+        "vitamin_b6": "1.0mg",
+        "phosphorus": "220mg",
+        "selenium": "27mcg",
+        "zinc": "1.0mg (Low)"
+      }
+    },
+    "biological_impact": {
+      "muscle_synthesis": "The highest protein-to-calorie ratio of any common Indian food. Triggers mTOR (muscle protein synthesis pathway) maximally due to the massive leucine content.",
+      "tryptophan": "Rich in Tryptophan, the precursor to Serotonin and Melatonin (required for sleep - SLP_DEEPSLEEP_001)."
+    },
+    "anti_nutrients": "None inherent. Commercial broiler chicken is raised with antibiotics, which disrupts gut microbiome (GUT_DYSBIOSIS_001).",
+    "preparation_rules": "Always prefer free-range/country chicken (Desi Murga) over commercial broiler. Cook to internal temperature of 74°C. Avoid charring/blackening as it creates Heterocyclic Amines (HCAs), potent carcinogens.",
+    "related_nodes": ["NUT_PROTEIN_001", "SLP_DEEPSLEEP_001", "GUT_DYSBIOSIS_001"]
+  },
+  "FOOD_MEAT_CHICKEN_THIGH_001": {
+    "id": "FOOD_MEAT_CHICKEN_THIGH_001",
+    "name": "Chicken Thigh (Dark Meat, with Skin)",
+    "category": "Meat and Poultry",
+    "serving_size_reference": "Per 100g (Raw)",
+    "nutritional_values": {
+      "macronutrients": { "protein": "20g", "carbohydrates": "0g", "fiber": "0g", "fat": "13g" },
+      "micronutrients": {
+        "zinc": "2.4mg (2x more than breast)",
+        "iron": "1.3mg",
+        "vitamin_b12": "0.3mcg"
+      }
+    },
+    "biological_impact": {
+      "zinc_iron": "Dark meat contains significantly more Zinc and Iron than white breast meat, making it superior for immune function and testosterone production (HOR_TESTOSTERONE_001).",
+      "collagen": "Skin and connective tissue in thighs are rich in Type I and Type III Collagen glycine."
+    },
+    "anti_nutrients": "None.",
+    "preparation_rules": "Slow cooking (curry/stew) extracts more collagen from the connective tissue than grilling.",
+    "related_nodes": ["HOR_TESTOSTERONE_001", "BIO_COLLAGEN_001"]
+  },
+  "FOOD_MEAT_MUTTON_001": {
+    "id": "FOOD_MEAT_MUTTON_001",
+    "name": "Mutton / Goat Meat (Bakra)",
+    "category": "Meat and Poultry",
+    "serving_size_reference": "Per 100g (Raw)",
+    "nutritional_values": {
+      "macronutrients": { "protein": "25g", "carbohydrates": "0g", "fiber": "0g", "fat": "17g" },
+      "micronutrients": {
+        "iron_haem": "2.1mg (Highly bioavailable - 25% absorption rate vs 2% for plant iron)",
+        "zinc": "4.6mg",
+        "vitamin_b12": "2.6mcg (217% DV)",
+        "selenium": "13mcg"
+      }
+    },
+    "biological_impact": {
+      "iron_anemia": "Haem Iron from mutton is 12x more bioavailable than the non-haem iron from spinach or dal. The single most effective food for reversing Iron Deficiency Anaemia (MED_IRON_DEFICIENCY_ANAEMIA_001).",
+      "saturated_fat": "Indian Goat is naturally lean and grass-fed. Its fat profile is very different from commercial feedlot beef — much lower in pro-inflammatory Arachidonic Acid."
+    },
+    "anti_nutrients": "Purines (high uric acid risk for gout - MED_GOUT_001).",
+    "preparation_rules": "Marinating mutton in curd (yogurt) tenderizes it and pre-digests the protein. Slow pressure cooking preserves nutrients. Avoid charring/burning the meat.",
+    "related_nodes": ["MED_IRON_DEFICIENCY_ANAEMIA_001", "NUT_B12_001", "MED_GOUT_001"]
+  },
+  "FOOD_MEAT_LIVER_CHICKEN_001": {
+    "id": "FOOD_MEAT_LIVER_CHICKEN_001",
+    "name": "Chicken Liver",
+    "category": "Meat and Poultry",
+    "serving_size_reference": "Per 100g (Raw)",
+    "nutritional_values": {
+      "macronutrients": { "protein": "24.5g", "carbohydrates": "0.9g", "fiber": "0g", "fat": "5.5g" },
+      "micronutrients": {
+        "vitamin_a": "11078 IU (925% DV - Extremely High)",
+        "vitamin_b12": "16.6mcg (1383% DV)",
+        "folate": "578mcg",
+        "iron": "11.6mg",
+        "zinc": "4.1mg",
+        "coq10": "Significant amounts"
+      }
+    },
+    "biological_impact": {
+      "nature_multivitamin": "Gram for gram, liver is the most nutrient-dense food on Earth. A single 100g serving provides over 100% of the DV for B12, Folate, Iron, Zinc, and Vitamin A simultaneously.",
+      "vitamin_a_caution": "MTHFR patients benefit massively from preformed Vitamin A (Retinol) in liver (not Beta-Carotene from vegetables)."
+    },
+    "anti_nutrients": "Extreme Vitamin A (Retinol) content. Eating liver daily can cause Hypervitaminosis A, causing bone density loss.",
+    "preparation_rules": "Eat once or twice per week MAXIMUM. Always from free-range chicken (liver concentrates everything the animal was exposed to, including antibiotics). Avoid liver from commercial broiler chicken. MUST be cooked through completely.",
+    "related_nodes": ["GEN_MTHFR_001", "MED_IRON_DEFICIENCY_ANAEMIA_001", "NUT_B12_001"]
+  },
+  "FOOD_MEAT_LIVER_MUTTON_001": {
+    "id": "FOOD_MEAT_LIVER_MUTTON_001",
+    "name": "Mutton Liver (Kaleji)",
+    "category": "Meat and Poultry",
+    "serving_size_reference": "Per 100g (Raw)",
+    "nutritional_values": {
+      "macronutrients": { "protein": "26g", "carbohydrates": "3.9g", "fiber": "0g", "fat": "3.8g" },
+      "micronutrients": {
+        "vitamin_b12": "90.1mcg (7500% DV - The highest B12 food on Earth)",
+        "iron": "7.7mg",
+        "copper": "14.3mg",
+        "folate": "290mcg",
+        "zinc": "4.0mg"
+      }
+    },
+    "biological_impact": {
+      "b12_deficiency": "A single 100g serving of mutton liver provides 75 days' worth of B12. The ultimate solution for severe B12 deficiency (common in Indian vegetarians transitioning to meat eating).",
+      "copper": "Extreme copper content. Copper is required to convert Dopamine to Norepinephrine and to form myelin."
+    },
+    "anti_nutrients": "Even higher Vitamin A than chicken liver. Strict once-weekly maximum.",
+    "preparation_rules": "Soak mutton liver in lemon water for 1 hour before cooking to reduce the strong gamey smell and remove excess blood (heme iron).",
+    "related_nodes": ["NUT_B12_001", "SYS_NERVOUS_001", "GEN_MTHFR_001"]
+  },
+  "FOOD_MEAT_BONEMARROW_001": {
+    "id": "FOOD_MEAT_BONEMARROW_001",
+    "name": "Bone Marrow (Nalli / Bone Broth)",
+    "category": "Meat and Poultry",
+    "serving_size_reference": "Per 100g (Cooked Marrow)",
+    "nutritional_values": {
+      "macronutrients": { "protein": "7g", "carbohydrates": "0g", "fiber": "0g", "fat": "84g (Almost pure fat)" },
+      "micronutrients": {
+        "glycine": "High (collagen building block)",
+        "glucosamine": "Significant",
+        "hyaluronic_acid": "Present",
+        "conjugated_linoleic_acid": "Significant"
+      }
+    },
+    "biological_impact": {
+      "gut_repair": "Bone broth (slow-cooked Nalli soup) is the most concentrated source of Glycine, Proline, and Hydroxyproline — the exact amino acids needed to rebuild the gut lining (GUT_LEAKYGUT_001) and collagen.",
+      "joint_health": "Glucosamine and Chondroitin from bone marrow directly rebuild cartilage in arthritic joints."
+    },
+    "anti_nutrients": "Very high in purines if the broth is cooked for too long. Monitor gout risk.",
+    "preparation_rules": "Slow cook (6-12 hours minimum) to fully extract the gelatin and glycine from the bones. Indian Nalli Nihari and Paya soup are the traditional methods.",
+    "related_nodes": ["GUT_LEAKYGUT_001", "BIO_COLLAGEN_001", "SYM_JOINTPAIN_001"]
+  },
+  "FOOD_MEAT_PORK_001": {
+    "id": "FOOD_MEAT_PORK_001",
+    "name": "Pork (Lean Cuts - Loin)",
+    "category": "Meat and Poultry",
+    "serving_size_reference": "Per 100g (Raw)",
+    "nutritional_values": {
+      "macronutrients": { "protein": "27g", "carbohydrates": "0g", "fiber": "0g", "fat": "4g (Lean loin)" },
+      "micronutrients": {
+        "thiamine_b1": "0.9mg (Highest of all meats - 75% DV)",
+        "vitamin_b12": "0.9mcg",
+        "zinc": "2.9mg",
+        "selenium": "42mcg"
+      }
+    },
+    "biological_impact": {
+      "thiamine": "Pork is the single richest food source of Vitamin B1 (Thiamine), which is critical for carbohydrate metabolism and neurological function."
+    },
+    "anti_nutrients": "Pork is an intermediate host for Taenia solium (tapeworm) and Trichinella spiralis (roundworm). These are eliminated only by thorough cooking.",
+    "preparation_rules": "Must ALWAYS be cooked to an internal temperature of at least 71°C. Never eat undercooked or pink pork.",
+    "related_nodes": ["SYS_NERVOUS_001"]
+  }
+}

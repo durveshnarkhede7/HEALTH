@@ -1,0 +1,173 @@
+{
+  "_meta": {
+    "layer": "21_FOOD_DATABASE",
+    "category": "Dairy",
+    "serving_size_standard": "Per 100g / Per 100ml",
+    "description": "Dairy is deeply embedded in Indian culture but is biologically complex. The difference between A1 and A2 milk proteins, the probiotic power of fermented dairy (curd) vs the inflammatory load of fluid milk, and the metabolic effects of Ghee are critical distinctions.",
+    "nodes": [
+      "FOOD_DAIRY_A1MILK_001",
+      "FOOD_DAIRY_A2MILK_001",
+      "FOOD_DAIRY_CURD_001",
+      "FOOD_DAIRY_BUTTERMILK_001",
+      "FOOD_DAIRY_PANEER_001",
+      "FOOD_DAIRY_GHEE_001",
+      "FOOD_DAIRY_BUTTER_001",
+      "FOOD_DAIRY_CHEESE_001",
+      "FOOD_DAIRY_KHOYA_001"
+    ]
+  },
+  "FOOD_DAIRY_A1MILK_001": {
+    "id": "FOOD_DAIRY_A1MILK_001",
+    "name": "A1 Milk (Holstein / Jersey Cow - Commercial Milk)",
+    "category": "Dairy",
+    "serving_size_reference": "Per 100ml (Full Fat)",
+    "nutritional_values": {
+      "macronutrients": { "protein": "3.3g", "carbohydrates": "4.7g (Lactose)", "fiber": "0g", "fat": "3.6g" },
+      "micronutrients": { "calcium": "120mg", "vitamin_b12": "0.4mcg", "phosphorus": "93mg" }
+    },
+    "biological_impact": {
+      "gut_inflammation": "Contains the A1 Beta-Casein protein. During digestion, A1 casein releases a peptide called BCM-7 (Beta-Casomorphin-7), an opioid-like molecule that crosses the gut barrier. BCM-7 triggers systemic inflammation (INF_GUT_001) and is linked to severe acne, eczema, and bloating.",
+      "lactose": "70% of Indians (GEN_LCT_001) cannot digest the lactose, leading to chronic fermentation in the colon."
+    },
+    "anti_nutrients": "BCM-7 peptide, Lactose.",
+    "preparation_rules": "If patient has acne, bloating, or eczema, the FIRST dietary change is a 30-day elimination of all A1 commercial milk. Patients often report miraculous skin clearing.",
+    "related_nodes": ["GEN_LCT_001", "INF_GUT_001", "MED_ACNE_VULGARIS_001"]
+  },
+  "FOOD_DAIRY_A2MILK_001": {
+    "id": "FOOD_DAIRY_A2MILK_001",
+    "name": "A2 Milk (Indian Desi Cow - Gir, Sahiwal, Red Sindhi)",
+    "category": "Dairy",
+    "serving_size_reference": "Per 100ml (Full Fat)",
+    "nutritional_values": {
+      "macronutrients": { "protein": "3.3g", "carbohydrates": "4.7g", "fiber": "0g", "fat": "4.5g (Higher)" },
+      "micronutrients": { "calcium": "120mg", "vitamin_b12": "0.5mcg", "vitamin_d": "Trace" }
+    },
+    "biological_impact": {
+      "gut_safe": "Contains A2 Beta-Casein. Does NOT release BCM-7. Digested cleanly without triggering the inflammatory cascade that A1 milk causes.",
+      "brain_health": "Contains Cerebrosides, which support myelin sheath formation in the nervous system (SYS_NERVOUS_001)."
+    },
+    "anti_nutrients": "Still contains Lactose (but significantly easier to digest for many people compared to A1).",
+    "preparation_rules": "Must be sourced from verified Indian breeds (Gir, Sahiwal). Many 'A2' labels in the market are fraudulent.",
+    "related_nodes": ["SYS_NERVOUS_001", "GUT_MICROBIOME_001"]
+  },
+  "FOOD_DAIRY_CURD_001": {
+    "id": "FOOD_DAIRY_CURD_001",
+    "name": "Curd / Dahi (Homemade Yogurt)",
+    "category": "Dairy",
+    "serving_size_reference": "Per 100g",
+    "nutritional_values": {
+      "macronutrients": { "protein": "3.5g", "carbohydrates": "3.4g (Lower than milk - bacteria ate the lactose)", "fiber": "0g", "fat": "4.3g" },
+      "micronutrients": { "calcium": "149mg (Higher than milk due to concentration)", "vitamin_b12": "0.6mcg", "potassium": "234mg" }
+    },
+    "biological_impact": {
+      "probiotic_powerhouse": "Homemade Indian dahi contains Lactobacillus delbrueckii and Streptococcus thermophilus. These bacteria have PRE-DIGESTED the lactose, making it safe for many lactose-intolerant people. They also colonize the gut (GUT_MICROBIOME_001).",
+      "insulin_sensitivity": "Fermented dairy has been shown to improve insulin sensitivity (BSG_INSULIN_RESISTANCE_001)."
+    },
+    "anti_nutrients": "Histamine. Fermented foods are high in histamine (GEN_DAO_001).",
+    "preparation_rules": "Homemade curd is superior to commercial 'Greek yogurt' which often uses A1 milk and industrial starters. Set at home using a live starter culture. Always eat at room temperature (cold curd dampens Agni/digestive fire in Ayurveda).",
+    "related_nodes": ["GUT_MICROBIOME_001", "GEN_DAO_001", "BSG_INSULIN_RESISTANCE_001"]
+  },
+  "FOOD_DAIRY_BUTTERMILK_001": {
+    "id": "FOOD_DAIRY_BUTTERMILK_001",
+    "name": "Buttermilk (Chaas / Mattha)",
+    "category": "Dairy",
+    "serving_size_reference": "Per 100ml",
+    "nutritional_values": {
+      "macronutrients": { "protein": "1.5g", "carbohydrates": "2g", "fiber": "0g", "fat": "0.9g" },
+      "micronutrients": { "calcium": "60mg", "potassium": "150mg" }
+    },
+    "biological_impact": {
+      "digestion": "The ultimate digestive drink in Ayurveda. Diluted curd + cumin + salt rehydrates, replenishes gut bacteria, and stimulates digestive enzymes. Considered the best post-meal drink.",
+      "hydration": "Natural electrolyte replacement."
+    },
+    "anti_nutrients": "Lower histamine than curd due to dilution.",
+    "preparation_rules": "Must be freshly churned (not stored). Add roasted cumin (Jeera) and rock salt. Drink after lunch for maximum digestive benefit.",
+    "related_nodes": ["GUT_DYSBIOSIS_001", "HYD_ELECTROLYTE_001"]
+  },
+  "FOOD_DAIRY_PANEER_001": {
+    "id": "FOOD_DAIRY_PANEER_001",
+    "name": "Paneer (Indian Cottage Cheese)",
+    "category": "Dairy",
+    "serving_size_reference": "Per 100g",
+    "nutritional_values": {
+      "macronutrients": { "protein": "18g", "carbohydrates": "1.2g", "fiber": "0g", "fat": "21g" },
+      "micronutrients": { "calcium": "208mg", "phosphorus": "138mg", "vitamin_b12": "0.8mcg" }
+    },
+    "biological_impact": {
+      "muscle_building": "High in Casein protein, which digests very slowly (6-8 hours), providing a sustained drip of amino acids. Excellent for overnight muscle repair.",
+      "insulin_neutral": "Very low carbohydrate. Does not spike insulin."
+    },
+    "anti_nutrients": "Casein can trigger acne and inflammation in sensitive individuals. Commercial paneer is often made with A1 milk.",
+    "preparation_rules": "Make at home using A2 milk and lemon juice for the safest version. Avoid deep-frying paneer as it creates harmful Advanced Glycation End-products (AGEs).",
+    "related_nodes": ["NUT_PROTEIN_001", "MED_ACNE_VULGARIS_001"]
+  },
+  "FOOD_DAIRY_GHEE_001": {
+    "id": "FOOD_DAIRY_GHEE_001",
+    "name": "Ghee (Clarified Butter)",
+    "category": "Dairy",
+    "serving_size_reference": "Per 10g (1 Teaspoon)",
+    "nutritional_values": {
+      "macronutrients": { "protein": "0g", "carbohydrates": "0g", "fiber": "0g", "fat": "10g (Pure Fat)" },
+      "micronutrients": { "vitamin_a": "108 IU", "vitamin_e": "0.3mg", "vitamin_k": "0.8mcg", "butyric_acid": "3-4%" }
+    },
+    "biological_impact": {
+      "gut_healing": "Contains 3-4% Butyric Acid (Butyrate), the PRIMARY fuel source for colonocytes (cells lining the colon). It directly heals Leaky Gut (GUT_LEAKYGUT_001) and reduces gut inflammation.",
+      "cooking_safety": "Smoke point of 250°C. Unlike seed oils, Ghee does NOT oxidize into toxic aldehydes at high cooking temperatures.",
+      "lipid_profile": "APOE4 carriers (GEN_APOE_001) must strictly limit ghee. For everyone else, 1-2 tsp per meal does NOT raise LDL in the context of a low-sugar diet."
+    },
+    "anti_nutrients": "Pure fat. Zero lactose, zero casein (all removed in clarification). Safe for lactose-intolerant individuals.",
+    "preparation_rules": "A2 Desi Cow Ghee is the gold standard. Buffalo Ghee is higher in fat but lacks the specific butyrate profile. Use for cooking (high smoke point), NOT seed oils.",
+    "related_nodes": ["GUT_LEAKYGUT_001", "GEN_APOE_001", "GUT_MICROBIOME_001"]
+  },
+  "FOOD_DAIRY_BUTTER_001": {
+    "id": "FOOD_DAIRY_BUTTER_001",
+    "name": "Butter (Makhan)",
+    "category": "Dairy",
+    "serving_size_reference": "Per 10g (1 Pat)",
+    "nutritional_values": {
+      "macronutrients": { "protein": "0.1g", "carbohydrates": "0g", "fiber": "0g", "fat": "8.1g" },
+      "micronutrients": { "vitamin_a": "97 IU", "vitamin_d": "Trace" }
+    },
+    "biological_impact": {
+      "fat_composition": "Contains ~80% fat (vs Ghee at 99.7%). Still retains trace milk solids (casein and lactose), unlike ghee.",
+      "brain_health": "Cholesterol in butter is a precursor for brain hormones and cell membranes."
+    },
+    "anti_nutrients": "Trace casein and lactose (can trigger reactions in highly sensitive individuals).",
+    "preparation_rules": "White Makhan (hand-churned from Dahi) is traditional and superior. Commercial yellow butter often contains artificial color and salt.",
+    "related_nodes": ["SYS_NERVOUS_001"]
+  },
+  "FOOD_DAIRY_CHEESE_001": {
+    "id": "FOOD_DAIRY_CHEESE_001",
+    "name": "Cheese (Processed / Aged)",
+    "category": "Dairy",
+    "serving_size_reference": "Per 100g",
+    "nutritional_values": {
+      "macronutrients": { "protein": "25g", "carbohydrates": "1.3g", "fiber": "0g", "fat": "33g" },
+      "micronutrients": { "calcium": "721mg", "sodium": "621mg (Very High)", "vitamin_b12": "1.1mcg" }
+    },
+    "biological_impact": {
+      "histamine": "Aged cheese (Cheddar, Parmesan) is one of the highest histamine foods. Severe trigger for people with DAO mutations (GEN_DAO_001).",
+      "sodium_load": "The extreme sodium content directly spikes blood pressure."
+    },
+    "anti_nutrients": "Histamine, Tyramine (can trigger migraines), extreme sodium.",
+    "preparation_rules": "Avoid if histamine intolerant. Fresh paneer is infinitely safer than aged imported cheese.",
+    "related_nodes": ["GEN_DAO_001", "SYS_CARDIOMETABOLIC_001"]
+  },
+  "FOOD_DAIRY_KHOYA_001": {
+    "id": "FOOD_DAIRY_KHOYA_001",
+    "name": "Khoya / Mawa (Reduced Milk Solids)",
+    "category": "Dairy",
+    "serving_size_reference": "Per 100g",
+    "nutritional_values": {
+      "macronutrients": { "protein": "14g", "carbohydrates": "24g (Concentrated Lactose)", "fiber": "0g", "fat": "26g" },
+      "micronutrients": { "calcium": "420mg (Concentrated)", "vitamin_a": "200 IU" }
+    },
+    "biological_impact": {
+      "sugar_bomb": "Khoya is the base of every Indian mithai (Gulab Jamun, Barfi, Peda). When combined with sugar, it creates one of the most insulin-spiking foods in the Indian diet.",
+      "adulteration_risk": "Commonly adulterated with starch, urea, and detergent in India."
+    },
+    "anti_nutrients": "Concentrated lactose and A1 casein.",
+    "preparation_rules": "Avoid all commercial mithai during festivals if diabetic or insulin resistant. If consumed, pair with Nuts and eat in strict small quantities.",
+    "related_nodes": ["BSG_POSTPRANDIAL_001", "MED_TYPE2_DIABETES_001"]
+  }
+}

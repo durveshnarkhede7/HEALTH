@@ -1,0 +1,149 @@
+{
+  "_meta": {
+    "layer": "12_INFLAMMATION",
+    "version": "1.0",
+    "description": "The specific immune response cascades, their nutritional triggers, and their exact target tissues (metabolic, neuro, scalp, gut).",
+    "nodes": [
+      "INF_CHRONIC_001",
+      "INF_METABOLIC_001",
+      "INF_NEURO_001",
+      "INF_GUT_001",
+      "INF_AUTOIMMUNE_001",
+      "INF_ACUTE_001",
+      "INF_SCALP_001"
+    ]
+  },
+  "INF_CHRONIC_001": {
+    "id": "INF_CHRONIC_001",
+    "node_type": "inflammation",
+    "version": "1.0",
+    "name": "Chronic Low-Grade Systemic Inflammation",
+    "definition": "A persistent, prolonged state of immune activation ('simmering' background inflammation) where the body constantly produces inflammatory cytokines without a true acute threat to resolve.",
+    "indian_context": "The baseline state for the majority of the urban Indian population due to a perfect storm of factors: high pollution, seed oil consumption, chronic stress, and lack of sleep.",
+    "cytokine_profile": ["TNF-alpha", "IL-6", "Elevated hs-CRP"],
+    "nutritional_drivers": [
+      "Excess Omega-6 fatty acids (Refined seed oils: sunflower, soybean, canola) without sufficient Omega-3 balance.",
+      "Nutrient Deficiencies: Lack of Vitamin D and Zinc leaves the immune system unable to 'turn off'."
+    ],
+    "biological_damage": [
+      "HOR_THYROID_001 (TNF-alpha directly inhibits the conversion of T4 to T3)",
+      "HOR_CORTISOL_001 (Spikes cortisol to try and suppress the inflammation)",
+      "BIO_MITOCHONDRIA_001 (Damage via oxidative stress)"
+    ],
+    "resolution_pathways": ["NUT_OMEGA3_001", "REC_SLEEP_001", "NUT_CURCUMIN_001"],
+    "symptom_refs": ["SYM_FATIGUE_001", "SYM_JOINTPAIN_001"]
+  },
+  "INF_METABOLIC_001": {
+    "id": "INF_METABOLIC_001",
+    "node_type": "inflammation",
+    "version": "1.0",
+    "name": "Meta-inflammation (Visceral Adipose)",
+    "definition": "Inflammation originating specifically from visceral fat (belly fat). Visceral fat is not just storage; it is an active endocrine organ that secretes inflammatory 'adipokines'.",
+    "indian_context": "The 'Thin-Fat Indian' phenotype. South Asians have a genetic predisposition to store fat viscerally around organs rather than subcutaneously. This means an Indian with a 'normal' BMI of 23 can have severe meta-inflammation, causing insulin resistance and PCOS.",
+    "cytokine_profile": ["Leptin (elevated)", "Adiponectin (suppressed)", "IL-6"],
+    "nutritional_drivers": [
+      "Excess refined carbohydrates (Maida, white rice) combined with high-fructose consumption.",
+      "Caloric surplus in the absence of muscle-building stimuli."
+    ],
+    "biological_damage": [
+      "HOR_INSULIN_001 (Directly causes insulin resistance at the cellular level)",
+      "HOR_TESTOSTERONE_001 (In women, stimulates ovaries to overproduce testosterone → PCOS)"
+    ],
+    "resolution_pathways": ["EXE_RESISTANCE_001", "STR_NUTRITIONAL_001 (Mild caloric deficit)", "REC_SLEEP_001"],
+    "symptom_refs": ["SYM_WEIGHTGAIN_001", "SYM_PCOS_001"]
+  },
+  "INF_NEURO_001": {
+    "id": "INF_NEURO_001",
+    "node_type": "inflammation",
+    "version": "1.0",
+    "name": "Neuroinflammation",
+    "definition": "Inflammatory cytokines breaching the Blood-Brain Barrier (BBB) and activating the brain's immune cells (microglia).",
+    "indian_context": "Often misdiagnosed as purely psychological depression/anxiety. Severely exacerbated by air pollution (PM2.5 directly crosses the olfactory bulb into the brain) and Leaky Gut.",
+    "cytokine_profile": ["IL-1beta", "TNF-alpha in CNS"],
+    "nutritional_drivers": [
+      "Lack of brain-protective fats (DHA/EPA Omega-3s).",
+      "High blood sugar (glycation of brain proteins)."
+    ],
+    "biological_damage": [
+      "SYS_NERVOUS_001 (Disrupts serotonin and dopamine synthesis)",
+      "REC_HPA_001 (Keeps the brain stuck in fight-or-flight)"
+    ],
+    "resolution_pathways": ["NUT_OMEGA3_001", "REC_PARASYMPATHETIC_001", "EXE_AEROBIC_001"],
+    "symptom_refs": ["SYM_BRAINFOG_001", "SYM_FATIGUE_001", "SYM_POORSLEEP_001"]
+  },
+  "INF_GUT_001": {
+    "id": "INF_GUT_001",
+    "node_type": "inflammation",
+    "version": "1.0",
+    "name": "Mucosal Inflammation / Endotoxemia",
+    "definition": "Inflammation originating at the gut lining. Driven by Lipopolysaccharides (LPS) leaking from dying gram-negative bacteria through compromised tight junctions into the bloodstream.",
+    "indian_context": "Extremely prevalent due to high reliance on ultra-processed foods, unwashed pesticide-heavy produce, and chronic stress shutting down stomach acid (which normally sterilizes food).",
+    "cytokine_profile": ["LPS (Endotoxin)", "IL-8"],
+    "nutritional_drivers": [
+      "Alcohol consumption.",
+      "Gluten (gliadin) triggers zonulin release, breaking tight junctions in susceptible individuals.",
+      "Lack of fermentable fibre to feed butyrate-producing bacteria."
+    ],
+    "biological_damage": [
+      "BIO_GUTLINING_001 (Leaky gut)",
+      "BIO_LIVER_001 (Liver is the first organ hit by LPS via the portal vein)"
+    ],
+    "resolution_pathways": ["NUT_FIBRE_001", "NUT_PROTEIN_001 (L-Glutamine)", "REC_GUT_001"],
+    "symptom_refs": ["SYM_BLOATING_001", "SYM_CONSTIPATION_001"]
+  },
+  "INF_AUTOIMMUNE_001": {
+    "id": "INF_AUTOIMMUNE_001",
+    "node_type": "inflammation",
+    "version": "1.0",
+    "name": "Autoimmune Inflammation",
+    "definition": "A state where the immune system loses 'self-tolerance' and begins producing antibodies that attack host tissue (e.g., attacking the thyroid in Hashimoto's).",
+    "indian_context": "Explosion of Hashimoto's Thyroiditis in Indian women. Often triggered by a combination of iodine imbalances, chronic stress, and molecular mimicry from dietary proteins.",
+    "cytokine_profile": ["TPO Antibodies", "Th1/Th2 Imbalance"],
+    "nutritional_drivers": [
+      "Molecular mimicry: Proteins like gluten look structurally similar to thyroid tissue. When gluten leaks through the gut (INF_GUT_001), the immune system attacks it, but also attacks the thyroid.",
+      "Selenium deficiency (Selenium protects the thyroid from oxidative damage during hormone synthesis)."
+    ],
+    "biological_damage": [
+      "BIO_THYROID_001 (Physical destruction of the gland)",
+      "SYS_IMMUNE_001"
+    ],
+    "resolution_pathways": ["Dietary elimination (Gluten/Dairy removal)", "NUT_SELENIUM_001", "REC_GUT_001"],
+    "symptom_refs": ["SYM_FATIGUE_001", "SYM_HAIRFALL_001", "SYM_WEIGHTGAIN_001"]
+  },
+  "INF_ACUTE_001": {
+    "id": "INF_ACUTE_001",
+    "node_type": "inflammation",
+    "version": "1.0",
+    "name": "Acute / Protective Inflammation",
+    "definition": "The rapid, short-term immune response necessary to heal an injury or fight an active pathogen.",
+    "indian_context": "Post-viral syndromes. Diseases like Dengue, Chikungunya, and Typhoid cause massive acute inflammation. If the patient does not recover properly, it transitions into INF_CHRONIC_001 and triggers massive hair shedding.",
+    "cytokine_profile": ["Histamine", "Prostaglandins", "Neutrophils"],
+    "nutritional_drivers": [
+      "Massive drain on Vitamin C, Zinc, and Protein to fuel immune cells during the acute phase."
+    ],
+    "biological_damage": [
+      "BIO_FOLLICLE_001 (Forces follicles into catagen phase → Telogen Effluvium)"
+    ],
+    "resolution_pathways": ["REC_SLEEP_001", "REC_NUTRITIONAL_001"],
+    "symptom_refs": ["SYM_HAIRFALL_001 (2-3 months post-infection)"]
+  },
+  "INF_SCALP_001": {
+    "id": "INF_SCALP_001",
+    "node_type": "inflammation",
+    "version": "1.0",
+    "name": "Perifollicular Scalp Inflammation",
+    "definition": "Micro-inflammation specifically localized at the hair follicle. The immune system attacks the bulge region (where stem cells live), leading to perifollicular fibrosis (scarring) and miniaturization.",
+    "indian_context": "Very common in India due to hard water, high pollution (PM2.5 settling on the scalp), seborrheic dermatitis (dandruff driven by Malassezia fungus), and poor scalp microbiome.",
+    "cytokine_profile": ["TGF-beta1", "IL-1alpha (in the scalp dermis)"],
+    "nutritional_drivers": [
+      "Systemic INF_CHRONIC_001 makes the scalp hyper-reactive.",
+      "High sugar diet feeds Malassezia yeast on the scalp, driving localized dandruff and inflammation."
+    ],
+    "biological_damage": [
+      "BIO_FOLLICLE_001 (Causes the collagen sheath around the follicle to rigidify/fibrose. Once fibrosed, the follicle cannot grow a thick hair, leading to permanent miniaturization)",
+      "BIO_DERMIS_001"
+    ],
+    "resolution_pathways": ["Topical anti-inflammatories", "Resolving INF_GUT_001", "REC_FOLLICLE_001"],
+    "symptom_refs": ["SYM_HAIRFALL_001", "SYM_DANDRUFF_001", "SYM_ITCHYSCALP_001"]
+  }
+}

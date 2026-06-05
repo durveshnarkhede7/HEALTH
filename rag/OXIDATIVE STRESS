@@ -1,0 +1,292 @@
+{
+  "_meta": {
+    "layer": "13_OXIDATIVE_STRESS",
+    "version": "1.0",
+    "description": "The complete oxidative stress cascade — free radical generation, antioxidant defence systems, and tissue-specific oxidative damage pathways.",
+    "nodes": [
+      "OXI_STRESS_001",
+      "OXI_FREE_RADICAL_001",
+      "OXI_MITOCHONDRIAL_001",
+      "OXI_ANTIOXIDANT_SYSTEM_001",
+      "OXI_LIPID_PEROXIDATION_001",
+      "OXI_DNA_DAMAGE_001",
+      "OXI_PROTEIN_OXIDATION_001",
+      "OXI_FOLLICLE_001",
+      "OXI_GLYCATION_001",
+      "OXI_ENVIRONMENTAL_001"
+    ]
+  },
+  "OXI_STRESS_001": {
+    "id": "OXI_STRESS_001",
+    "node_type": "oxidative_stress",
+    "version": "1.0",
+    "name": "Oxidative Stress (Master Definition)",
+    "definition": "A systemic state where the production of Reactive Oxygen Species (ROS) overwhelms the body's antioxidant defence capacity. This imbalance causes progressive damage to lipids, proteins, and DNA in every cell of the body. Oxidative stress is not a disease — it is the underlying damage mechanism behind aging, inflammation, and chronic disease.",
+    "indian_context": "Indian urban populations face a uniquely severe oxidative load due to extreme air pollution (Delhi PM2.5 levels 10-20x WHO limits), high seed oil consumption (generating oxidized lipids), widespread nutrient deficiencies (depleted antioxidant reserves), pesticide residues on produce, and chronic stress (cortisol amplifies mitochondrial ROS output).",
+    "triggers": [
+      "INF_CHRONIC_001 (Activated immune cells release massive ROS as a weapon)",
+      "SLP_DEPRIVATION_001 (Brain cannot clear oxidative waste without glymphatic flushing during deep sleep)",
+      "STR_CHRONIC_001 (Cortisol dysregulates mitochondrial electron flow → increased electron leak → more superoxide)",
+      "EXE_HIIT_001 (Acute intense exercise generates massive transient ROS — beneficial if recovery is adequate, destructive if not)",
+      "SLP_APNEA_001 (Intermittent hypoxia → reperfusion injury → massive ROS burst with every breathing restart)"
+    ],
+    "downstream_damage": [
+      "BIO_MITOCHONDRIA_001 (Mitochondrial membrane damage → further electron leak → vicious cycle)",
+      "BIO_FOLLICLE_001 (Hair matrix cells — the fastest dividing cells in the body — are acutely vulnerable)",
+      "BIO_THYROID_001 (Thyroid peroxidase generates H2O2 during hormone synthesis — selenium/GPx is essential to neutralize it)",
+      "BIO_PANCREAS_001 (Beta cells have the lowest antioxidant enzyme levels of any tissue)"
+    ],
+    "nutritional_defences": [
+      "NUT_SELENIUM_001 (Glutathione Peroxidase — the primary enzymatic ROS neutralizer)",
+      "NUT_VITC_001 (Water-soluble free radical scavenger)",
+      "NUT_VITE_001 (Lipid-soluble membrane protector)",
+      "NUT_ZINC_001 (SOD cofactor)",
+      "NUT_COQ10_001 (Mitochondrial membrane antioxidant)",
+      "NUT_B2_001 (Required to regenerate glutathione via glutathione reductase)"
+    ],
+    "symptom_refs": ["SYM_FATIGUE_001", "SYM_HAIRFALL_001", "SYM_PREMATUREGREYING_001", "SYM_AGEING_001"]
+  },
+  "OXI_FREE_RADICAL_001": {
+    "id": "OXI_FREE_RADICAL_001",
+    "node_type": "oxidative_stress",
+    "version": "1.0",
+    "name": "Free Radical Species (ROS/RNS)",
+    "definition": "Unstable molecules with unpaired electrons that steal electrons from neighbouring molecules (lipids, proteins, DNA), setting off chain reactions of molecular destruction.",
+    "species": {
+      "superoxide_O2_minus": "The primary ROS produced at mitochondrial Complex I and III. Relatively short-lived. Dismutated by SOD into H2O2.",
+      "hydrogen_peroxide_H2O2": "More stable than superoxide. Can diffuse across membranes. Neutralized by catalase and glutathione peroxidase (GPx). In the hair follicle, H2O2 accumulates with age and directly bleaches melanin (causing greying).",
+      "hydroxyl_radical_OH": "The most destructive ROS. Formed when H2O2 reacts with free iron (Fenton reaction: Fe2+ + H2O2 → Fe3+ + OH· + OH-). Cannot be enzymatically neutralized — only prevented by controlling free iron and H2O2 levels.",
+      "peroxynitrite_ONOO": "Formed when superoxide reacts with nitric oxide (NO). Extremely damaging to proteins (nitration). Relevant in neuroinflammation and cardiovascular damage.",
+      "lipid_peroxyl_LOO": "Generated when ROS attack polyunsaturated fatty acids in cell membranes. Propagates chain reactions that destroy membrane integrity."
+    },
+    "indian_context": "The Fenton reaction (hydroxyl radical from free iron) is critically relevant to India because of widespread iron supplementation without concurrent antioxidant support. Excess unbound iron becomes a pro-oxidant, not a nutrient.",
+    "nutritional_connection": [
+      "NUT_IRON_001 (Free/unbound iron catalyzes Fenton reaction → hydroxyl radicals. This is why iron must NEVER be supplemented blindly without checking ferritin AND transferrin saturation.)",
+      "NUT_VITC_001 (Can regenerate Vitamin E and directly scavenge superoxide and hydroxyl radicals. But in the presence of free iron, Vitamin C paradoxically INCREASES hydroxyl radical production via Fenton chemistry.)"
+    ],
+    "biological_refs": [
+      "BIO_FOLLICLE_001",
+      "BIO_MELANOCYTE_001 (H2O2 bleaches melanin → greying)",
+      "BIO_MITOCHONDRIA_001 (Primary production site)",
+      "BIO_ETC_001 (Complex I and III are the main leak points)"
+    ]
+  },
+  "OXI_MITOCHONDRIAL_001": {
+    "id": "OXI_MITOCHONDRIAL_001",
+    "node_type": "oxidative_stress",
+    "version": "1.0",
+    "name": "Mitochondrial Oxidative Stress",
+    "definition": "Oxidative damage originating specifically within mitochondria. Since mitochondria produce 90% of cellular ROS AND have their own vulnerable DNA (mtDNA — no histones, no repair mechanisms), they are both the source and the victim of oxidative stress.",
+    "mechanism": {
+      "normal_leak": "Under healthy conditions, 1-2% of electrons passing through the ETC leak at Complex I and III, generating superoxide. This is normal and handled by mitochondrial SOD2 (manganese-dependent).",
+      "pathological_leak": "When ETC components are damaged or nutrient cofactors are depleted (iron for Fe-S clusters, CoQ10 for electron shuttling, B2/B3 for Complex I/II), electron leak increases dramatically — 5-10% leak rate — overwhelming SOD2 → superoxide accumulates → attacks mitochondrial membranes → releases cytochrome c → triggers apoptosis.",
+      "vicious_cycle": "Damaged mitochondrial membranes → more electron leak → more ROS → more membrane damage. This self-amplifying loop is why untreated nutrient deficiencies cause progressively worsening fatigue over months."
+    },
+    "indian_context": "Iron deficiency (affecting ~50% of Indian women) paradoxically INCREASES mitochondrial ROS: incomplete Fe-S clusters → electrons back up → increased leak. This is the molecular reason why iron-deficient women feel crushingly fatigued — their mitochondria are simultaneously energy-starved AND self-destructing.",
+    "nutrient_cofactors_required": [
+      "NUT_IRON_001 (Fe-S clusters in Complex I, II, III)",
+      "NUT_COQ10_001 (Electron shuttle between Complex II/III)",
+      "NUT_B2_001 (FAD for Complex I and II)",
+      "NUT_B3_001 (NAD+ for Complex I)",
+      "NUT_COPPER_001 (Complex IV — cytochrome c oxidase)"
+    ],
+    "downstream_effects": [
+      "SYM_FATIGUE_001 (Reduced ATP output)",
+      "BIO_FOLLICLE_001 (Matrix cells require massive ATP — starved follicles enter catagen)",
+      "INF_CHRONIC_001 (Damaged mitochondria release DAMPs → trigger innate immune activation)"
+    ]
+  },
+  "OXI_ANTIOXIDANT_SYSTEM_001": {
+    "id": "OXI_ANTIOXIDANT_SYSTEM_001",
+    "node_type": "oxidative_stress",
+    "version": "1.0",
+    "name": "Endogenous Antioxidant Defence System",
+    "definition": "The body's multi-layered enzymatic and non-enzymatic defence network against ROS. This is NOT about eating 'antioxidant foods' — it is about the body's own enzyme systems that require specific mineral cofactors to function.",
+    "enzymatic_defences": {
+      "SOD_superoxide_dismutase": {
+        "function": "Converts superoxide (O2-) to hydrogen peroxide (H2O2). The first line of defence.",
+        "isoforms": {
+          "SOD1_CuZn": "Cytoplasmic. Requires Copper and Zinc.",
+          "SOD2_Mn": "Mitochondrial. Requires Manganese. The most critical isoform — protects the mitochondria itself.",
+          "SOD3_CuZn": "Extracellular. Requires Copper and Zinc."
+        },
+        "nutrient_dependency": ["NUT_ZINC_001", "NUT_COPPER_001"]
+      },
+      "catalase": {
+        "function": "Converts H2O2 to water and oxygen. Extremely fast enzyme (40 million reactions/second).",
+        "location": "Peroxisomes. High concentration in liver and red blood cells.",
+        "nutrient_dependency": ["NUT_IRON_001 (Haem-containing enzyme)"]
+      },
+      "glutathione_peroxidase_GPx": {
+        "function": "Converts H2O2 AND lipid peroxides to water and lipid alcohols using glutathione (GSH) as an electron donor. The most versatile antioxidant enzyme.",
+        "nutrient_dependency": ["NUT_SELENIUM_001 (Active site atom — without selenium, GPx is completely non-functional)"]
+      },
+      "glutathione_reductase": {
+        "function": "Recycles oxidized glutathione (GSSG) back to reduced glutathione (GSH) using NADPH as the electron source.",
+        "nutrient_dependency": ["NUT_B2_001 (FAD cofactor)", "NUT_B3_001 (NADPH source)"]
+      }
+    },
+    "non_enzymatic_defences": {
+      "glutathione_GSH": "The master intracellular antioxidant. A tripeptide (glutamate-cysteine-glycine). Synthesized in the liver. Donated as an electron source by GPx. Recycled by glutathione reductase. Depleted by alcohol, paracetamol, and chronic stress.",
+      "vitamin_C": "Water-soluble. Scavenges free radicals in plasma and cytoplasm. Regenerates Vitamin E. Ref: NUT_VITC_001.",
+      "vitamin_E": "Lipid-soluble. Sits inside cell membranes and breaks lipid peroxidation chain reactions. Ref: NUT_VITE_001.",
+      "coenzyme_Q10": "Lipid-soluble. Sits in mitochondrial inner membrane. Dual role: electron carrier in ETC AND membrane antioxidant. Ref: NUT_COQ10_001.",
+      "uric_acid": "Surprisingly, one of the strongest plasma antioxidants. Scavenges peroxynitrite. However, excess (gout) indicates purine metabolism issues."
+    },
+    "indian_context": "The Indian population has a perfect storm for antioxidant depletion: widespread Selenium deficiency (poor soil), Zinc deficiency (phytate-heavy vegetarian diets), Vitamin C depletion (stress and pollution), and B2 deficiency (low dairy in many diets). The body's defence network is crippled at multiple levels simultaneously."
+  },
+  "OXI_LIPID_PEROXIDATION_001": {
+    "id": "OXI_LIPID_PEROXIDATION_001",
+    "node_type": "oxidative_stress",
+    "version": "1.0",
+    "name": "Lipid Peroxidation",
+    "definition": "The chain-reaction destruction of polyunsaturated fatty acids (PUFAs) in cell membranes by free radicals. A single hydroxyl radical can trigger a self-propagating chain that destroys hundreds of lipid molecules before Vitamin E terminates it.",
+    "mechanism": {
+      "initiation": "A free radical (usually hydroxyl OH·) steals a hydrogen atom from a PUFA in the cell membrane → creates a lipid radical (L·).",
+      "propagation": "The lipid radical (L·) reacts with oxygen → lipid peroxyl radical (LOO·) → steals hydrogen from the NEXT PUFA → new lipid radical. This chain reaction can destroy 100+ lipid molecules per single initiating event.",
+      "termination": "Vitamin E (alpha-tocopherol) donates a hydrogen to the lipid peroxyl radical, stopping the chain. Vitamin E itself becomes a radical but is regenerated by Vitamin C.",
+      "toxic_byproducts": "Lipid peroxidation produces malondialdehyde (MDA) and 4-hydroxynonenal (4-HNE) — both are highly reactive aldehydes that crosslink proteins and DNA, causing further damage."
+    },
+    "tissue_targets": [
+      "BIO_FOLLICLE_001 (Destroys the sebaceous gland lipid layer protecting the hair shaft)",
+      "BIO_MITOCHONDRIA_001 (Inner membrane is extremely PUFA-rich — lipid peroxidation disrupts ETC function)",
+      "BIO_NERVOUS_001 (Brain is 60% fat — extremely susceptible)"
+    ],
+    "nutritional_connection": [
+      "NUT_VITE_001 (The ONLY chain-breaking antioxidant in lipid membranes)",
+      "NUT_VITC_001 (Regenerates Vitamin E after it stops a chain)",
+      "NUT_OMEGA3_001 (Paradox: Omega-3 PUFAs are highly susceptible to peroxidation but are anti-inflammatory. Must be consumed WITH Vitamin E.)"
+    ],
+    "indian_context": "Reheated cooking oils (common in Indian street food, deep frying) are a massive source of pre-formed lipid peroxides. Every time oil is reheated, it generates more aldehydes (MDA, 4-HNE). Consuming these oils introduces pre-formed oxidative damage directly into the bloodstream."
+  },
+  "OXI_DNA_DAMAGE_001": {
+    "id": "OXI_DNA_DAMAGE_001",
+    "node_type": "oxidative_stress",
+    "version": "1.0",
+    "name": "Oxidative DNA Damage",
+    "definition": "Free radicals attacking the nucleotide bases and sugar-phosphate backbone of DNA. The most studied marker is 8-oxo-dG (8-oxo-2'-deoxyguanosine), a modified guanine base caused by hydroxyl radical attack.",
+    "mechanism": {
+      "nuclear_DNA": "Hydroxyl radicals attack guanine bases → 8-oxo-dG. If not repaired by base excision repair (BER) enzymes, this causes G→T transversion mutations. Zinc is essential for BER enzyme function.",
+      "mitochondrial_DNA": "mtDNA has NO histone protection and sits directly adjacent to the ETC (the primary ROS source). mtDNA accumulates 10-20x more oxidative damage than nuclear DNA. mtDNA mutations → defective ETC proteins → more ROS → more mtDNA damage (the aging vicious cycle).",
+      "telomere_damage": "Telomeres (chromosome end-caps) are guanine-rich sequences (TTAGGG repeats) — making them preferential targets for hydroxyl radicals. Oxidative stress accelerates telomere shortening → cellular senescence → biological aging."
+    },
+    "tissue_targets": [
+      "BIO_MELANOCYTE_001 (Oxidative DNA damage depletes melanocyte stem cells → premature greying)",
+      "BIO_FOLLICLE_001 (Stem cell DNA damage in the bulge region → follicle miniaturization)"
+    ],
+    "nutritional_connection": [
+      "NUT_ZINC_001 (Essential for DNA repair enzymes — BER pathway)",
+      "NUT_FOLATE_001 (Required for DNA methylation and repair)",
+      "NUT_B12_001 (Protects methylation pathways that maintain DNA integrity)"
+    ],
+    "indian_context": "PM2.5 air pollution particles are small enough to enter cells and directly cause oxidative DNA damage. Indians in Delhi/NCR have measurably elevated 8-oxo-dG levels compared to rural populations."
+  },
+  "OXI_PROTEIN_OXIDATION_001": {
+    "id": "OXI_PROTEIN_OXIDATION_001",
+    "node_type": "oxidative_stress",
+    "version": "1.0",
+    "name": "Protein Oxidation & Carbonylation",
+    "definition": "Free radicals modifying the amino acid side chains of proteins, introducing carbonyl groups (protein carbonylation) that cause misfolding and loss of function.",
+    "mechanism": {
+      "carbonylation": "ROS attack amino acid side chains (especially proline, arginine, lysine, threonine) → introduce aldehyde/ketone groups → protein unfolds → loss of enzymatic activity.",
+      "crosslinking": "Oxidized proteins crosslink with each other → form insoluble aggregates. In the lens of the eye, this is the molecular basis of cataracts.",
+      "proteasome_overload": "Normally, the proteasome degrades damaged proteins. Under severe oxidative stress, the sheer volume of carbonylated proteins overwhelms the proteasome → aggregated proteins accumulate → cellular dysfunction."
+    },
+    "tissue_targets": [
+      "Keratin in hair (Oxidized keratin → brittle, dull hair with reduced tensile strength)",
+      "Collagen in skin (Oxidized collagen → wrinkles, loss of elasticity)",
+      "Lens crystallins in the eye (Oxidized → cataracts — extremely common in India)"
+    ],
+    "resolution_pathways": [
+      "REC_THERMAL_001 (Heat Shock Proteins refold damaged proteins)",
+      "NUT_VITC_001 (Prevents collagen oxidation)",
+      "REC_SLEEP_001 (Autophagy during deep sleep clears aggregated proteins)"
+    ],
+    "indian_context": "Cataracts are the leading cause of blindness in India, affecting millions. The molecular root cause is protein oxidation in the lens. UV exposure, diabetes (glycation), and selenium/zinc deficiency all accelerate this."
+  },
+  "OXI_FOLLICLE_001": {
+    "id": "OXI_FOLLICLE_001",
+    "node_type": "oxidative_stress",
+    "version": "1.0",
+    "name": "Follicular Oxidative Stress (Hair & Scalp)",
+    "definition": "Localized oxidative damage specifically within the hair follicle microenvironment, targeting the rapidly dividing matrix cells, the melanocyte stem cells, and the dermal papilla.",
+    "mechanism": {
+      "matrix_cell_vulnerability": "Hair matrix cells divide every 12-24 hours — the fastest mitotic rate in the body. This requires enormous mitochondrial ATP output, generating proportionally massive ROS. If antioxidant cofactors (Selenium, Zinc, Vitamin C) are depleted, the matrix cells are the FIRST tissue to suffer.",
+      "melanocyte_bleaching": "Hydrogen peroxide (H2O2) accumulates naturally in the follicle with age as catalase activity declines. This H2O2 directly oxidizes melanin pigment and damages melanocyte stem cell DNA. This is the proven molecular mechanism of greying.",
+      "dermal_papilla_signalling": "Oxidative stress in the dermal papilla disrupts Wnt/beta-catenin signalling (the master 'grow' signal) and upregulates TGF-beta (the 'stop' signal) → premature catagen entry.",
+      "perifollicular_fibrosis": "Chronic oxidative damage triggers fibroblast activation around the follicle → excess collagen deposition → rigid perifollicular sheath → physically chokes the follicle's blood supply → miniaturization."
+    },
+    "triggers": [
+      "INF_SCALP_001 (Inflammatory cytokines generate local ROS)",
+      "HOR_DHT_001 (DHT increases local ROS production in the dermal papilla)",
+      "OXI_ENVIRONMENTAL_001 (PM2.5 settles on scalp, hard water mineral deposits)",
+      "NUT_SELENIUM_001 deficiency (Disables GPx in follicle)",
+      "NUT_ZINC_001 deficiency (Disables SOD in follicle)"
+    ],
+    "nutritional_connection": [
+      "NUT_SELENIUM_001 (GPx neutralizes H2O2 before it bleaches melanin)",
+      "NUT_ZINC_001 (SOD converts superoxide → H2O2 in a controlled manner)",
+      "NUT_VITC_001 (Scavenges free radicals in the aqueous follicle environment)",
+      "NUT_VITE_001 (Protects follicle sebum lipids from peroxidation)",
+      "NUT_COQ10_001 (Supports matrix cell mitochondria)"
+    ],
+    "symptom_refs": ["SYM_HAIRFALL_001", "SYM_PREMATUREGREYING_001", "SYM_THINHAIR_001"],
+    "indian_context": "India has the perfect combination of factors for severe follicular oxidative stress: extreme air pollution depositing heavy metals on the scalp, hard water (high calcium/magnesium carbonates) forming mineral deposits that trap oxidized sebum, widespread selenium/zinc deficiency, and high UV exposure accelerating melanocyte stem cell damage."
+  },
+  "OXI_GLYCATION_001": {
+    "id": "OXI_GLYCATION_001",
+    "node_type": "oxidative_stress",
+    "version": "1.0",
+    "name": "Glycation & Advanced Glycation End-products (AGEs)",
+    "definition": "A non-enzymatic reaction where excess blood glucose permanently binds to proteins (and lipids/DNA), forming irreversible cross-links called Advanced Glycation End-products (AGEs). AGEs are both a cause and a consequence of oxidative stress.",
+    "mechanism": {
+      "maillard_reaction": "Glucose reacts with amino groups on proteins (especially lysine and arginine residues) → Schiff base → Amadori product (e.g., HbA1c) → irreversible AGE crosslinks. This is the exact same 'browning' reaction as cooking food.",
+      "RAGE_activation": "AGEs bind to the Receptor for AGEs (RAGE) on cell surfaces → triggers NF-kB → massive inflammatory cytokine release (TNF-alpha, IL-6) → further ROS generation. This creates a vicious glycation-inflammation-oxidative stress triangle.",
+      "collagen_crosslinking": "Collagen has a 15-year half-life — it cannot easily be replaced. Once glycated, collagen becomes rigid, brittle, and dysfunctional. This is why diabetics age faster, have poor wound healing, and develop skin changes."
+    },
+    "tissue_targets": [
+      "BIO_DERMIS_001 (Glycated collagen → wrinkles, loss of elasticity, 'sugar face')",
+      "BIO_FOLLICLE_001 (Glycated dermal papilla basement membrane → impaired nutrient delivery to matrix)",
+      "BIO_CARDIOVASCULAR_001 (Glycated arterial walls → atherosclerosis)",
+      "BIO_NERVOUS_001 (Glycated myelin → peripheral neuropathy in diabetics)",
+      "BIO_KIDNEY_001 (Glycated glomerular basement membrane → diabetic nephropathy)"
+    ],
+    "nutritional_connection": [
+      "NUT_CARBS_001 (High blood sugar is the primary substrate for glycation)",
+      "HOR_INSULIN_001 (Insulin resistance → chronically elevated blood sugar → accelerated glycation)",
+      "NUT_B1_001 (Benfotiamine — a B1 derivative — blocks multiple glycation pathways)"
+    ],
+    "indian_context": "India is the diabetes capital of the world with 100+ million diabetics and 140+ million prediabetics. The high refined carbohydrate diet (white rice, maida, sugar in chai) combined with sedentary lifestyles means AGE formation is accelerated in a massive percentage of the population. Dietary AGEs from tandoori/grilled foods (high-heat cooking) add exogenous AGEs to the endogenous burden."
+  },
+  "OXI_ENVIRONMENTAL_001": {
+    "id": "OXI_ENVIRONMENTAL_001",
+    "node_type": "oxidative_stress",
+    "version": "1.0",
+    "name": "Environmental Oxidative Stressors",
+    "definition": "External environmental factors that directly introduce free radicals or pro-oxidant compounds into the body.",
+    "sources": {
+      "air_pollution_PM2_5": {
+        "mechanism": "PM2.5 particles are small enough to cross the alveolar membrane into the bloodstream. They carry polycyclic aromatic hydrocarbons (PAHs) and heavy metals (lead, cadmium, arsenic) that directly catalyze free radical generation. PM2.5 also crosses the olfactory bulb into the brain.",
+        "indian_context": "Delhi, Mumbai, Kolkata, and most North Indian cities regularly exceed WHO PM2.5 limits by 10-20x. Indoor air quality is also poor due to cooking with biomass fuels in rural India."
+      },
+      "UV_radiation": {
+        "mechanism": "UVB generates ROS directly in the skin and scalp. UVA penetrates deeper and damages dermal collagen via singlet oxygen generation.",
+        "indian_context": "High UV index across most of India year-round. Combined with widespread Vitamin D deficiency (paradoxically, due to sun avoidance for skin lightening), the skin lacks adequate repair capacity."
+      },
+      "heavy_metals": {
+        "mechanism": "Lead, mercury, arsenic, and cadmium displace essential minerals (zinc, selenium, iron) from enzyme active sites, disabling antioxidant enzymes while simultaneously generating ROS via Fenton-like chemistry.",
+        "indian_context": "Contaminated groundwater (arsenic in West Bengal, fluoride in Rajasthan), lead in paints and cosmetics (kajal/surma), mercury in skin-whitening creams."
+      },
+      "pesticides": {
+        "mechanism": "Organophosphate and organochlorine pesticides inhibit mitochondrial electron transport, increasing ROS production. They also deplete glutathione reserves.",
+        "indian_context": "India is one of the world's largest pesticide users. Residues on fruits and vegetables are common due to inadequate regulation and washing."
+      },
+      "hard_water": {
+        "mechanism": "High calcium and magnesium carbonate deposits on scalp and hair, trapping oxidized sebum, disrupting the scalp microbiome, and creating a pro-inflammatory environment.",
+        "indian_context": "Hard water is extremely common across North India and the Deccan plateau. Direct contributor to dry, brittle hair and dandruff."
+      }
+    },
+    "symptom_refs": ["SYM_HAIRFALL_001", "SYM_DRYSKIN_001", "SYM_PREMATUREGREYING_001"],
+    "resolution_pathways": ["NUT_VITC_001", "NUT_SELENIUM_001", "Water filtration (RO/Shower filters)"]
+  }
+}

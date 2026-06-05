@@ -1,0 +1,282 @@
+{
+  "_meta": {
+    "layer": "21_FOOD_DATABASE",
+    "category": "Legumes and Beans",
+    "serving_size_standard": "Per 100g (Raw/Uncooked Weight)",
+    "description": "Dense, heavy plant proteins. These contain some of the highest concentrations of toxic lectins in the plant kingdom, requiring absolute precision in preparation to avoid destroying the gut lining.",
+    "nodes": [
+      "FOOD_LEGUME_RAJMA_001",
+      "FOOD_LEGUME_CHHOLE_001",
+      "FOOD_LEGUME_KALACHANA_001",
+      "FOOD_LEGUME_LOBIA_001",
+      "FOOD_LEGUME_SOYBEAN_001",
+      "FOOD_LEGUME_MATAR_001",
+      "FOOD_LEGUME_VAL_001",
+      "FOOD_LEGUME_BLACKBEAN_001",
+      "FOOD_LEGUME_GREENPEA_001",
+      "FOOD_LEGUME_PEANUT_001"
+    ]
+  },
+  "FOOD_LEGUME_RAJMA_001": {
+    "id": "FOOD_LEGUME_RAJMA_001",
+    "name": "Kidney Beans (Rajma)",
+    "category": "Legumes and Beans",
+    "serving_size_reference": "Per 100g (Raw)",
+    "nutritional_values": {
+      "macronutrients": {
+        "protein": "24g",
+        "carbohydrates": "60g",
+        "fiber": "25g",
+        "fat": "0.8g"
+      },
+      "micronutrients": {
+        "magnesium": "140mg",
+        "iron": "8.2mg",
+        "potassium": "1400mg",
+        "zinc": "2.8mg"
+      }
+    },
+    "biological_impact": {
+      "blood_sugar": "Very low Glycaemic Index (GI 29) due to massive fiber content. Feeds gut microbiome (GUT_MICROBIOME_001) heavily.",
+      "protein_quality": "Incomplete protein (low in methionine). Pairs perfectly with rice to form a complete amino acid profile (Rajma Chawal)."
+    },
+    "anti_nutrients": "Extremely high in Phytohaemagglutinin (PHA), a highly toxic lectin that agglutinates red blood cells and tears open tight junctions in the gut (GUT_LEAKYGUT_001).",
+    "preparation_rules": "MUST be soaked overnight (12 hours) and pressure cooked for at least 30-40 minutes. Boiling for less than 10 minutes actually INCREASES PHA toxicity five-fold, causing severe food poisoning-like symptoms.",
+    "related_nodes": ["NUT_PROTEIN_001", "GUT_LEAKYGUT_001", "NUT_IRON_001"]
+  },
+  "FOOD_LEGUME_CHHOLE_001": {
+    "id": "FOOD_LEGUME_CHHOLE_001",
+    "name": "Chickpeas / Kabuli Chana (Chhole)",
+    "category": "Legumes and Beans",
+    "serving_size_reference": "Per 100g (Raw)",
+    "nutritional_values": {
+      "macronutrients": {
+        "protein": "19g",
+        "carbohydrates": "61g",
+        "fiber": "17g",
+        "fat": "6g"
+      },
+      "micronutrients": {
+        "iron": "6.2mg",
+        "magnesium": "115mg",
+        "folate": "557mcg (Massive)",
+        "zinc": "1.5mg"
+      }
+    },
+    "biological_impact": {
+      "methylation": "The massive Folate (B9) content directly supports the methylation cycle (GEN_MTHFR_001), crucial for DNA synthesis and preventing birth defects.",
+      "hormonal_health": "Contains Phytoestrogens (isoflavones) which can weakly bind to estrogen receptors. Can be protective in Menopause (LFS_MENOPAUSE_001) but problematic if a patient has Estrogen Dominance."
+    },
+    "anti_nutrients": "High in Saponins and Phytates.",
+    "preparation_rules": "Soaking overnight with a pinch of baking soda (sodium bicarbonate) breaks down the complex oligosaccharides, preventing the severe gas commonly associated with Chhole.",
+    "related_nodes": ["NUT_FOLATE_001", "GEN_MTHFR_001", "HOR_ESTROGEN_001"]
+  },
+  "FOOD_LEGUME_KALACHANA_001": {
+    "id": "FOOD_LEGUME_KALACHANA_001",
+    "name": "Black Chickpeas (Kala Chana)",
+    "category": "Legumes and Beans",
+    "serving_size_reference": "Per 100g (Raw)",
+    "nutritional_values": {
+      "macronutrients": {
+        "protein": "20g",
+        "carbohydrates": "63g",
+        "fiber": "21g (Extremely High)",
+        "fat": "5g"
+      },
+      "micronutrients": {
+        "iron": "8.9mg",
+        "magnesium": "138mg",
+        "calcium": "160mg",
+        "potassium": "875mg"
+      }
+    },
+    "biological_impact": {
+      "blood_sugar": "The dark brown skin provides an impenetrable wall of insoluble fiber, making its Glycaemic Index incredibly low. It is a cornerstone food for reversing Type 2 Diabetes in India.",
+      "iron_status": "Because it has more iron than Kabuli Chana, it is traditionally given to pregnant women and menstruating females (LFS_REPRODUCTIVE_FEMALE_001)."
+    },
+    "anti_nutrients": "The thick skin holds very high amounts of tannins and phytic acid.",
+    "preparation_rules": "Requires the longest soaking time of any bean (12-24 hours). If eaten unsoaked (e.g., as a dry snack), it will aggressively dehydrate the colon and cause severe constipation.",
+    "related_nodes": ["MED_TYPE2_DIABETES_001", "MED_IRON_DEFICIENCY_ANAEMIA_001"]
+  },
+  "FOOD_LEGUME_LOBIA_001": {
+    "id": "FOOD_LEGUME_LOBIA_001",
+    "name": "Black-Eyed Peas (Lobia / Chawli)",
+    "category": "Legumes and Beans",
+    "serving_size_reference": "Per 100g (Raw)",
+    "nutritional_values": {
+      "macronutrients": {
+        "protein": "23.5g",
+        "carbohydrates": "60g",
+        "fiber": "11g",
+        "fat": "1.2g"
+      },
+      "micronutrients": {
+        "magnesium": "119mg",
+        "iron": "8.3mg",
+        "potassium": "1112mg",
+        "zinc": "3.4mg"
+      }
+    },
+    "biological_impact": {
+      "digestion": "Among the large beans (Rajma/Chhole), Lobia has the thinnest skin and the lowest concentration of oligosaccharides. It is the least gas-producing bean.",
+      "heart_health": "Very high potassium-to-sodium ratio directly lowers blood pressure (SYS_CARDIOMETABOLIC_001) by dilating blood vessels."
+    },
+    "anti_nutrients": "Lower phytic acid and lectins compared to Rajma.",
+    "preparation_rules": "Can be cooked relatively quickly (only 2-3 hours of soaking required).",
+    "related_nodes": ["SYS_CARDIOMETABOLIC_001", "SYM_BLOATING_001"]
+  },
+  "FOOD_LEGUME_SOYBEAN_001": {
+    "id": "FOOD_LEGUME_SOYBEAN_001",
+    "name": "Soybeans",
+    "category": "Legumes and Beans",
+    "serving_size_reference": "Per 100g (Raw)",
+    "nutritional_values": {
+      "macronutrients": {
+        "protein": "36g (Massive)",
+        "carbohydrates": "30g",
+        "fiber": "9g",
+        "fat": "20g"
+      },
+      "micronutrients": {
+        "calcium": "277mg",
+        "iron": "15.7mg",
+        "magnesium": "280mg",
+        "zinc": "4.9mg"
+      }
+    },
+    "biological_impact": {
+      "protein_quality": "The only plant food that is a 100% COMPLETE protein containing all 9 essential amino acids in perfect ratios. It rivals meat for muscle building.",
+      "hormonal_disruption": "Contains highly active Phytoestrogens (Genistein and Daidzein). While protective for menopausal women, high consumption in men can lower free testosterone (HOR_TESTOSTERONE_001). For women with PCOS or estrogen dominance, it can be disastrous."
+    },
+    "anti_nutrients": "The most heavily defended plant. Contains extreme levels of Trypsin Inhibitors (blocking protein digestion), massive Phytates, and Goitrogens (suppresses thyroid/iodine uptake).",
+    "preparation_rules": "NEVER EAT SOY RAW OR UNFERMENTED. The only biologically safe ways to eat soy are deeply fermented (Tempeh/Miso) or highly processed (Tofu) where the anti-nutrients are physically separated. Soya chunks (TVP) are highly processed and stripped of fat, but retain some anti-nutrients.",
+    "related_nodes": ["HOR_ESTROGEN_001", "HOR_THYROID_001", "NUT_PROTEIN_001"]
+  },
+  "FOOD_LEGUME_MATAR_001": {
+    "id": "FOOD_LEGUME_MATAR_001",
+    "name": "Peas (Matar - Dried/Green)",
+    "category": "Legumes and Beans",
+    "serving_size_reference": "Per 100g (Raw/Dried)",
+    "nutritional_values": {
+      "macronutrients": {
+        "protein": "24g",
+        "carbohydrates": "60g",
+        "fiber": "25g",
+        "fat": "1g"
+      },
+      "micronutrients": {
+        "iron": "4.4mg",
+        "magnesium": "115mg",
+        "vitamin_k": "5mcg",
+        "zinc": "3.0mg"
+      }
+    },
+    "biological_impact": {
+      "muscle_synthesis": "Pea protein is highly bioavailable and rapidly absorbed, making it the superior vegan protein powder source compared to soy (no estrogenic effects).",
+      "joint_health": "Contains high levels of purines, which break down into Uric Acid. Can trigger gout (MED_GOUT_001) in susceptible individuals."
+    },
+    "anti_nutrients": "Low in anti-nutrients compared to soy and rajma, making them much easier to digest.",
+    "preparation_rules": "Green fresh peas require no soaking. Dried white/green peas (used in Ragda Patties) require overnight soaking.",
+    "related_nodes": ["NUT_PROTEIN_001", "MED_GOUT_001"]
+  },
+  "FOOD_LEGUME_VAL_001": {
+    "id": "FOOD_LEGUME_VAL_001",
+    "name": "Val (Field Beans / Pawta)",
+    "category": "Legumes and Beans",
+    "serving_size_reference": "Per 100g (Raw)",
+    "nutritional_values": {
+      "macronutrients": {
+        "protein": "24g",
+        "carbohydrates": "61g",
+        "fiber": "15g",
+        "fat": "1.2g"
+      },
+      "micronutrients": {
+        "iron": "5mg",
+        "magnesium": "140mg",
+        "calcium": "60mg"
+      }
+    },
+    "biological_impact": {
+      "digestion": "Very heavy to digest, heavily aggravates Vata dosha in Ayurveda, causing significant gas if not sprouted."
+    },
+    "anti_nutrients": "High in Phytohaemagglutinin (PHA) and specific flatulence-producing oligosaccharides.",
+    "preparation_rules": "Traditionally soaked, sprouted, and then peeled (Vaalache Birde) to completely remove the anti-nutrients in the skin.",
+    "related_nodes": ["SYM_BLOATING_001", "GUT_DYSBIOSIS_001"]
+  },
+  "FOOD_LEGUME_BLACKBEAN_001": {
+    "id": "FOOD_LEGUME_BLACKBEAN_001",
+    "name": "Black Beans",
+    "category": "Legumes and Beans",
+    "serving_size_reference": "Per 100g (Raw)",
+    "nutritional_values": {
+      "macronutrients": {
+        "protein": "21g",
+        "carbohydrates": "62g",
+        "fiber": "16g",
+        "fat": "0.9g"
+      },
+      "micronutrients": {
+        "iron": "5.0mg",
+        "magnesium": "171mg",
+        "zinc": "3.6mg"
+      }
+    },
+    "biological_impact": {
+      "blood_sugar": "The black seed coat is exceptionally high in anthocyanins (antioxidants). This physical barrier slows digestion, making it one of the lowest GI foods available."
+    },
+    "anti_nutrients": "High phytates in the dark skin.",
+    "preparation_rules": "Requires 12+ hours soaking. Often paired with cumin to aid digestion.",
+    "related_nodes": ["BSG_INSULIN_RESISTANCE_001"]
+  },
+  "FOOD_LEGUME_GREENPEA_001": {
+    "id": "FOOD_LEGUME_GREENPEA_001",
+    "name": "Fresh Green Peas (Hari Matar)",
+    "category": "Legumes and Beans",
+    "serving_size_reference": "Per 100g (Fresh)",
+    "nutritional_values": {
+      "macronutrients": {
+        "protein": "5g",
+        "carbohydrates": "14g",
+        "fiber": "5g",
+        "fat": "0.4g"
+      },
+      "micronutrients": {
+        "vitamin_c": "40mg",
+        "vitamin_k": "24mcg",
+        "folate": "65mcg"
+      }
+    },
+    "biological_impact": {
+      "nutrition_density": "Because they are eaten fresh, they retain massive amounts of Vitamin C, which is usually destroyed when drying legumes."
+    },
+    "anti_nutrients": "Very low compared to dried legumes.",
+    "preparation_rules": "Can be eaten lightly steamed. Overcooking destroys the Vitamin C.",
+    "related_nodes": ["NUT_VITC_001"]
+  },
+  "FOOD_LEGUME_PEANUT_001": {
+    "id": "FOOD_LEGUME_PEANUT_001",
+    "name": "Peanuts (Mungfali)",
+    "category": "Legumes and Beans",
+    "serving_size_reference": "Per 100g (Raw)",
+    "nutritional_values": {
+      "macronutrients": {
+        "protein": "25.8g",
+        "carbohydrates": "16g",
+        "fiber": "8.5g",
+        "fat": "49.2g"
+      },
+      "micronutrients": {
+        "magnesium": "168mg",
+        "vitamin_e": "8.3mg",
+        "zinc": "3.3mg"
+      }
+    },
+    "biological_impact": {
+      "inflammation": "Peanuts are biologically LEGUMES that grow underground, NOT tree nuts. They have a massive Omega-6 to Omega-3 ratio (over 5000:1). Eating large quantities (peanut butter) heavily drives systemic inflammation (INF_CHRONIC_001)."
+    },
+    "anti_nutrients": "Aflatoxin: Peanuts are uniquely susceptible to Aspergillus mold, which produces Aflatoxin (a potent liver carcinogen). They also contain Peanut Agglutinin (PNA), a lectin that can cross the gut barrier and promote tumor growth in susceptible individuals.",
+    "preparation_rules": "Never eat raw. Roasting or boiling destroys the mold spores but does not destroy aflatoxin. Valencia peanuts have the lowest aflatoxin risk.",
+    "related_nodes": ["INF_CHRONIC_001", "BIO_LIVER_001", "NUT_FATTYACID_001"]
+  }
+}

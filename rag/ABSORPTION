@@ -1,0 +1,439 @@
+{
+  "_meta": {
+    "layer": "05_ABSORPTION",
+    "version": "1.0",
+    "description": "Mechanisms of nutrient absorption and dependencies."
+  },
+  "ABS_PROTEIN_001": {
+    "id": "ABS_PROTEIN_001",
+    "node_type": "absorption",
+    "version": "1.0",
+    "nutrient_ref": "NUT_PROTEIN_001",
+    "primary_site": "Jejunum and Ileum",
+    "mechanism": {
+      "transporters": "PEPT1 (di/tripeptides), specific amino acid transporters (Na+-dependent)",
+      "process": "Gastric HCl denatures protein. Pepsin cleaves into large polypeptides. Pancreatic proteases (trypsin, chymotrypsin) cleave into oligopeptides. Brush border peptidases cleave into amino acids and di/tripeptides. PEPT1 absorbs di/tripeptides efficiently."
+    },
+    "enhancers": [
+      { "factor": "Gastric Acid", "mechanism": "Essential for initial denaturation and pepsinogen activation" }
+    ],
+    "inhibitors": [
+      { "factor": "MEDS_PPIS_001", "mechanism": "Raises gastric pH → impairs initial protein denaturation" },
+      { "factor": "Trypsin inhibitors", "mechanism": "Found in raw legumes/soy; blocks pancreatic proteases" }
+    ],
+    "gut_health_dependencies": ["BIO_GUTLINING_001"]
+  },
+  "ABS_CARBS_001": {
+    "id": "ABS_CARBS_001",
+    "node_type": "absorption",
+    "version": "1.0",
+    "nutrient_ref": "NUT_CARBS_001",
+    "primary_site": "Duodenum and Jejunum",
+    "mechanism": {
+      "transporters": "SGLT1 (Glucose/Galactose), GLUT5 (Fructose), GLUT2 (basolateral exit)",
+      "process": "Salivary/pancreatic amylase breaks down starch to maltose/dextrins. Brush border disaccharidases (sucrase, lactase, maltase) produce monosaccharides. SGLT1 active transport (requires Na+ gradient)."
+    },
+    "enhancers": [],
+    "inhibitors": [
+      { "factor": "Soluble Fibre", "mechanism": "Forms viscous gel, slows gastric emptying and enzyme access" },
+      { "factor": "Alpha-glucosidase inhibitors", "mechanism": "Medications that block brush border enzymes" }
+    ],
+    "gut_health_dependencies": ["BIO_GUTLINING_001"]
+  },
+  "ABS_FATS_001": {
+    "id": "ABS_FATS_001",
+    "node_type": "absorption",
+    "version": "1.0",
+    "nutrient_ref": "NUT_FATS_001",
+    "primary_site": "Jejunum",
+    "mechanism": {
+      "transporters": "CD36, FATP4, passive diffusion",
+      "process": "Bile salts emulsify large fat droplets. Pancreatic lipase hydrolyses triglycerides to monoglycerides and free fatty acids. Micelles form and deliver lipids to brush border. Re-esterified in enterocyte, packaged into chylomicrons, enter lymphatics."
+    },
+    "enhancers": [
+      { "factor": "Bile Production", "mechanism": "Essential for micelle formation" }
+    ],
+    "inhibitors": [
+      { "factor": "Bile acid sequestrants", "mechanism": "Bind bile in gut, preventing micelle formation" },
+      { "factor": "Orlistat", "mechanism": "Inhibits pancreatic lipase" }
+    ],
+    "gut_health_dependencies": ["BIO_LIVER_001", "BIO_GUTLINING_001"]
+  },
+  "ABS_VITD_001": {
+    "id": "ABS_VITD_001",
+    "node_type": "absorption",
+    "version": "1.0",
+    "nutrient_ref": "NUT_VITD_001",
+    "primary_site": "Jejunum and Ileum",
+    "mechanism": {
+      "transporters": "Cholesterol transporters (NPC1L1, SR-B1), passive diffusion",
+      "process": "Fat-soluble. Strictly requires bile salts and micelle formation. Incorporated into chylomicrons for lymphatic transport."
+    },
+    "enhancers": [
+      { "factor": "Dietary Fat", "mechanism": "Co-ingestion with fat triggers bile release and micelle formation" }
+    ],
+    "inhibitors": [
+      { "factor": "Fat Malabsorption", "mechanism": "Conditions like Celiac, Crohn's, or cystic fibrosis" },
+      { "factor": "Orlistat", "mechanism": "Blocks fat absorption, taking Vitamin D with it" }
+    ],
+    "gut_health_dependencies": ["ABS_FATS_001", "BIO_LIVER_001"]
+  },
+  "ABS_B12_001": {
+    "id": "ABS_B12_001",
+    "node_type": "absorption",
+    "version": "1.0",
+    "nutrient_ref": "NUT_B12_001",
+    "primary_site": "Terminal Ileum",
+    "mechanism": {
+      "transporters": "Cubilin-Amnionless (CUBAM) receptor complex",
+      "process": "1. Stomach: HCl/pepsin release B12 from food. 2. Binds R-protein (haptocorrin). 3. Duodenum: Pancreatic enzymes degrade R-protein. 4. B12 binds Intrinsic Factor (secreted by gastric parietal cells). 5. Ileum: IF-B12 complex binds cubilin receptor and is endocytosed."
+    },
+    "enhancers": [
+      { "factor": "Gastric Acid", "mechanism": "Crucial for releasing B12 from dietary protein" },
+      { "factor": "Intrinsic Factor", "mechanism": "Absolute requirement for receptor binding" }
+    ],
+    "inhibitors": [
+      { "factor": "MEDS_PPIS_001", "mechanism": "Achlorhydria prevents B12 release from food" },
+      { "factor": "MEDS_METFORMIN_001", "mechanism": "Calcium-dependent interference with cubilin receptor" },
+      { "factor": "Autoantibodies", "mechanism": "Pernicious anaemia (antibodies against IF or parietal cells)" }
+    ],
+    "gut_health_dependencies": ["BIO_GUTLINING_001"]
+  },
+  "ABS_VITC_001": {
+    "id": "ABS_VITC_001",
+    "node_type": "absorption",
+    "version": "1.0",
+    "nutrient_ref": "NUT_VITC_001",
+    "primary_site": "Jejunum",
+    "mechanism": {
+      "transporters": "SVCT1 and SVCT2 (Sodium-dependent Vitamin C Transporters)",
+      "process": "Active, saturable transport. Absorption is dose-dependent: ~98% at <100mg, drops to ~50% at 1000mg, and <16% at doses over 3000mg. Unabsorbed ascorbate causes osmotic diarrhoea."
+    },
+    "enhancers": [],
+    "inhibitors": [
+      { "factor": "Glucose", "mechanism": "High blood glucose competes with dehydroascorbic acid for GLUT transporters" },
+      { "factor": "High Dose", "mechanism": "Downregulates SVCT1 expression to prevent toxicity" }
+    ],
+    "gut_health_dependencies": ["BIO_GUTLINING_001"]
+  },
+  "ABS_BIOTIN_001": {
+    "id": "ABS_BIOTIN_001",
+    "node_type": "absorption",
+    "version": "1.0",
+    "nutrient_ref": "NUT_BIOTIN_001",
+    "primary_site": "Jejunum",
+    "mechanism": {
+      "transporters": "SMVT (Sodium-Dependent Multivitamin Transporter)",
+      "process": "Protein-bound biotin cleaved by biotinidase in pancreatic juice. Free biotin actively transported by SMVT."
+    },
+    "enhancers": [],
+    "inhibitors": [
+      { "factor": "Avidin", "mechanism": "Glycoprotein in raw egg whites tightly binds biotin, preventing absorption. Heat denatures avidin." },
+      { "factor": "Alcohol", "mechanism": "Chronic alcohol exposure strongly inhibits SMVT expression" },
+      { "factor": "Anti-seizure meds", "mechanism": "Carbamazepine/Phenytoin compete for absorption" }
+    ],
+    "gut_health_dependencies": ["BIO_GUTLINING_001"]
+  },
+  "ABS_FOLATE_001": {
+    "id": "ABS_FOLATE_001",
+    "node_type": "absorption",
+    "version": "1.0",
+    "nutrient_ref": "NUT_FOLATE_001",
+    "primary_site": "Jejunum",
+    "mechanism": {
+      "transporters": "PCFT (Proton-Coupled Folate Transporter)",
+      "process": "Dietary polyglutamates must be deconjugated to monoglutamates by brush border glutamate carboxypeptidase II (GCPII). Active transport via PCFT (optimal at acidic pH microclimate of jejunum)."
+    },
+    "enhancers": [
+      { "factor": "Slightly acidic gut pH", "mechanism": "PCFT operates on a proton gradient" }
+    ],
+    "inhibitors": [
+      { "factor": "Alcohol", "mechanism": "Inhibits PCFT expression and GCPII activity" },
+      { "factor": "Zinc deficiency", "mechanism": "GCPII is a zinc-dependent enzyme" },
+      { "factor": "Sulfasalazine", "mechanism": "Competitively inhibits folate transport" }
+    ],
+    "gut_health_dependencies": ["BIO_GUTLINING_001", "ABS_ZINC_001"]
+  },
+  "ABS_B1_001": {
+    "id": "ABS_B1_001",
+    "node_type": "absorption",
+    "version": "1.0",
+    "nutrient_ref": "NUT_B1_001",
+    "primary_site": "Jejunum and Ileum",
+    "mechanism": {
+      "transporters": "ThTR-1 and ThTR-2",
+      "process": "Phosphorylated thiamine from food is dephosphorylated by intestinal phosphatases. Transported actively at low concentrations, passive diffusion at high doses."
+    },
+    "enhancers": [],
+    "inhibitors": [
+      { "factor": "Alcohol", "mechanism": "Severe inhibition of ThTR-1/2 → Wernicke-Korsakoff syndrome risk" },
+      { "factor": "Thiaminases", "mechanism": "Enzymes in raw fish/shellfish destroy thiamine" },
+      { "factor": "Tannins/Polyphenols", "mechanism": "Tea, coffee, betel nuts oxidise thiamine" }
+    ],
+    "gut_health_dependencies": ["BIO_GUTLINING_001"]
+  },
+  "ABS_B2_001": {
+    "id": "ABS_B2_001",
+    "node_type": "absorption",
+    "version": "1.0",
+    "nutrient_ref": "NUT_B2_001",
+    "primary_site": "Proximal Small Intestine",
+    "mechanism": {
+      "transporters": "RFVT1, RFVT2, RFVT3",
+      "process": "FAD and FMN from food are hydrolysed to free riboflavin by brush border phosphatases. Absorbed via saturable, carrier-mediated transport."
+    },
+    "enhancers": [
+      { "factor": "Food presence", "mechanism": "Delays gastric emptying, allowing maximum uptake (absorption increases up to 60% with food)" }
+    ],
+    "inhibitors": [
+      { "factor": "Alcohol", "mechanism": "Interferes with digestion and absorption" }
+    ],
+    "gut_health_dependencies": ["BIO_GUTLINING_001"]
+  },
+  "ABS_B3_001": {
+    "id": "ABS_B3_001",
+    "node_type": "absorption",
+    "version": "1.0",
+    "nutrient_ref": "NUT_B3_001",
+    "primary_site": "Stomach and Small Intestine",
+    "mechanism": {
+      "transporters": "Sodium-dependent carrier, passive diffusion",
+      "process": "NAD and NADP hydrolysed to nicotinamide. Rapidly absorbed via Na+-dependent facilitated diffusion at low concentrations, passive at high concentrations."
+    },
+    "enhancers": [],
+    "inhibitors": [
+      { "factor": "Niacytin complex", "mechanism": "Niacin in corn is tightly bound to carbs/peptides. Requires alkaline treatment (nixtamalization) to release." }
+    ],
+    "gut_health_dependencies": ["BIO_GUTLINING_001"]
+  },
+  "ABS_B5_001": {
+    "id": "ABS_B5_001",
+    "node_type": "absorption",
+    "version": "1.0",
+    "nutrient_ref": "NUT_B5_001",
+    "primary_site": "Jejunum",
+    "mechanism": {
+      "transporters": "SMVT (Sodium-Dependent Multivitamin Transporter)",
+      "process": "CoA and ACP hydrolysed to free pantothenic acid. Shares the SMVT transporter with biotin and lipoic acid."
+    },
+    "enhancers": [],
+    "inhibitors": [
+      { "factor": "High Biotin", "mechanism": "Competes for SMVT transporter" }
+    ],
+    "gut_health_dependencies": ["BIO_GUTLINING_001"]
+  },
+  "ABS_B6_001": {
+    "id": "ABS_B6_001",
+    "node_type": "absorption",
+    "version": "1.0",
+    "nutrient_ref": "NUT_B6_001",
+    "primary_site": "Jejunum",
+    "mechanism": {
+      "transporters": "Passive diffusion (mostly)",
+      "process": "Phosphorylated B6 (PLP, PMP) must be dephosphorylated by alkaline phosphatase to PL, PN, PM. Absorbed via non-saturable passive diffusion."
+    },
+    "enhancers": [],
+    "inhibitors": [
+      { "factor": "Alcohol", "mechanism": "Acetaldehyde promotes PLP degradation" },
+      { "factor": "Glucosides", "mechanism": "Plant forms of B6 (PN-glucoside) are poorly bioavailable (~50%)" }
+    ],
+    "gut_health_dependencies": ["BIO_GUTLINING_001"]
+  },
+  "ABS_IRON_001": {
+    "id": "ABS_IRON_001",
+    "node_type": "absorption",
+    "version": "1.0",
+    "nutrient_ref": "NUT_IRON_001",
+    "primary_site": "Duodenum and proximal jejunum",
+    "mechanism": {
+      "transporters": "DMT-1 (apical), Ferroportin (basolateral)",
+      "process": "Heme iron: imported intact via HCP1, cleaved by heme oxygenase. Non-heme iron: Fe3+ reduced to Fe2+ by DcytB on brush border, imported via DMT-1. Exported to blood via ferroportin, oxidised back to Fe3+ by hephaestin."
+    },
+    "enhancers": [
+      { "factor": "NUT_VITC_001", "mechanism": "Reduces non-heme Fe3+ to absorbable Fe2+; forms soluble chelate" },
+      { "factor": "Gastric Acid", "mechanism": "Solubilises iron salts" }
+    ],
+    "inhibitors": [
+      { "factor": "Phytates", "mechanism": "Forms insoluble complexes (found in whole grains, legumes)" },
+      { "factor": "Tannins", "mechanism": "Binds iron tightly (found in tea, coffee, wine)" },
+      { "factor": "Calcium", "mechanism": "Inhibits both heme and non-heme absorption" },
+      { "factor": "Hepcidin", "mechanism": "Liver hormone released during inflammation (INF_CHRONIC_001) → degrades ferroportin → traps iron in gut cells" },
+      { "factor": "MEDS_PPIS_001", "mechanism": "Achlorhydria prevents solubilisation" }
+    ],
+    "gut_health_dependencies": ["BIO_GUTLINING_001", "INF_CHRONIC_001"]
+  },
+  "ABS_ZINC_001": {
+    "id": "ABS_ZINC_001",
+    "node_type": "absorption",
+    "version": "1.0",
+    "nutrient_ref": "NUT_ZINC_001",
+    "primary_site": "Jejunum",
+    "mechanism": {
+      "transporters": "ZIP4 (apical import), ZnT1 (basolateral export)",
+      "process": "Hydrolysed from dietary proteins. Absorbed predominantly by ZIP4 carrier. Inside enterocyte, can be bound to metallothionein (for storage/excretion) or exported via ZnT1."
+    },
+    "enhancers": [
+      { "factor": "Animal Protein", "mechanism": "Amino acids (histidine, cysteine) form soluble absorbable ligands with zinc" }
+    ],
+    "inhibitors": [
+      { "factor": "Phytates", "mechanism": "Most potent zinc inhibitor. Forms completely insoluble zinc-phytate complexes." },
+      { "factor": "High Iron", "mechanism": "Competes with zinc for transport pathways" },
+      { "factor": "High Copper", "mechanism": "Upregulates metallothionein which traps zinc" }
+    ],
+    "gut_health_dependencies": ["BIO_GUTLINING_001"]
+  },
+  "ABS_CALCIUM_001": {
+    "id": "ABS_CALCIUM_001",
+    "node_type": "absorption",
+    "version": "1.0",
+    "nutrient_ref": "NUT_CALCIUM_001",
+    "primary_site": "Duodenum (active), entire small intestine (passive)",
+    "mechanism": {
+      "transporters": "TRPV6 (apical channel), Calbindin-D9k (intracellular ferry), PMCA1b (basolateral pump)",
+      "process": "Active, saturable transport (Vitamin D dependent) in duodenum. Passive, paracellular diffusion throughout rest of gut when intake is high."
+    },
+    "enhancers": [
+      { "factor": "NUT_VITD_001", "mechanism": "Calcitriol profoundly upregulates TRPV6 and calbindin expression, increasing absorption efficiency from ~10% to ~40%" },
+      { "factor": "Gastric Acid", "mechanism": "Solubilises calcium carbonate" }
+    ],
+    "inhibitors": [
+      { "factor": "Oxalates", "mechanism": "Binds calcium tightly (found in spinach, rhubarb) rendering it unabsorbable" },
+      { "factor": "Phytates", "mechanism": "Binds calcium in grains/legumes" },
+      { "factor": "MEDS_PPIS_001", "mechanism": "Impairs solubilisation of carbonate forms" }
+    ],
+    "gut_health_dependencies": ["BIO_GUTLINING_001", "NUT_VITD_001"]
+  },
+  "ABS_MAGNESIUM_001": {
+    "id": "ABS_MAGNESIUM_001",
+    "node_type": "absorption",
+    "version": "1.0",
+    "nutrient_ref": "NUT_MAGNESIUM_001",
+    "primary_site": "Jejunum and Ileum",
+    "mechanism": {
+      "transporters": "TRPM6 and TRPM7 channels",
+      "process": "Mostly absorbed via passive paracellular diffusion (80-90%). Active transport via TRPM channels handles the rest, upregulated when intake is low."
+    },
+    "enhancers": [
+      { "factor": "Fructooligosaccharides (FOS)", "mechanism": "Fermentation lowers colon pH, increasing Mg solubility in large intestine" }
+    ],
+    "inhibitors": [
+      { "factor": "High Calcium", "mechanism": "Competes for transport pathways" },
+      { "factor": "Phytates", "mechanism": "Forms insoluble complexes" },
+      { "factor": "MEDS_PPIS_001", "mechanism": "Chronic use severely impairs TRPM6 function leading to hypomagnesaemia" }
+    ],
+    "gut_health_dependencies": ["BIO_GUTLINING_001"]
+  },
+  "ABS_SELENIUM_001": {
+    "id": "ABS_SELENIUM_001",
+    "node_type": "absorption",
+    "version": "1.0",
+    "nutrient_ref": "NUT_SELENIUM_001",
+    "primary_site": "Duodenum",
+    "mechanism": {
+      "transporters": "Amino acid transporters (for selenomethionine/selenocysteine)",
+      "process": "Organic forms (selenomethionine from plants, selenocysteine from animals) are actively absorbed via amino acid transporters. Extremely highly absorbed (>90%). Inorganic forms (selenite) absorbed by passive diffusion."
+    },
+    "enhancers": [
+      { "factor": "NUT_VITC_001", "mechanism": "Enhances selenite absorption" }
+    ],
+    "inhibitors": [
+      { "factor": "Heavy metals", "mechanism": "Mercury and lead bind selenium" }
+    ],
+    "gut_health_dependencies": ["BIO_GUTLINING_001"]
+  },
+  "ABS_COPPER_001": {
+    "id": "ABS_COPPER_001",
+    "node_type": "absorption",
+    "version": "1.0",
+    "nutrient_ref": "NUT_COPPER_001",
+    "primary_site": "Stomach and Duodenum",
+    "mechanism": {
+      "transporters": "Ctr1 (Copper Transporter 1), DMT1",
+      "process": "Cu2+ reduced to Cu+ by reductases (e.g., Steap proteins) on brush border. Imported via Ctr1. Bound to metallothionein or exported via ATP7A into portal blood."
+    },
+    "enhancers": [
+      { "factor": "Amino Acids", "mechanism": "Histidine and cysteine enhance solubility" }
+    ],
+    "inhibitors": [
+      { "factor": "High Zinc", "mechanism": "Upregulates metallothionein in enterocytes. MT has higher affinity for copper than zinc, trapping copper in gut cells which are then shed." },
+      { "factor": "High Vitamin C", "mechanism": "Keeps copper in Cu+ state which may precipitate or alter binding" },
+      { "factor": "Phytates", "mechanism": "Binds copper" }
+    ],
+    "gut_health_dependencies": ["BIO_GUTLINING_001"]
+  },
+  "ABS_IODINE_001": {
+    "id": "ABS_IODINE_001",
+    "node_type": "absorption",
+    "version": "1.0",
+    "nutrient_ref": "NUT_IODINE_001",
+    "primary_site": "Stomach and upper small intestine",
+    "mechanism": {
+      "transporters": "NIS (Sodium-Iodide Symporter)",
+      "process": "Dietary iodine and iodate rapidly reduced to iodide (I-). Absorbed extremely efficiently (>90%) via NIS."
+    },
+    "enhancers": [],
+    "inhibitors": [
+      { "factor": "Goitrogens", "mechanism": "Thiocyanates (from raw cruciferous veg) and perchlorates competitively block NIS, preventing uptake." },
+      { "factor": "Fluoride/Bromide", "mechanism": "Halogens that compete with iodide" }
+    ],
+    "gut_health_dependencies": ["BIO_GUTLINING_001"]
+  },
+  "ABS_CHROMIUM_001": {
+    "id": "ABS_CHROMIUM_001",
+    "node_type": "absorption",
+    "version": "1.0",
+    "nutrient_ref": "NUT_CHROMIUM_001",
+    "primary_site": "Jejunum",
+    "mechanism": {
+      "transporters": "Passive diffusion and carrier-mediated transport",
+      "process": "Absorption of trivalent chromium (Cr3+) is extremely low (0.4% to 2.5%)."
+    },
+    "enhancers": [
+      { "factor": "NUT_VITC_001", "mechanism": "Enhances absorption by keeping chromium in soluble complex" },
+      { "factor": "Niacin", "mechanism": "Helps form biologically active chromium complexes" }
+    ],
+    "inhibitors": [
+      { "factor": "Phytates", "mechanism": "Binds chromium" },
+      { "factor": "Antacids", "mechanism": "Increase pH, precipitating chromium" }
+    ],
+    "gut_health_dependencies": ["BIO_GUTLINING_001"]
+  },
+  "ABS_OMEGA3_001": {
+    "id": "ABS_OMEGA3_001",
+    "node_type": "absorption",
+    "version": "1.0",
+    "nutrient_ref": "NUT_OMEGA3_001",
+    "primary_site": "Jejunum",
+    "mechanism": {
+      "transporters": "FATP4, CD36",
+      "process": "Triglyceride form (fish oil/food) requires pancreatic lipase. Phospholipid form (krill oil) requires phospholipase A2. Both forms must be incorporated into micelles using bile salts."
+    },
+    "enhancers": [
+      { "factor": "Dietary Fat", "mechanism": "High-fat meal strongly stimulates bile release, crucial for micellisation and absorption." },
+      { "factor": "Phospholipid form", "mechanism": "More efficiently incorporated into micelles than ethyl ester forms." }
+    ],
+    "inhibitors": [
+      { "factor": "Fat Malabsorption", "mechanism": "Bile or pancreatic insufficiency" }
+    ],
+    "gut_health_dependencies": ["ABS_FATS_001", "BIO_LIVER_001", "BIO_PANCREAS_001"]
+  },
+  "ABS_COENZYME_001": {
+    "id": "ABS_COENZYME_001",
+    "node_type": "absorption",
+    "version": "1.0",
+    "nutrient_ref": "NUT_COENZYME_001",
+    "primary_site": "Jejunum",
+    "mechanism": {
+      "transporters": "NPC1L1 (cholesterol transporter), passive diffusion",
+      "process": "Highly lipophilic, high molecular weight. Extremely poor absorption (2-3%) without a lipid carrier. Must be dissolved in mixed micelles."
+    },
+    "enhancers": [
+      { "factor": "Dietary Fat", "mechanism": "Absolute requirement for significant absorption" },
+      { "factor": "Ubiquinol form", "mechanism": "Reduced form is significantly more bioavailable than ubiquinone" }
+    ],
+    "inhibitors": [
+      { "factor": "Empty stomach", "mechanism": "Prevents micelle formation, rendering supplement useless" }
+    ],
+    "gut_health_dependencies": ["ABS_FATS_001"]
+  }
+}

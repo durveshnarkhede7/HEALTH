@@ -1,0 +1,182 @@
+{
+  "_meta": {
+    "layer": "21_FOOD_DATABASE",
+    "category": "Fish and Seafood",
+    "serving_size_standard": "Per 100g (Raw)",
+    "description": "The ultimate source of DHA/EPA (marine Omega-3s) for brain health. However, modern oceans are polluted; the biological impact of heavy metal (mercury) accumulation in large predatory fish is a severe neurological risk.",
+    "nodes": [
+      "FOOD_FISH_SARDINE_001",
+      "FOOD_FISH_MACKEREL_001",
+      "FOOD_FISH_ROHU_001",
+      "FOOD_FISH_HILSA_001",
+      "FOOD_FISH_SURMAI_001",
+      "FOOD_FISH_PRAWN_001",
+      "FOOD_FISH_POMFRET_001",
+      "FOOD_FISH_SHELLFISH_001"
+    ]
+  },
+  "FOOD_FISH_SARDINE_001": {
+    "id": "FOOD_FISH_SARDINE_001",
+    "name": "Sardines (Mathi / Tarli)",
+    "category": "Fish and Seafood",
+    "serving_size_reference": "Per 100g (Raw, Whole)",
+    "nutritional_values": {
+      "macronutrients": { "protein": "20g", "carbohydrates": "0g", "fiber": "0g", "fat": "10g" },
+      "micronutrients": {
+        "omega_3_epa_dha": "1480mg (Massive)",
+        "vitamin_b12": "8.9mcg (370% DV)",
+        "vitamin_d": "193 IU (48% DV)",
+        "calcium": "382mg (If eaten with bones)"
+      }
+    },
+    "biological_impact": {
+      "brain_inflammation": "Sardines provide the most concentrated, bioavailable form of DHA and EPA, which directly cross the blood-brain barrier and extinguish neuroinflammation (SYS_NERVOUS_001).",
+      "low_toxicity": "Because they are at the absolute bottom of the food chain, they have virtually ZERO mercury accumulation. The safest fish on Earth."
+    },
+    "anti_nutrients": "High purines (can trigger gout - MED_GOUT_001).",
+    "preparation_rules": "Eat whole with the soft bones for a massive calcium boost. Frying in seed oils completely destroys the delicate Omega-3 fats (they oxidize rapidly). Must be baked or cooked in a curry (coconut oil/ghee).",
+    "related_nodes": ["SYS_NERVOUS_001", "NUT_FATTYACID_001", "MED_GOUT_001"]
+  },
+  "FOOD_FISH_MACKEREL_001": {
+    "id": "FOOD_FISH_MACKEREL_001",
+    "name": "Indian Mackerel (Bangda)",
+    "category": "Fish and Seafood",
+    "serving_size_reference": "Per 100g (Raw)",
+    "nutritional_values": {
+      "macronutrients": { "protein": "18.6g", "carbohydrates": "0g", "fiber": "0g", "fat": "13.9g" },
+      "micronutrients": {
+        "omega_3_epa_dha": "2670mg (The highest of all common Indian fish)",
+        "vitamin_b12": "19mcg (791% DV)",
+        "selenium": "44mcg"
+      }
+    },
+    "biological_impact": {
+      "cardiovascular": "The extreme Omega-3 content directly lowers triglycerides and raises HDL (good) cholesterol, dramatically improving the lipid panel (SYS_CARDIOMETABOLIC_001)."
+    },
+    "anti_nutrients": "Moderate mercury (higher than sardines, lower than Surmai).",
+    "preparation_rules": "Avoid deep-frying Bangda (a common coastal practice). Frying a high-fat fish destroys the medicinal Omega-3s.",
+    "related_nodes": ["SYS_CARDIOMETABOLIC_001", "NUT_FATTYACID_001"]
+  },
+  "FOOD_FISH_ROHU_001": {
+    "id": "FOOD_FISH_ROHU_001",
+    "name": "Rohu / Katla (Indian Carp - Freshwater)",
+    "category": "Fish and Seafood",
+    "serving_size_reference": "Per 100g (Raw)",
+    "nutritional_values": {
+      "macronutrients": { "protein": "16.4g", "carbohydrates": "0g", "fiber": "0g", "fat": "1.8g" },
+      "micronutrients": {
+        "vitamin_c": "15mg (Rare for animal products)",
+        "iron": "1mg",
+        "omega_3_epa_dha": "Very low compared to marine fish"
+      }
+    },
+    "biological_impact": {
+      "lean_protein": "A very lean, easily digestible protein staple in East India (Bengal/Odisha).",
+      "freshwater_limitations": "Because it is a freshwater river/pond fish, it does NOT contain the massive DHA/EPA Omega-3s that saltwater marine fish have."
+    },
+    "anti_nutrients": "Pond-farmed Rohu can accumulate heavy metals depending on the water quality.",
+    "preparation_rules": "Often cooked in mustard oil (Bengal). The pungent mustard oil provides the Omega-3 (ALA) that the freshwater fish lacks, making it a balanced meal.",
+    "related_nodes": ["NUT_PROTEIN_001"]
+  },
+  "FOOD_FISH_HILSA_001": {
+    "id": "FOOD_FISH_HILSA_001",
+    "name": "Hilsa / Ilish",
+    "category": "Fish and Seafood",
+    "serving_size_reference": "Per 100g (Raw)",
+    "nutritional_values": {
+      "macronutrients": { "protein": "21g", "carbohydrates": "0g", "fiber": "0g", "fat": "19g" },
+      "micronutrients": {
+        "omega_3_epa_dha": "High (est. 1000-1500mg)",
+        "calcium": "180mg"
+      }
+    },
+    "biological_impact": {
+      "energy_density": "An extremely fatty, calorie-dense fish. The fats are primarily heart-healthy polyunsaturated and monounsaturated fats."
+    },
+    "anti_nutrients": "Countless tiny intramuscular bones (choking hazard).",
+    "preparation_rules": "Traditionally steamed with mustard paste (Bhapa Ilish). Steaming is the absolute best way to preserve marine Omega-3s.",
+    "related_nodes": ["NUT_FATTYACID_001"]
+  },
+  "FOOD_FISH_SURMAI_001": {
+    "id": "FOOD_FISH_SURMAI_001",
+    "name": "Kingfish / Seer Fish (Surmai)",
+    "category": "Fish and Seafood",
+    "serving_size_reference": "Per 100g (Raw)",
+    "nutritional_values": {
+      "macronutrients": { "protein": "19g", "carbohydrates": "0g", "fiber": "0g", "fat": "3.5g" },
+      "micronutrients": {
+        "vitamin_b12": "2.4mcg",
+        "selenium": "36mcg"
+      }
+    },
+    "biological_impact": {
+      "mercury_toxicity": "Surmai is a large, predatory fish high up the food chain. It bioaccumulates severe levels of Methylmercury. Mercury crosses the blood-brain barrier and destroys neurons (SYS_NERVOUS_001)."
+    },
+    "anti_nutrients": "METHYLMERCURY (Extreme neurological toxin).",
+    "preparation_rules": "PREGNANT WOMEN (LFS_PREGNANCY_001) MUST STRICTLY AVOID SURMAI. Mercury exposure in utero causes irreversible fetal brain damage. For normal adults, limit to 1-2 times per month.",
+    "related_nodes": ["SYS_NERVOUS_001", "LFS_PREGNANCY_001"]
+  },
+  "FOOD_FISH_PRAWN_001": {
+    "id": "FOOD_FISH_PRAWN_001",
+    "name": "Prawns / Shrimp (Jhinga)",
+    "category": "Fish and Seafood",
+    "serving_size_reference": "Per 100g (Raw)",
+    "nutritional_values": {
+      "macronutrients": { "protein": "24g", "carbohydrates": "0.2g", "fiber": "0g", "fat": "0.3g (Extremely Lean)" },
+      "micronutrients": {
+        "cholesterol": "189mg (High)",
+        "selenium": "38mcg",
+        "iodine": "Significant",
+        "astaxanthin": "Present"
+      }
+    },
+    "biological_impact": {
+      "thyroid_support": "High in Iodine and Selenium, the two critical minerals required to convert inactive T4 thyroid hormone into active T3 (HOR_THYROID_001).",
+      "antioxidant": "Astaxanthin (which makes prawns turn pink when cooked) is a potent antioxidant."
+    },
+    "anti_nutrients": "High dietary cholesterol (though dietary cholesterol does not significantly impact blood cholesterol for most people).",
+    "preparation_rules": "Deveining (removing the black digestive tract line) is mandatory to prevent bacterial food poisoning. Cooks in minutes; overcooking makes them rubbery.",
+    "related_nodes": ["HOR_THYROID_001", "NUT_SELENIUM_001"]
+  },
+  "FOOD_FISH_POMFRET_001": {
+    "id": "FOOD_FISH_POMFRET_001",
+    "name": "Pomfret (Paplet)",
+    "category": "Fish and Seafood",
+    "serving_size_reference": "Per 100g (Raw)",
+    "nutritional_values": {
+      "macronutrients": { "protein": "16.4g", "carbohydrates": "0g", "fiber": "0g", "fat": "1.7g" },
+      "micronutrients": {
+        "vitamin_b12": "1mcg",
+        "calcium": "30mg"
+      }
+    },
+    "biological_impact": {
+      "light_protein": "A very light, easily digestible, single-bone fish. Excellent for elderly patients or those recovering from illness."
+    },
+    "anti_nutrients": "Low mercury compared to Surmai.",
+    "preparation_rules": "Highly prized but nutritionally inferior (lower Omega-3s) to cheaper fish like Sardines and Mackerel.",
+    "related_nodes": ["NUT_PROTEIN_001"]
+  },
+  "FOOD_FISH_SHELLFISH_001": {
+    "id": "FOOD_FISH_SHELLFISH_001",
+    "name": "Shellfish (Crabs / Mussels / Oysters)",
+    "category": "Fish and Seafood",
+    "serving_size_reference": "Per 100g (Raw Meat)",
+    "nutritional_values": {
+      "macronutrients": { "protein": "18g", "carbohydrates": "0g", "fiber": "0g", "fat": "1.5g" },
+      "micronutrients": {
+        "zinc": "39.3mg (357% DV - Highest in nature)",
+        "vitamin_b12": "16mcg",
+        "copper": "4.4mg",
+        "selenium": "77mcg"
+      }
+    },
+    "biological_impact": {
+      "testosterone": "The massive zinc content makes oysters/shellfish the ultimate food for male fertility and testosterone production (HOR_TESTOSTERONE_001).",
+      "thyroid": "The perfect balance of Selenium and Zinc directly supports T4 to T3 conversion."
+    },
+    "anti_nutrients": "Shellfish are filter feeders; they can accumulate heavy metals (cadmium, lead) and microplastics if harvested from polluted waters.",
+    "preparation_rules": "Ensure sourcing from clean waters. Thorough cooking is required to destroy Vibrio bacteria.",
+    "related_nodes": ["HOR_TESTOSTERONE_001", "HOR_THYROID_001"]
+  }
+}

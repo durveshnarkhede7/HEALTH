@@ -1,0 +1,369 @@
+{
+  "_meta": {
+    "layer": "21_FOOD_DATABASE",
+    "category": "Fruits",
+    "serving_size_standard": "Per 100g (Raw/Fresh Weight)",
+    "description": "Fruits are nature's candy. While rich in vitamins and antioxidants, many tropical Indian fruits are fructose bombs that overwhelm the liver and drive fatty liver disease (NAFLD) and insulin resistance when consumed in excess.",
+    "nodes": [
+      "FOOD_FRUIT_MANGO_001",
+      "FOOD_FRUIT_BANANA_001",
+      "FOOD_FRUIT_PAPAYA_001",
+      "FOOD_FRUIT_GUAVA_001",
+      "FOOD_FRUIT_APPLE_001",
+      "FOOD_FRUIT_POMEGRANATE_001",
+      "FOOD_FRUIT_ORANGE_001",
+      "FOOD_FRUIT_LEMON_001",
+      "FOOD_FRUIT_AMLA_001",
+      "FOOD_FRUIT_WATERMELON_001",
+      "FOOD_FRUIT_GRAPES_001",
+      "FOOD_FRUIT_COCONUT_001",
+      "FOOD_FRUIT_CHICKOO_001",
+      "FOOD_FRUIT_JAMUN_001",
+      "FOOD_FRUIT_PINEAPPLE_001",
+      "FOOD_FRUIT_BERRIES_001",
+      "FOOD_FRUIT_DATES_001",
+      "FOOD_FRUIT_JACKFRUIT_001",
+      "FOOD_FRUIT_CUSTARDAPPLE_001",
+      "FOOD_FRUIT_LITCHI_001"
+    ]
+  },
+  "FOOD_FRUIT_MANGO_001": {
+    "id": "FOOD_FRUIT_MANGO_001",
+    "name": "Mango (Aam)",
+    "category": "Fruits",
+    "serving_size_reference": "Per 100g (Fresh)",
+    "nutritional_values": {
+      "macronutrients": { "protein": "0.8g", "carbohydrates": "15g", "fiber": "1.6g", "fat": "0.4g" },
+      "micronutrients": { "vitamin_c": "36mg", "vitamin_a": "1082 IU", "potassium": "168mg", "folate": "43mcg" }
+    },
+    "biological_impact": {
+      "blood_sugar": "Very high fructose content. The fructose bypasses the normal insulin pathway and is metabolized directly by the liver, converting to liver fat (MED_FATTY_LIVER_001).",
+      "skin": "Massive Beta-Carotene and Vitamin A for skin glow. The antioxidants are protective IF the sugar load is controlled."
+    },
+    "anti_nutrients": "Urushiol (the same toxin in poison ivy) is present in the mango skin and sap, causing contact dermatitis (lip/mouth rashes) in sensitive people.",
+    "preparation_rules": "Limit to 1 small mango per day. MUST be eaten with a fat source (like full-fat curd) to slow the fructose dump on the liver. Never drink mango juice/shake (it removes all fiber and concentrates the sugar).",
+    "related_nodes": ["MED_FATTY_LIVER_001", "BSG_POSTPRANDIAL_001"]
+  },
+  "FOOD_FRUIT_BANANA_001": {
+    "id": "FOOD_FRUIT_BANANA_001",
+    "name": "Banana (Kela)",
+    "category": "Fruits",
+    "serving_size_reference": "Per 100g (Fresh)",
+    "nutritional_values": {
+      "macronutrients": { "protein": "1.1g", "carbohydrates": "23g", "fiber": "2.6g", "fat": "0.3g" },
+      "micronutrients": { "potassium": "358mg", "vitamin_b6": "0.4mg", "magnesium": "27mg" }
+    },
+    "biological_impact": {
+      "muscle_cramps": "Massive potassium and magnesium content directly combats muscle cramps and electrolyte imbalance.",
+      "blood_sugar": "Ripe bananas (yellow with brown spots) have a GI of 62 (high). Raw/green bananas have a GI of 30 (low) because the starch hasn't converted to sugar yet."
+    },
+    "anti_nutrients": "None significant.",
+    "preparation_rules": "For diabetics: eat ONLY raw/green bananas (as a sabzi). A ripe banana is essentially candy. Raw banana (Kacha Kela) is a massive source of Resistant Starch (feeds gut bacteria).",
+    "related_nodes": ["BSG_POSTPRANDIAL_001", "GUT_MICROBIOME_001"]
+  },
+  "FOOD_FRUIT_PAPAYA_001": {
+    "id": "FOOD_FRUIT_PAPAYA_001",
+    "name": "Papaya (Papita)",
+    "category": "Fruits",
+    "serving_size_reference": "Per 100g (Fresh)",
+    "nutritional_values": {
+      "macronutrients": { "protein": "0.5g", "carbohydrates": "11g", "fiber": "1.7g", "fat": "0.3g" },
+      "micronutrients": { "vitamin_c": "60mg", "vitamin_a": "950 IU", "folate": "37mcg", "potassium": "182mg" }
+    },
+    "biological_impact": {
+      "digestion": "Contains Papain, a powerful proteolytic enzyme that physically breaks down undigested protein in the stomach. A natural digestive aid.",
+      "skin": "High Vitamin C directly supports collagen synthesis (BIO_COLLAGEN_001)."
+    },
+    "anti_nutrients": "Latex in unripe papaya can trigger allergic reactions and uterine contractions.",
+    "preparation_rules": "PREGNANT WOMEN MUST AVOID unripe/semi-ripe papaya. The latex contains papain and chymopapain which can cause uterine contractions and miscarriage (LFS_PREGNANCY_001).",
+    "related_nodes": ["GUT_DYSBIOSIS_001", "BIO_COLLAGEN_001", "LFS_PREGNANCY_001"]
+  },
+  "FOOD_FRUIT_GUAVA_001": {
+    "id": "FOOD_FRUIT_GUAVA_001",
+    "name": "Guava (Amrood)",
+    "category": "Fruits",
+    "serving_size_reference": "Per 100g (Fresh)",
+    "nutritional_values": {
+      "macronutrients": { "protein": "2.6g", "carbohydrates": "14g", "fiber": "5.4g (Very High)", "fat": "1g" },
+      "micronutrients": { "vitamin_c": "228mg (4x more than an orange)", "potassium": "417mg", "lycopene": "5204mcg (pink variety)" }
+    },
+    "biological_impact": {
+      "immunity": "The single highest Vitamin C fruit available in India. Massively boosts immune function (INF_IMMUNE_001).",
+      "blood_sugar": "Despite being sweet, its massive 5.4g fiber creates a very low GI. Excellent for diabetics."
+    },
+    "anti_nutrients": "Seeds can cause constipation if not chewed properly.",
+    "preparation_rules": "Eat with the skin for maximum fiber. The pink variety has double the lycopene of tomatoes.",
+    "related_nodes": ["INF_IMMUNE_001", "NUT_VITC_001"]
+  },
+  "FOOD_FRUIT_APPLE_001": {
+    "id": "FOOD_FRUIT_APPLE_001",
+    "name": "Apple (Seb)",
+    "category": "Fruits",
+    "serving_size_reference": "Per 100g (Fresh)",
+    "nutritional_values": {
+      "macronutrients": { "protein": "0.3g", "carbohydrates": "14g", "fiber": "2.4g", "fat": "0.2g" },
+      "micronutrients": { "vitamin_c": "4.6mg", "potassium": "107mg" }
+    },
+    "biological_impact": {
+      "gut_health": "Apple skin contains Pectin, a powerful prebiotic fiber that feeds Bifidobacteria in the colon (GUT_MICROBIOME_001).",
+      "detox": "Quercetin in the skin acts as a natural antihistamine."
+    },
+    "anti_nutrients": "Imported apples are coated in food-grade wax containing fungicides.",
+    "preparation_rules": "Always wash imported apples with baking soda water to remove the wax coating. Eat with skin for Pectin.",
+    "related_nodes": ["GUT_MICROBIOME_001"]
+  },
+  "FOOD_FRUIT_POMEGRANATE_001": {
+    "id": "FOOD_FRUIT_POMEGRANATE_001",
+    "name": "Pomegranate (Anar)",
+    "category": "Fruits",
+    "serving_size_reference": "Per 100g (Arils)",
+    "nutritional_values": {
+      "macronutrients": { "protein": "1.7g", "carbohydrates": "19g", "fiber": "4g", "fat": "1.2g" },
+      "micronutrients": { "vitamin_c": "10mg", "potassium": "236mg", "folate": "38mcg" }
+    },
+    "biological_impact": {
+      "heart_health": "Contains Punicalagins, one of the most powerful antioxidants in any food. Directly reverses arterial plaque buildup (SYS_CARDIOMETABOLIC_001).",
+      "gut_microbiome": "Ellagitannins in pomegranate are converted by gut bacteria into Urolithin A, which promotes mitophagy (recycling of damaged mitochondria)."
+    },
+    "anti_nutrients": "None significant.",
+    "preparation_rules": "Eat the whole arils (seeds included) for maximum fiber. Pomegranate juice without the fiber is a concentrated sugar bomb.",
+    "related_nodes": ["SYS_CARDIOMETABOLIC_001", "OXI_MITOCHONDRIAL_001"]
+  },
+  "FOOD_FRUIT_ORANGE_001": {
+    "id": "FOOD_FRUIT_ORANGE_001",
+    "name": "Orange (Santra) / Sweet Lime (Mosambi)",
+    "category": "Fruits",
+    "serving_size_reference": "Per 100g (Fresh)",
+    "nutritional_values": {
+      "macronutrients": { "protein": "0.9g", "carbohydrates": "12g", "fiber": "2.4g", "fat": "0.1g" },
+      "micronutrients": { "vitamin_c": "53mg", "folate": "30mcg", "potassium": "181mg" }
+    },
+    "biological_impact": {
+      "iron_absorption": "Vitamin C massively enhances NON-HEME iron absorption when eaten with meals containing dal/spinach.",
+      "collagen": "Direct precursor for collagen synthesis (BIO_COLLAGEN_001)."
+    },
+    "anti_nutrients": "Citric acid can aggravate acid reflux (GERD).",
+    "preparation_rules": "Never drink packaged orange juice (stripped fiber, added sugar). Eat the whole fruit. Mosambi has lower Vitamin C than Santra.",
+    "related_nodes": ["NUT_VITC_001", "NUT_IRON_001"]
+  },
+  "FOOD_FRUIT_LEMON_001": {
+    "id": "FOOD_FRUIT_LEMON_001",
+    "name": "Lemon (Nimbu)",
+    "category": "Fruits",
+    "serving_size_reference": "Per 100g (Juice)",
+    "nutritional_values": {
+      "macronutrients": { "protein": "0.4g", "carbohydrates": "6.9g", "fiber": "0.3g", "fat": "0.2g" },
+      "micronutrients": { "vitamin_c": "53mg", "potassium": "103mg", "citric_acid": "5g" }
+    },
+    "biological_impact": {
+      "kidney_stones": "Citric acid in lemon juice binds to urinary calcium, preventing calcium oxalate kidney stone formation (HYD_KIDNEY_001).",
+      "iron_absorption": "A squeeze of lemon on dal or sabzi can increase non-heme iron absorption by 2-3x."
+    },
+    "anti_nutrients": "Erodes tooth enamel if consumed undiluted regularly.",
+    "preparation_rules": "Always dilute in water. Drink through a straw to protect enamel. Add to meals, not on an empty stomach if you have gastritis.",
+    "related_nodes": ["HYD_KIDNEY_001", "NUT_IRON_001"]
+  },
+  "FOOD_FRUIT_AMLA_001": {
+    "id": "FOOD_FRUIT_AMLA_001",
+    "name": "Indian Gooseberry (Amla)",
+    "category": "Fruits",
+    "serving_size_reference": "Per 100g (Fresh)",
+    "nutritional_values": {
+      "macronutrients": { "protein": "0.9g", "carbohydrates": "10g", "fiber": "4.3g", "fat": "0.6g" },
+      "micronutrients": { "vitamin_c": "600mg (The highest of ANY fruit on Earth)", "chromium": "Trace amounts" }
+    },
+    "biological_impact": {
+      "antioxidant_powerhouse": "The Vitamin C in Amla is uniquely bound to tannins (Gallic acid), which stabilize it. Unlike other fruits, the Vitamin C in Amla survives cooking and drying.",
+      "hair_health": "Amla strengthens the hair follicle matrix and directly combats premature greying by protecting melanocytes from oxidative stress (OXI_FOLLICLE_001)."
+    },
+    "anti_nutrients": "Very high tannins causing extreme sourness.",
+    "preparation_rules": "Best eaten raw or as Amla Murabba. Can be dried into powder without losing Vitamin C, unlike any other fruit.",
+    "related_nodes": ["NUT_VITC_001", "OXI_FOLLICLE_001", "BIO_COLLAGEN_001"]
+  },
+  "FOOD_FRUIT_WATERMELON_001": {
+    "id": "FOOD_FRUIT_WATERMELON_001",
+    "name": "Watermelon (Tarbooz)",
+    "category": "Fruits",
+    "serving_size_reference": "Per 100g (Fresh)",
+    "nutritional_values": {
+      "macronutrients": { "protein": "0.6g", "carbohydrates": "7.6g", "fiber": "0.4g", "fat": "0.2g" },
+      "micronutrients": { "vitamin_c": "8.1mg", "lycopene": "4532mcg", "citrulline": "250mg" }
+    },
+    "biological_impact": {
+      "blood_pressure": "Contains L-Citrulline, which converts to L-Arginine in the kidneys, producing Nitric Oxide (NO) for vasodilation.",
+      "hydration": "92% water with natural electrolytes. Excellent rehydration food."
+    },
+    "anti_nutrients": "None.",
+    "preparation_rules": "High GI (72) but low glycaemic load per serving due to high water content. Eat the white rind (highest citrulline content).",
+    "related_nodes": ["SYS_CARDIOMETABOLIC_001", "HYD_ELECTROLYTE_001"]
+  },
+  "FOOD_FRUIT_GRAPES_001": {
+    "id": "FOOD_FRUIT_GRAPES_001",
+    "name": "Grapes (Angoor)",
+    "category": "Fruits",
+    "serving_size_reference": "Per 100g (Fresh)",
+    "nutritional_values": {
+      "macronutrients": { "protein": "0.7g", "carbohydrates": "18g", "fiber": "0.9g", "fat": "0.2g" },
+      "micronutrients": { "vitamin_c": "3.2mg", "vitamin_k": "14.6mcg", "potassium": "191mg" }
+    },
+    "biological_impact": {
+      "anti_aging": "Red/black grape skins contain Resveratrol, a potent SIRT1 activator (longevity gene). Activates autophagy (cellular cleanup).",
+      "blood_sugar": "Very high sugar content with virtually no fiber. A massive fructose load on the liver."
+    },
+    "anti_nutrients": "Indian grapes are among the most heavily pesticide-sprayed fruits.",
+    "preparation_rules": "Soak in baking soda water for 15 minutes to remove pesticide residues. Prefer black/red grapes over green for Resveratrol.",
+    "related_nodes": ["MED_FATTY_LIVER_001", "GEN_EPIGENETICS_001"]
+  },
+  "FOOD_FRUIT_COCONUT_001": {
+    "id": "FOOD_FRUIT_COCONUT_001",
+    "name": "Coconut (Nariyal - Fresh Malai / Tender Water)",
+    "category": "Fruits",
+    "serving_size_reference": "Per 100g (Fresh Meat)",
+    "nutritional_values": {
+      "macronutrients": { "protein": "3.3g", "carbohydrates": "15g", "fiber": "9g", "fat": "33g" },
+      "micronutrients": { "manganese": "1.5mg", "potassium": "356mg", "iron": "2.4mg" }
+    },
+    "biological_impact": {
+      "medium_chain_triglycerides": "Contains MCTs (Lauric Acid) which bypass normal fat digestion and go directly to the liver for ketone production. Provides rapid brain fuel.",
+      "saturated_fat_warning": "APOE4 carriers (GEN_APOE_001) must strictly limit coconut as the saturated fat can spike their LDL cholesterol catastrophically."
+    },
+    "anti_nutrients": "None.",
+    "preparation_rules": "Tender coconut water is a natural electrolyte drink (isotonic). Fresh malai is high in MCTs. Desiccated coconut has concentrated sugar.",
+    "related_nodes": ["GEN_APOE_001", "SYS_NERVOUS_001"]
+  },
+  "FOOD_FRUIT_CHICKOO_001": {
+    "id": "FOOD_FRUIT_CHICKOO_001",
+    "name": "Sapodilla (Chickoo)",
+    "category": "Fruits",
+    "serving_size_reference": "Per 100g (Fresh)",
+    "nutritional_values": {
+      "macronutrients": { "protein": "0.4g", "carbohydrates": "20g", "fiber": "5.3g", "fat": "1.1g" },
+      "micronutrients": { "vitamin_c": "14.7mg", "potassium": "193mg", "iron": "0.8mg" }
+    },
+    "biological_impact": {
+      "energy": "Extremely dense calorie source (83 kcal/100g). One of the highest sugar fruits in India.",
+      "gut_health": "High tannin content has astringent properties, used traditionally to treat diarrhea."
+    },
+    "anti_nutrients": "Latex in unripe chickoo.",
+    "preparation_rules": "Must be fully ripe. Extremely high sugar load; diabetics should strictly avoid.",
+    "related_nodes": ["BSG_POSTPRANDIAL_001", "MED_TYPE2_DIABETES_001"]
+  },
+  "FOOD_FRUIT_JAMUN_001": {
+    "id": "FOOD_FRUIT_JAMUN_001",
+    "name": "Jamun (Java Plum / Black Plum)",
+    "category": "Fruits",
+    "serving_size_reference": "Per 100g (Fresh)",
+    "nutritional_values": {
+      "macronutrients": { "protein": "0.7g", "carbohydrates": "14g", "fiber": "0.6g", "fat": "0.2g" },
+      "micronutrients": { "vitamin_c": "14mg", "iron": "1.6mg", "potassium": "79mg" }
+    },
+    "biological_impact": {
+      "diabetes_management": "The Jamboline/Jambosine alkaloid in Jamun seeds directly inhibits the conversion of starch to sugar. One of the most powerful natural anti-diabetic fruits in the world.",
+      "blood_health": "Rich in anthocyanins that support hemoglobin production."
+    },
+    "anti_nutrients": "Tannins (astringent taste).",
+    "preparation_rules": "Eat the fruit AND dry the seeds into a powder. Jamun seed powder taken daily has clinical evidence for lowering fasting blood sugar in Type 2 Diabetes.",
+    "related_nodes": ["MED_TYPE2_DIABETES_001", "BSG_INSULIN_RESISTANCE_001"]
+  },
+  "FOOD_FRUIT_PINEAPPLE_001": {
+    "id": "FOOD_FRUIT_PINEAPPLE_001",
+    "name": "Pineapple (Ananas)",
+    "category": "Fruits",
+    "serving_size_reference": "Per 100g (Fresh)",
+    "nutritional_values": {
+      "macronutrients": { "protein": "0.5g", "carbohydrates": "13g", "fiber": "1.4g", "fat": "0.1g" },
+      "micronutrients": { "vitamin_c": "47.8mg", "manganese": "0.9mg" }
+    },
+    "biological_impact": {
+      "digestion": "Contains Bromelain, a powerful proteolytic enzyme that breaks down protein. Used clinically to reduce post-surgical swelling and inflammation (INF_CHRONIC_001)."
+    },
+    "anti_nutrients": "Bromelain also breaks down mouth tissue, causing that 'burning' sensation.",
+    "preparation_rules": "Eat after meals as a digestive aid (breaks down undigested meat/paneer). Soak in salt water to deactivate Bromelain if the mouth burning is too severe.",
+    "related_nodes": ["INF_CHRONIC_001", "GUT_DYSBIOSIS_001"]
+  },
+  "FOOD_FRUIT_BERRIES_001": {
+    "id": "FOOD_FRUIT_BERRIES_001",
+    "name": "Berries (Blueberry, Strawberry, Mulberry/Shahtoot)",
+    "category": "Fruits",
+    "serving_size_reference": "Per 100g (Fresh)",
+    "nutritional_values": {
+      "macronutrients": { "protein": "0.7g", "carbohydrates": "14g", "fiber": "2.4g", "fat": "0.3g" },
+      "micronutrients": { "vitamin_c": "9.7mg", "vitamin_k": "19.3mcg", "manganese": "0.3mg" }
+    },
+    "biological_impact": {
+      "brain_health": "Highest anthocyanin content of all fruits. Anthocyanins cross the blood-brain barrier and protect neurons from oxidative damage (SYS_NERVOUS_001).",
+      "blood_sugar": "Among the lowest GI fruits available. Excellent for diabetics."
+    },
+    "anti_nutrients": "Heavily pesticide-sprayed. Strawberries consistently rank #1 on the 'Dirty Dozen' list.",
+    "preparation_rules": "Always wash in baking soda + water to remove pesticides. Indian Shahtoot (Mulberry) is a cheaper, locally available alternative with similar anthocyanin power.",
+    "related_nodes": ["SYS_NERVOUS_001", "GEN_EPIGENETICS_001"]
+  },
+  "FOOD_FRUIT_DATES_001": {
+    "id": "FOOD_FRUIT_DATES_001",
+    "name": "Dates (Khajoor)",
+    "category": "Fruits",
+    "serving_size_reference": "Per 100g (Dried)",
+    "nutritional_values": {
+      "macronutrients": { "protein": "2.5g", "carbohydrates": "75g (Pure sugar)", "fiber": "8g", "fat": "0.4g" },
+      "micronutrients": { "potassium": "656mg", "magnesium": "43mg", "iron": "1mg" }
+    },
+    "biological_impact": {
+      "energy": "Nature's energy bar. 75g carbs per 100g. Massive fast-release glucose and fructose.",
+      "labor": "Clinical evidence shows eating 6 dates/day in the last 4 weeks of pregnancy (LFS_PREGNANCY_001) increases cervical dilation and reduces the need for labor induction."
+    },
+    "anti_nutrients": "None.",
+    "preparation_rules": "Limit to 2-3 dates per day MAX. Pair with nuts (almonds/walnuts) to slow down the sugar absorption. Diabetics must be extremely cautious.",
+    "related_nodes": ["BSG_POSTPRANDIAL_001", "LFS_PREGNANCY_001"]
+  },
+  "FOOD_FRUIT_JACKFRUIT_001": {
+    "id": "FOOD_FRUIT_JACKFRUIT_001",
+    "name": "Jackfruit (Kathal)",
+    "category": "Fruits",
+    "serving_size_reference": "Per 100g (Fresh Ripe)",
+    "nutritional_values": {
+      "macronutrients": { "protein": "1.7g", "carbohydrates": "23g", "fiber": "1.5g", "fat": "0.6g" },
+      "micronutrients": { "vitamin_c": "13.7mg", "potassium": "448mg", "magnesium": "29mg" }
+    },
+    "biological_impact": {
+      "meat_substitute": "Raw (unripe) jackfruit has a meat-like texture and is used as a complete vegan meat replacement in Indian cooking (Kathal ki Sabzi).",
+      "blood_sugar": "Ripe jackfruit is a sugar bomb. Unripe jackfruit has a much lower GI."
+    },
+    "anti_nutrients": "Latex in unripe jackfruit can cause allergic reactions.",
+    "preparation_rules": "Cook raw jackfruit as a vegetable (sabzi) for low sugar. Ripe jackfruit should be limited like mango for diabetics. Seeds are edible when boiled (high protein).",
+    "related_nodes": ["NUT_PROTEIN_001"]
+  },
+  "FOOD_FRUIT_CUSTARDAPPLE_001": {
+    "id": "FOOD_FRUIT_CUSTARDAPPLE_001",
+    "name": "Custard Apple (Sitaphal / Sharifa)",
+    "category": "Fruits",
+    "serving_size_reference": "Per 100g (Fresh)",
+    "nutritional_values": {
+      "macronutrients": { "protein": "2.1g", "carbohydrates": "24g", "fiber": "4.4g", "fat": "0.6g" },
+      "micronutrients": { "vitamin_c": "19.2mg", "potassium": "382mg", "magnesium": "18mg", "vitamin_b6": "0.2mg" }
+    },
+    "biological_impact": {
+      "weight_gain": "One of the most calorie-dense fruits (101 kcal/100g). Traditionally recommended in Ayurveda for people who need to gain weight.",
+      "nervous_system": "High B6 content supports neurotransmitter synthesis."
+    },
+    "anti_nutrients": "Seeds are highly toxic (contain annonacin, a neurotoxin). NEVER chew or swallow the seeds.",
+    "preparation_rules": "Eat only the flesh. The seeds are dangerous. Limit intake if diabetic.",
+    "related_nodes": ["SYS_NERVOUS_001"]
+  },
+  "FOOD_FRUIT_LITCHI_001": {
+    "id": "FOOD_FRUIT_LITCHI_001",
+    "name": "Litchi (Lychee)",
+    "category": "Fruits",
+    "serving_size_reference": "Per 100g (Fresh)",
+    "nutritional_values": {
+      "macronutrients": { "protein": "0.8g", "carbohydrates": "17g", "fiber": "1.3g", "fat": "0.4g" },
+      "micronutrients": { "vitamin_c": "71.5mg", "potassium": "171mg" }
+    },
+    "biological_impact": {
+      "hypoglycemia_risk": "Contains Hypoglycin A (MCPG), a toxin that blocks fatty acid oxidation, preventing the liver from producing glucose overnight. This is the exact mechanism behind the Muzaffarpur (Bihar) litchi deaths in malnourished children.",
+      "immunity": "High Vitamin C."
+    },
+    "anti_nutrients": "Hypoglycin A and MCPG (Methylenecyclopropylglycine) in unripe litchi.",
+    "preparation_rules": "NEVER eat on an empty stomach, especially malnourished children. ALWAYS eat only fully ripe litchi after a meal. The toxin concentration is highest in unripe fruit.",
+    "related_nodes": ["BSG_POSTPRANDIAL_001", "NUT_VITC_001"]
+  }
+}

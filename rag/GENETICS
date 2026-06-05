@@ -1,0 +1,303 @@
+{
+  "_meta": {
+    "layer": "19_GENETICS",
+    "version": "1.0",
+    "description": "The foundational genetic blueprints (SNPs) and the epigenetic mechanisms that turn them on or off based on environment and nutrition. 'Genetics loads the gun, lifestyle pulls the trigger.'",
+    "nodes": [
+      "GEN_MTHFR_001",
+      "GEN_ANDROGEN_RECEPTOR_001",
+      "GEN_VDR_001",
+      "GEN_FTO_001",
+      "GEN_APOE_001",
+      "GEN_HLA_DQ_001",
+      "GEN_CYP450_001",
+      "GEN_LCT_001",
+      "GEN_FLG_001",
+      "GEN_EPIGENETICS_001",
+      "GEN_COMT_001",
+      "GEN_DAO_001",
+      "GEN_GSTM1_001",
+      "GEN_PEMT_001",
+      "GEN_FADS1_001",
+      "GEN_SLC30A8_001"
+    ]
+  },
+  "GEN_MTHFR_001": {
+    "id": "GEN_MTHFR_001",
+    "node_type": "genetics",
+    "version": "1.0",
+    "name": "MTHFR (Methylenetetrahydrofolate Reductase)",
+    "mechanism": "The MTHFR enzyme is responsible for converting dietary folate (B9) into 5-Methyltetrahydrofolate (5-MTHF), the active form required for the methylation cycle, DNA synthesis, and homocysteine clearance.",
+    "polymorphism_impact": "The C677T and A1298C variants (SNPs) reduce the enzyme's efficiency by 40% to 70%. Individuals with these variants cannot effectively process synthetic Folic Acid. Instead, unmetabolized folic acid builds up in the blood, blocking folate receptors, while the body simultaneously suffers from severe active folate deficiency.",
+    "biological_consequences": [
+      "Hyperhomocysteinemia: High homocysteine levels directly damage the endothelial lining of blood vessels, driving early-onset cardiovascular disease (massive in India).",
+      "Neurotransmitter failure: Poor methylation impairs the synthesis of serotonin, dopamine, and melatonin (driving depression and insomnia).",
+      "Impaired liver detoxification (Phase II methylation pathway)."
+    ],
+    "epigenetic_rescue": [
+      "Strict avoidance of synthetic 'Folic Acid' (found in cheap supplements and fortified foods).",
+      "Direct supplementation with L-Methylfolate (5-MTHF) and Methylcobalamin (B12) to bypass the broken enzyme.",
+      "NUT_B2_001 (Riboflavin acts as a cofactor to speed up whatever residual MTHFR enzyme activity remains)."
+    ],
+    "related_nodes": ["NUT_FOLATE_001", "NUT_B12_001", "SYS_CARDIOMETABOLIC_001"]
+  },
+  "GEN_ANDROGEN_RECEPTOR_001": {
+    "id": "GEN_ANDROGEN_RECEPTOR_001",
+    "node_type": "genetics",
+    "version": "1.0",
+    "name": "AR Gene (Androgen Receptor - CAG Repeats)",
+    "mechanism": "The AR gene is located on the X chromosome (inherited from the mother's side). It determines the structure and sensitivity of androgen receptors on cells, particularly in the dermal papilla of the hair follicle.",
+    "polymorphism_impact": "The sensitivity of the receptor is inversely proportional to the number of CAG (cytosine-adenine-guanine) repeats in the gene. Fewer CAG repeats = a highly sensitive receptor that reacts aggressively to even normal or low levels of DHT.",
+    "biological_consequences": [
+      "This is the exact genetic mechanism of Androgenetic Alopecia (Male/Female Pattern Baldness). It explains why men with normal testosterone/DHT levels can go completely bald, while men with high testosterone/DHT can keep a full head of hair (they have high CAG repeats/low sensitivity).",
+      "Increases susceptibility to severe hormonal acne and prostate enlargement."
+    ],
+    "epigenetic_rescue": [
+      "Since you cannot change the receptor sensitivity, you must strictly control the ligand (DHT) binding to it.",
+      "BSG_INSULIN_RESISTANCE_001 management (Insulin upregulates 5-alpha reductase, creating more DHT).",
+      "Natural/Pharmaceutical DHT blockers (e.g., Saw Palmetto, Finasteride) to reduce the DHT load hitting the hypersensitive receptors."
+    ],
+    "related_nodes": ["HOR_DHT_001", "MED_ANDROGENETIC_ALOPECIA_001", "BIO_FOLLICLE_001"]
+  },
+  "GEN_VDR_001": {
+    "id": "GEN_VDR_001",
+    "node_type": "genetics",
+    "version": "1.0",
+    "name": "VDR (Vitamin D Receptor)",
+    "mechanism": "Active Vitamin D (Calcitriol) is a steroid hormone that must bind to the VDR inside the cell nucleus to influence the transcription of over 2,000 genes (immune regulation, bone density, hair cycling).",
+    "polymorphism_impact": "Taq1, Bsm1, and Fok1 SNPs alter the shape or density of the Vitamin D Receptors. Cells become 'deaf' to the Vitamin D signal. A person can have a 'normal' Vitamin D blood level (e.g., 40 ng/mL), but their cells behave as if they are severely deficient because the hormone cannot dock properly.",
+    "biological_consequences": [
+      "Massively increased risk of autoimmune diseases (Hashimoto's, Psoriasis, Alopecia Areata) because Vitamin D cannot effectively stimulate Regulatory T-cells (Tregs) to calm the immune system.",
+      "Impaired calcium absorption leading to early osteopenia.",
+      "Disrupted hair follicle cycling (VDR is mandatory for initiating the anagen growth phase)."
+    ],
+    "epigenetic_rescue": [
+      "Individuals with VDR mutations must maintain much higher optimal blood levels (60-80 ng/mL) of Vitamin D3 to force the sluggish receptors into action.",
+      "Mandatory co-supplementation with NUT_MAGNESIUM_001 (Magnesium is required to activate the VDR itself)."
+    ],
+    "related_nodes": ["NUT_VITAMIND_001", "INF_AUTOIMMUNE_001", "MED_HASHIMOTOS_001"]
+  },
+  "GEN_FTO_001": {
+    "id": "GEN_FTO_001",
+    "node_type": "genetics",
+    "version": "1.0",
+    "name": "FTO (Fat Mass and Obesity-Associated Gene)",
+    "mechanism": "Regulates appetite, satiety signaling in the hypothalamus, and the browning of adipose tissue (thermogenesis).",
+    "polymorphism_impact": "The 'A' allele variant disrupts ghrelin (hunger hormone) suppression after eating. Carriers feel physically hungry even after eating a massive meal. It also preferentially shifts the body to store excess carbohydrates as visceral fat rather than burning them as heat.",
+    "biological_consequences": [
+      "The 'Thin-Fat' Indian Phenotype: High prevalence in South Asians contributes to visceral fat accumulation around the liver and pancreas, driving insulin resistance even at a low body weight.",
+      "Hyperphagia (constant desire to eat, specifically craving high-carb/high-fat combinations)."
+    ],
+    "epigenetic_rescue": [
+      "The FTO gene expression is heavily driven by refined carbohydrates. A high-protein, low-carb diet physically suppresses the expression of the FTO gene variant.",
+      "EXE_RESISTANCE_001 (Lifting weights alters epigenetic markers on the FTO gene, mitigating its obesity-driving effects)."
+    ],
+    "related_nodes": ["MED_METABOLIC_SYNDROME_001", "BSG_INSULIN_RESISTANCE_001", "INF_METABOLIC_001"]
+  },
+  "GEN_APOE_001": {
+    "id": "GEN_APOE_001",
+    "node_type": "genetics",
+    "version": "1.0",
+    "name": "APOE (Apolipoprotein E)",
+    "mechanism": "Produces a protein that combines with lipids to form lipoproteins, which package and carry cholesterol and fats through the bloodstream and into the brain.",
+    "polymorphism_impact": "APOE comes in three main alleles: E2, E3, and E4. The E4 variant (APOE4) produces a malformed protein that is terrible at clearing cholesterol and amyloid-beta plaques from the brain.",
+    "biological_consequences": [
+      "Having one copy of APOE4 increases Alzheimer's risk 3x. Having two copies increases it 10-15x.",
+      "Severe cardiovascular risk. APOE4 carriers experience massive LDL cholesterol spikes when consuming saturated fats (ghee, butter, coconut oil)."
+    ],
+    "epigenetic_rescue": [
+      "APOE4 carriers MUST avoid the 'Keto' diet if it is high in saturated fat. They must get their fats primarily from monounsaturated sources (olive oil, avocados) and Omega-3s (EPA/DHA).",
+      "Strict blood sugar control: Alzheimer's in APOE4 carriers is often called 'Type 3 Diabetes' due to brain insulin resistance.",
+      "Regular cardiovascular exercise (increases brain-derived neurotrophic factor - BDNF)."
+    ],
+    "related_nodes": ["SYS_NERVOUS_001", "SYS_CARDIOMETABOLIC_001", "BSG_INSULIN_RESISTANCE_001"]
+  },
+  "GEN_HLA_DQ_001": {
+    "id": "GEN_HLA_DQ_001",
+    "node_type": "genetics",
+    "version": "1.0",
+    "name": "HLA-DQ (Human Leukocyte Antigen)",
+    "mechanism": "Part of the Major Histocompatibility Complex (MHC). These genes produce proteins that sit on the outside of cells and present 'foreign' peptides to the immune system to determine if they are friend or foe.",
+    "polymorphism_impact": "The HLA-DQ2 and HLA-DQ8 variants are the specific genetic markers for Celiac Disease and severe autoimmune susceptibility. They present the gliadin protein (from gluten) to T-cells in a way that triggers a massive, destructive immune response.",
+    "biological_consequences": [
+      "Celiac Disease (destruction of the small intestine villi).",
+      "Hashimoto's Thyroiditis (molecular mimicry where the immune system, hyper-activated by gluten, mistakenly attacks the thyroid gland).",
+      "Type 1 Diabetes."
+    ],
+    "epigenetic_rescue": [
+      "100% strict, lifelong elimination of gluten. Without the gliadin trigger, the genetic gun cannot fire, and the autoimmune disease stays dormant.",
+      "GUT_LEAKYGUT_001 repair (using Glutamine and Zinc) to prevent large proteins from entering the blood in the first place."
+    ],
+    "related_nodes": ["INF_AUTOIMMUNE_001", "MED_HASHIMOTOS_001", "GUT_LEAKYGUT_001"]
+  },
+  "GEN_CYP450_001": {
+    "id": "GEN_CYP450_001",
+    "node_type": "genetics",
+    "version": "1.0",
+    "name": "CYP450 (Cytochrome P450 Enzymes - specifically CYP1A2)",
+    "mechanism": "A superfamily of liver enzymes responsible for Phase I detoxification of medications, toxins, and caffeine.",
+    "polymorphism_impact": "Variants in the CYP1A2 gene determine if you are a 'Fast' or 'Slow' metabolizer of caffeine.",
+    "biological_consequences": [
+      "Slow Metabolizers: Caffeine stays in the bloodstream for 10-14 hours. Drinking coffee at 2 PM means high caffeine levels at midnight, causing severe insomnia, chronic cortisol elevation (STR_CHRONIC_001), and heightened anxiety.",
+      "Fast Metabolizers: Clear caffeine in 3-4 hours. They can drink coffee at 6 PM and sleep perfectly."
+    ],
+    "epigenetic_rescue": [
+      "Slow metabolizers must enforce a strict 10 AM caffeine cutoff and limit intake to 100mg (one cup) daily.",
+      "Cruciferous vegetables (broccoli sprouts, cabbage) epigenetically upregulate CYP1A2 activity, helping the liver clear toxins faster."
+    ],
+    "related_nodes": ["BIO_LIVER_001", "STR_CHRONIC_001", "SLP_DEEPSLEEP_001"]
+  },
+  "GEN_LCT_001": {
+    "id": "GEN_LCT_001",
+    "node_type": "genetics",
+    "version": "1.0",
+    "name": "LCT (Lactase Persistence Gene)",
+    "mechanism": "Provides instructions for making lactase, the enzyme that digests lactose (milk sugar). In most mammals, this gene naturally turns OFF after weaning.",
+    "polymorphism_impact": "A specific genetic mutation (Lactase Persistence) keeps the gene ON into adulthood, allowing the digestion of milk. However, 60-70% of South and East Indians DO NOT have this mutation.",
+    "biological_consequences": [
+      "When a lactose-intolerant person drinks milk, the undigested lactose ferments in the colon. This feeds pathogenic bacteria, causing severe bloating, gas, and chronic low-grade gut inflammation (GUT_DYSBIOSIS_001).",
+      "Systemic inflammation from the gut triggers acne and skin issues."
+    ],
+    "epigenetic_rescue": [
+      "Switching to fermented dairy (curd/yogurt/kefir) where the bacteria have already pre-digested the lactose.",
+      "Total elimination of fluid milk."
+    ],
+    "related_nodes": ["GUT_DYSBIOSIS_001", "INF_GUT_001", "MED_ACNE_VULGARIS_001"]
+  },
+  "GEN_FLG_001": {
+    "id": "GEN_FLG_001",
+    "node_type": "genetics",
+    "version": "1.0",
+    "name": "FLG (Filaggrin Gene)",
+    "mechanism": "Filaggrin is the 'glue' protein in the stratum corneum (outermost skin layer). It aggregates keratin filaments and breaks down into Natural Moisturizing Factors (NMF) that trap water in the skin.",
+    "polymorphism_impact": "Loss-of-function mutations in the FLG gene result in a severely compromised, 'leaky' skin barrier. The skin cannot hold water (massive Transepidermal Water Loss) and allows allergens and bacteria to easily penetrate.",
+    "biological_consequences": [
+      "Ichthyosis Vulgaris (severe, scaly 'fish scale' skin).",
+      "Atopic Dermatitis (Eczema).",
+      "Severe, chronic dandruff (because the compromised scalp barrier is easily colonized by Malassezia yeast)."
+    ],
+    "epigenetic_rescue": [
+      "Daily application of occlusive emollients (Ceramides, Squalane) immediately after bathing to artificially seal the barrier that the body cannot build itself.",
+      "Avoiding hot water and harsh surfactants (SLS) which strip what little barrier remains."
+    ],
+    "related_nodes": ["BIO_EPIDERMIS_001", "HYD_HAIR_SKIN_001", "INF_SCALP_001"]
+  },
+  "GEN_EPIGENETICS_001": {
+    "id": "GEN_EPIGENETICS_001",
+    "node_type": "genetics",
+    "version": "1.0",
+    "name": "Epigenetics (The Master Switchboard)",
+    "mechanism": "The study of how behaviors and environment cause changes that affect the WAY genes work, without changing the underlying DNA sequence.",
+    "polymorphism_impact": "Two primary mechanisms:\n1. DNA Methylation: Adding a methyl group to a gene 'turns it off' (silences it). Removing it 'turns it on'.\n2. Histone Modification: DNA is wrapped around histone proteins. Tightly wrapped DNA cannot be read (turned off); loosely wrapped DNA is actively read (turned on).",
+    "biological_consequences": [
+      "This is why identical twins can have completely different diseases. One twin's diet turned on an autoimmune gene, while the other's diet kept it silenced.",
+      "Chronic stress (cortisol), environmental toxins (BPA), and sugar literally strip methyl groups off DNA, turning ON disease-promoting genes."
+    ],
+    "epigenetic_rescue": [
+      "Methyl-donors in the diet (Choline, Folate, B12 from eggs, leafy greens, and meat) provide the chemical tags needed to keep bad genes SILENCED.",
+      "Polyphenols (Curcumin from turmeric, EGCG from green tea) act as powerful histone deacetylase (HDAC) inhibitors, physically unspooling DNA to turn ON antioxidant and longevity genes."
+    ],
+    "related_nodes": ["ENV_ENDOCRINE_DISRUPTORS_001", "STR_CHRONIC_001", "NUT_METHYLATION_001"]
+  },
+  "GEN_COMT_001": {
+    "id": "GEN_COMT_001",
+    "node_type": "genetics",
+    "version": "1.0",
+    "name": "COMT (Catechol-O-Methyltransferase)",
+    "mechanism": "Enzyme responsible for breaking down (methylating) catecholamines (Dopamine, Epinephrine, Norepinephrine) and Estrogen in the liver and brain.",
+    "polymorphism_impact": "The Val158Met variant determines enzyme speed. 'Met/Met' = Slow COMT (Worrier). 'Val/Val' = Fast COMT (Warrior).",
+    "biological_consequences": [
+      "Slow COMT: The brain cannot clear dopamine and adrenaline fast enough. Leads to chronic anxiety, perfectionism, poor stress tolerance, and estrogen dominance (PCOS/heavy periods) because the liver cannot clear estrogen.",
+      "Fast COMT: Clears dopamine too fast. Leads to ADHD, thrill-seeking, lower IQ scores in quiet environments, but excellent performance under extreme stress."
+    ],
+    "epigenetic_rescue": [
+      "Slow COMT: Must supplement with NUT_MAGNESIUM_001 (the essential cofactor) to speed up the enzyme. Must strictly avoid high doses of Quercetin and EGCG (Green Tea) because they physically block the COMT enzyme, driving anxiety through the roof."
+    ],
+    "related_nodes": ["SYS_NERVOUS_001", "HOR_ESTROGEN_001", "MED_PCOS_001"]
+  },
+  "GEN_DAO_001": {
+    "id": "GEN_DAO_001",
+    "node_type": "genetics",
+    "version": "1.0",
+    "name": "DAO (Diamine Oxidase)",
+    "mechanism": "The primary enzyme in the gut mucosa responsible for breaking down dietary histamine.",
+    "polymorphism_impact": "Mutations severely reduce DAO production. When these individuals eat high-histamine foods, the histamine enters the bloodstream rather than being destroyed in the gut.",
+    "biological_consequences": [
+      "Histamine Intolerance: Unexplainable migraines, hives, brain fog, and nasal congestion immediately after eating 'healthy' fermented foods (curd, idli, dosa, kefir) or high-histamine foods (tomatoes, spinach, aged cheese).",
+      "Often misdiagnosed as random food allergies or idiopathic urticaria."
+    ],
+    "epigenetic_rescue": [
+      "Low histamine diet (avoiding all fermented and aged foods).",
+      "Supplementing with exogenous DAO enzymes before meals.",
+      "NUT_VITC_001 and NUT_COPPER_001 (essential cofactors to maximize endogenous DAO production)."
+    ],
+    "related_nodes": ["GUT_LEAKYGUT_001", "INF_GUT_001", "SYM_HEADACHE_001"]
+  },
+  "GEN_GSTM1_001": {
+    "id": "GEN_GSTM1_001",
+    "node_type": "genetics",
+    "version": "1.0",
+    "name": "GSTM1 (Glutathione S-Transferase Mu 1)",
+    "mechanism": "Enzyme crucial for Phase II liver detoxification, specifically responsible for conjugating (binding) toxins with Glutathione so they can be safely excreted.",
+    "polymorphism_impact": "A 'Null' deletion is incredibly common (up to 50% in some populations). The gene is entirely missing. These individuals have severely crippled antioxidant capacity.",
+    "biological_consequences": [
+      "Extreme vulnerability to oxidative stress from environmental toxins, specifically PM2.5 air pollution and heavy metals.",
+      "Rapid biological aging, premature greying of hair (OXI_FOLLICLE_001), and significantly higher risk of toxin-driven cancers."
+    ],
+    "epigenetic_rescue": [
+      "Since the gene is missing, you cannot 'fix' the enzyme. You must overwhelm the system with Glutathione precursors.",
+      "Daily supplementation with N-Acetyl Cysteine (NAC) and heavily consuming cruciferous vegetables (broccoli/cabbage) to activate alternative detoxification pathways (GSTT1 / GSTP1)."
+    ],
+    "related_nodes": ["OXI_ANTIOXIDANT_SYSTEM_001", "ENV_POLLUTION_001", "BIO_LIVER_001"]
+  },
+  "GEN_PEMT_001": {
+    "id": "GEN_PEMT_001",
+    "node_type": "genetics",
+    "version": "1.0",
+    "name": "PEMT (Phosphatidylethanolamine N-methyltransferase)",
+    "mechanism": "Enzyme in the liver that endogenously synthesizes Choline. Choline is required to build VLDL particles to export fat OUT of the liver.",
+    "polymorphism_impact": "Mutations cripple the liver's ability to make its own choline. The individual becomes 100% dependent on dietary choline.",
+    "biological_consequences": [
+      "If a woman with this mutation eats a vegetarian/vegan diet (which is naturally very low in choline compared to eggs/meat), fat becomes trapped in her liver.",
+      "This is a major hidden cause of Non-Alcoholic Fatty Liver Disease (NAFLD) and severe muscle weakness in thin, vegetarian Indian women."
+    ],
+    "epigenetic_rescue": [
+      "Mandatory daily consumption of whole eggs (runny yolks).",
+      "For strict vegetarians, mandatory supplementation with CDP-Choline or Alpha-GPC to bypass the broken liver enzyme and prevent liver failure."
+    ],
+    "related_nodes": ["MED_FATTY_LIVER_001", "BIO_LIVER_001", "NUT_METHYLATION_001"]
+  },
+  "GEN_FADS1_001": {
+    "id": "GEN_FADS1_001",
+    "node_type": "genetics",
+    "version": "1.0",
+    "name": "FADS1 (Fatty Acid Desaturase 1)",
+    "mechanism": "Enzyme required to convert short-chain plant Omega-3s (ALA from flaxseeds, chia seeds, walnuts) into the long-chain, brain-active Omega-3s (EPA and DHA).",
+    "polymorphism_impact": "Even with perfect genetics, ALA to DHA conversion is poor (<5%). With the FADS1 mutation, the conversion rate drops to near 0%.",
+    "biological_consequences": [
+      "Severe brain DHA deficiency. Drives neuro-inflammation, severe depression, brain fog, and early cognitive decline.",
+      "The 'Vegetarian Trap': Patients believe they are getting enough Omega-3 from flaxseeds, but biologically their brains are starving."
+    ],
+    "epigenetic_rescue": [
+      "Total dietary bypass. Vegetarians with this mutation MUST consume Algae-based EPA/DHA supplements (the exact source fish get it from). Flaxseeds are biologically useless for them as an Omega-3 source."
+    ],
+    "related_nodes": ["SYS_NERVOUS_001", "INF_NEURO_001", "NUT_FATTYACID_001"]
+  },
+  "GEN_SLC30A8_001": {
+    "id": "GEN_SLC30A8_001",
+    "node_type": "genetics",
+    "version": "1.0",
+    "name": "SLC30A8 (Zinc Transporter 8 / ZnT8)",
+    "mechanism": "A protein that transports Zinc from the cytoplasm into the insulin-secretory vesicles of the pancreatic beta cells. Zinc is required to crystallize and store insulin.",
+    "polymorphism_impact": "Mutations impair the transport of zinc into the pancreas. The beta cells cannot package or secrete insulin effectively.",
+    "biological_consequences": [
+      "Massively increased genetic risk for Type 2 Diabetes. The body becomes diabetic not necessarily because of severe insulin resistance, but because the pancreas structurally fails to release the insulin it produces.",
+      "ZnT8 autoantibodies are also a primary marker for Type 1 Diabetes."
+    ],
+    "epigenetic_rescue": [
+      "Aggressive systemic Zinc supplementation (NUT_ZINC_001).",
+      "Strict timing: Zinc must be taken completely away from Indian staples like dal and chapati (phytates), which irreversibly bind zinc in the gut and prevent absorption."
+    ],
+    "related_nodes": ["BIO_PANCREAS_001", "MED_TYPE2_DIABETES_001", "NUT_ZINC_001"]
+  }
+}

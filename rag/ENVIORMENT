@@ -1,0 +1,223 @@
+{
+  "_meta": {
+    "layer": "16_ENVIRONMENT",
+    "version": "1.0",
+    "description": "The external physical factors (chemical, physical, and biological) that interact with the human body, driving oxidative stress, inflammation, endocrine disruption, and circadian misalignment.",
+    "nodes": [
+      "ENV_POLLUTION_001",
+      "ENV_WATER_QUALITY_001",
+      "ENV_ENDOCRINE_DISRUPTORS_001",
+      "ENV_PESTICIDES_001",
+      "ENV_LIGHT_POLLUTION_001",
+      "ENV_TEMPERATURE_HUMIDITY_001",
+      "ENV_INDOOR_TOXINS_001",
+      "ENV_RADIATION_001",
+      "ENV_NOISE_POLLUTION_001",
+      "ENV_OCCUPATIONAL_001"
+    ]
+  },
+  "ENV_POLLUTION_001": {
+    "id": "ENV_POLLUTION_001",
+    "node_type": "environment",
+    "version": "1.0",
+    "name": "Air Pollution (PM2.5, Heavy Metals, PAHs)",
+    "definition": "Suspended particulate matter and toxic gases (NOx, SOx, ozone) in the air. PM2.5 particles are small enough (<2.5 micrometres) to bypass respiratory defences, cross the alveolar membrane, and enter the systemic circulation directly.",
+    "mechanism": {
+      "systemic_oxidation": "PM2.5 carries heavy metals and Polycyclic Aromatic Hydrocarbons (PAHs). Once in the blood, these act as potent catalysts for the Fenton reaction, generating massive amounts of hydroxyl radicals. This depletes the body's antioxidant reserves (OXI_STRESS_001).",
+      "neuroinflammation": "PM2.5 can travel directly up the olfactory nerve (in the nose) and cross the blood-brain barrier into the brain, triggering microglial activation and neuroinflammation (INF_NEURO_001).",
+      "skin_barrier_damage": "Airborne pollutants settle on the skin, oxidizing the squalene in sebum (OXI_LIPID_PEROXIDATION_001) → creates a highly comedogenic and inflammatory environment → drives urban acne and accelerates skin aging.",
+      "hair_follicle_toxicity": "Particulates settle on the scalp, enter the hair follicle ostia, and induce localized oxidative stress at the bulge region where stem cells reside → premature miniaturisation and greying."
+    },
+    "indian_context": "India is home to most of the world's most polluted cities. The AQI in Delhi/NCR and North India regularly exceeds 400-500 during winter (severe category). This is not just 'bad air' — it is a daily, systemic oxidative assault equivalent to smoking several cigarettes a day. Hair fall and asthma spikes in November/December are directly correlated to the post-Diwali and crop-burning smog.",
+    "biological_damage": [
+      "OXI_DNA_DAMAGE_001",
+      "INF_CHRONIC_001",
+      "BIO_DERMIS_001"
+    ],
+    "resolution_pathways": ["Indoor HEPA air purifiers", "NUT_VITC_001", "NUT_SELENIUM_001", "Scalp exfoliation (salicylic acid) to remove PM2.5 deposits"],
+    "symptom_refs": ["SYM_HAIRFALL_001", "SYM_ACNE_001", "SYM_BRAINFOG_001", "SYM_AGEING_001"]
+  },
+  "ENV_WATER_QUALITY_001": {
+    "id": "ENV_WATER_QUALITY_001",
+    "node_type": "environment",
+    "version": "1.0",
+    "name": "Water Quality (Hardness & Contaminants)",
+    "definition": "The chemical composition of water used for drinking and bathing. Hard water contains high concentrations of dissolved calcium and magnesium carbonates. Contaminated water contains heavy metals (arsenic, lead, fluoride) or pathogens.",
+    "mechanism": {
+      "topical_hard_water_damage": "Calcium and magnesium ions in hard water react with fatty acids in soaps/shampoos to form insoluble 'soap scum' (calcium salts). This leaves a waxy residue on the hair shaft (making it brittle and dull) and blocks follicle ostia (causing scalp inflammation and dandruff).",
+      "skin_barrier_disruption": "Hard water increases the pH of the skin surface (which should naturally be slightly acidic around pH 5.5). Alkaline skin permits pathogenic bacterial overgrowth and increases transepidermal water loss (HYD_HAIR_SKIN_001).",
+      "drinking_RO_demineralisation": "Reverse Osmosis (RO) filtration removes heavy metals but also strips 100% of essential minerals (calcium, magnesium). Drinking demineralised RO water actively leaches electrolytes from the body and provides poor cellular hydration (HYD_CELLULAR_001).",
+      "heavy_metal_toxicity": "Arsenic (common in East India groundwater) and excess Fluoride (common in West/Central India) act as enzymatic poisons, displacing essential minerals like zinc and iodine from their active sites."
+    },
+    "indian_context": "The majority of urban India relies on hard borewell water for bathing (TDS 500-1500+). The sudden onset of massive hair fall when people move to a new city (e.g., moving to Bangalore or Pune) is almost entirely driven by the shock of hard water on the scalp microbiome and hair cuticle. Simultaneously, the universal reliance on RO systems for drinking has created widespread subclinical magnesium deficiency.",
+    "biological_damage": [
+      "BIO_FOLLICLE_001",
+      "BIO_SCALPMICROBIOME_001",
+      "HYD_ELECTROLYTE_001"
+    ],
+    "resolution_pathways": ["Shower filters (to remove chlorine/hardness)", "Chelating shampoos (EDTA)", "Remineralising RO water (adding trace drops or using alkaline filters)"],
+    "symptom_refs": ["SYM_HAIRFALL_001", "SYM_DANDRUFF_001", "SYM_DRYSKIN_001"]
+  },
+  "ENV_ENDOCRINE_DISRUPTORS_001": {
+    "id": "ENV_ENDOCRINE_DISRUPTORS_001",
+    "node_type": "environment",
+    "version": "1.0",
+    "name": "Endocrine Disrupting Chemicals (EDCs)",
+    "definition": "Synthetic chemicals found in plastics, personal care products, and non-stick cookware that mimic, block, or interfere with the body's natural hormones. Common EDCs include BPA (Bisphenol-A), Phthalates, Parabens, and PFAS (forever chemicals).",
+    "mechanism": {
+      "estrogen_mimicry": "BPA and phthalates are 'xenoestrogens'. They structurally resemble estradiol and bind to estrogen receptors. In men, this suppresses natural testosterone production and promotes fat storage. In women, it contributes to estrogen dominance conditions (endometriosis, fibroids, severe PMS).",
+      "thyroid_disruption": "Many EDCs (especially halogens like fluorine and bromine found in flame retardants and water) compete directly with iodine for uptake into the thyroid gland, suppressing T4 production (HOR_THYROID_001).",
+      "obesogens": "Certain EDCs directly alter epigenetic programming of fat cells, promoting the creation of new fat cells (adipogenesis) and visceral fat storage, completely independent of caloric intake. This drives metabolic inflammation (INF_METABOLIC_001).",
+      "microplastics": "Now found in human blood, placenta, and testicles. They induce chronic low-grade inflammation as the immune system attempts (and fails) to digest them."
+    },
+    "indian_context": "Extreme EDC exposure occurs daily in India: drinking hot tea from thin plastic cups, packing hot curries in plastic bags (heat accelerates BPA/phthalate leaching exponentially), drinking from sun-baked plastic water bottles, and widespread use of paraben-heavy, unregulated cosmetics and fairness creams.",
+    "biological_damage": [
+      "HOR_TESTOSTERONE_001",
+      "HOR_THYROID_001",
+      "HOR_ESTROGEN_001"
+    ],
+    "resolution_pathways": ["Never heat food in plastic", "Switch to steel/glass water bottles", "Paraben/phthalate-free personal care products"],
+    "symptom_refs": ["SYM_WEIGHTGAIN_001", "SYM_PCOS_001", "SYM_FATIGUE_001"]
+  },
+  "ENV_PESTICIDES_001": {
+    "id": "ENV_PESTICIDES_001",
+    "node_type": "environment",
+    "version": "1.0",
+    "name": "Agricultural Toxins (Pesticides & Herbicides)",
+    "definition": "Chemicals designed to kill insects (organophosphates, pyrethroids) and weeds (glyphosate). When ingested chronically in small doses, they act as neurotoxins and microbiome destroyers in humans.",
+    "mechanism": {
+      "microbiome_decimation": "Glyphosate (Roundup) is an antibiotic. It specifically targets the shikimate pathway in bacteria. While humans lack this pathway, our gut bacteria depend on it. Chronic ingestion of pesticide-laden food systematically kills beneficial gut bacteria (GUT_DYSBIOSIS_001).",
+      "liver_overload": "The liver's Cytochrome P450 enzymes must detoxify all ingested pesticides (Phase 1 and Phase 2 detoxification). This consumes massive amounts of glutathione. High pesticide load → glutathione depletion → reduced antioxidant capacity (OXI_ANTIOXIDANT_SYSTEM_001).",
+      "neurological_impact": "Organophosphates inhibit acetylcholinesterase (an enzyme critical for nerve transmission). Chronic low-dose exposure is linked to brain fog, poor memory, and neurodegeneration."
+    },
+    "indian_context": "India is one of the world's largest consumers of agricultural pesticides, often poorly regulated. Residue levels on common Indian vegetables (spinach, tomatoes, cauliflower) frequently exceed safe limits. The practice of coloring vegetables with chemicals (e.g., malachite green on peas) adds to the toxic load.",
+    "biological_damage": [
+      "BIO_LIVER_001",
+      "GUT_MICROBIOME_001",
+      "SYS_NERVOUS_001"
+    ],
+    "resolution_pathways": ["Soaking vegetables in baking soda (sodium bicarbonate) water for 15 mins removes up to 90% of surface pesticides", "Buying seasonal/local", "Liver support (NUT_PROTEIN_001 for glutathione)"],
+    "symptom_refs": ["SYM_BRAINFOG_001", "SYM_BLOATING_001", "SYM_FATIGUE_001"]
+  },
+  "ENV_LIGHT_POLLUTION_001": {
+    "id": "ENV_LIGHT_POLLUTION_001",
+    "node_type": "environment",
+    "version": "1.0",
+    "name": "Light Pollution & Circadian Disruption",
+    "definition": "The unnatural presence of bright, blue-spectrum light at night, combined with the severe lack of full-spectrum sunlight exposure during the day. This creates a state of 'circadian mismatch'.",
+    "mechanism": {
+      "melatonin_suppression": "Intrinsically photosensitive retinal ganglion cells (ipRGCs) in the eye are maximally sensitive to blue light (480nm). Evening screen time and LED bulbs signal to the suprachiasmatic nucleus (SCN) that it is still daytime, completely suppressing pineal melatonin secretion (HOR_MELATONIN_001).",
+      "morning_anchor_loss": "The circadian rhythm requires a 'reset' signal of bright light (>10,000 lux) entering the eyes within 60 minutes of waking. Indoor lighting is only 100-300 lux. Lack of morning sunlight delays the cortisol peak and pushes the entire circadian clock out of phase.",
+      "metabolic_consequence": "Circadian mismatch directly induces peripheral insulin resistance (BSG_INSULIN_RESISTANCE_001) independent of diet. Eating late at night under artificial light when the pancreas is expecting sleep causes massive glucose spikes."
+    },
+    "indian_context": "Urban Indian lifestyles have shifted heavily into the night. IT professionals work across time zones. Binge-watching on phones in bed until 2 AM is common. Most urban Indians live in apartments with minimal morning sunlight and spend the entire day under fluorescent office lights. This is a primary driver of the Indian epidemic of insomnia and metabolic syndrome.",
+    "biological_damage": [
+      "SLP_CIRCADIAN_001",
+      "HOR_MELATONIN_001",
+      "STR_CIRCADIAN_001"
+    ],
+    "resolution_pathways": ["Morning sunlight exposure (10-15 mins before 9 AM)", "Blue light blocking glasses post 8 PM", "Screen dimming/warm light apps"],
+    "symptom_refs": ["SYM_POORSLEEP_001", "SYM_FATIGUE_001", "SYM_WEIGHTGAIN_001"]
+  },
+  "ENV_TEMPERATURE_HUMIDITY_001": {
+    "id": "ENV_TEMPERATURE_HUMIDITY_001",
+    "node_type": "environment",
+    "version": "1.0",
+    "name": "Temperature, Humidity, and AC Exposure",
+    "definition": "The ambient atmospheric conditions and the physiological stress of moving rapidly between extreme microclimates.",
+    "mechanism": {
+      "AC_dehydration": "Air conditioning works by stripping moisture from the air. Prolonged exposure to AC environments (humidity <40%) dramatically increases transepidermal water loss (TEWL) from the skin and respiratory tract. This dehydrates the skin barrier and dries out mucosal linings, increasing susceptibility to respiratory infections (HYD_HAIR_SKIN_001).",
+      "heat_shock": "Moving from a 40°C humid outdoor environment into a 20°C dry AC office causes rapid vasoconstriction. This vascular shock stresses the cardiovascular system and confuses thermoregulatory pathways.",
+      "sweat_microbiome": "In high humidity without AC, sweat does not evaporate efficiently. The skin remains constantly damp, providing a perfect breeding ground for fungal infections (Tinea/Ringworm) and Malassezia yeast (dandruff)."
+    },
+    "indian_context": "The Indian corporate lifestyle involves 8-10 hours in freezing, dry AC offices, followed by commutes in intense heat and humidity. The skin and hair bear the brunt of this microclimate ping-pong, leading to paradoxical conditions: skin that is oily on the surface (from humidity/sweat) but deeply dehydrated underneath (from AC). Fungal infections (ringworm) are epidemic during the Indian monsoon.",
+    "biological_damage": [
+      "HYD_DEHYDRATION_001",
+      "BIO_DERMIS_001",
+      "BIO_SCALPMICROBIOME_001"
+    ],
+    "resolution_pathways": ["Indoor humidifiers in AC rooms", "Hydrating skincare (hyaluronic acid + occlusives)", "HYD_CELLULAR_001 optimization"],
+    "symptom_refs": ["SYM_DRYSKIN_001", "SYM_DANDRUFF_001", "SYM_ACNE_001 (Fungal acne)"]
+  },
+  "ENV_INDOOR_TOXINS_001": {
+    "id": "ENV_INDOOR_TOXINS_001",
+    "node_type": "environment",
+    "version": "1.0",
+    "name": "Indoor Toxins (VOCs, Mold, Mosquito Coils)",
+    "definition": "Chemicals and biological pathogens trapped in poorly ventilated indoor spaces. Indoor air is frequently 2-5x more polluted than outdoor air.",
+    "mechanism": {
+      "VOC_inhalation": "Volatile Organic Compounds (VOCs) from fresh paint, cheap furniture glue, and cleaning chemicals are inhaled continuously. They burden liver detoxification pathways and cause chronic neuro-inflammation (headaches, brain fog).",
+      "combustion_particles": "Burning anything indoors (mosquito coils, incense, cooking gas without exhaust) generates extreme levels of PM2.5 and carbon monoxide in an enclosed space, directly driving respiratory inflammation (INF_CHRONIC_001).",
+      "mold_mycotoxins": "Damp walls (seepage) breed toxic mold (Stachybotrys, Aspergillus). Mold releases invisible mycotoxins that trigger severe chronic inflammatory response syndrome (CIRS) and autoimmune flares."
+    },
+    "indian_context": "This is a massive hidden health destroyer in India. The daily burning of mosquito repellent coils (which contain neurotoxic pyrethroids like allethrin) in closed AC bedrooms while sleeping is incredibly toxic. Burning incense sticks (agarbatti) daily in small, unventilated pooja rooms exposes families to high levels of VOCs and particulate matter. Kitchens without strong exhaust chimneys trap mustard oil fumes (highly oxidizing when burnt).",
+    "biological_damage": [
+      "INF_CHRONIC_001",
+      "SYS_NERVOUS_001",
+      "BIO_LIVER_001"
+    ],
+    "resolution_pathways": ["Cross-ventilation (opening opposite windows for 15 mins daily)", "Switching to mosquito nets instead of coils", "Kitchen exhausts/chimneys"],
+    "symptom_refs": ["SYM_HEADACHE_001", "SYM_FATIGUE_001", "SYM_BRAINFOG_001"]
+  },
+  "ENV_RADIATION_001": {
+    "id": "ENV_RADIATION_001",
+    "node_type": "environment",
+    "version": "1.0",
+    "name": "Radiation (UV & Electromagnetic)",
+    "definition": "Exposure to high-energy radiation (Ultraviolet) from the sun, and non-ionizing electromagnetic fields (EMF) from devices.",
+    "mechanism": {
+      "UVA_aging": "UVA rays penetrate deep into the dermis, generating singlet oxygen radicals that activate metalloproteinases (enzymes that physically chop up collagen and elastin). This is the primary driver of skin wrinkling and photoaging (OXI_PROTEIN_OXIDATION_001).",
+      "UVB_burning": "UVB rays hit the epidermis, causing direct DNA damage (thymine dimers). The body responds with melanin production (tanning) or apoptosis of damaged cells (sunburn).",
+      "follicle_UV_damage": "The scalp receives the most direct UV radiation of any body part. UV radiation penetrates the hair shaft, degrades keratin proteins, bleaches melanin, and generates massive oxidative stress in the follicle stem cell bulge (BIO_MELANOCYTE_001).",
+      "EMF_oxidative_stress": "Chronic proximity to high-EMF sources (keeping phones under pillows, sitting next to heavy electrical transformers) is linked to activation of Voltage-Gated Calcium Channels (VGCCs) in cells, leading to increased intracellular calcium and subsequent oxidative stress."
+    },
+    "indian_context": "The UV index in India is extreme (often 10+ year-round). Sunscreen use is minimal, especially among men. Ironically, despite high UV exposure, Vitamin D deficiency is epidemic because Indians avoid the sun during peak UVB hours (midday) or cover up due to cultural preferences for lighter skin, leaving them exposed only to the damaging UVA rays during morning/evening commutes.",
+    "biological_damage": [
+      "BIO_DERMIS_001",
+      "BIO_FOLLICLE_001",
+      "OXI_DNA_DAMAGE_001"
+    ],
+    "resolution_pathways": ["Broad-spectrum sunscreen (SPF 50, PA++++)", "Physical barriers (caps/umbrellas)", "NUT_VITC_001 (Internal UV protection)"],
+    "symptom_refs": ["SYM_PREMATUREGREYING_001", "SYM_AGEING_001", "SYM_HAIRFALL_001"]
+  },
+  "ENV_NOISE_POLLUTION_001": {
+    "id": "ENV_NOISE_POLLUTION_001",
+    "node_type": "environment",
+    "version": "1.0",
+    "name": "Noise Pollution & Urban Acoustics",
+    "definition": "Constant exposure to elevated, unwanted ambient sound. The brain processes loud noise as a physical threat, even during sleep when conscious awareness is suspended.",
+    "mechanism": {
+      "HPA_axis_activation": "Sudden or chronic loud noises (honking, construction) activate the amygdala → triggers the hypothalamus → sympathetic nervous system activation → adrenaline and cortisol release (STR_CHRONIC_001).",
+      "sleep_architecture_destruction": "Even if noise doesn't wake you up, it causes 'micro-arousals' in the brain. Traffic noise outside a bedroom window shifts the brain out of restorative deep sleep (SLP_DEEPSLEEP_001) into lighter sleep stages. This prevents the physiological repair processes from occurring.",
+      "cardiovascular_strain": "Studies consistently link chronic traffic noise exposure to higher rates of hypertension and ischemic heart disease, purely via the chronic stress and cortisol pathway."
+    },
+    "indian_context": "Indian cities are among the loudest in the world (Mumbai, Delhi frequently exceed 80-90 dB on average). The constant, aggressive traffic honking, loud festivals/loudspeakers, and construction noise mean the Indian nervous system is perpetually in a state of low-grade sympathetic fight-or-flight. This is a massive, invisible drain on systemic energy.",
+    "biological_damage": [
+      "SYS_NERVOUS_001",
+      "HOR_CORTISOL_001",
+      "SLP_DEEPSLEEP_001"
+    ],
+    "resolution_pathways": ["Soundproof windows/Heavy curtains", "White noise machines or earplugs during sleep", "REC_PARASYMPATHETIC_001 techniques"],
+    "symptom_refs": ["SYM_ANXIETY_001", "SYM_FATIGUE_001", "SYM_POORSLEEP_001"]
+  },
+  "ENV_OCCUPATIONAL_001": {
+    "id": "ENV_OCCUPATIONAL_001",
+    "node_type": "environment",
+    "version": "1.0",
+    "name": "Occupational & Sedentary Environment",
+    "definition": "The physical constraints of the modern workplace, specifically prolonged sitting and screen dominance.",
+    "mechanism": {
+      "sedentary_insulin_resistance": "Sitting for more than 2 hours continuously shuts down lipoprotein lipase activity in muscles and reduces GLUT4 expression. The muscles literally go to sleep and refuse to absorb glucose from the blood, causing acute insulin resistance (BSG_INSULIN_RESISTANCE_001).",
+      "postural_hypoxia": "Hunched posture over laptops compresses the diaphragm, leading to shallow chest breathing instead of deep diaphragmatic breathing. This reduces systemic oxygenation and keeps the body in a sympathetic (stress) state.",
+      "ergonomic_structural_damage": "Forward head posture strains the cervical spine, leading to tension headaches, reduced blood flow to the scalp, and chronic neck/shoulder inflammation."
+    },
+    "indian_context": "India's shift to a service-based IT economy means millions of young adults now spend 10-12 hours a day locked in chairs, staring at screens, under fluorescent lights, in AC rooms. This specific occupational environment perfectly combines lack of NEAT (Non-Exercise Activity Thermogenesis), circadian disruption, and postural stress.",
+    "biological_damage": [
+      "EXE_NEAT_001",
+      "STR_PHYSICAL_001",
+      "SYS_CARDIOMETABOLIC_001"
+    ],
+    "resolution_pathways": ["Standing desks", "2-minute movement breaks every 45 mins", "Ergonomic alignment"],
+    "symptom_refs": ["SYM_FATIGUE_001", "SYM_WEIGHTGAIN_001", "SYM_HEADACHE_001"]
+  }
+}

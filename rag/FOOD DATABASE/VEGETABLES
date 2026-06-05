@@ -1,0 +1,377 @@
+{
+  "_meta": {
+    "layer": "21_FOOD_DATABASE",
+    "category": "Vegetables",
+    "serving_size_standard": "Per 100g (Raw/Uncooked Weight)",
+    "description": "The primary source of micronutrients, antioxidants, and fiber. However, plants do not want to be eaten; many contain defense chemicals (oxalates, goitrogens, solanine) that can trigger disease if consumed excessively or improperly.",
+    "nodes": [
+      "FOOD_VEG_SPINACH_001",
+      "FOOD_VEG_METHI_001",
+      "FOOD_VEG_SARSON_001",
+      "FOOD_VEG_CHAULAI_001",
+      "FOOD_VEG_CABBAGE_001",
+      "FOOD_VEG_CAULIFLOWER_001",
+      "FOOD_VEG_BROCCOLI_001",
+      "FOOD_VEG_TOMATO_001",
+      "FOOD_VEG_EGGPLANT_001",
+      "FOOD_VEG_CAPSICUM_001",
+      "FOOD_VEG_KARELA_001",
+      "FOOD_VEG_LAUKI_001",
+      "FOOD_VEG_TORI_001",
+      "FOOD_VEG_PETHA_001",
+      "FOOD_VEG_POTATO_001",
+      "FOOD_VEG_SWEET_POTATO_001",
+      "FOOD_VEG_CARROT_001",
+      "FOOD_VEG_RADISH_001",
+      "FOOD_VEG_BEETROOT_001",
+      "FOOD_VEG_BHINDI_001",
+      "FOOD_VEG_MORINGA_001",
+      "FOOD_VEG_GARLIC_001",
+      "FOOD_VEG_ONION_001",
+      "FOOD_VEG_MUSHROOM_001"
+    ]
+  },
+  "FOOD_VEG_SPINACH_001": {
+    "id": "FOOD_VEG_SPINACH_001",
+    "name": "Spinach (Palak)",
+    "category": "Vegetables",
+    "serving_size_reference": "Per 100g (Raw)",
+    "nutritional_values": {
+      "macronutrients": { "protein": "2.9g", "carbohydrates": "3.6g", "fiber": "2.2g", "fat": "0.4g" },
+      "micronutrients": { "iron": "2.7mg", "calcium": "99mg", "magnesium": "79mg", "vitamin_k": "482mcg" }
+    },
+    "biological_impact": { "iron_myth": "Spinach iron is NON-HEME and bound by oxalates. Bioavailability is < 2%." },
+    "anti_nutrients": "Highest Oxalate content in the human diet.",
+    "preparation_rules": "MUST be blanched and the water thrown away to leach out oxalates to prevent kidney stones (HYD_KIDNEY_001).",
+    "related_nodes": ["HYD_KIDNEY_001", "NUT_CALCIUM_001"]
+  },
+  "FOOD_VEG_METHI_001": {
+    "id": "FOOD_VEG_METHI_001",
+    "name": "Fenugreek Leaves (Methi)",
+    "category": "Vegetables",
+    "serving_size_reference": "Per 100g (Raw)",
+    "nutritional_values": {
+      "macronutrients": { "protein": "4.4g", "carbohydrates": "6g", "fiber": "1.1g", "fat": "0.9g" },
+      "micronutrients": { "iron": "1.9mg", "calcium": "395mg (Massive)", "magnesium": "47mg" }
+    },
+    "biological_impact": { "blood_sugar": "Contains 4-hydroxyisoleucine, which stimulates insulin secretion, directly combating MED_TYPE2_DIABETES_001." },
+    "anti_nutrients": "Saponins causing bitter taste.",
+    "preparation_rules": "Salt extraction to remove extreme bitterness if required.",
+    "related_nodes": ["MED_TYPE2_DIABETES_001", "BSG_INSULIN_RESISTANCE_001"]
+  },
+  "FOOD_VEG_SARSON_001": {
+    "id": "FOOD_VEG_SARSON_001",
+    "name": "Mustard Greens (Sarson)",
+    "category": "Vegetables",
+    "serving_size_reference": "Per 100g (Raw)",
+    "nutritional_values": {
+      "macronutrients": { "protein": "2.9g", "carbohydrates": "4.7g", "fiber": "3.2g", "fat": "0.4g" },
+      "micronutrients": { "vitamin_k": "257mcg", "vitamin_a": "3024 IU", "calcium": "115mg" }
+    },
+    "biological_impact": { "detox": "High in glucosinolates, supporting liver detox (BIO_LIVER_001)." },
+    "anti_nutrients": "Goitrogens.",
+    "preparation_rules": "Must be boiled/slow-cooked (Sarson ka Saag) to destroy goitrogens.",
+    "related_nodes": ["BIO_LIVER_001", "HOR_THYROID_001"]
+  },
+  "FOOD_VEG_CHAULAI_001": {
+    "id": "FOOD_VEG_CHAULAI_001",
+    "name": "Amaranth Leaves (Chaulai)",
+    "category": "Vegetables",
+    "serving_size_reference": "Per 100g (Raw)",
+    "nutritional_values": {
+      "macronutrients": { "protein": "2.5g", "carbohydrates": "4g", "fiber": "2g", "fat": "0.3g" },
+      "micronutrients": { "calcium": "215mg", "iron": "2.3mg", "vitamin_c": "43mg" }
+    },
+    "biological_impact": { "blood_health": "Considered superior to spinach in Ayurveda for blood building due to lower oxalates." },
+    "anti_nutrients": "Moderate oxalates.",
+    "preparation_rules": "Can be stir-fried; no massive blanching required like spinach.",
+    "related_nodes": ["NUT_CALCIUM_001"]
+  },
+  "FOOD_VEG_CABBAGE_001": {
+    "id": "FOOD_VEG_CABBAGE_001",
+    "name": "Cabbage (Patta Gobi)",
+    "category": "Vegetables",
+    "serving_size_reference": "Per 100g (Raw)",
+    "nutritional_values": {
+      "macronutrients": { "protein": "1.3g", "carbohydrates": "5.8g", "fiber": "2.5g", "fat": "0.1g" },
+      "micronutrients": { "vitamin_c": "36mg", "vitamin_k": "76mcg" }
+    },
+    "biological_impact": { "gut_healing": "Cabbage juice contains 'Vitamin U' (S-Methylmethionine), clinically proven to heal peptic ulcers (GUT_DYSBIOSIS_001)." },
+    "anti_nutrients": "High Goitrogens.",
+    "preparation_rules": "Hypothyroid patients (MED_HASHIMOTOS_001) MUST cook it.",
+    "related_nodes": ["GUT_DYSBIOSIS_001", "HOR_THYROID_001"]
+  },
+  "FOOD_VEG_CAULIFLOWER_001": {
+    "id": "FOOD_VEG_CAULIFLOWER_001",
+    "name": "Cauliflower (Phool Gobi)",
+    "category": "Vegetables",
+    "serving_size_reference": "Per 100g (Raw)",
+    "nutritional_values": {
+      "macronutrients": { "protein": "1.9g", "carbohydrates": "5g", "fiber": "2g", "fat": "0.2g" },
+      "micronutrients": { "vitamin_c": "48mg", "folate": "57mcg" }
+    },
+    "biological_impact": { "estrogen_clearance": "Contains DIM, clearing toxic estrogen (HOR_ESTROGEN_001)." },
+    "anti_nutrients": "Goitrogens.",
+    "preparation_rules": "Cook well for thyroid patients.",
+    "related_nodes": ["HOR_ESTROGEN_001"]
+  },
+  "FOOD_VEG_BROCCOLI_001": {
+    "id": "FOOD_VEG_BROCCOLI_001",
+    "name": "Broccoli",
+    "category": "Vegetables",
+    "serving_size_reference": "Per 100g (Raw)",
+    "nutritional_values": {
+      "macronutrients": { "protein": "2.8g", "carbohydrates": "6.6g", "fiber": "2.6g", "fat": "0.3g" },
+      "micronutrients": { "vitamin_c": "89mg", "vitamin_k": "101mcg" }
+    },
+    "biological_impact": { "detox": "Highest Sulforaphane source, massive Nrf2 activator for liver detox (BIO_LIVER_001)." },
+    "anti_nutrients": "Goitrogens.",
+    "preparation_rules": "Steam for exactly 3-4 minutes. Boiling destroys the myrosinase enzyme needed to create sulforaphane.",
+    "related_nodes": ["BIO_LIVER_001"]
+  },
+  "FOOD_VEG_TOMATO_001": {
+    "id": "FOOD_VEG_TOMATO_001",
+    "name": "Tomato",
+    "category": "Vegetables",
+    "serving_size_reference": "Per 100g (Raw)",
+    "nutritional_values": {
+      "macronutrients": { "protein": "0.9g", "carbohydrates": "3.9g", "fiber": "1.2g", "fat": "0.2g" },
+      "micronutrients": { "vitamin_c": "14mg", "lycopene": "2573mcg" }
+    },
+    "biological_impact": { "prostate": "Lycopene accumulates in the prostate, highly protective." },
+    "anti_nutrients": "Solanine and Lectins (Nightshade family).",
+    "preparation_rules": "Cooking INCREASES lycopene bioavailability. Remove skin/seeds for arthritis patients.",
+    "related_nodes": ["INF_AUTOIMMUNE_001", "SYM_JOINTPAIN_001"]
+  },
+  "FOOD_VEG_EGGPLANT_001": {
+    "id": "FOOD_VEG_EGGPLANT_001",
+    "name": "Eggplant (Baingan)",
+    "category": "Vegetables",
+    "serving_size_reference": "Per 100g (Raw)",
+    "nutritional_values": {
+      "macronutrients": { "protein": "1g", "carbohydrates": "6g", "fiber": "3g", "fat": "0.2g" },
+      "micronutrients": { "potassium": "229mg", "manganese": "0.2mg" }
+    },
+    "biological_impact": { "brain_health": "Skin contains Nasunin, a powerful antioxidant for brain cell membranes." },
+    "anti_nutrients": "High Solanine (alkaloid).",
+    "preparation_rules": "Severe trigger for Rheumatoid Arthritis (INF_AUTOIMMUNE_001). Must be thoroughly cooked.",
+    "related_nodes": ["INF_AUTOIMMUNE_001"]
+  },
+  "FOOD_VEG_CAPSICUM_001": {
+    "id": "FOOD_VEG_CAPSICUM_001",
+    "name": "Capsicum (Bell Pepper)",
+    "category": "Vegetables",
+    "serving_size_reference": "Per 100g (Raw)",
+    "nutritional_values": {
+      "macronutrients": { "protein": "1g", "carbohydrates": "4.6g", "fiber": "2g", "fat": "0.2g" },
+      "micronutrients": { "vitamin_c": "80mg (Massive)", "vitamin_a": "3131 IU (Red variety)" }
+    },
+    "biological_impact": { "immunity": "One of the highest Vitamin C sources per calorie." },
+    "anti_nutrients": "Nightshade lectins.",
+    "preparation_rules": "Best eaten raw for Vitamin C, but cooked if patient has joint pain.",
+    "related_nodes": ["NUT_VITC_001"]
+  },
+  "FOOD_VEG_KARELA_001": {
+    "id": "FOOD_VEG_KARELA_001",
+    "name": "Bitter Gourd (Karela)",
+    "category": "Vegetables",
+    "serving_size_reference": "Per 100g (Raw)",
+    "nutritional_values": {
+      "macronutrients": { "protein": "1g", "carbohydrates": "3.7g", "fiber": "2.8g", "fat": "0.2g" },
+      "micronutrients": { "vitamin_c": "84mg", "folate": "72mcg" }
+    },
+    "biological_impact": { "insulin_mimic": "Contains Polypeptide-p, which mimics insulin, forcing glucose into cells (BSG_INSULIN_RESISTANCE_001)." },
+    "anti_nutrients": "Alkaloids causing bitterness.",
+    "preparation_rules": "Crucial for diabetics, but drinking massive amounts of raw juice can cause hypoglycemic shock.",
+    "related_nodes": ["MED_TYPE2_DIABETES_001", "BSG_INSULIN_RESISTANCE_001"]
+  },
+  "FOOD_VEG_LAUKI_001": {
+    "id": "FOOD_VEG_LAUKI_001",
+    "name": "Bottle Gourd (Lauki)",
+    "category": "Vegetables",
+    "serving_size_reference": "Per 100g (Raw)",
+    "nutritional_values": {
+      "macronutrients": { "protein": "0.6g", "carbohydrates": "3.4g", "fiber": "1.5g", "fat": "0.2g" },
+      "micronutrients": { "potassium": "150mg", "vitamin_c": "10mg" }
+    },
+    "biological_impact": { "hydration": "92% water. Highly alkaline diuretic, flushes kidneys (HYD_KIDNEY_001)." },
+    "anti_nutrients": "Cucurbitacins (toxins).",
+    "preparation_rules": "NEVER drink bitter Lauki juice. It contains lethal cucurbitacin levels causing severe GI bleeding.",
+    "related_nodes": ["HYD_KIDNEY_001"]
+  },
+  "FOOD_VEG_TORI_001": {
+    "id": "FOOD_VEG_TORI_001",
+    "name": "Ridge Gourd (Tori)",
+    "category": "Vegetables",
+    "serving_size_reference": "Per 100g (Raw)",
+    "nutritional_values": {
+      "macronutrients": { "protein": "1.2g", "carbohydrates": "4.3g", "fiber": "3g", "fat": "0.2g" },
+      "micronutrients": { "vitamin_a": "410 IU", "potassium": "453mg" }
+    },
+    "biological_impact": { "liver": "Traditionally used to support liver function and cool the body." },
+    "anti_nutrients": "Low.",
+    "preparation_rules": "Easily digested.",
+    "related_nodes": ["BIO_LIVER_001"]
+  },
+  "FOOD_VEG_PETHA_001": {
+    "id": "FOOD_VEG_PETHA_001",
+    "name": "Ash Gourd (Petha / Winter Melon)",
+    "category": "Vegetables",
+    "serving_size_reference": "Per 100g (Raw)",
+    "nutritional_values": {
+      "macronutrients": { "protein": "0.4g", "carbohydrates": "3g", "fiber": "2.9g", "fat": "0.2g" },
+      "micronutrients": { "vitamin_c": "13mg", "calcium": "19mg" }
+    },
+    "biological_impact": { "pranic_energy": "Revered in Ayurveda as the highest 'Pranic' (life-energy) vegetable. Deeply cools the gut lining and nervous system." },
+    "anti_nutrients": "Extremely low.",
+    "preparation_rules": "Drank raw on an empty stomach to heal gut ulcers (GUT_DYSBIOSIS_001).",
+    "related_nodes": ["GUT_DYSBIOSIS_001"]
+  },
+  "FOOD_VEG_POTATO_001": {
+    "id": "FOOD_VEG_POTATO_001",
+    "name": "Potato (Aloo)",
+    "category": "Vegetables",
+    "serving_size_reference": "Per 100g (Raw)",
+    "nutritional_values": {
+      "macronutrients": { "protein": "2g", "carbohydrates": "17g", "fiber": "2.2g", "fat": "0.1g" },
+      "micronutrients": { "potassium": "421mg", "vitamin_c": "19.7mg" }
+    },
+    "biological_impact": { "blood_sugar": "High GI if eaten hot. Spikes insulin (BSG_POSTPRANDIAL_001)." },
+    "anti_nutrients": "Solanine in green skin.",
+    "preparation_rules": "Cool overnight to form Resistant Starch, halving the GI impact.",
+    "related_nodes": ["BSG_POSTPRANDIAL_001", "GUT_MICROBIOME_001"]
+  },
+  "FOOD_VEG_SWEET_POTATO_001": {
+    "id": "FOOD_VEG_SWEET_POTATO_001",
+    "name": "Sweet Potato (Shakarkandi)",
+    "category": "Vegetables",
+    "serving_size_reference": "Per 100g (Raw)",
+    "nutritional_values": {
+      "macronutrients": { "protein": "1.6g", "carbohydrates": "20g", "fiber": "3g", "fat": "0.1g" },
+      "micronutrients": { "vitamin_a": "14187 IU (Massive Beta-Carotene)", "potassium": "337mg" }
+    },
+    "biological_impact": { "vision_skin": "Massive Vitamin A precursor content supports skin and retinal health." },
+    "anti_nutrients": "Moderate oxalates.",
+    "preparation_rules": "Boiling retains a low GI (around 46). Roasting spikes the GI to 82.",
+    "related_nodes": ["BIO_EPIDERMIS_001"]
+  },
+  "FOOD_VEG_CARROT_001": {
+    "id": "FOOD_VEG_CARROT_001",
+    "name": "Carrot (Gajar)",
+    "category": "Vegetables",
+    "serving_size_reference": "Per 100g (Raw)",
+    "nutritional_values": {
+      "macronutrients": { "protein": "0.9g", "carbohydrates": "9.6g", "fiber": "2.8g", "fat": "0.2g" },
+      "micronutrients": { "vitamin_a": "16706 IU", "vitamin_k": "13mcg" }
+    },
+    "biological_impact": { "estrogen_detox": "Raw carrot fiber uniquely binds to excess estrogen in the gut, preventing its reabsorption (HOR_ESTROGEN_001)." },
+    "anti_nutrients": "Very low.",
+    "preparation_rules": "Eat raw for estrogen detox. Cook with fat (ghee) to absorb the fat-soluble Beta-Carotene.",
+    "related_nodes": ["HOR_ESTROGEN_001"]
+  },
+  "FOOD_VEG_RADISH_001": {
+    "id": "FOOD_VEG_RADISH_001",
+    "name": "Radish (Mooli)",
+    "category": "Vegetables",
+    "serving_size_reference": "Per 100g (Raw)",
+    "nutritional_values": {
+      "macronutrients": { "protein": "0.7g", "carbohydrates": "3.4g", "fiber": "1.6g", "fat": "0.1g" },
+      "micronutrients": { "vitamin_c": "14.8mg", "potassium": "233mg" }
+    },
+    "biological_impact": { "liver_gallbladder": "Contains sulfur compounds that stimulate bile flow, cleansing the gallbladder and liver (BIO_LIVER_001)." },
+    "anti_nutrients": "Goitrogens.",
+    "preparation_rules": "Excellent for digestion if eaten with salt before a meal.",
+    "related_nodes": ["BIO_LIVER_001"]
+  },
+  "FOOD_VEG_BEETROOT_001": {
+    "id": "FOOD_VEG_BEETROOT_001",
+    "name": "Beetroot (Chukandar)",
+    "category": "Vegetables",
+    "serving_size_reference": "Per 100g (Raw)",
+    "nutritional_values": {
+      "macronutrients": { "protein": "1.6g", "carbohydrates": "9.6g", "fiber": "2.8g", "fat": "0.2g" },
+      "micronutrients": { "folate": "109mcg", "potassium": "325mg" }
+    },
+    "biological_impact": { "blood_pressure": "Massive source of dietary Nitrates, which convert to Nitric Oxide (NO) in the blood, relaxing vessels and dropping BP (SYS_CARDIOMETABOLIC_001)." },
+    "anti_nutrients": "High Oxalates.",
+    "preparation_rules": "Patients with kidney stones must avoid raw beetroot juice.",
+    "related_nodes": ["SYS_CARDIOMETABOLIC_001", "HYD_KIDNEY_001"]
+  },
+  "FOOD_VEG_BHINDI_001": {
+    "id": "FOOD_VEG_BHINDI_001",
+    "name": "Okra (Bhindi)",
+    "category": "Vegetables",
+    "serving_size_reference": "Per 100g (Raw)",
+    "nutritional_values": {
+      "macronutrients": { "protein": "1.9g", "carbohydrates": "7g", "fiber": "3.2g", "fat": "0.2g" },
+      "micronutrients": { "vitamin_k": "31mcg", "magnesium": "57mg" }
+    },
+    "biological_impact": { "gut_healing": "The mucilage (slime) coats the GI tract, healing ulcers and severe inflammation (INF_GUT_001)." },
+    "anti_nutrients": "High Oxalates and Solanine-like alkaloids.",
+    "preparation_rules": "Do not overcook if you want the gut-healing mucilage.",
+    "related_nodes": ["INF_GUT_001", "GUT_DYSBIOSIS_001"]
+  },
+  "FOOD_VEG_MORINGA_001": {
+    "id": "FOOD_VEG_MORINGA_001",
+    "name": "Drumstick (Moringa / Sahjan)",
+    "category": "Vegetables",
+    "serving_size_reference": "Per 100g (Raw Pods)",
+    "nutritional_values": {
+      "macronutrients": { "protein": "2.1g", "carbohydrates": "8.5g", "fiber": "3.2g", "fat": "0.2g" },
+      "micronutrients": { "vitamin_c": "141mg", "iron": "0.4mg", "magnesium": "45mg" }
+    },
+    "biological_impact": { "superfood": "The leaves (not just pods) contain 7x the Vitamin C of oranges and 15x the potassium of bananas." },
+    "anti_nutrients": "Extremely low.",
+    "preparation_rules": "Pods used in sambar; leaves can be dried into powder as a massive multivitamin.",
+    "related_nodes": ["NUT_VITC_001"]
+  },
+  "FOOD_VEG_GARLIC_001": {
+    "id": "FOOD_VEG_GARLIC_001",
+    "name": "Garlic (Lehsun)",
+    "category": "Vegetables",
+    "serving_size_reference": "Per 10g (Raw)",
+    "nutritional_values": {
+      "macronutrients": { "protein": "0.6g", "carbohydrates": "3.3g", "fiber": "0.2g", "fat": "0g" },
+      "micronutrients": { "manganese": "0.2mg", "vitamin_c": "3.1mg" }
+    },
+    "biological_impact": { "antibiotic": "Allicin destroys pathogenic gut bacteria and Candida without harming beneficial bacteria." },
+    "anti_nutrients": "Fructans (FODMAP).",
+    "preparation_rules": "Must be crushed and exposed to air for 10 mins to create Allicin.",
+    "related_nodes": ["INF_IMMUNE_001"]
+  },
+  "FOOD_VEG_ONION_001": {
+    "id": "FOOD_VEG_ONION_001",
+    "name": "Onion (Pyaaz)",
+    "category": "Vegetables",
+    "serving_size_reference": "Per 100g (Raw)",
+    "nutritional_values": {
+      "macronutrients": { "protein": "1.1g", "carbohydrates": "9.3g", "fiber": "1.7g", "fat": "0.1g" },
+      "micronutrients": { "vitamin_c": "7.4mg", "potassium": "146mg" }
+    },
+    "biological_impact": { "antihistamine": "Highest dietary source of Quercetin, a potent mast-cell stabilizer that stops histamine release (allergies)." },
+    "anti_nutrients": "Fructans.",
+    "preparation_rules": "Raw red onions have the highest Quercetin.",
+    "related_nodes": ["INF_IMMUNE_001"]
+  },
+  "FOOD_VEG_MUSHROOM_001": {
+    "id": "FOOD_VEG_MUSHROOM_001",
+    "name": "Mushrooms (White Button / Shiitake)",
+    "category": "Vegetables",
+    "serving_size_reference": "Per 100g (Raw)",
+    "nutritional_values": {
+      "macronutrients": { "protein": "3.1g", "carbohydrates": "3.3g", "fiber": "1g", "fat": "0.3g" },
+      "micronutrients": {
+        "vitamin_d": "High (if exposed to UV light)",
+        "selenium": "9.3mcg",
+        "copper": "0.3mg"
+      }
+    },
+    "biological_impact": {
+      "immune_system": "Mushrooms contain Beta-Glucans, which directly stimulate macrophages and Natural Killer (NK) cells to fight viral infections and tumors (INF_IMMUNE_001).",
+      "vegan_vitamin_d": "Mushrooms are the ONLY vegan food source of Vitamin D (Ergocalciferol / D2). If you place them in direct sunlight for 30 minutes before cooking, they synthesize massive amounts of Vitamin D."
+    },
+    "anti_nutrients": "Raw mushrooms contain Agaritine (a suspected carcinogen).",
+    "preparation_rules": "NEVER eat raw (e.g., in salads). Cooking completely destroys the Agaritine toxin and breaks down the tough chitin cell walls to release the nutrients.",
+    "related_nodes": ["NUT_VITAMIND_001", "INF_IMMUNE_001"]
+  }
+}
